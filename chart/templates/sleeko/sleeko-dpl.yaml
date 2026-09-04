@@ -1,0 +1,137 @@
+{{- if .Values.sleeko.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "harbor.sleeko" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+{{ include "harbor.labels" . | indent 4 }}
+    component: sleeko
+    app.kubernetes.io/component: sleeko
+spec:
+  replicas: {{ .Values.sleeko.replicas }}
+  selector:
+    matchLabels:
+{{ include "harbor.matchLabels" . | indent 6 }}
+      component: sleeko
+  template:
+    metadata:
+      labels:
+{{ include "harbor.labels" . | indent 8 }}
+        component: sleeko
+        app.kubernetes.io/component: sleeko
+{{- if .Values.sleeko.podLabels }}
+{{ toYaml .Values.sleeko.podLabels | indent 8 }}
+{{- end }}
+      annotations:
+        checksum/secret: {{ include (print $.Template.BasePath "/sleeko/sleeko-secret.yaml") . | sha256sum }}
+        checksum/configmap: {{ include (print $.Template.BasePath "/sleeko/sleeko-cm.yaml") . | sha256sum }}
+{{- if .Values.sleeko.podAnnotations }}
+{{ toYaml .Values.sleeko.podAnnotations | indent 8 }}
+{{- end }}
+    spec:
+{{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+{{- end }}
+{{- if .Values.sleeko.serviceAccountName }}
+      serviceAccountName: {{ .Values.sleeko.serviceAccountName }}
+{{- end }}
+      securityContext:
+        runAsUser: 10000
+        fsGroup: 10000
+      automountServiceAccountToken: {{ .Values.sleeko.automountServiceAccountToken | default false }}
+      containers:
+        - name: sleeko
+          image: {{ .Values.sleeko.image.repository }}:{{ .Values.sleeko.image.tag }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          {{- if not (empty .Values.containerSecurityContext) }}
+          securityContext: {{ .Values.containerSecurityContext | toYaml | nindent 12 }}
+          {{- end }}
+          env:
+          {{- if has "sleeko" .Values.proxy.components }}
+            - name: HTTP_PROXY
+              value: "{{ .Values.proxy.httpProxy }}"
+            - name: HTTPS_PROXY
+              value: "{{ .Values.proxy.httpsProxy }}"
+            - name: NO_PROXY
+              value: "{{ template "harbor.noProxy" . }}"
+          {{- end }}
+            - name: OPTIMIZER_ADAPTER_LISTEN_ADDR
+              value: ":{{ template "harbor.sleeko.containerPort" . }}"
+            - name: OPTIMIZER_ADAPTER_JOB_TTL
+              value: {{ .Values.sleeko.jobTTL | quote }}
+            - name: OPTIMIZER_ADAPTER_MAX_CONCURRENCY
+              value: {{ .Values.sleeko.maxConcurrency | quote }}
+            - name: LLMGW_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.sleeko.llmgw.existingSecret | default (include "harbor.sleeko" .) }}
+                  key: LLMGW_API_KEY
+            - name: LLMGW_API_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.sleeko.llmgw.existingSecret | default (include "harbor.sleeko" .) }}
+                  key: LLMGW_API_BASE_URL
+            - name: LLMGW_MODEL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.sleeko.llmgw.existingSecret | default (include "harbor.sleeko" .) }}
+                  key: LLMGW_MODEL
+          {{- if .Values.sleeko.optimizerPrompt }}
+            - name: OPTIMIZER_PROMPT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "harbor.sleeko" . }}
+                  key: OPTIMIZER_PROMPT
+          {{- end }}
+          {{- if not (kindIs "invalid" .Values.sleeko.llmgw.maxTokens) }}
+            - name: LLMGW_MAX_TOKENS
+              value: {{ .Values.sleeko.llmgw.maxTokens | quote }}
+          {{- end }}
+          {{- if not (kindIs "invalid" .Values.sleeko.llmgw.contextWindow) }}
+            - name: LLMGW_CONTEXT_WINDOW
+              value: {{ .Values.sleeko.llmgw.contextWindow | quote }}
+          {{- end }}
+{{- with .Values.sleeko.extraEnvVars }}
+{{- toYaml . | nindent 12 }}
+{{- end }}
+          ports:
+            - name: api-server
+              containerPort: {{ template "harbor.sleeko.containerPort" . }}
+          livenessProbe:
+            httpGet:
+              path: /probe/healthy
+              port: api-server
+            initialDelaySeconds: {{ .Values.sleeko.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.sleeko.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.sleeko.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.sleeko.livenessProbe.failureThreshold }}
+            successThreshold: {{ .Values.sleeko.livenessProbe.successThreshold }}
+          readinessProbe:
+            httpGet:
+              path: /probe/healthy
+              port: api-server
+            initialDelaySeconds: {{ .Values.sleeko.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.sleeko.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.sleeko.readinessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.sleeko.readinessProbe.failureThreshold }}
+            successThreshold: {{ .Values.sleeko.readinessProbe.successThreshold }}
+          resources:
+{{ toYaml .Values.sleeko.resources | indent 12 }}
+    {{- with .Values.sleeko.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.sleeko.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.sleeko.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- if .Values.sleeko.priorityClassName }}
+      priorityClassName: {{ .Values.sleeko.priorityClassName }}
+    {{- end }}
+{{- end }}

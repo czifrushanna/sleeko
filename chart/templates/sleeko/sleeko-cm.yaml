@@ -1,0 +1,11 @@
+{{- if and .Values.sleeko.enabled .Values.sleeko.optimizerPrompt }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "harbor.sleeko" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+{{ include "harbor.labels" . | indent 4 }}
+data:
+  OPTIMIZER_PROMPT: {{ .Values.sleeko.optimizerPrompt | quote }}
+{{- end }}
