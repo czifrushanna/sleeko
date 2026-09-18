@@ -1,6 +1,7 @@
 package adapter
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
@@ -8,6 +9,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 
 	v1 "github.com/czifrushanna/sleeko/pkg/api/v1"
@@ -154,4 +156,116 @@ func TestStripCodeFences(t *testing.T) {
 			require.Equal(t, c.want, stripCodeFences(c.in))
 		})
 	}
+}
+
+// TestSubmitOptimize_AcceptsAndRunsAsynchronously covers the accept path: a valid
+// request must come back 202 with a fresh id immediately, and the pipeline must
+// then run in the background and land a terminal report under that id. The fake
+// registry serves an attestation-free index, so the background run terminates
+// with NO_ATTESTATION without touching the network.
+func TestSubmitOptimize_AcceptsAndRunsAsynchronously(t *testing.T) {
+	cli := newFakeRegistryClient()
+	cli.manifests["sha256:artifact"] = []byte(`{"manifests":[]}`)
+	withFakeRegistryClient(t, cli)
+
+	s := testServer()
+	srv := httptest.NewServer(s.Handler())
+	defer srv.Close()
+
+	body := `{
+		"registry": {"url": "http://harbor-core:8080", "authorization": "Basic dXNlcjpwYXNz"},
+		"artifact": {"repository": "library/photon", "tag": "5.0", "digest": "sha256:artifact"},
+		"scan_report": "{\"vulnerabilities\":[]}"
+	}`
+	resp, err := http.Post(srv.URL+"/api/v1/optimize", v1.MimeTypeOptimizeRequest, strings.NewReader(body))
+	require.NoError(t, err)
+	defer resp.Body.Close()
+
+	require.Equal(t, http.StatusAccepted, resp.StatusCode)
+	require.Equal(t, v1.MimeTypeOptimizeResponse, resp.Header.Get("Content-Type"))
+
+	submitted := &v1.OptimizeResponse{}
+	require.NoError(t, json.NewDecoder(resp.Body).Decode(submitted))
+	_, err = uuid.Parse(submitted.ID)
+	require.NoError(t, err, "the adapter must hand Harbor a UUID to poll")
+
+	// The job is registered before the response is written, so it is pollable
+	// straight away, and the worker fills in the report shortly after.
+	require.NotNil(t, s.store.get(submitted.ID))
+	require.Eventually(t, func() bool {
+		entry := s.store.get(submitted.ID)
+		return entry != nil && entry.report != nil
+	}, 5*time.Second, 10*time.Millisecond)
+
+	report := s.store.get(submitted.ID).report
+	require.Equal(t, v1.ReportStatusFailed, report.Status)
+	require.Equal(t, v1.ErrorCodeNoAttestation, report.Error.Code)
+}
+
+// Each submission gets its own id, so concurrent Harbor jobs cannot read each
+// other's report.
+func TestSubmitOptimize_IssuesADistinctIDPerRequest(t *testing.T) {
+	cli := newFakeRegistryClient()
+	cli.manifests["sha256:artifact"] = []byte(`{"manifests":[]}`)
+	withFakeRegistryClient(t, cli)
+
+	s := testServer()
+	srv := httptest.NewServer(s.Handler())
+	defer srv.Close()
+
+	body := `{
+		"registry": {"url": "http://harbor-core:8080"},
+		"artifact": {"repository": "library/photon", "digest": "sha256:artifact"}
+	}`
+
+	seen := map[string]bool{}
+	for range 3 {
+		resp, err := http.Post(srv.URL+"/api/v1/optimize", v1.MimeTypeOptimizeRequest, strings.NewReader(body))
+		require.NoError(t, err)
+
+		submitted := &v1.OptimizeResponse{}
+		require.NoError(t, json.NewDecoder(resp.Body).Decode(submitted))
+		resp.Body.Close()
+
+		require.False(t, seen[submitted.ID], "id %s was issued twice", submitted.ID)
+		seen[submitted.ID] = true
+	}
+	require.Len(t, seen, 3)
+
+	// Each submission gets its own report, and waiting for all of them keeps the
+	// background workers from outliving the fake registry client.
+	for id := range seen {
+		require.Eventually(t, func() bool {
+			entry := s.store.get(id)
+			return entry != nil && entry.report != nil
+		}, 5*time.Second, 10*time.Millisecond)
+	}
+}
+
+func TestStartSweeper_EvictsExpiredJobsUntilContextIsDone(t *testing.T) {
+	// A short TTL keeps the sweeper's ttl/4 tick well inside the test timeout.
+	s := NewServer(&Config{JobTTL: 40 * time.Millisecond, MaxConcurrency: 1})
+
+	ctx, cancel := context.WithCancel(context.Background())
+	s.StartSweeper(ctx)
+
+	s.store.put("expired")
+	s.store.mu.Lock()
+	s.store.entries["expired"].createdAt = time.Now().Add(-time.Hour)
+	s.store.mu.Unlock()
+
+	require.Eventually(t, func() bool {
+		return s.store.get("expired") == nil
+	}, 5*time.Second, 5*time.Millisecond)
+
+	// After cancellation the sweeper stops, so a stale entry survives.
+	cancel()
+	s.store.put("kept")
+	s.store.mu.Lock()
+	s.store.entries["kept"].createdAt = time.Now().Add(-time.Hour)
+	s.store.mu.Unlock()
+
+	require.Never(t, func() bool {
+		return s.store.get("kept") == nil
+	}, 200*time.Millisecond, 20*time.Millisecond)
 }
