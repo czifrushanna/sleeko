@@ -103,3 +103,34 @@ func TestRegistryBlobSource_BlobBothFail(t *testing.T) {
 	require.Error(t, err)
 	require.Contains(t, err.Error(), "pull blob")
 }
+
+// erroringReadCloser fails partway through, standing in for a blob download
+// that dies mid-stream.
+type erroringReadCloser struct{ closed bool }
+
+func (e *erroringReadCloser) Read([]byte) (int, error) { return 0, errors.New("connection reset") }
+func (e *erroringReadCloser) Close() error             { e.closed = true; return nil }
+
+// brokenBlobClient serves a blob body that cannot be read to completion.
+type brokenBlobClient struct{ body *erroringReadCloser }
+
+func (b *brokenBlobClient) PullManifest(string, string) ([]byte, error) {
+	return nil, errors.New("not a manifest")
+}
+func (b *brokenBlobClient) PullBlob(string, string) (io.ReadCloser, error) {
+	return b.body, nil
+}
+
+func TestRegistryBlobSource_BlobReadFails(t *testing.T) {
+	body := &erroringReadCloser{}
+	src := &RegistryBlobSource{
+		Client:     &brokenBlobClient{body: body},
+		Repository: "library/repo",
+		Reference:  "latest",
+	}
+
+	_, err := src.Blob(context.Background(), "sha256:mno")
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "read blob sha256:mno")
+	require.True(t, body.closed, "the blob body must be closed even when the read fails")
+}

@@ -16,13 +16,17 @@ package dockerfile
 
 import (
 	"archive/tar"
+	"bytes"
 	"context"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/require"
 )
@@ -513,4 +517,281 @@ func TestExtractDockerfileMissingAttestationIsErrNoProvenance(t *testing.T) {
 
 	_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
 	require.ErrorIs(t, err, ErrNoProvenance)
+}
+
+func TestDigestToBlobPath(t *testing.T) {
+	cases := []struct {
+		name    string
+		digest  string
+		want    string
+		wantErr bool
+	}{
+		{name: "sha256", digest: "sha256:abc123", want: "blobs/sha256/abc123"},
+		{name: "no algorithm", digest: "abc123", wantErr: true},
+		{name: "unsupported algorithm", digest: "sha512:abc123", wantErr: true},
+		{name: "empty hex", digest: "sha256:", wantErr: true},
+		{name: "too many separators", digest: "sha256:abc:123", wantErr: true},
+		{name: "empty", digest: "", wantErr: true},
+	}
+
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			got, err := digestToBlobPath(c.digest)
+			if c.wantErr {
+				require.Error(t, err)
+				require.Contains(t, err.Error(), "unsupported digest format")
+				return
+			}
+			require.NoError(t, err)
+			require.Equal(t, c.want, got)
+		})
+	}
+}
+
+// A digest the archive cannot express as a blob path must surface as an error
+// rather than a lookup miss.
+func TestExtractDockerfileFromReader_MalformedDigestInIndex(t *testing.T) {
+	indexContent, err := json.Marshal(map[string]any{
+		"manifests": []map[string]any{{
+			"digest":      "sha512:abc123",
+			"annotations": map[string]string{"vnd.docker.reference.type": attestationManifestType},
+		}},
+	})
+	require.NoError(t, err)
+
+	var buf bytes.Buffer
+	tw := tar.NewWriter(&buf)
+	writeTarEntry(t, tw, "index.json", indexContent)
+	require.NoError(t, tw.Close())
+
+	_, err = NewWorkflow().ExtractDockerfileFromReader(context.Background(), &buf)
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "unsupported digest format")
+}
+
+func TestExtractDockerfileFromReader_MissingIndexJSON(t *testing.T) {
+	var buf bytes.Buffer
+	tw := tar.NewWriter(&buf)
+	writeTarEntry(t, tw, filepath.Join("blobs", "sha256", "orphan"), []byte("{}"))
+	require.NoError(t, tw.Close())
+
+	_, err := NewWorkflow().ExtractDockerfileFromReader(context.Background(), &buf)
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "index.json not found in OCI archive")
+}
+
+func TestExtractDockerfileFromReader_NotATarArchive(t *testing.T) {
+	_, err := NewWorkflow().ExtractDockerfileFromReader(
+		context.Background(), strings.NewReader("this is not a tar archive"))
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "read OCI archive")
+}
+
+// Directory members carry no content and must be skipped rather than stored as
+// empty entries that could shadow a real blob.
+func TestExtractDockerfileFromReader_SkipsDirectoryEntries(t *testing.T) {
+	archivePath := createOCIArchive(t, "FROM alpine:3.20\n")
+	original, err := os.ReadFile(archivePath)
+	require.NoError(t, err)
+
+	var buf bytes.Buffer
+	tw := tar.NewWriter(&buf)
+	require.NoError(t, tw.WriteHeader(&tar.Header{
+		Name:     "blobs/sha256/",
+		Mode:     0700,
+		Typeflag: tar.TypeDir,
+	}))
+	require.NoError(t, tw.Flush())
+	// Append the well-formed archive's members after the directory header.
+	entries, err := readArchiveEntries(bytes.NewReader(original))
+	require.NoError(t, err)
+	for _, name := range []string{"index.json", "blobs/sha256/attestation", "blobs/sha256/statement"} {
+		writeTarEntry(t, tw, name, entries[name])
+	}
+	require.NoError(t, tw.Close())
+
+	result, err := NewWorkflow().ExtractDockerfileFromReader(context.Background(), &buf)
+	require.NoError(t, err)
+	require.Equal(t, "FROM alpine:3.20\n", result.Dockerfile)
+}
+
+func TestExtractDockerfile_UnreadableArchivePath(t *testing.T) {
+	_, err := NewWorkflow().ExtractDockerfile(
+		context.Background(), filepath.Join(t.TempDir(), "no-such-archive.oci"))
+	require.Error(t, err)
+}
+
+func TestExtractDockerfileFromReader_ContextCancelled(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+
+	_, err := NewWorkflow().ExtractDockerfileFromReader(ctx, bytes.NewReader(nil))
+	require.ErrorIs(t, err, context.Canceled)
+}
+
+func TestExtractDockerfileFromSource_MalformedIndex(t *testing.T) {
+	_, err := NewWorkflow().ExtractDockerfileFromSource(
+		context.Background(), &fakeBlobSource{index: []byte(`{"manifests":`)})
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "unmarshal index")
+}
+
+func TestExtractDockerfileFromSource_IndexUnavailable(t *testing.T) {
+	_, err := NewWorkflow().ExtractDockerfileFromSource(
+		context.Background(), &erroringBlobSource{err: errors.New("registry unavailable")})
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "registry unavailable")
+}
+
+// erroringBlobSource fails on Index, covering the path where the artifact
+// cannot be reached at all.
+type erroringBlobSource struct{ err error }
+
+func (e *erroringBlobSource) Index(context.Context) ([]byte, error) { return nil, e.err }
+func (e *erroringBlobSource) Blob(context.Context, string) ([]byte, error) {
+	return nil, e.err
+}
+
+func TestExtractDockerfileFromSource_MalformedAttestationManifest(t *testing.T) {
+	_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{"sha256:attestation": []byte(`{"layers":`)},
+	})
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "unmarshal attestation manifest")
+}
+
+func TestExtractDockerfileFromSource_StatementBlobUnavailable(t *testing.T) {
+	attestation, err := json.Marshal(map[string]any{
+		"layers": []map[string]string{{"digest": "sha256:statement"}},
+	})
+	require.NoError(t, err)
+
+	_, err = NewWorkflow().ExtractDockerfileFromSource(context.Background(), &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{"sha256:attestation": attestation},
+	})
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "sha256:statement")
+}
+
+// The nested-index walk is bounded, so an index that references itself
+// terminates instead of recursing forever. The depth-exhausted error is
+// internal -- the walk keeps trying sibling candidates -- so the caller sees
+// ErrNoProvenance and falls back to Dockerfile generation.
+func TestFindAttestationManifest_SelfReferentialIndexTerminates(t *testing.T) {
+	selfReferential, err := json.Marshal(map[string]any{
+		"manifests": []map[string]any{{"digest": "sha256:loop"}},
+	})
+	require.NoError(t, err)
+
+	done := make(chan error, 1)
+	go func() {
+		_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), &fakeBlobSource{
+			index: selfReferential,
+			blobs: map[string][]byte{"sha256:loop": selfReferential},
+		})
+		done <- err
+	}()
+
+	select {
+	case err := <-done:
+		require.ErrorIs(t, err, ErrNoProvenance)
+	case <-time.After(10 * time.Second):
+		t.Fatal("the nested-index walk did not terminate")
+	}
+}
+
+// The recursion guard itself: once the depth budget is spent the walk reports
+// it rather than descending further.
+func TestFindAttestationManifest_DepthExhausted(t *testing.T) {
+	idx := &index{}
+	idx.Manifests = append(idx.Manifests, struct {
+		Digest      string            `json:"digest"`
+		Annotations map[string]string `json:"annotations"`
+	}{Digest: "sha256:attestation", Annotations: map[string]string{
+		"vnd.docker.reference.type": attestationManifestType,
+	}})
+
+	// Even an index holding the attestation is not inspected at depth 0.
+	_, err := findAttestationManifestDigestFromSource(
+		context.Background(), idx, &fakeBlobSource{}, 0)
+	require.Error(t, err)
+	require.Contains(t, err.Error(), "max recursion reached")
+}
+
+// Nested candidates that cannot be fetched, are not JSON, or hold no manifests
+// are skipped so a later sibling can still yield the attestation.
+func TestFindAttestationManifest_SkipsUnusableNestedIndexes(t *testing.T) {
+	const expected = "FROM alpine:3.20\nRUN echo nested\n"
+
+	nested, err := json.Marshal(map[string]any{
+		"manifests": []map[string]any{{
+			"digest":      "sha256:attestation",
+			"annotations": map[string]string{"vnd.docker.reference.type": attestationManifestType},
+		}},
+	})
+	require.NoError(t, err)
+	attestation, err := json.Marshal(map[string]any{
+		"layers": []map[string]string{{"digest": "sha256:statement"}},
+	})
+	require.NoError(t, err)
+
+	top, err := json.Marshal(map[string]any{
+		"manifests": []map[string]any{
+			{"digest": "sha256:missing"},
+			{"digest": "sha256:notjson"},
+			{"digest": "sha256:nomanifests"},
+			{"digest": "sha256:nested"},
+		},
+	})
+	require.NoError(t, err)
+
+	result, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), &fakeBlobSource{
+		index: top,
+		blobs: map[string][]byte{
+			"sha256:notjson":     []byte(`{"manifests":`),
+			"sha256:nomanifests": []byte(`{"layers":[]}`),
+			"sha256:nested":      nested,
+			"sha256:attestation": attestation,
+			"sha256:statement":   provenanceStatementJSON(t, expected),
+		},
+	})
+	require.NoError(t, err)
+	require.Equal(t, expected, result.Dockerfile)
+}
+
+func TestDecodeDockerfile_Errors(t *testing.T) {
+	t.Run("malformed statement JSON", func(t *testing.T) {
+		_, err := decodeDockerfile([]byte(`{"predicate":`))
+		require.Error(t, err)
+		require.Contains(t, err.Error(), "unmarshal in-toto statement")
+	})
+
+	t.Run("statement carries no buildkit source info", func(t *testing.T) {
+		_, err := decodeDockerfile([]byte(`{"predicate":{"runDetails":{"metadata":{}}}}`))
+		require.Error(t, err)
+		require.Contains(t, err.Error(), "buildkit source info not found")
+	})
+
+	t.Run("source info is not valid base64 under either encoding", func(t *testing.T) {
+		statement, err := json.Marshal(map[string]any{
+			"predicate": map[string]any{
+				"runDetails": map[string]any{
+					"metadata": map[string]any{
+						"buildkit_metadata": map[string]any{
+							"source": map[string]any{
+								"infos": []map[string]string{{"data": "not!valid!base64!"}},
+							},
+						},
+					},
+				},
+			},
+		})
+		require.NoError(t, err)
+
+		_, err = decodeDockerfile(statement)
+		require.Error(t, err)
+		require.Contains(t, err.Error(), "decode embedded Dockerfile")
+	})
 }
