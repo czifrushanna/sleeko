@@ -346,3 +346,120 @@ func TestProcess_StoresTerminalReport(t *testing.T) {
 	require.Equal(t, v1.ReportStatusFailed, entry.report.Status)
 	require.Equal(t, v1.ErrorCodeNoAttestation, entry.report.Error.Code)
 }
+
+// TestRun_PicksProvenanceLayerWhenSBOMComesFirst covers an image pushed with both
+// --sbom and --provenance=mode=max: BuildKit orders the SPDX document ahead of
+// the SLSA provenance in the attestation manifest, and reading the first layer
+// yields a statement that parses but carries no Dockerfile.
+func TestRun_PicksProvenanceLayerWhenSBOMComesFirst(t *testing.T) {
+	const expected = "FROM python:3.11-slim\nRUN apt-get update\n"
+
+	idx, _ := json.Marshal(map[string]any{
+		"manifests": []map[string]any{{
+			"digest": "sha256:attestation",
+			"annotations": map[string]string{
+				"vnd.docker.reference.type": "attestation-manifest",
+			},
+		}},
+	})
+	attestation, _ := json.Marshal(map[string]any{
+		"layers": []map[string]any{
+			{
+				"digest":      "sha256:sbom",
+				"annotations": map[string]string{"in-toto.io/predicate-type": "https://spdx.dev/Document"},
+			},
+			{
+				"digest":      "sha256:provenance",
+				"annotations": map[string]string{"in-toto.io/predicate-type": "https://slsa.dev/provenance/v1"},
+			},
+		},
+	})
+	statement, _ := json.Marshal(map[string]any{
+		"predicate": map[string]any{
+			"runDetails": map[string]any{
+				"metadata": map[string]any{
+					"buildkit_metadata": map[string]any{
+						"source": map[string]any{
+							"infos": []map[string]string{
+								{"data": base64.StdEncoding.EncodeToString([]byte(expected))},
+							},
+						},
+					},
+				},
+			},
+		},
+	})
+
+	cli := newFakeRegistryClient()
+	cli.manifests["sha256:artifact"] = idx
+	cli.manifests["sha256:attestation"] = attestation
+	cli.blobs["sha256:sbom"] = []byte(`{"predicateType":"https://spdx.dev/Document","predicate":{"name":"pyapi"}}`)
+	cli.blobs["sha256:provenance"] = statement
+	withFakeRegistryClient(t, cli)
+
+	llm := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"FROM python:3.11-alpine\n"}}]}`)
+		fmt.Fprintln(w, "data: [DONE]")
+	}))
+	defer llm.Close()
+
+	s := NewServer(&Config{APIKey: "key", APIBaseURL: llm.URL, Model: "test-model", MaxConcurrency: 1})
+	report := s.run(context.Background(), sampleOptimizeRequest())
+
+	require.Equal(t, v1.ReportStatusSuccess, report.Status)
+	require.False(t, report.Generated)
+	require.Equal(t, expected, report.Dockerfile)
+	require.Equal(t, "sha256:provenance", report.StatementDigest)
+}
+
+// TestRun_SBOMOnlyAttestationFallsBackToGeneration covers --sbom without
+// --provenance: an attestation manifest exists but holds nothing extractable, so
+// the pipeline should reconstruct from image history rather than report
+// EXTRACTION_FAILED.
+func TestRun_SBOMOnlyAttestationFallsBackToGeneration(t *testing.T) {
+	idx, _ := json.Marshal(map[string]any{
+		"manifests": []map[string]any{
+			{"digest": "sha256:image"},
+			{
+				"digest": "sha256:attestation",
+				"annotations": map[string]string{
+					"vnd.docker.reference.type": "attestation-manifest",
+				},
+			},
+		},
+	})
+	attestation, _ := json.Marshal(map[string]any{
+		"layers": []map[string]any{{
+			"digest":      "sha256:sbom",
+			"annotations": map[string]string{"in-toto.io/predicate-type": "https://spdx.dev/Document"},
+		}},
+	})
+	image := []byte(`{"config":{"digest":"sha256:cfg"},"layers":[{"digest":"sha256:layer1"}]}`)
+	cfg := []byte(`{
+		"config": {"Cmd": ["/bin/sh"]},
+		"history": [
+			{"created_by": "/bin/sh -c apk add --no-cache curl", "empty_layer": false}
+		]
+	}`)
+
+	cli := newFakeRegistryClient()
+	cli.manifests["sha256:artifact"] = idx
+	cli.manifests["sha256:attestation"] = attestation
+	cli.manifests["sha256:image"] = image
+	cli.manifests["sha256:cfg"] = cfg
+	cli.blobs["sha256:sbom"] = []byte(`{"predicateType":"https://spdx.dev/Document"}`)
+	withFakeRegistryClient(t, cli)
+
+	llm := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"FROM alpine:3.21\n"}}]}`)
+		fmt.Fprintln(w, "data: [DONE]")
+	}))
+	defer llm.Close()
+
+	s := NewServer(&Config{APIKey: "key", APIBaseURL: llm.URL, Model: "test-model", MaxConcurrency: 1})
+	report := s.run(context.Background(), sampleOptimizeRequest())
+
+	require.Equal(t, v1.ReportStatusSuccess, report.Status)
+	require.True(t, report.Generated)
+	require.Contains(t, report.Dockerfile, "RUN apk add --no-cache curl")
+}

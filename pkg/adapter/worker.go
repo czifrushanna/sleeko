@@ -2,6 +2,7 @@ package adapter
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log"
 	"strings"
@@ -48,14 +49,15 @@ func (s *Server) run(ctx context.Context, req *v1.OptimizeRequest) *v1.Optimizat
 	// 2. Extract the Dockerfile from the BuildKit provenance attestation.
 	result, err := dockerfile.NewWorkflow().ExtractDockerfileFromSource(ctx, src)
 	if err != nil {
-		if !strings.Contains(err.Error(), "attestation manifest not found") {
+		if !errors.Is(err, dockerfile.ErrNoProvenance) {
 			return failedReport(v1.ErrorCodeExtractionFailed, err.Error())
 		}
 
-		// No BuildKit provenance attestation on this artifact (e.g. it wasn't
-		// built with BuildKit, or was pulled/re-pushed without one): fall back
-		// to reconstructing a best-effort Dockerfile from the image's own
-		// config history rather than failing outright.
+		// No usable BuildKit provenance attestation on this artifact (e.g. it
+		// wasn't built with BuildKit, was pulled/re-pushed without one, or was
+		// built with --sbom but without --provenance): fall back to
+		// reconstructing a best-effort Dockerfile from the image's own config
+		// history rather than failing outright.
 		generated, genErr := dockerfile.GenerateDockerfileFromSource(ctx, src)
 		if genErr != nil {
 			return failedReport(v1.ErrorCodeNoAttestation,

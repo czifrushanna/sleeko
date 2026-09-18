@@ -346,3 +346,171 @@ func TestExtractDockerfileBlobNotInArchive(t *testing.T) {
 	_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
 	require.Error(t, err)
 }
+
+// attestationIndexJSON builds a top-level OCI index pointing at a single
+// attestation manifest under the given digest.
+func attestationIndexJSON(t *testing.T, digest string) []byte {
+	t.Helper()
+
+	content, err := json.Marshal(map[string]any{
+		"manifests": []map[string]any{
+			{
+				"digest": digest,
+				"annotations": map[string]string{
+					"vnd.docker.reference.type": attestationManifestType,
+				},
+			},
+		},
+	})
+	require.NoError(t, err)
+
+	return content
+}
+
+// provenanceStatementJSON builds an SLSA provenance in-toto statement carrying
+// the given Dockerfile as BuildKit source info.
+func provenanceStatementJSON(t *testing.T, dockerfile string) []byte {
+	t.Helper()
+
+	content, err := json.Marshal(map[string]any{
+		"predicate": map[string]any{
+			"runDetails": map[string]any{
+				"metadata": map[string]any{
+					"buildkit_metadata": map[string]any{
+						"source": map[string]any{
+							"infos": []map[string]string{
+								{"data": base64.StdEncoding.EncodeToString([]byte(dockerfile))},
+							},
+						},
+					},
+				},
+			},
+		},
+	})
+	require.NoError(t, err)
+
+	return content
+}
+
+// TestExtractDockerfileSBOMLayerFirst covers an image built with both --sbom and
+// --provenance: BuildKit writes the SPDX document as layer 0 and the SLSA
+// provenance as layer 1, so reading layer 0 finds a statement that parses as
+// JSON but carries no source info.
+func TestExtractDockerfileSBOMLayerFirst(t *testing.T) {
+	const expected = "FROM python:3.11-slim\nRUN pip install -r requirements.txt\n"
+
+	attestationJSON, _ := json.Marshal(map[string]any{
+		"layers": []map[string]any{
+			{
+				"digest":      "sha256:sbom",
+				"annotations": map[string]string{predicateTypeAnnotation: "https://spdx.dev/Document"},
+			},
+			{
+				"digest":      "sha256:provenance",
+				"annotations": map[string]string{predicateTypeAnnotation: "https://slsa.dev/provenance/v1"},
+			},
+		},
+	})
+
+	src := &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{
+			"sha256:attestation": attestationJSON,
+			// An SPDX document has no predicate.runDetails at all, so decoding it
+			// as a provenance statement yields no source info.
+			"sha256:sbom":       []byte(`{"predicateType":"https://spdx.dev/Document","predicate":{"name":"pyapi"}}`),
+			"sha256:provenance": provenanceStatementJSON(t, expected),
+		},
+	}
+
+	result, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
+	require.NoError(t, err)
+	require.Equal(t, expected, result.Dockerfile)
+	require.Equal(t, "sha256:provenance", result.StatementDigest)
+}
+
+// TestExtractDockerfileProvenanceLayerOnly is the same selection path when
+// provenance is the only statement but is still annotated.
+func TestExtractDockerfileProvenanceLayerOnly(t *testing.T) {
+	const expected = "FROM alpine:3.20\n"
+
+	attestationJSON, _ := json.Marshal(map[string]any{
+		"layers": []map[string]any{
+			{
+				"digest":      "sha256:provenance",
+				"annotations": map[string]string{predicateTypeAnnotation: "https://slsa.dev/provenance/v0.2"},
+			},
+		},
+	})
+
+	src := &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{
+			"sha256:attestation": attestationJSON,
+			"sha256:provenance":  provenanceStatementJSON(t, expected),
+		},
+	}
+
+	result, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
+	require.NoError(t, err)
+	require.Equal(t, expected, result.Dockerfile)
+	require.Equal(t, "sha256:provenance", result.StatementDigest)
+}
+
+// TestExtractDockerfileUnannotatedLayersFallBackToFirst keeps manifests written
+// before BuildKit stamped predicate-type annotations working.
+func TestExtractDockerfileUnannotatedLayersFallBackToFirst(t *testing.T) {
+	const expected = "FROM busybox\n"
+
+	attestationJSON, _ := json.Marshal(map[string]any{
+		"layers": []map[string]string{{"digest": "sha256:statement"}},
+	})
+
+	src := &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{
+			"sha256:attestation": attestationJSON,
+			"sha256:statement":   provenanceStatementJSON(t, expected),
+		},
+	}
+
+	result, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
+	require.NoError(t, err)
+	require.Equal(t, expected, result.Dockerfile)
+	require.Equal(t, "sha256:statement", result.StatementDigest)
+}
+
+// TestExtractDockerfileSBOMOnly covers --sbom without --provenance: there is an
+// attestation manifest, but nothing in it can yield a Dockerfile, so callers
+// should see ErrNoProvenance and fall back to generating one.
+func TestExtractDockerfileSBOMOnly(t *testing.T) {
+	attestationJSON, _ := json.Marshal(map[string]any{
+		"layers": []map[string]any{
+			{
+				"digest":      "sha256:sbom",
+				"annotations": map[string]string{predicateTypeAnnotation: "https://spdx.dev/Document"},
+			},
+		},
+	})
+
+	src := &fakeBlobSource{
+		index: attestationIndexJSON(t, "sha256:attestation"),
+		blobs: map[string][]byte{
+			"sha256:attestation": attestationJSON,
+			"sha256:sbom":        []byte(`{"predicateType":"https://spdx.dev/Document"}`),
+		},
+	}
+
+	_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
+	require.ErrorIs(t, err, ErrNoProvenance)
+	require.Contains(t, err.Error(), "no slsa provenance statement")
+}
+
+// TestExtractDockerfileMissingAttestationIsErrNoProvenance pins the sentinel on
+// the other "nothing to extract" path, which the adapter treats identically.
+func TestExtractDockerfileMissingAttestationIsErrNoProvenance(t *testing.T) {
+	src := &fakeBlobSource{index: []byte(`{"manifests":[]}`), blobs: map[string][]byte{}}
+
+	_, err := NewWorkflow().ExtractDockerfileFromSource(context.Background(), src)
+	require.ErrorIs(t, err, ErrNoProvenance)
+}
