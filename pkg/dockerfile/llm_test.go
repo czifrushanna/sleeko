@@ -236,3 +236,70 @@ func TestOptimizeDockerfile_MalformedSSELinesIgnored(t *testing.T) {
 	require.NoError(t, err)
 	require.Equal(t, "FROM scratch", result)
 }
+
+// A gateway may interleave chunks the client cannot parse — a truncated JSON
+// payload, or a keep-alive chunk carrying no choices. Those must be skipped so
+// the surrounding content still assembles into a Dockerfile.
+func TestOptimizeDockerfile_UnparseableDataChunksSkipped(t *testing.T) {
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"FROM "}}]}`)
+		fmt.Fprintln(w, `data: {"choices":[{"delta":`)
+		fmt.Fprintln(w, `data: {"choices":[]}`)
+		fmt.Fprintln(w, `data: {"id":"chunk-without-choices"}`)
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":""}}]}`)
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"alpine:3.21"}}]}`)
+		fmt.Fprintln(w, "data: [DONE]")
+		// Anything after [DONE] is not read.
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"IGNORED"}}]}`)
+	}))
+	defer ts.Close()
+
+	result, err := OptimizeDockerfile(context.Background(), ts.URL, "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
+	require.NoError(t, err)
+	require.Equal(t, "FROM alpine:3.21", result)
+}
+
+func TestOptimizeDockerfile_UnreachableGateway(t *testing.T) {
+	ts := httptest.NewServer(http.HandlerFunc(func(http.ResponseWriter, *http.Request) {}))
+	url := ts.URL
+	ts.Close() // nothing is listening any more
+
+	_, err := OptimizeDockerfile(context.Background(), url, "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
+	require.Error(t, err)
+}
+
+func TestOptimizeDockerfile_MalformedGatewayURL(t *testing.T) {
+	// A control character makes http.NewRequestWithContext itself fail.
+	_, err := OptimizeDockerfile(context.Background(), "http://llm.invalid\x7f", "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
+	require.Error(t, err)
+}
+
+func TestOptimizeDockerfile_ContextCancelled(t *testing.T) {
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"FROM alpine"}}]}`)
+	}))
+	defer ts.Close()
+
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+
+	_, err := OptimizeDockerfile(ctx, ts.URL, "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
+	require.ErrorIs(t, err, context.Canceled)
+}
+
+// A stream that dies mid-response must surface as an error rather than a
+// silently truncated Dockerfile.
+func TestOptimizeDockerfile_StreamAbortedMidResponse(t *testing.T) {
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		fmt.Fprintln(w, `data: {"choices":[{"delta":{"content":"FROM alpine:3.21"}}]}`)
+		w.(http.Flusher).Flush()
+		// Break the connection without sending [DONE].
+		if conn, _, err := w.(http.Hijacker).Hijack(); err == nil {
+			_ = conn.Close()
+		}
+	}))
+	defer ts.Close()
+
+	_, err := OptimizeDockerfile(context.Background(), ts.URL, "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
+	require.Error(t, err)
+}

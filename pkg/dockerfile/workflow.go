@@ -19,6 +19,7 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -30,7 +31,22 @@ const (
 	attestationManifestType = "attestation-manifest"
 	indexFileName           = "index.json"
 	blobsPrefix             = "blobs/sha256/"
+
+	// predicateTypeAnnotation is the OCI layer annotation BuildKit stamps on each
+	// in-toto statement inside an attestation manifest, naming what the statement
+	// is (SLSA provenance, SPDX SBOM, ...).
+	predicateTypeAnnotation = "in-toto.io/predicate-type"
+	// slsaProvenancePrefix matches every SLSA provenance predicate version
+	// ("https://slsa.dev/provenance/v0.2", ".../v1", ...). Only these statements
+	// carry the Dockerfile source info.
+	slsaProvenancePrefix = "https://slsa.dev/provenance/"
 )
+
+// ErrNoProvenance indicates the artifact carries no usable BuildKit provenance
+// attestation: either no attestation manifest at all, or one holding only
+// non-provenance statements (an SBOM, say). Callers can treat it as a signal to
+// fall back to reconstructing a Dockerfile from the image config history.
+var ErrNoProvenance = errors.New("no buildkit provenance attestation found")
 
 // Result contains the extracted Dockerfile and the OCI digests that led to it.
 type Result struct {
@@ -78,7 +94,8 @@ type index struct {
 
 type attestationManifest struct {
 	Layers []struct {
-		Digest string `json:"digest"`
+		Digest      string            `json:"digest"`
+		Annotations map[string]string `json:"annotations"`
 	} `json:"layers"`
 }
 
@@ -156,7 +173,10 @@ func (w *workflow) ExtractDockerfileFromSource(ctx context.Context, src BlobSour
 		return nil, fmt.Errorf("attestation manifest %s has no layers", attestationDigest)
 	}
 
-	statementDigest := manifest.Layers[0].Digest
+	statementDigest, err := provenanceStatementDigest(manifest, attestationDigest)
+	if err != nil {
+		return nil, err
+	}
 	statementBytes, err := src.Blob(ctx, statementDigest)
 	if err != nil {
 		return nil, err
@@ -245,7 +265,33 @@ func findAttestationManifestDigestFromSource(ctx context.Context, idx *index, sr
 		}
 	}
 
-	return "", fmt.Errorf("attestation manifest not found in OCI index")
+	return "", fmt.Errorf("attestation manifest not found in OCI index: %w", ErrNoProvenance)
+}
+
+// provenanceStatementDigest picks the SLSA provenance statement out of an
+// attestation manifest. A manifest can hold several in-toto statements -- an
+// image built with both --provenance and --sbom carries the SPDX document
+// first -- so the layer is chosen by its predicate-type annotation rather than
+// by position. Manifests written before BuildKit stamped that annotation carry
+// no predicate types at all; those fall back to the first layer.
+func provenanceStatementDigest(manifest *attestationManifest, attestationDigest string) (string, error) {
+	annotated := false
+	for _, layer := range manifest.Layers {
+		predicateType := layer.Annotations[predicateTypeAnnotation]
+		if predicateType == "" {
+			continue
+		}
+		annotated = true
+		if strings.HasPrefix(predicateType, slsaProvenancePrefix) {
+			return layer.Digest, nil
+		}
+	}
+
+	if !annotated {
+		return manifest.Layers[0].Digest, nil
+	}
+
+	return "", fmt.Errorf("attestation manifest %s holds no slsa provenance statement: %w", attestationDigest, ErrNoProvenance)
 }
 
 func readAttestationManifest(content []byte) (*attestationManifest, error) {
