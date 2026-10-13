@@ -7,13 +7,14 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 )
 
 // setBaseEnv clears every adapter env var so each test starts from a known state
 // regardless of what the surrounding environment has set.
 func setBaseEnv(t *testing.T) {
 	t.Helper()
-	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow} {
+	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow, envPipeline} {
 		t.Setenv(k, "")
 	}
 }
@@ -72,6 +73,7 @@ func TestLoadConfig_Defaults(t *testing.T) {
 	require.Equal(t, defaultMaxConcurrency, cfg.MaxConcurrency)
 	require.Equal(t, defaultMaxTokens, cfg.MaxTokens)
 	require.Equal(t, defaultContextWindow, cfg.ContextWindow)
+	require.Equal(t, pipeline.DefaultNames(), cfg.Pipeline)
 }
 
 func TestLoadConfig_PromptOverride(t *testing.T) {
@@ -141,6 +143,37 @@ func TestLoadConfig_InvalidValues(t *testing.T) {
 			_, err := LoadConfig()
 			require.Error(t, err)
 			require.Contains(t, err.Error(), env)
+		})
+	}
+}
+
+func TestLoadConfig_Pipeline(t *testing.T) {
+	cases := []struct {
+		name    string
+		spec    string
+		want    []string
+		wantErr string
+	}{
+		{"single stage", "generate", []string{"generate"}, ""},
+		{"spaces and empty entries are ignored", " generate , ", []string{"generate"}, ""},
+		{"unknown stage refuses to start", "generate,verfiy", nil, `unknown stage "verfiy"`},
+		{"only separators", ",", nil, "no stages configured"},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			setBaseEnv(t)
+			setRequiredEnv(t)
+			t.Setenv(envPipeline, c.spec)
+
+			cfg, err := LoadConfig()
+			if c.wantErr != "" {
+				require.Error(t, err)
+				require.Contains(t, err.Error(), envPipeline)
+				require.Contains(t, err.Error(), c.wantErr)
+				return
+			}
+			require.NoError(t, err)
+			require.Equal(t, c.want, cfg.Pipeline)
 		})
 	}
 }

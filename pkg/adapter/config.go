@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 )
 
 const (
@@ -25,6 +26,7 @@ const (
 	envPrompt         = "OPTIMIZER_PROMPT"
 	envMaxTokens      = "LLMGW_MAX_TOKENS"
 	envContextWindow  = "LLMGW_CONTEXT_WINDOW"
+	envPipeline       = "OPTIMIZER_PIPELINE"
 
 	defaultListenAddr     = ":8080"
 	defaultJobTTL         = time.Hour
@@ -68,6 +70,10 @@ type Config struct {
 	// instructions and the Dockerfile leave inside it. Set LLMGW_CONTEXT_WINDOW
 	// to 0 to disable trimming entirely.
 	ContextWindow int
+	// Pipeline is the ordered list of optimization stages run after extraction
+	// (see pkg/pipeline), set as a comma-separated OPTIMIZER_PIPELINE. It defaults
+	// to pipeline.DefaultNames(), the single LLM call.
+	Pipeline []string
 }
 
 // LoadConfig resolves the adapter configuration from the environment.
@@ -82,10 +88,19 @@ func LoadConfig() (*Config, error) {
 		APIBaseURL:     os.Getenv(envAPIBaseURL),
 		Model:          os.Getenv(envModel),
 		Prompt:         dockerfile.DefaultPrompt,
+		Pipeline:       pipeline.DefaultNames(),
 	}
 
 	if v := os.Getenv(envPrompt); v != "" {
 		cfg.Prompt = v
+	}
+
+	if v := os.Getenv(envPipeline); v != "" {
+		names, err := pipeline.ParseNames(v)
+		if err != nil {
+			return nil, fmt.Errorf("invalid %s %q: %w", envPipeline, v, err)
+		}
+		cfg.Pipeline = names
 	}
 
 	if cfg.APIKey == "" {
