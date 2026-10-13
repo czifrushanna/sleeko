@@ -161,7 +161,7 @@ func TestRenderHistoryLine(t *testing.T) {
 
 	for _, tc := range cases {
 		t.Run(tc.name, func(t *testing.T) {
-			require.Equal(t, tc.want, renderHistoryLine(tc.createdBy))
+			require.Equal(t, tc.want, renderHistoryLine(tc.createdBy, &ociContainerConfig{}))
 		})
 	}
 }
