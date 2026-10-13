@@ -20,7 +20,9 @@ import (
 	"fmt"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
+	"time"
 )
 
 // generatedDockerfileHeader is prepended to every reconstructed Dockerfile so
@@ -43,11 +45,38 @@ var shellExecPrefixes = []string{
 	"powershell -Command ",
 }
 
-// addCopyPattern matches the synthetic "#(nop) ADD/COPY <kind>:<digest> in <dest>"
+// addCopyPattern matches the synthetic "#(nop) ADD/COPY [--chown=...] <kind>:<digest> in <dest>"
 // form Docker writes into history for ADD/COPY instructions. The original
 // source path isn't preserved anywhere in image config, only a digest of the
 // content that got added, so it can't be recovered exactly.
-var addCopyPattern = regexp.MustCompile(`(?s)^(ADD|COPY)\s+(?:file|dir|multi):([0-9a-fA-F]+)\s+in\s+(.+?)\s*$`)
+var addCopyPattern = regexp.MustCompile(`(?s)^(ADD|COPY)((?:\s+--\S+)*)\s+(?:file|dir|multi):([0-9a-fA-F]+)\s+in\s+(.+?)\s*$`)
+
+// buildkitSuffix marks the history entries BuildKit writes for instructions
+// that produce a layer (RUN, COPY, ADD).
+const buildkitSuffix = " # buildkit"
+
+// buildkitInstructions are the instruction keywords BuildKit writes at the
+// start of a history entry. The classic builder instead writes
+// "/bin/sh -c <command>" for RUN and "/bin/sh -c #(nop) <instruction>" for
+// everything else.
+var buildkitInstructions = map[string]bool{
+	"ADD": true, "ARG": true, "CMD": true, "COPY": true, "ENTRYPOINT": true, "ENV": true,
+	"EXPOSE": true, "HEALTHCHECK": true, "LABEL": true, "MAINTAINER": true, "ONBUILD": true,
+	"RUN": true, "SHELL": true, "STOPSIGNAL": true, "USER": true, "VOLUME": true, "WORKDIR": true,
+}
+
+// buildArgPrefix matches the "|<n> " both builders put in front of a RUN that
+// had build args in scope; the n KEY=value words that follow it are the args,
+// not part of the command.
+var buildArgPrefix = regexp.MustCompile(`^\|(\d+)\s+`)
+
+// keyValueStart matches the start of a new KEY=value pair in an ENV or LABEL
+// history entry; words that do not match continue the previous value.
+var keyValueStart = regexp.MustCompile(`^[A-Za-z_][A-Za-z0-9_./-]*=`)
+
+// exposedPort matches one port in any of the forms EXPOSE history takes
+// ("80/tcp", "[80/tcp 443/tcp]", "map[80/tcp:{}]").
+var exposedPort = regexp.MustCompile(`\d+(?:-\d+)?(?:/[a-z]+)?`)
 
 type ociContainerConfig struct {
 	Env          []string          `json:"Env"`
@@ -59,6 +88,17 @@ type ociContainerConfig struct {
 	Volumes      map[string]any    `json:"Volumes"`
 	Labels       map[string]string `json:"Labels"`
 	StopSignal   string            `json:"StopSignal"`
+	Healthcheck  *ociHealthcheck   `json:"Healthcheck"`
+}
+
+// ociHealthcheck is the image config's healthcheck. Durations are nanoseconds.
+type ociHealthcheck struct {
+	Test          []string `json:"Test"`
+	Interval      int64    `json:"Interval"`
+	Timeout       int64    `json:"Timeout"`
+	StartPeriod   int64    `json:"StartPeriod"`
+	StartInterval int64    `json:"StartInterval"`
+	Retries       int      `json:"Retries"`
 }
 
 type ociHistoryEntry struct {
@@ -170,7 +210,7 @@ func renderGeneratedDockerfile(cfg *ociImageConfig) string {
 
 	seen := map[string]bool{}
 	for _, h := range cfg.History {
-		line := renderHistoryLine(h.CreatedBy)
+		line := renderHistoryLine(h.CreatedBy, &cfg.Config)
 		if line == "" {
 			continue
 		}
@@ -188,39 +228,244 @@ func renderGeneratedDockerfile(cfg *ociImageConfig) string {
 }
 
 // renderHistoryLine turns one image config history entry's created_by string
-// into a Dockerfile line: metadata instructions (marked with the "#(nop)"
-// convention) are passed through close to verbatim, everything else is a real
-// shell command that produced a layer and becomes a RUN line.
-func renderHistoryLine(createdBy string) string {
-	raw := strings.TrimSpace(createdBy)
+// into a Dockerfile line. Two builders write history, in different forms:
+//
+//   - the classic builder: "/bin/sh -c <command>" for RUN and
+//     "/bin/sh -c #(nop) <instruction>" for everything else;
+//   - BuildKit: the instruction itself ("RUN /bin/sh -c <command>",
+//     "WORKDIR /app", "COPY src /dst"), with " # buildkit" appended to the
+//     ones that produced a layer.
+//
+// Both write some arguments in Go's formatting rather than Dockerfile syntax
+// (`CMD ["a" "b"]`, `VOLUME [/data]`, `HEALTHCHECK &{...}`), so non-RUN
+// instructions go through renderInstruction to come out parseable.
+func renderHistoryLine(createdBy string, c *ociContainerConfig) string {
+	raw := strings.TrimSpace(strings.TrimSuffix(strings.TrimSpace(createdBy), buildkitSuffix))
 	if raw == "" {
 		return ""
 	}
 
-	for _, prefix := range shellExecPrefixes {
-		if strings.HasPrefix(raw, prefix) {
-			raw = strings.TrimSpace(strings.TrimPrefix(raw, prefix))
-			break
+	if kw := firstToken(raw); buildkitInstructions[kw] && strings.HasPrefix(raw, kw) {
+		if kw == "RUN" {
+			return renderRun(strings.TrimSpace(raw[len(kw):]))
 		}
+		return renderInstruction(raw, c)
 	}
 
-	if strings.HasPrefix(raw, "#(nop)") {
-		instr := strings.TrimSpace(strings.TrimPrefix(raw, "#(nop)"))
+	if cmd := stripShellPrefix(raw); strings.HasPrefix(cmd, "#(nop)") {
+		instr := strings.TrimSpace(strings.TrimPrefix(cmd, "#(nop)"))
 		if instr == "" {
 			return ""
 		}
-		return rewriteAddCopyPlaceholder(instr)
+		return renderInstruction(instr, c)
 	}
 
-	return "RUN " + raw
+	// A bare comment, as Docker's official Debian-based images record their
+	// rootfs layer ("# debian.sh --arch 'amd64' out/ 'bookworm' ..."): keep it
+	// as a comment rather than a RUN that does nothing.
+	if strings.HasPrefix(raw, "#") && !strings.Contains(raw, "\n") {
+		return raw
+	}
+
+	return renderRun(raw)
 }
 
-func rewriteAddCopyPlaceholder(instr string) string {
-	if m := addCopyPattern.FindStringSubmatch(instr); m != nil {
-		keyword, digest, dest := m[1], m[2], m[3]
-		return fmt.Sprintf("%s <unresolvable-source sha256:%s> %s", keyword, digest, dest)
+func stripShellPrefix(s string) string {
+	for _, prefix := range shellExecPrefixes {
+		if strings.HasPrefix(s, prefix) {
+			return strings.TrimSpace(strings.TrimPrefix(s, prefix))
+		}
+	}
+	return s
+}
+
+// renderRun turns a recorded command into a RUN line: build args and the shell
+// wrapper are dropped, and a command spanning several lines (BuildKit records
+// a heredoc RUN's script that way) becomes a heredoc again, since each extra
+// line would otherwise be read as an instruction of its own.
+func renderRun(cmd string) string {
+	if m := buildArgPrefix.FindStringSubmatch(cmd); m != nil {
+		// The args are joined with single spaces, so a value that itself
+		// contains a space cannot be told apart from the command; such values
+		// are rare enough to accept that.
+		n, _ := strconv.Atoi(m[1])
+		rest := strings.TrimPrefix(cmd, m[0])
+		for i := 0; i < n; i++ {
+			_, rest, _ = strings.Cut(strings.TrimLeft(rest, " "), " ")
+		}
+		cmd = rest
+	}
+	cmd = strings.TrimSpace(stripShellPrefix(strings.TrimSpace(cmd)))
+	if cmd == "" {
+		return ""
+	}
+
+	if !strings.Contains(cmd, "\n") {
+		return "RUN " + cmd
+	}
+	delim := "SLEEKO_EOF"
+	for strings.Contains("\n"+cmd+"\n", "\n"+delim+"\n") {
+		delim += "_"
+	}
+	return "RUN <<" + delim + "\n" + cmd + "\n" + delim
+}
+
+// renderInstruction turns a recorded non-RUN instruction into valid
+// Dockerfile syntax.
+func renderInstruction(instr string, c *ociContainerConfig) string {
+	kw := firstToken(instr)
+	args := strings.TrimSpace(instr[len(kw):])
+
+	switch kw {
+	case "ADD", "COPY":
+		return rewriteAddCopyPlaceholder(instr)
+	case "CMD", "ENTRYPOINT", "SHELL":
+		if list, ok := parseRecordedList(args); ok {
+			return kw + " " + jsonArray(list)
+		}
+	case "VOLUME":
+		if list, ok := parseRecordedList(args); ok {
+			return kw + " " + jsonArray(list)
+		}
+	case "EXPOSE":
+		if ports := exposedPort.FindAllString(args, -1); len(ports) > 0 {
+			return kw + " " + strings.Join(ports, " ")
+		}
+	case "ENV", "LABEL":
+		return renderKeyValues(kw, args)
+	case "HEALTHCHECK":
+		return renderHealthcheck(c.Healthcheck)
 	}
 	return instr
+}
+
+// rewriteAddCopyPlaceholder makes an ADD/COPY whose source cannot be recovered
+// parseable: the classic builder records only a digest of the content
+// ("COPY file:<hex> in /dst"), and BuildKit records a heredoc source by name
+// only ("COPY <<EOT /dst"), its body gone.
+func rewriteAddCopyPlaceholder(instr string) string {
+	if m := addCopyPattern.FindStringSubmatch(instr); m != nil {
+		keyword, flags, digest, dest := m[1], m[2], m[3], m[4]
+		return fmt.Sprintf("%s%s <unresolvable-source sha256:%s> %s", keyword, flags, digest, dest)
+	}
+
+	words := strings.Fields(instr)
+	for i, w := range words {
+		if name, ok := strings.CutPrefix(w, "<<"); ok && i > 0 && i < len(words)-1 {
+			words[i] = fmt.Sprintf("<unresolvable-source heredoc:%s>", strings.TrimLeft(name, "-"))
+		}
+	}
+	return strings.Join(words, " ")
+}
+
+// parseRecordedList reads a list argument the way history records it: as
+// JSON, as a Go-quoted list (`["a" "b"]`, which is not JSON once it has two
+// elements), or as a bare Go list (`[/data /logs]`).
+func parseRecordedList(s string) ([]string, bool) {
+	if !strings.HasPrefix(s, "[") || !strings.HasSuffix(s, "]") {
+		return nil, false
+	}
+
+	var list []string
+	if err := json.Unmarshal([]byte(s), &list); err == nil {
+		return list, true
+	}
+
+	inner := strings.TrimSpace(s[1 : len(s)-1])
+	if !strings.HasPrefix(inner, `"`) {
+		return strings.Fields(inner), true
+	}
+	for inner != "" {
+		lit, err := strconv.QuotedPrefix(inner)
+		if err != nil {
+			return nil, false
+		}
+		v, err := strconv.Unquote(lit)
+		if err != nil {
+			return nil, false
+		}
+		list = append(list, v)
+		inner = strings.TrimSpace(inner[len(lit):])
+	}
+	return list, true
+}
+
+// renderKeyValues re-quotes an ENV or LABEL history entry. History records
+// the values unquoted ("LABEL maintainer=NGINX Docker Maintainers <...>"), so
+// a value with a space would otherwise read as several malformed pairs.
+func renderKeyValues(kw, args string) string {
+	var pairs []string
+	for _, w := range strings.Fields(args) {
+		if keyValueStart.MatchString(w) || len(pairs) == 0 {
+			pairs = append(pairs, w)
+			continue
+		}
+		pairs[len(pairs)-1] += " " + w
+	}
+
+	for i, p := range pairs {
+		key, value, ok := strings.Cut(p, "=")
+		if !ok {
+			// Not KEY=value at all (an old "ENV KEY value" form): leave it alone.
+			return kw + " " + args
+		}
+		pairs[i] = key + "=" + quoteValue(value)
+	}
+	return kw + " " + strings.Join(pairs, " ")
+}
+
+// quoteValue quotes an ENV/LABEL value when it would not survive as a bare
+// word. History holds values after expansion, so "$" is escaped to stay
+// literal.
+func quoteValue(v string) string {
+	if v != "" && !strings.ContainsAny(v, " \t\"'\\$") {
+		return v
+	}
+	r := strings.NewReplacer(`\`, `\\`, `"`, `\"`, `$`, `\$`)
+	return `"` + r.Replace(v) + `"`
+}
+
+// renderHealthcheck renders the image config's healthcheck. Both builders
+// record HEALTHCHECK in Go struct syntax ("&{[CMD-SHELL ...] 30s ...}"),
+// which cannot be parsed back reliably, while the config holds the same
+// settings exactly. With no healthcheck in the config there is nothing to
+// render.
+func renderHealthcheck(h *ociHealthcheck) string {
+	if h == nil || len(h.Test) == 0 {
+		return ""
+	}
+	if h.Test[0] == "NONE" {
+		return "HEALTHCHECK NONE"
+	}
+
+	var b strings.Builder
+	b.WriteString("HEALTHCHECK")
+	for _, opt := range []struct {
+		flag string
+		ns   int64
+	}{
+		{"--interval", h.Interval},
+		{"--timeout", h.Timeout},
+		{"--start-period", h.StartPeriod},
+		{"--start-interval", h.StartInterval},
+	} {
+		if opt.ns > 0 {
+			fmt.Fprintf(&b, " %s=%s", opt.flag, time.Duration(opt.ns))
+		}
+	}
+	if h.Retries > 0 {
+		fmt.Fprintf(&b, " --retries=%d", h.Retries)
+	}
+
+	switch h.Test[0] {
+	case "CMD-SHELL":
+		b.WriteString(" CMD " + strings.Join(h.Test[1:], " "))
+	case "CMD":
+		b.WriteString(" CMD " + jsonArray(h.Test[1:]))
+	default:
+		return ""
+	}
+	return b.String()
 }
 
 func firstToken(line string) string {
@@ -240,7 +485,7 @@ func trailingConfigLines(c *ociContainerConfig, seen map[string]bool) []string {
 
 	if !seen["ENV"] {
 		for _, kv := range c.Env {
-			lines = append(lines, "ENV "+kv)
+			lines = append(lines, renderKeyValues("ENV", kv))
 		}
 	}
 
@@ -295,6 +540,9 @@ func sortedKeys[V any](m map[string]V) []string {
 }
 
 func jsonArray(items []string) string {
+	if items == nil {
+		items = []string{} // "[]", not "null"
+	}
 	b, _ := json.Marshal(items)
 	return string(b)
 }
