@@ -1,0 +1,10 @@
+{
+  "vulnerabilities": [
+    {"id": "CVE-2024-6119", "package": "libssl3", "version": "3.0.13-1~deb12u1", "fix_version": "3.0.14-1~deb12u2", "severity": "High", "description": "dropped by condensing", "links": ["https://nvd.nist.gov/vuln/detail/CVE-2024-6119"]},
+    {"id": "CVE-2024-5535", "package": "libssl3", "version": "3.0.13-1~deb12u1", "fix_version": "3.0.14-1~deb12u2", "severity": "Critical"},
+    {"id": "CVE-2023-45853", "package": "zlib1g", "version": "1:1.2.13.dfsg-1", "fix_version": "", "severity": "Critical"},
+    {"id": "CVE-2024-2398", "package": "curl", "version": "7.88.1-10+deb12u5", "fix_version": "7.88.1-10+deb12u6", "severity": "Medium"},
+    {"id": "CVE-2024-6345", "package": "setuptools", "version": "65.5.1", "fix_version": "70.0.0", "severity": "High"},
+    {"id": "CVE-2011-3374", "package": "apt", "version": "2.6.1", "fix_version": "", "severity": "Low"}
+  ]
+}

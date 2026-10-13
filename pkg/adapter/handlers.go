@@ -10,6 +10,8 @@ import (
 	"github.com/google/uuid"
 
 	v1 "github.com/czifrushanna/sleeko/pkg/api/v1"
+	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 )
 
 const (
@@ -27,19 +29,40 @@ var Version = "dev"
 
 // Server is the optimizer adapter HTTP service.
 type Server struct {
-	cfg   *Config
-	store *store
+	cfg      *Config
+	store    *store
+	pipeline *pipeline.Pipeline
 	// sem bounds the number of concurrently running optimizations.
 	sem chan struct{}
 }
 
 // NewServer creates the adapter server. Call Handler() to obtain the http.Handler
-// and StartSweeper to enable TTL eviction of finished jobs.
+// and StartSweeper to enable TTL eviction of finished jobs. An empty
+// cfg.Pipeline runs pipeline.DefaultNames(). It panics on an unknown stage name:
+// LoadConfig rejects those, so one reaching here is a programming error.
 func NewServer(cfg *Config) *Server {
+	names := cfg.Pipeline
+	if len(names) == 0 {
+		names = pipeline.DefaultNames()
+	}
+	p, err := pipeline.New(names, pipeline.Deps{
+		LLM: pipeline.LLM{
+			APIBaseURL: cfg.APIBaseURL,
+			APIKey:     cfg.APIKey,
+			Model:      cfg.Model,
+			Prompt:     cfg.Prompt,
+			Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
+		},
+	})
+	if err != nil {
+		panic(fmt.Sprintf("sleeko: build pipeline: %v", err))
+	}
+
 	return &Server{
-		cfg:   cfg,
-		store: newStore(cfg.JobTTL),
-		sem:   make(chan struct{}, cfg.MaxConcurrency),
+		cfg:      cfg,
+		store:    newStore(cfg.JobTTL),
+		pipeline: p,
+		sem:      make(chan struct{}, cfg.MaxConcurrency),
 	}
 }
 

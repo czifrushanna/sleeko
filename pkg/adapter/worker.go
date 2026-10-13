@@ -5,11 +5,11 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"strings"
 	"time"
 
 	v1 "github.com/czifrushanna/sleeko/pkg/api/v1"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/registry"
 )
 
@@ -76,18 +76,33 @@ func (s *Server) run(ctx context.Context, req *v1.OptimizeRequest) *v1.Optimizat
 			"no vulnerability scan report found for this artifact; trigger a scan and try again")
 	}
 
-	// 4. Optimize via the LLM gateway. The scan report is condensed and fitted to
-	// the model's context window on the way into the prompt.
-	budget := dockerfile.Budget{MaxTokens: s.cfg.MaxTokens, ContextWindow: s.cfg.ContextWindow}
-	optimized, err := dockerfile.OptimizeDockerfile(ctx, s.cfg.APIBaseURL, s.cfg.APIKey, s.cfg.Model, s.cfg.Prompt, result.Dockerfile, req.ScanReport, budget)
-	if err != nil {
+	// 4. Run the configured optimization pipeline (by default the single
+	// "generate" LLM call). The scan report is condensed and fitted to the
+	// model's context window on the way into the prompt.
+	st := &pipeline.State{
+		Original:   result.Dockerfile,
+		Generated:  result.Generated,
+		ScanReport: req.ScanReport,
+	}
+	if err := s.pipeline.Run(ctx, st); err != nil {
+		// The Harbor contract has no failure code beyond LLM_FAILED for this part
+		// of the run, so every terminal stage error is reported under it, with the
+		// stage's own message so the report reads exactly as it did before stages
+		// existed.
+		var stageErr *pipeline.StageError
+		if errors.As(err, &stageErr) {
+			err = stageErr.Err
+		}
 		return failedReport(v1.ErrorCodeLLMFailed, err.Error())
+	}
+	for _, d := range st.Diagnostics {
+		log.Printf("%s: %s", d.Stage, d.Message)
 	}
 
 	return &v1.OptimizationReport{
 		Status:                    v1.ReportStatusSuccess,
 		Dockerfile:                result.Dockerfile,
-		OptimizedDockerfile:       stripCodeFences(optimized),
+		OptimizedDockerfile:       st.Candidate,
 		AttestationManifestDigest: result.AttestationManifestDigest,
 		StatementDigest:           result.StatementDigest,
 		Generated:                 result.Generated,
@@ -102,27 +117,4 @@ func failedReport(code, message string) *v1.OptimizationReport {
 			Message: message,
 		},
 	}
-}
-
-// stripCodeFences removes a leading ``` / ```dockerfile line and a trailing ```
-// line that LLM gateways commonly wrap around the returned Dockerfile.
-func stripCodeFences(s string) string {
-	out := strings.TrimSpace(s)
-
-	if strings.HasPrefix(out, "```") {
-		if idx := strings.IndexByte(out, '\n'); idx >= 0 {
-			out = out[idx+1:]
-		} else {
-			// A lone fence line with no content
-			return ""
-		}
-	}
-
-	if strings.HasSuffix(strings.TrimSpace(out), "```") {
-		trimmed := strings.TrimSpace(out)
-		trimmed = strings.TrimSuffix(trimmed, "```")
-		out = strings.TrimRight(trimmed, " \t\n")
-	}
-
-	return strings.TrimSpace(out) + "\n"
 }

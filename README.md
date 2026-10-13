@@ -68,6 +68,7 @@ All configuration is via environment variables:
 | `LLMGW_API_KEY` | yes | — | LLM gateway API key |
 | `LLMGW_MODEL` | yes | — | Model identifier |
 | `OPTIMIZER_PROMPT` | no | [built-in](pkg/dockerfile/prompt.txt) | Instruction text prepended to the Dockerfile; overrides the default entirely |
+| `OPTIMIZER_PIPELINE` | no | `generate` | Comma-separated optimization stages run after extraction (see `pkg/pipeline`); an unknown name stops the adapter from starting |
 | `LLMGW_MAX_TOKENS` | no | `4096` | Completion budget, sent as `max_tokens` |
 | `LLMGW_CONTEXT_WINDOW` | no | `32768` | Model's total token window, used to bound the prompt; `0` disables trimming |
 | `OPTIMIZER_ADAPTER_LISTEN_ADDR` | no | `:8080` | HTTP listen address |

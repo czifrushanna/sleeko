@@ -173,6 +173,9 @@ func TestRun_SuccessAndLLMFailedShareExtraction(t *testing.T) {
 		require.Equal(t, v1.ReportStatusFailed, report.Status)
 		require.NotNil(t, report.Error)
 		require.Equal(t, v1.ErrorCodeLLMFailed, report.Error.Code)
+		// The stage's own message, with no pipeline wrapping: the report must read
+		// as it did before the pipeline existed.
+		require.Equal(t, "llm gateway returned 500 Internal Server Error: gateway error", report.Error.Message)
 	})
 
 	t.Run("success end to end, including code-fence stripping", func(t *testing.T) {

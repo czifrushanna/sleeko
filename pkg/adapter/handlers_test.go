@@ -138,26 +138,6 @@ func TestStoreSweep(t *testing.T) {
 	require.NotNil(t, st.get("fresh"))
 }
 
-func TestStripCodeFences(t *testing.T) {
-	cases := []struct {
-		name string
-		in   string
-		want string
-	}{
-		{"plain", "FROM alpine\nRUN true", "FROM alpine\nRUN true\n"},
-		{"bare fences", "```\nFROM alpine\n```", "FROM alpine\n"},
-		{"dockerfile fences", "```dockerfile\nFROM alpine\nRUN true\n```", "FROM alpine\nRUN true\n"},
-		{"leading whitespace", "\n\n```dockerfile\nFROM alpine\n```\n\n", "FROM alpine\n"},
-		{"only fence", "```", ""},
-		{"no trailing fence", "```dockerfile\nFROM alpine", "FROM alpine\n"},
-	}
-	for _, c := range cases {
-		t.Run(c.name, func(t *testing.T) {
-			require.Equal(t, c.want, stripCodeFences(c.in))
-		})
-	}
-}
-
 // TestSubmitOptimize_AcceptsAndRunsAsynchronously covers the accept path: a valid
 // request must come back 202 with a fresh id immediately, and the pipeline must
 // then run in the background and land a terminal report under that id. The fake
