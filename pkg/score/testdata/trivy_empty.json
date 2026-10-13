@@ -1,0 +1,8 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "gcr.io/distroless/static-debian12",
+  "ArtifactType": "container_image",
+  "Results": [
+    {"Target": "gcr.io/distroless/static-debian12 (debian 12.8)", "Class": "os-pkgs", "Type": "debian"}
+  ]
+}
