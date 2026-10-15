@@ -1,0 +1,164 @@
+# Demo candidates: a hand-written list from docker/awesome-compose, pinned to
+# one commit. Most are services, so the smoke test is the generic "container
+# starts and keeps running for 10s" one. Not yet filtered: distro_family is
+# filled in by eval/benchmark/import/select from what Trivy detects.
+items:
+  - id: demo-flask
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: flask/app
+    dockerfile: flask/app/Dockerfile
+    target: builder
+    distro_family: unknown
+    language: python
+    smoke:
+      command: ["-c", "import app"]
+
+  - id: demo-express-backend
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: react-express-mongodb/backend
+    dockerfile: react-express-mongodb/backend/Dockerfile
+    target: development
+    distro_family: unknown
+    language: javascript
+    smoke:
+      command: ["node", "-e", "require('express'); require('mongoose')"]
+
+  - id: demo-django
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: django/app
+    dockerfile: django/app/Dockerfile
+    target: builder
+    distro_family: unknown
+    language: python
+    smoke:
+      run_for: 10s
+
+  - id: demo-fastapi
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: fastapi
+    dockerfile: fastapi/Dockerfile
+    target: builder
+    distro_family: unknown
+    language: python
+    smoke:
+      run_for: 10s
+
+  - id: demo-apache-php
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: apache-php/app
+    dockerfile: apache-php/app/Dockerfile
+    target: builder
+    distro_family: unknown
+    language: php
+    smoke:
+      run_for: 10s
+
+  - id: demo-sparkjava
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: sparkjava/sparkjava
+    dockerfile: sparkjava/sparkjava/Dockerfile
+    distro_family: unknown
+    language: java
+    smoke:
+      run_for: 10s
+
+  - id: demo-spring-backend
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: spring-postgres/backend
+    dockerfile: spring-postgres/backend/Dockerfile
+    distro_family: unknown
+    language: java
+    smoke:
+      run_for: 10s
+
+  - id: demo-rust-backend
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: react-rust-postgres/backend
+    dockerfile: react-rust-postgres/backend/Dockerfile
+    distro_family: unknown
+    language: rust
+    smoke:
+      run_for: 10s
+
+  - id: demo-vuejs
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: vuejs/vuejs
+    dockerfile: vuejs/vuejs/Dockerfile
+    target: development
+    distro_family: unknown
+    language: javascript
+    smoke:
+      run_for: 10s
+
+  - id: demo-nodejs-web
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: nginx-nodejs-redis/web
+    dockerfile: nginx-nodejs-redis/web/Dockerfile
+    distro_family: unknown
+    language: javascript
+    smoke:
+      run_for: 10s
+
+  - id: demo-wsgi-flask
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: nginx-wsgi-flask/flask
+    dockerfile: nginx-wsgi-flask/flask/Dockerfile
+    distro_family: unknown
+    language: python
+    smoke:
+      run_for: 10s
+
+  - id: demo-golang-backend
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: nginx-golang/backend
+    dockerfile: nginx-golang/backend/Dockerfile
+    distro_family: unknown
+    language: go
+    smoke:
+      run_for: 10s
+
+  - id: demo-traefik-golang
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: traefik-golang/backend
+    dockerfile: traefik-golang/backend/Dockerfile
+    distro_family: unknown
+    language: go
+    smoke:
+      run_for: 10s
+
+  - id: demo-aspnet
+    source: demo
+    repo: https://github.com/docker/awesome-compose
+    commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+    context: aspnet-mssql/app/aspnetapp
+    dockerfile: aspnet-mssql/app/aspnetapp/Dockerfile
+    distro_family: unknown
+    language: c#
+    smoke:
+      run_for: 10s

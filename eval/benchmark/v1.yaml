@@ -1,0 +1,373 @@
+# Benchmark items that built, passed their smoke test and measured cleanly
+# with a no-op pipeline on 2026-10-15 (trivy 0.75.0 db 2026-10-13T13:06:33.602531196Z). Selected by eval/benchmark/import/select
+# from candidates/demo.yaml (all 14) and candidates/d3.yaml (91 of 113; the
+# other 22 are multi-GB ML/CUDA images, not tried). d3-dgtlmoon-changedetection-io
+# also passed but was left out: its O′ build took 12m50s, over the ~10 minute
+# limit for v1. Heavy items (omnigres, unitycatalog) need the Docker VM's memory
+# to themselves: run them at --concurrency 1, or give Docker more than 8 GB.
+items:
+    - id: demo-flask
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: flask/app
+      dockerfile: flask/app/Dockerfile
+      platform: linux/amd64
+      target: builder
+      smoke:
+        command:
+            - -c
+            - import app
+        timeout: 2m0s
+      distro_family: alpine
+      language: python
+    - id: demo-express-backend
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: react-express-mongodb/backend
+      dockerfile: react-express-mongodb/backend/Dockerfile
+      platform: linux/amd64
+      target: development
+      smoke:
+        command:
+            - node
+            - -e
+            - require('express'); require('mongoose')
+        timeout: 2m0s
+      distro_family: debian
+      language: javascript
+    - id: demo-django
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: django/app
+      dockerfile: django/app/Dockerfile
+      platform: linux/amd64
+      target: builder
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: python
+    - id: demo-fastapi
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: fastapi
+      dockerfile: fastapi/Dockerfile
+      platform: linux/amd64
+      target: builder
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: python
+    - id: demo-apache-php
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: apache-php/app
+      dockerfile: apache-php/app/Dockerfile
+      platform: linux/amd64
+      target: builder
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: php
+    - id: demo-sparkjava
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: sparkjava/sparkjava
+      dockerfile: sparkjava/sparkjava/Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: ubuntu
+      language: java
+    - id: demo-nodejs-web
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: nginx-nodejs-redis/web
+      dockerfile: nginx-nodejs-redis/web/Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: javascript
+    - id: demo-golang-backend
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: nginx-golang/backend
+      dockerfile: nginx-golang/backend/Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: scratch
+      language: go
+    - id: demo-traefik-golang
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: traefik-golang/backend
+      dockerfile: traefik-golang/backend/Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: scratch
+      language: go
+    - id: demo-aspnet
+      source: demo
+      repo: https://github.com/docker/awesome-compose
+      commit: 30f4b7f6a6c3b0c0ecf4d4efb0de203c48d11562
+      context: aspnet-mssql/app/aspnetapp
+      dockerfile: aspnet-mssql/app/aspnetapp/Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: c#
+    - id: d3-astrbotdevs-astrbot
+      source: d3
+      repo: https://github.com/AstrBotDevs/AstrBot
+      commit: 86e2fd9aee7459a9a9d71faf9c30e64e141359cd
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: python
+    - id: d3-glimesh-broadcast-box
+      source: d3
+      repo: https://github.com/Glimesh/broadcast-box
+      commit: de7e6cc6f4957715d2f2b2863832ed5984d8992b
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: go
+    - id: d3-jfryy-qq
+      source: d3
+      repo: https://github.com/JFryy/qq
+      commit: fdc28b39b6fe2d5992974512a45d70e15e7d1490
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: go
+    - id: d3-raywangqvq-bilibilitoolpro
+      source: d3
+      repo: https://github.com/RayWangQvQ/BiliBiliToolPro
+      commit: afb79d2ae1c6045f82ff13febbe0d25b389d5043
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: c#
+    - id: d3-tracecathq-tracecat-prod
+      source: d3
+      repo: https://github.com/TracecatHQ/tracecat
+      commit: 123b2ebc4a0c0256fe0b0ffa9abf42c6a1fadaf5
+      context: frontend
+      dockerfile: frontend/Dockerfile.prod
+      build_args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+        NEXT_PUBLIC_APP_ENV: production
+        NEXT_PUBLIC_APP_URL: http://localhost:3000
+        NEXT_SERVER_API_URL: http://localhost:8000
+        NODE_ENV: production
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: python
+    - id: d3-badtuxx-girus-cli
+      source: d3
+      repo: https://github.com/badtuxx/girus-cli
+      commit: f83f3a2e7cbb7f5c6c5c2641ac43eef4c2e24898
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: go
+    - id: d3-bruin-data-bruin
+      source: d3
+      repo: https://github.com/bruin-data/bruin
+      commit: 481daffc57899f9ddc5dcd23e1339fab6cfd3018
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: go
+    - id: d3-cilium-tetragon-rthooks
+      source: d3
+      repo: https://github.com/cilium/tetragon
+      commit: e3c2b34717f90da433fae1465cc7fd2adbc7f401
+      context: .
+      dockerfile: Dockerfile.rthooks
+      build_args:
+        TETRAGON_VERSION: v1.5.0-pre.0-229-g792590e57
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: c
+    - id: d3-datawhores-of-scraper
+      source: d3
+      repo: https://github.com/datawhores/OF-Scraper
+      commit: 34f038d84f1a298f95d8b84c5ca108ad95aefe1c
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_VERSION: 3.13.dev9+gcc22f822
+        INSTALL_FFMPEG: "true"
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: python
+    - id: d3-hanxi-xiaomusic-builder
+      source: d3
+      repo: https://github.com/hanxi/xiaomusic
+      commit: fe25ad6b81d1496f9a83d17e3a02dff179a901a5
+      context: .
+      dockerfile: Dockerfile.builder
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: python
+    - id: d3-langchain-ai-local-deep-researcher
+      source: d3
+      repo: https://github.com/langchain-ai/local-deep-researcher
+      commit: 5e53626c1280b1bbf51b70ba9738dc8a325bb941
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: python
+    - id: d3-lanyi1998-dnslog-go
+      source: d3
+      repo: https://github.com/lanyi1998/DNSlog-GO
+      commit: c01f0d317874dd7ed4b0413c751c3c983d49e4c3
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: go
+    - id: d3-marcopiovanello-yt-dlp-web-ui
+      source: d3
+      repo: https://github.com/marcopiovanello/yt-dlp-web-ui
+      commit: f578f44cfdea105053a9a6657f3f30d9a458ef24
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: typescript
+    - id: d3-markqvist-nomadnet
+      source: d3
+      repo: https://github.com/markqvist/NomadNet
+      commit: 58407b9ec46044fbc496933cd5eeaef0e4f12c7e
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: python
+    - id: d3-omnigres-omnigres-builder
+      source: d3
+      repo: https://github.com/omnigres/omnigres
+      commit: 0e2e47f48ce13897213e5dc0eff19594af92d535
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_PARALLEL_LEVEL: "4"
+        PG: "17"
+      platform: linux/amd64
+      target: builder
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: debian
+      language: c
+    - id: d3-projectdiscovery-httpx
+      source: d3
+      repo: https://github.com/projectdiscovery/httpx
+      commit: a10bd2d558be4b211354893072cec6c147c4a0d7
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: go
+    - id: d3-unitycatalog-unitycatalog
+      source: d3
+      repo: https://github.com/unitycatalog/unitycatalog
+      commit: 0b954e1a0c40392db2729558f44db8842871c068
+      context: .
+      dockerfile: Dockerfile
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: alpine
+      language: scala
+    - id: d3-vogler-free-games-claimer
+      source: d3
+      repo: https://github.com/vogler/free-games-claimer
+      commit: a7b882f3a1b8637b721b1ae5c619dace6a5a179e
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BRANCH: mega-linter
+        COMMIT: 2a6f0733ab6384af1ab3ad1f30330d55c21d86bd
+        NOW: Sat,
+      platform: linux/amd64
+      smoke:
+        timeout: 2m0s
+        run_for: 10s
+      distro_family: ubuntu
+      language: javascript

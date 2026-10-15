@@ -144,6 +144,7 @@ func runEval(ctx context.Context, args []string) error {
 	reps := fs.Int("reps", 3, "repetitions per item")
 	out := fs.String("out", "results.jsonl", "JSONL file to append records to")
 	concurrency := fs.Int("concurrency", 1, "items processed at once")
+	buildTimeout := fs.Duration("build-timeout", 0, "limit for each image build, e.g. 10m (default: none)")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	fs.Parse(args)
 
@@ -198,6 +199,7 @@ func runEval(ctx context.Context, args []string) error {
 		Pipeline:      *name,
 		Repetitions:   *reps,
 		Concurrency:   *concurrency,
+		BuildTimeout:  *buildTimeout,
 		Weights:       score.DefaultWeights,
 		SizeTolerance: *tolerance,
 		Model:         model,

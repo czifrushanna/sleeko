@@ -231,8 +231,9 @@ type DockerSmoker struct {
 	exec execFunc
 }
 
-// Smoke runs the image with the smoke command and compares the exit code.
-// The container gets a unique name so a run that times out can be removed.
+// Smoke runs the image with the smoke command and compares the exit code,
+// or with RunFor checks that it starts and keeps running. The container gets
+// a unique name so it can always be removed.
 func (d *DockerSmoker) Smoke(ctx context.Context, img Image, platform string, smoke Smoke) error {
 	run := d.exec
 	if run == nil {
@@ -240,12 +241,19 @@ func (d *DockerSmoker) Smoke(ctx context.Context, img Image, platform string, sm
 	}
 
 	name := "sleeko-smoke-" + hashKey(img.Tag, time.Now().String())[:12]
-	args := []string{"run", "--rm", "--name", name, "--platform", platform}
-	if smoke.Entrypoint != "" {
-		args = append(args, "--entrypoint", smoke.Entrypoint)
+	runArgs := func(mode string) []string {
+		args := []string{"run", mode, "--name", name, "--platform", platform}
+		if smoke.Entrypoint != "" {
+			args = append(args, "--entrypoint", smoke.Entrypoint)
+		}
+		args = append(args, img.Tag)
+		return append(args, smoke.Command...)
 	}
-	args = append(args, img.Tag)
-	args = append(args, smoke.Command...)
+
+	if smoke.RunFor > 0 {
+		return d.smokeRunning(ctx, run, name, runArgs("--detach"), smoke)
+	}
+	args := runArgs("--rm")
 
 	timeout := smoke.Timeout
 	if timeout <= 0 {
@@ -266,4 +274,33 @@ func (d *DockerSmoker) Smoke(ctx context.Context, img Image, platform string, sm
 		return fmt.Errorf("exit code %d, want %d: %s", res.ExitCode, smoke.ExitCode, tail(res.Stderr, res.Stdout))
 	}
 	return nil
+}
+
+// smokeRunning starts the container detached, waits RunFor, and passes if it
+// is still running or has exited with the expected code. The container is
+// removed whatever happens.
+func (d *DockerSmoker) smokeRunning(ctx context.Context, run execFunc, name string, args []string, smoke Smoke) error {
+	defer run(context.Background(), "", "docker", "rm", "--force", name)
+
+	res, err := run(ctx, "", "docker", args...)
+	if _, err := mustSucceed(res, err, "docker run"); err != nil {
+		return err
+	}
+	select {
+	case <-time.After(smoke.RunFor):
+	case <-ctx.Done():
+		return ctx.Err()
+	}
+
+	res, err = run(ctx, "", "docker", "inspect", "--format", "{{.State.Running}} {{.State.ExitCode}}", name)
+	if res, err = mustSucceed(res, err, "docker inspect"); err != nil {
+		return err
+	}
+	running, code, _ := strings.Cut(strings.TrimSpace(string(res.Stdout)), " ")
+	if running == "true" || code == fmt.Sprint(smoke.ExitCode) {
+		return nil
+	}
+	logs, _ := run(context.Background(), "", "docker", "logs", "--tail", "15", name)
+	return fmt.Errorf("exited with code %s within %s, want it running or exit code %d: %s",
+		code, smoke.RunFor, smoke.ExitCode, tail(logs.Stderr, logs.Stdout))
 }

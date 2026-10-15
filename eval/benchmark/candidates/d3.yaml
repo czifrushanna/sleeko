@@ -1,0 +1,1278 @@
+# Candidates imported from D³ (Cadre) on 2026-10-15 by eval/benchmark/import/d3.
+# Not yet filtered: distro_family is filled in by eval/benchmark/import/select.
+items:
+    - id: d3-astrbotdevs-astrbot
+      source: d3
+      repo: https://github.com/AstrBotDevs/AstrBot
+      commit: 86e2fd9aee7459a9a9d71faf9c30e64e141359cd
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-berriai-litellm-database
+      source: d3
+      repo: https://github.com/BerriAI/litellm
+      commit: 6f940f621e43bef624094178e02fcdd44d6ddf74
+      context: .
+      dockerfile: docker/Dockerfile.database
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-berriai-litellm-non-root
+      source: d3
+      repo: https://github.com/BerriAI/litellm
+      commit: 6f940f621e43bef624094178e02fcdd44d6ddf74
+      context: .
+      dockerfile: docker/Dockerfile.non_root
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-berriai-litellm
+      source: d3
+      repo: https://github.com/BerriAI/litellm
+      commit: 6f940f621e43bef624094178e02fcdd44d6ddf74
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-cyfershepard-jellystat
+      source: d3
+      repo: https://github.com/CyferShepard/Jellystat
+      commit: f11dfc187c5342bf427a5b1768b08ed1ceb55714
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-darkflameuniverse-darkflameserver
+      source: d3
+      repo: https://github.com/DarkflameUniverse/DarkflameServer
+      commit: 1f580491c778cdf033e198d64cb6c637a5507794
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c++
+    - id: d3-flaresolverr-flaresolverr
+      source: d3
+      repo: https://github.com/FlareSolverr/FlareSolverr
+      commit: 237694df76431270233e2d23f7abd9e5e3485dc2
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-glimesh-broadcast-box
+      source: d3
+      repo: https://github.com/Glimesh/broadcast-box
+      commit: de7e6cc6f4957715d2f2b2863832ed5984d8992b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-gozargah-marzban
+      source: d3
+      repo: https://github.com/Gozargah/Marzban
+      commit: a93459da767f543e750efbde7c29ef3eeac62f07
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-hxsecurity-dongtai
+      source: d3
+      repo: https://github.com/HXSecurity/DongTai
+      commit: a79de64de01a1bf119ef65d65407ae127a80bb2d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-heyputer-puter
+      source: d3
+      repo: https://github.com/HeyPuter/puter
+      commit: 2d9526ba404bead5beaa87c86712dee4984b28dc
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-jfryy-qq
+      source: d3
+      repo: https://github.com/JFryy/qq
+      commit: fdc28b39b6fe2d5992974512a45d70e15e7d1490
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-joeanamier-tiktokdownloader
+      source: d3
+      repo: https://github.com/JoeanAmier/TikTokDownloader
+      commit: 039bbbfcb5b205d6aba8a64385485b6d3a495695
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-maim-with-u-maibot
+      source: d3
+      repo: https://github.com/MaiM-with-u/MaiBot
+      commit: 4d7b415589c2aa0ef5b498c6cee20b15100309e3
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_DATE: $(date
+        VCS_REF: 84aa4fc1728828320adfca1b15b7b7686455aad8
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-matrixtm-mhddos
+      source: d3
+      repo: https://github.com/MatrixTM/MHDDoS
+      commit: e2cd9bd9f8f822c3c6b7312594b9580f48c153e4
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-memecrafters-meme-generator-memebot
+      source: d3
+      repo: https://github.com/MemeCrafters/meme-generator
+      commit: 62ea216228a119116be48b8419f42cec932197c1
+      context: .
+      dockerfile: Dockerfile.memebot
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-milescranmer-pysr
+      source: d3
+      repo: https://github.com/MilesCranmer/PySR
+      commit: 6ec0bb400b4714b130a9b582f6fba3db8b57b3a1
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        JLVERSION: 1.10.3
+        PYVERSION: 3.12.3
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-modeltc-lightllm
+      source: d3
+      repo: https://github.com/ModelTC/lightllm
+      commit: 4686b50a5d5dac5e1caa1a74717513c0619c36a6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-modeltc-lightllm-deepep
+      source: d3
+      repo: https://github.com/ModelTC/lightllm
+      commit: 5033dc23641b348c4822c43d2716f3a3a1e92797
+      context: .
+      dockerfile: docker/Dockerfile.deepep
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-ot-container-kit-redis-operator
+      source: d3
+      repo: https://github.com/OT-CONTAINER-KIT/redis-operator
+      commit: 7619360d6ba2418cd93c743299785f2eb01b2798
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-offchainlabs-nitro-nitro-node-dev
+      source: d3
+      repo: https://github.com/OffchainLabs/nitro
+      commit: 7af2e7e4f4959d22b630fc729fa198c696af895a
+      context: .
+      dockerfile: Dockerfile
+      target: nitro-node-dev
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-offchainlabs-nitro-nitro-node
+      source: d3
+      repo: https://github.com/OffchainLabs/nitro
+      commit: 8caf7b0e3f9aca95a8689b917694b4047fe0ee5c
+      context: .
+      dockerfile: Dockerfile
+      target: nitro-node
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-pbh-btn-peerbanhelper
+      source: d3
+      repo: https://github.com/PBH-BTN/PeerBanHelper
+      commit: 911863a643fb4c73e2962a289fd0c4a26b0bf4a9
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: d3-raywangqvq-bilibilitoolpro
+      source: d3
+      repo: https://github.com/RayWangQvQ/BiliBiliToolPro
+      commit: afb79d2ae1c6045f82ff13febbe0d25b389d5043
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#  # set by hand: the repository is missing from Cadre\'s language list
+    - id: d3-robosats-robosats
+      source: d3
+      repo: https://github.com/RoboSats/robosats
+      commit: 791854474ca4cb6b361aa61c6cd451272dcf6037
+      context: nodeapp
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-stirling-tools-stirling-pdf
+      source: d3
+      repo: https://github.com/Stirling-Tools/Stirling-PDF
+      commit: a208d55525329e2349c01140cd9a8d1cd651406d
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        VERSION_TAG: 1.0.0
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: d3-tracecathq-tracecat
+      source: d3
+      repo: https://github.com/TracecatHQ/tracecat
+      commit: 123b2ebc4a0c0256fe0b0ffa9abf42c6a1fadaf5
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-tracecathq-tracecat-prod
+      source: d3
+      repo: https://github.com/TracecatHQ/tracecat
+      commit: 123b2ebc4a0c0256fe0b0ffa9abf42c6a1fadaf5
+      context: frontend
+      dockerfile: frontend/Dockerfile.prod
+      build_args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+        NEXT_PUBLIC_APP_ENV: production
+        NEXT_PUBLIC_APP_URL: http://localhost:3000
+        NEXT_SERVER_API_URL: http://localhost:8000
+        NODE_ENV: production
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-arpanghosh8453-garmin-grafana
+      source: d3
+      repo: https://github.com/arpanghosh8453/garmin-grafana
+      commit: fce6e46908c6f5c9ef9aaaa0f403af61c4ea67aa
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: jupyter notebook
+    - id: d3-badtuxx-girus-cli
+      source: d3
+      repo: https://github.com/badtuxx/girus-cli
+      commit: f83f3a2e7cbb7f5c6c5c2641ac43eef4c2e24898
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-binary-husky-gpt-academic-githubaction-nolocal-latex
+      source: d3
+      repo: https://github.com/binary-husky/gpt_academic
+      commit: 8c2143229113ad0953b4e4dfd2a543292ce65b14
+      context: .
+      dockerfile: docs/GithubAction+NoLocal+Latex
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-binary-husky-gpt-academic-githubaction-allcapacity
+      source: d3
+      repo: https://github.com/binary-husky/gpt_academic
+      commit: 8c2143229113ad0953b4e4dfd2a543292ce65b14
+      context: .
+      dockerfile: docs/GithubAction+AllCapacity
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-binary-husky-gpt-academic-githubaction-nolocal
+      source: d3
+      repo: https://github.com/binary-husky/gpt_academic
+      commit: 8c2143229113ad0953b4e4dfd2a543292ce65b14
+      context: .
+      dockerfile: docs/GithubAction+NoLocal
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-binary-husky-gpt-academic-githubaction-nolocal-audioassistant
+      source: d3
+      repo: https://github.com/binary-husky/gpt_academic
+      commit: 8c2143229113ad0953b4e4dfd2a543292ce65b14
+      context: .
+      dockerfile: docs/GithubAction+NoLocal+AudioAssistant
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-binary-husky-gpt-academic-githubaction-chatglm-moss
+      source: d3
+      repo: https://github.com/binary-husky/gpt_academic
+      commit: 8c2143229113ad0953b4e4dfd2a543292ce65b14
+      context: .
+      dockerfile: docs/GithubAction+ChatGLM+Moss
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-bruin-data-bruin
+      source: d3
+      repo: https://github.com/bruin-data/bruin
+      commit: 481daffc57899f9ddc5dcd23e1339fab6cfd3018
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-cilium-tetragon-rthooks
+      source: d3
+      repo: https://github.com/cilium/tetragon
+      commit: e3c2b34717f90da433fae1465cc7fd2adbc7f401
+      context: .
+      dockerfile: Dockerfile.rthooks
+      build_args:
+        TETRAGON_VERSION: v1.5.0-pre.0-229-g792590e57
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: d3-cilium-tetragon
+      source: d3
+      repo: https://github.com/cilium/tetragon
+      commit: 714700d8dd5d9500b92774962c6f3565a36f4aa4
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        TETRAGON_VERSION: v1.5.0-pre.0-381-gf8dd5df01
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: d3-containerd-nerdctl
+      source: d3
+      repo: https://github.com/containerd/nerdctl
+      commit: d16f34059f5599a58d1ea7aad4e43790f4d27118
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-crocodilestick-calibre-web-automated
+      source: d3
+      repo: https://github.com/crocodilestick/Calibre-Web-Automated
+      commit: 72c7df598584fd8cc04d1406765677479a48b477
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_DATE: "2025-05-15T12:26:30Z"
+        VERSION: V3.1.0-DEV_BUILD-dev-4
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-crowdsecurity-crowdsec-debian-full
+      source: d3
+      repo: https://github.com/crowdsecurity/crowdsec
+      commit: bcedd56a62a233c688ff8668342c664793a28fe2
+      context: .
+      dockerfile: Dockerfile.debian
+      target: full
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-dagu-org-dagu-dev
+      source: d3
+      repo: https://github.com/dagu-org/dagu
+      commit: 4ee3c50988b7feb1bc60fa3112dc0b717cc77103
+      context: .
+      dockerfile: Dockerfile.dev
+      build_args:
+        LDFLAGS: -X
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-dagu-org-dagu-alpine
+      source: d3
+      repo: https://github.com/dagu-org/dagu
+      commit: 4ee3c50988b7feb1bc60fa3112dc0b717cc77103
+      context: .
+      dockerfile: Dockerfile.alpine
+      build_args:
+        LDFLAGS: -X
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-dagu-org-dagu
+      source: d3
+      repo: https://github.com/dagu-org/dagu
+      commit: 4ee3c50988b7feb1bc60fa3112dc0b717cc77103
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        LDFLAGS: -X
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-datawhores-of-scraper
+      source: d3
+      repo: https://github.com/datawhores/OF-Scraper
+      commit: 34f038d84f1a298f95d8b84c5ca108ad95aefe1c
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_VERSION: 3.13.dev9+gcc22f822
+        INSTALL_FFMPEG: "true"
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-datawhores-of-scraper-2
+      source: d3
+      repo: https://github.com/datawhores/OF-Scraper
+      commit: 18b2a8156487bb933262497938ee403eb67c89e4
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_VERSION: 3.13.dev10+g4dd89384
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-dgtlmoon-changedetection-io
+      source: d3
+      repo: https://github.com/dgtlmoon/changedetection.io
+      commit: 36004cf74b056e8b9eb38776dfc19e480f3fd898
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-featureform-featureform
+      source: d3
+      repo: https://github.com/featureform/featureform
+      commit: de3b5d8bc077f0d0a9cdd8ee1f4e464bdd3621f8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-gofr-dev-gofr
+      source: d3
+      repo: https://github.com/gofr-dev/gofr
+      commit: 493ab969ea2b6c40a7beb585098a75efd0ef1b6e
+      context: .
+      dockerfile: docs/Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-gosom-google-maps-scraper
+      source: d3
+      repo: https://github.com/gosom/google-maps-scraper
+      commit: 5c5f2a739efedc708e4e3e20c38f501b62cf3d52
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-grafana-beyla-generator
+      source: d3
+      repo: https://github.com/grafana/beyla
+      commit: e4a3b26196d74fd9846647ab35eaea8a8ceb1621
+      context: .
+      dockerfile: generator.Dockerfile
+      build_args:
+        EBPF_VER: v0.17.3
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: d3-hanxi-xiaomusic-builder
+      source: d3
+      repo: https://github.com/hanxi/xiaomusic
+      commit: fe25ad6b81d1496f9a83d17e3a02dff179a901a5
+      context: .
+      dockerfile: Dockerfile.builder
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-hao-ai-lab-fastvideo-python3-12
+      source: d3
+      repo: https://github.com/hao-ai-lab/FastVideo
+      commit: 7664dd0de3ec7c5a7dde78b0682ac0a027dcb67c
+      context: .
+      dockerfile: docker/Dockerfile.python3.12
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-icereed-paperless-gpt
+      source: d3
+      repo: https://github.com/icereed/paperless-gpt
+      commit: 7ccb2829acabf7cd5f868f90cf2219fd4c5d5c74
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_DATE: "1747202105"
+        COMMIT: 76dd01ada3197ee4190d409f51fd1a642231ad68
+        VERSION: 76dd01ada3197ee4190d409f51fd1a642231ad68
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: d3-immichframe-immichframe-final
+      source: d3
+      repo: https://github.com/immichFrame/ImmichFrame
+      commit: 1b76e57834e6e623ebffefa0db0cf72e62814039
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        VERSION: pool_test
+      target: final
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: d3-infracost-infracost
+      source: d3
+      repo: https://github.com/infracost/infracost
+      commit: 5b249793d5b3dbfd8dfd16ca0ae31031a75c43fd
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-khoj-ai-khoj-computer
+      source: d3
+      repo: https://github.com/khoj-ai/khoj
+      commit: a98525be019caf33ed46147127c326f7146d471e
+      context: .
+      dockerfile: computer.Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-khoj-ai-khoj
+      source: d3
+      repo: https://github.com/khoj-ai/khoj
+      commit: 30ced1d86c08799a47086f5f1d23e49858b15904
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        PORT: "42110"
+        VERSION: 1.42.5.dev4
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-khoj-ai-khoj-prod
+      source: d3
+      repo: https://github.com/khoj-ai/khoj
+      commit: 30ced1d86c08799a47086f5f1d23e49858b15904
+      context: .
+      dockerfile: prod.Dockerfile
+      build_args:
+        PORT: "42110"
+        VERSION: 1.42.5.dev4
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-kingwrcy-moments
+      source: d3
+      repo: https://github.com/kingwrcy/moments
+      commit: d503267f5284d669be58a1a61a514b4852c2080b
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        COMMIT_ID: 4af1573
+        VERSION: dev
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: vue
+    - id: d3-koodo-reader-koodo-reader
+      source: d3
+      repo: https://github.com/koodo-reader/koodo-reader
+      commit: 5b89e33a94f18d2de213673875fdf441bd476894
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: d3-langchain-ai-local-deep-researcher
+      source: d3
+      repo: https://github.com/langchain-ai/local-deep-researcher
+      commit: 5e53626c1280b1bbf51b70ba9738dc8a325bb941
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-lanyi1998-dnslog-go
+      source: d3
+      repo: https://github.com/lanyi1998/DNSlog-GO
+      commit: c01f0d317874dd7ed4b0413c751c3c983d49e4c3
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-likeflyme-cloudbak
+      source: d3
+      repo: https://github.com/likeflyme/cloudbak
+      commit: a02896e63c131a651f76edd94124b3922850a12b
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        SYSTEM_VERSION: 1.0.1
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-loxilb-io-loxilb
+      source: d3
+      repo: https://github.com/loxilb-io/loxilb
+      commit: 3cdb612c1ad91d5ed25058f9714d6eeea2f2ca95
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-marcopiovanello-yt-dlp-web-ui
+      source: d3
+      repo: https://github.com/marcopiovanello/yt-dlp-web-ui
+      commit: f578f44cfdea105053a9a6657f3f30d9a458ef24
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: d3-markqvist-nomadnet
+      source: d3
+      repo: https://github.com/markqvist/NomadNet
+      commit: 58407b9ec46044fbc496933cd5eeaef0e4f12c7e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-marqo-ai-marqo
+      source: d3
+      repo: https://github.com/marqo-ai/marqo
+      commit: d86d8c86d3064147196b0ded82221ee463518f75
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-mayswind-ezbookkeeping
+      source: d3
+      repo: https://github.com/mayswind/ezbookkeeping
+      commit: fe7736a7f69bdb4a7174a5d4090f50875e5ce042
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        SKIP_TESTS: ""
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-mediacms-io-mediacms
+      source: d3
+      repo: https://github.com/mediacms-io/mediacms
+      commit: a5acce4ab10b747c8a683ca8b769475b020f23da
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-mendableai-firecrawl-mcp-server
+      source: d3
+      repo: https://github.com/mendableai/firecrawl-mcp-server
+      commit: b4ffdf48043d8ea64981a7cd7bbe49847512b4a0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-minekube-gate
+      source: d3
+      repo: https://github.com/minekube/gate
+      commit: bfae4e9767ee6be0d89d18466dbd31f41b1d1e6a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-modelscope-data-juicer
+      source: d3
+      repo: https://github.com/modelscope/data-juicer
+      commit: a4a67c16086eb391424dbe953e88c6b5e6113ffd
+      context: dj-14926797589
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-modelscope-data-juicer-2
+      source: d3
+      repo: https://github.com/modelscope/data-juicer
+      commit: 02623b08c204d40e54d51f949677ada64ca6e0e1
+      context: dj-15633746951
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-mosaicml-llm-foundry
+      source: d3
+      repo: https://github.com/mosaicml/llm-foundry
+      commit: cb07bf3a86be9214c957a99313f486d4d250908c
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BASE_IMAGE: mosaicml/pytorch:2.7.0_cu126-python3.12-ubuntu22.04-aws
+        BRANCH_NAME: boweny/torch-2.7
+        DEP_GROUPS: '[all]'
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-mother-of-all-self-hosting-mash-playbook
+      source: d3
+      repo: https://github.com/mother-of-all-self-hosting/mash-playbook
+      commit: e6b0ea8e47c215be2d7f70b4db449032c9abdc1d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-mudler-localai-intel
+      source: d3
+      repo: https://github.com/mudler/LocalAI
+      commit: 6adb019f8f3ccd24d4fc249245eb92ce437c050a
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BASE_IMAGE: intel/oneapi-basekit:2025.1.0-0-devel-ubuntu22.04
+      target: intel
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: earthly
+    - id: d3-odigos-io-odigos-rhel
+      source: d3
+      repo: https://github.com/odigos-io/odigos
+      commit: a0dd861b048751da72c2a2df892918fab3b7fb36
+      context: .
+      dockerfile: Dockerfile.rhel
+      build_args:
+        DESCRIPTION: Autoscaler
+        LD_FLAGS: -s -w
+        ODIGOS_VERSION: v1.0.170
+        RELEASE: v1.0.170
+        SERVICE_NAME: autoscaler
+        SUMMARY: Autoscaler
+        VERSION: v1.0.170
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-odigos-io-odigos
+      source: d3
+      repo: https://github.com/odigos-io/odigos
+      commit: a0dd861b048751da72c2a2df892918fab3b7fb36
+      context: .
+      dockerfile: operator/Dockerfile
+      build_args:
+        DESCRIPTION: The
+        LD_FLAGS: -s -w
+        ODIGOS_VERSION: v1.0.170
+        RELEASE: v1.0.170
+        SERVICE_NAME: operator
+        SUMMARY: Odigos
+        VERSION: v1.0.170
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-odigos-io-odigos-2
+      source: d3
+      repo: https://github.com/odigos-io/odigos
+      commit: a0dd861b048751da72c2a2df892918fab3b7fb36
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        DESCRIPTION: Instrumentor
+        LD_FLAGS: -s -w
+        ODIGOS_VERSION: v1.0.170
+        RELEASE: v1.0.170
+        SERVICE_NAME: instrumentor
+        SUMMARY: Instrumentor
+        VERSION: v1.0.170
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-odigos-io-odigos-3
+      source: d3
+      repo: https://github.com/odigos-io/odigos
+      commit: 1438dc7237ca581210b09c1877a0716942130a78
+      context: .
+      dockerfile: frontend/Dockerfile
+      build_args:
+        DESCRIPTION: UI
+        LD_FLAGS: -s
+        ODIGOS_VERSION: v1.0.170
+        RELEASE: v1.0.170
+        SERVICE_NAME: ui
+        SUMMARY: UI
+        VERSION: v1.0.170
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-ollama-ollama
+      source: d3
+      repo: https://github.com/ollama/ollama
+      commit: fbe70396181222e2d91ca1d8895b11c5fd464c3f
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        CGO_CFLAGS: ""
+        CGO_CXXFLAGS: ""
+        GOFLAGS: ""
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: d3-ollama-ollama-archive
+      source: d3
+      repo: https://github.com/ollama/ollama
+      commit: fbe70396181222e2d91ca1d8895b11c5fd464c3f
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        CGO_CFLAGS: -O3
+        CGO_CXXFLAGS: -O3
+        GOFLAGS: -ldflags=-w -s "-X=github.com/ollama/ollama/version.Version=0.6.6-rc1" "-X=github.com/ollama/ollama/server.mode=release"
+      target: archive
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: d3-omnigres-omnigres-builder
+      source: d3
+      repo: https://github.com/omnigres/omnigres
+      commit: 0e2e47f48ce13897213e5dc0eff19594af92d535
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_PARALLEL_LEVEL: "4"
+        PG: "17"
+      target: builder
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: d3-omnigres-omnigres-pg
+      source: d3
+      repo: https://github.com/omnigres/omnigres
+      commit: d347be5ae1d79645ac277d19080eacba7b229cf8
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_PARALLEL_LEVEL: "4"
+        PG: "16"
+      target: pg
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: d3-open-webui-mcpo
+      source: d3
+      repo: https://github.com/open-webui/mcpo
+      commit: 334089b4065d48a6c6998104ededf777637e54aa
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_HASH: 8b41671bdde0f49cddcd3cdfff021b48ff03b79e
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-open-webui-open-webui
+      source: d3
+      repo: https://github.com/open-webui/open-webui
+      commit: d4f67bb26660e6ce17e28a3e694f7415777b61c9
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_HASH: b8103807cf1298a7e4756c58178eba0c8d596be7
+        USE_CUDA: "true"
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-opsre-watchalert
+      source: d3
+      repo: https://github.com/opsre/WatchAlert
+      commit: 87455f29a2ad31baf6e900bed545c99d1c445d3c
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        VERSION: ""
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-opsre-go-ldap-admin
+      source: d3
+      repo: https://github.com/opsre/go-ldap-admin
+      commit: 9e621c8a80b83b0dce2f08fd5eb7d04c7dc2cb45
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-paperless-ngx-paperless-ngx
+      source: d3
+      repo: https://github.com/paperless-ngx/paperless-ngx
+      commit: 51e6eed72afbc824bc2357ce74b6f104db43307f
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        PNGX_TAG_VERSION: dev
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-pgrok-pgrok
+      source: d3
+      repo: https://github.com/pgrok/pgrok
+      commit: 96f711bc36fceca3ccf52dd2a7d3d2cbaa7221a9
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_VERSION: v1.4.5+main.b88bbcb
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-pojntfx-weron
+      source: d3
+      repo: https://github.com/pojntfx/weron
+      commit: edd419de1de22c4a2f4efd0bf1287acefe7e85b5
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-power721-alist-tvbox-dockerfile-xiaoya
+      source: d3
+      repo: https://github.com/power721/alist-tvbox
+      commit: d3c95fade4ca3e561455dc6d0026c4226b468163
+      context: .
+      dockerfile: Dockerfile-xiaoya
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: d3-power721-alist-tvbox-dockerfile-base
+      source: d3
+      repo: https://github.com/power721/alist-tvbox
+      commit: ca42e518c699c4e2bcec78b4f3027bac693a0ce7
+      context: .
+      dockerfile: Dockerfile-base
+      build_args:
+        TAG: latest
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: d3-predibase-lorax
+      source: d3
+      repo: https://github.com/predibase/lorax
+      commit: 423bce05eb893445f951e923a933880e90444e20
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: d3-projectdiscovery-cloudlist
+      source: d3
+      repo: https://github.com/projectdiscovery/cloudlist
+      commit: 16937f05084e8604ffa72a05db62e069be116ac6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-projectdiscovery-httpx
+      source: d3
+      repo: https://github.com/projectdiscovery/httpx
+      commit: a10bd2d558be4b211354893072cec6c147c4a0d7
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-projectdiscovery-pdtm
+      source: d3
+      repo: https://github.com/projectdiscovery/pdtm
+      commit: ad43539b4af7e3598b8e6417532296ab766615bd
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-synctv-org-synctv
+      source: d3
+      repo: https://github.com/synctv-org/synctv
+      commit: 0df11b95928bb0f83147a1262b699fd4c8d4984d
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        VERSION: ""
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-sysadminsmedia-homebox-rootless
+      source: d3
+      repo: https://github.com/sysadminsmedia/homebox
+      commit: 635ad2672a4a50ad431291f5a02be92263d02f2f
+      context: .
+      dockerfile: Dockerfile.rootless
+      build_args:
+        COMMIT: aa96163d96b41f1698c182b15b0777f456cd5247
+        VERSION: 678/merge
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-tangly1024-notionnext
+      source: d3
+      repo: https://github.com/tangly1024/NotionNext
+      commit: 352e845cb444bd3789ec5537e9fc12e50ab906aa
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-tsukumijima-konomitv
+      source: d3
+      repo: https://github.com/tsukumijima/KonomiTV
+      commit: bc3d7bda7fbb12c0d324e3a8c2d085fc36c5c960
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-tursodatabase-libsql
+      source: d3
+      repo: https://github.com/tursodatabase/libsql
+      commit: 0ef59ff5659da8479b9be2cc67a9762d877a6114
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_DEBUG: "true"
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: m4
+    - id: d3-unitycatalog-unitycatalog
+      source: d3
+      repo: https://github.com/unitycatalog/unitycatalog
+      commit: 0b954e1a0c40392db2729558f44db8842871c068
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: scala
+    - id: d3-unum-cloud-usearch
+      source: d3
+      repo: https://github.com/unum-cloud/usearch
+      commit: e414f46b440fc2b989aca648fecfc4db35e22332
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-vogler-free-games-claimer
+      source: d3
+      repo: https://github.com/vogler/free-games-claimer
+      commit: a7b882f3a1b8637b721b1ae5c619dace6a5a179e
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BRANCH: mega-linter
+        COMMIT: 2a6f0733ab6384af1ab3ad1f30330d55c21d86bd
+        NOW: Sat,
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: d3-voxel51-fiftyone
+      source: d3
+      repo: https://github.com/voxel51/fiftyone
+      commit: d34b19635c94c35818d3992ce24ee0a585da802c
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        BUILD_TYPE: released
+        FO_VERSION: v1.5.2
+        PYTHON_VERSION: "3.11"
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-yaqwsx-kikit
+      source: d3
+      repo: https://github.com/yaqwsx/KiKit
+      commit: 715cfc90a505dbbf3e1e4101c8269ddd764d744b
+      context: .
+      dockerfile: Dockerfile
+      build_args:
+        ADDITIONAL_PACKAGES: ""
+        ADDITIONAL_PYTHON_PACKAGES: ""
+        KICAD_VERSION: "7.0"
+        REPO: ubuntu
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-yassinebenaid-bunster
+      source: d3
+      repo: https://github.com/yassinebenaid/bunster
+      commit: 3a6eb4b082c4670198a87c4d884159c30ffdbb77
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-yihong0618-xiaogpt
+      source: d3
+      repo: https://github.com/yihong0618/xiaogpt
+      commit: 3a586af3969d64ac7f3c954b0002a2df2d162466
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-yourselfhosted-slash
+      source: d3
+      repo: https://github.com/yourselfhosted/slash
+      commit: fdabfe7bfa6781e8dbbefc4a96930b36e07cf141
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: d3-zackees-transcribe-anything
+      source: d3
+      repo: https://github.com/zackees/transcribe-anything
+      commit: d4ea221b6a83714760b6f552b98becd55d11d380
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: d3-zhayujie-chatgpt-on-wechat-latest
+      source: d3
+      repo: https://github.com/zhayujie/chatgpt-on-wechat
+      commit: 40b62e9d383ba787555768b62c3f516b0f8b57df
+      context: .
+      dockerfile: docker/Dockerfile.latest
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python

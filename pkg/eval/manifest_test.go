@@ -48,6 +48,9 @@ items:
     platform: linux/arm64
     target: runtime
     distro_family: alpine
+    language: go
+    smoke:
+      run_for: 10s
 `
 
 func TestParseManifest(t *testing.T) {
@@ -65,6 +68,8 @@ func TestParseManifest(t *testing.T) {
 	require.Equal(t, "linux/arm64", server.Platform)
 	require.Equal(t, "runtime", server.Target)
 	require.Equal(t, DefaultSmokeTimeout, server.Smoke.Timeout)
+	require.Equal(t, 10*time.Second, server.Smoke.RunFor)
+	require.Equal(t, "go", server.Language)
 	require.Empty(t, server.Smoke.Command, "no command runs the image as it is")
 }
 
@@ -92,6 +97,7 @@ func TestParseManifest_Rejects(t *testing.T) {
 			return strings.Replace(s, "dockerfile: flask/app/Dockerfile", "dockerfile: ../Dockerfile", 1)
 		}), "inside the repository"},
 		{"absolute path", item(func(s string) string { return strings.Replace(s, "context: flask/app", "context: /flask", 1) }), "inside the repository"},
+		{"negative run_for", item(func(s string) string { return strings.Replace(s, "timeout: 90s", "run_for: -1s", 1) }), "must not be negative"},
 		{"duplicate id", strings.Replace(validManifest, "id: go-server", "id: flask-app", 1), "duplicate id"},
 		{"not YAML", "items: [", "parse manifest"},
 	}
@@ -128,6 +134,10 @@ func TestLoadManifestAndSelect(t *testing.T) {
 func TestRepositoryManifestsAreValid(t *testing.T) {
 	files, err := filepath.Glob(filepath.Join("..", "..", "eval", "benchmark", "*.yaml"))
 	require.NoError(t, err)
+	candidates, err := filepath.Glob(filepath.Join("..", "..", "eval", "benchmark", "candidates", "*.yaml"))
+	require.NoError(t, err)
+	files = append(files, candidates...)
+	require.NotEmpty(t, files)
 	for _, f := range files {
 		_, err := LoadManifest(f)
 		require.NoError(t, err, f)
