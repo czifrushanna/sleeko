@@ -69,7 +69,7 @@ func TestFilter(t *testing.T) {
 	}, "noop")
 	delete(recs, "not-run")
 
-	kept, dropped := filter(items, recs, nil)
+	kept, dropped := filter(items, recs, nil, nil, false)
 	require.Len(t, kept, 2)
 	require.Equal(t, "debian", kept[0].item.DistroFamily, "set from Trivy; the later record wins")
 	require.Equal(t, "scratch", kept[1].item.DistroFamily)
@@ -79,7 +79,7 @@ func TestFilter(t *testing.T) {
 		{"not-run", "no record in the results"},
 	}, dropped)
 
-	only, _ := filter(items, recs, map[string]bool{"ok-scratch": true})
+	only, _ := filter(items, recs, map[string]bool{"ok-scratch": true}, nil, false)
 	require.Len(t, only, 1)
 }
 
@@ -123,4 +123,60 @@ func TestDistroFamily(t *testing.T) {
 	require.Equal(t, "debian", distroFamily("debian 12.8"))
 	require.Equal(t, "alpine", distroFamily("Alpine 3.20.10"))
 	require.Equal(t, "scratch", distroFamily(""))
+}
+
+func sized(id, lang, distro string, size int64) keptItem {
+	r := measured(id, distro+" 1", "", gates())
+	r.Original.Size = size
+	return keptItem{item: eval.Item{ID: id, Language: lang, DistroFamily: distro}, rec: r}
+}
+
+func ids(ks []keptItem) []string {
+	var out []string
+	for _, k := range ks {
+		out = append(out, k.item.ID)
+	}
+	return out
+}
+
+func TestBalance(t *testing.T) {
+	passing := []keptItem{
+		sized("py-1", "python", "debian", 100), sized("py-2", "python", "alpine", 100),
+		sized("py-3", "python", "debian", 100), sized("go-1", "go", "alpine", 100),
+		sized("rb-big", "ruby", "debian", 900), sized("rb-small", "ruby", "debian", 50),
+		sized("rb-alpine", "ruby", "alpine", 500), sized("php-1", "php", "debian", 100),
+		sized("unknown", "", "debian", 1),
+	}
+
+	// The current benchmark stays; new items fill the thinnest languages
+	// first, distro variety before size within a language.
+	got := balance(passing, map[string]bool{"py-1": true, "py-2": true}, 6, 0)
+	require.Equal(t, []string{"py-1", "py-2", "go-1", "php-1", "rb-small", "rb-alpine"}, ids(got))
+
+	// A per-language cap leaves out good candidates; the unknown language
+	// comes last.
+	got = balance(passing, nil, 0, 2)
+	require.Equal(t, []string{"go-1", "php-1", "py-1", "rb-alpine", "py-2", "rb-small", "unknown"}, ids(got))
+
+	// No limits keeps everything.
+	require.Len(t, balance(passing, nil, 0, 0), len(passing))
+}
+
+func TestFilter_ScannerBlindAndExcluded(t *testing.T) {
+	items := []eval.Item{{ID: "blind"}, {ID: "scratch-clean"}, {ID: "seen"}, {ID: "excluded"}}
+	blind := measured("blind", "ubuntu 14.04", "", gates())
+	blind.Original.Severities = map[string]int{}
+	clean := measured("scratch-clean", "", "", gates())
+	clean.Original.Severities = map[string]int{}
+	recs := latest([]eval.Record{blind, clean, measured("seen", "debian 12", "", gates()), measured("excluded", "debian 12", "", gates())}, "noop")
+
+	kept, dropped := filter(items, recs, nil, map[string]bool{"excluded": true}, false)
+	require.Equal(t, []string{"scratch-clean", "seen"}, ids(kept), "a scratch image may genuinely have nothing")
+	require.Equal(t, []droppedItem{
+		{"blind", "ubuntu 14.04 image scans with no findings: likely unreadable by the scanner"},
+		{"excluded", "excluded by -exclude"},
+	}, dropped)
+
+	kept, _ = filter(items, recs, nil, nil, true)
+	require.Len(t, kept, 4, "-allow-zero-v keeps it")
 }

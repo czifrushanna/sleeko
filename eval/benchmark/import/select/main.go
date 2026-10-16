@@ -51,6 +51,11 @@ func main() {
 	out := flag.String("out", "", "manifest to write the kept items to")
 	src := flag.String("src", defaultSrc(), "sleeko-eval's checkout directory (<work>/src), to read Dockerfiles for the diversity table")
 	ids := flag.String("items", "", "comma-separated ids to keep (default: every item that passes)")
+	keepFile := flag.String("keep", "", "manifest whose passing items are always kept, before any others (the current benchmark)")
+	target := flag.Int("target", 0, "stop at this many items (default: no limit)")
+	maxPerLanguage := flag.Int("max-per-language", 0, "keep at most this many items per language (default: no limit)")
+	exclude := flag.String("exclude", "", "comma-separated ids to leave out regardless, e.g. images the scanner cannot fully see")
+	allowZeroV := flag.Bool("allow-zero-v", false, "keep non-scratch images whose O′ scan found nothing (dropped by default as likely unreadable by Trivy)")
 	flag.Parse()
 	if *results == "" || *out == "" || flag.NArg() == 0 {
 		log.Fatal("usage: select -results noop.jsonl -out v1.yaml CANDIDATES.yaml...")
@@ -77,9 +82,33 @@ func main() {
 		}
 	}
 
-	kept, dropped := filter(items, latest(recs, *pipeline), want)
+	excluded := map[string]bool{}
+	if *exclude != "" {
+		for _, id := range strings.Split(*exclude, ",") {
+			excluded[id] = true
+		}
+	}
+	kept, dropped := filter(items, latest(recs, *pipeline), want, excluded, *allowZeroV)
 	for _, d := range dropped {
 		log.Printf("dropped %s: %s", d.id, d.reason)
+	}
+
+	var keep map[string]bool
+	if *keepFile != "" {
+		m, err := eval.LoadManifest(*keepFile)
+		if err != nil {
+			log.Fatalf("%s: %v", *keepFile, err)
+		}
+		keep = map[string]bool{}
+		for _, it := range m.Items {
+			keep[it.ID] = true
+		}
+	}
+	passing := len(kept)
+	kept = balance(kept, keep, *target, *maxPerLanguage)
+	if len(kept) < passing {
+		log.Printf("left out %d passing items to keep the benchmark varied (target %d, at most %d per language)",
+			passing-len(kept), *target, *maxPerLanguage)
 	}
 
 	m := eval.Manifest{Items: make([]eval.Item, 0, len(kept))}
@@ -126,12 +155,21 @@ type droppedItem struct {
 	id, reason string
 }
 
-// filter keeps the items whose no-op attempt measured cleanly.
-func filter(items []eval.Item, recs map[string]eval.Record, want map[string]bool) ([]keptItem, []droppedItem) {
+// filter keeps the items whose no-op attempt measured cleanly and whose
+// image the scanner can actually see. An image that is not FROM scratch but
+// scans with no findings at all is dropped unless allowZeroV: Trivy reports
+// nothing for OS releases it has no advisories for (Ubuntu 14.04, 16.04) and
+// for images that deleted their package database, and for such an image a
+// candidate that moves to a supported base would look worse for doing so.
+func filter(items []eval.Item, recs map[string]eval.Record, want, excluded map[string]bool, allowZeroV bool) ([]keptItem, []droppedItem) {
 	var kept []keptItem
 	var dropped []droppedItem
 	for _, it := range items {
 		if want != nil && !want[it.ID] {
+			continue
+		}
+		if excluded[it.ID] {
+			dropped = append(dropped, droppedItem{it.ID, "excluded by -exclude"})
 			continue
 		}
 		rec, ok := recs[it.ID]
@@ -143,10 +181,22 @@ func filter(items []eval.Item, recs map[string]eval.Record, want map[string]bool
 			dropped = append(dropped, droppedItem{it.ID, reason})
 			continue
 		}
+		if !allowZeroV && rec.Original.OS != "" && findings(rec.Original.Severities) == 0 {
+			dropped = append(dropped, droppedItem{it.ID, fmt.Sprintf("%s image scans with no findings: likely unreadable by the scanner", rec.Original.OS)})
+			continue
+		}
 		it.DistroFamily = distroFamily(rec.Original.OS)
 		kept = append(kept, keptItem{item: it, rec: rec})
 	}
 	return kept, dropped
+}
+
+func findings(sev map[string]int) int {
+	n := 0
+	for _, c := range sev {
+		n += c
+	}
+	return n
 }
 
 // failure says why a no-op record disqualifies its item; "" when it does not.
@@ -174,6 +224,69 @@ func firstLine(s string) string {
 		line = line[:160] + "…"
 	}
 	return line
+}
+
+// balance chooses which passing items make the benchmark, favouring variety
+// over volume. Items in keep (the current benchmark) come first, so it stays
+// stable. The rest are taken one at a time from the language with the fewest
+// items so far; within it, from the distro family with the fewest items so
+// far, then the smallest image (cheaper to evaluate), then by id. Items with
+// no known language come last. target and maxPerLanguage of 0 mean no limit.
+func balance(passing []keptItem, keep map[string]bool, target, maxPerLanguage int) []keptItem {
+	var chosen, rest []keptItem
+	langs, distros := map[string]int{}, map[string]int{}
+	add := func(k keptItem) {
+		chosen = append(chosen, k)
+		langs[k.item.Language]++
+		distros[k.item.DistroFamily]++
+	}
+	for _, k := range passing {
+		if keep[k.item.ID] {
+			add(k)
+		} else {
+			rest = append(rest, k)
+		}
+	}
+
+	full := func() bool { return target > 0 && len(chosen) >= target }
+	for len(rest) > 0 && !full() {
+		best := -1
+		for i, k := range rest {
+			lang := k.item.Language
+			if maxPerLanguage > 0 && langs[lang] >= maxPerLanguage {
+				continue
+			}
+			if best < 0 || better(k, rest[best], langs, distros) {
+				best = i
+			}
+		}
+		if best < 0 {
+			break
+		}
+		add(rest[best])
+		rest = append(rest[:best], rest[best+1:]...)
+	}
+	return chosen
+}
+
+// better reports whether a should be chosen before b.
+func better(a, b keptItem, langs, distros map[string]int) bool {
+	if (a.item.Language == "") != (b.item.Language == "") {
+		return b.item.Language == ""
+	}
+	if la, lb := langs[a.item.Language], langs[b.item.Language]; la != lb {
+		return la < lb
+	}
+	if a.item.Language != b.item.Language {
+		return a.item.Language < b.item.Language
+	}
+	if da, db := distros[a.item.DistroFamily], distros[b.item.DistroFamily]; da != db {
+		return da < db
+	}
+	if a.rec.Original.Size != b.rec.Original.Size {
+		return a.rec.Original.Size < b.rec.Original.Size
+	}
+	return a.item.ID < b.item.ID
 }
 
 // distroFamily turns Trivy's "debian 12.8" into "debian"; an image without a

@@ -38,7 +38,10 @@ manifest that stops parsing fails the build.
 - `candidates/`: imported items, not yet known to build. `demo.yaml` is a
   hand-written list from `docker/awesome-compose`; `d3.yaml` comes from D³
   (`import/d3`), one item per (repository, Dockerfile, target), at the parent
-  of the commit whose CI build failed.
+  of the commit whose CI build failed. `flake4dock.yaml` is a sample of
+  FLAKE4DOCK's non-flaky Dockerfiles (`import/flake4dock`), weighted towards
+  the ecosystems the benchmark is thin on; the dataset has no commits or
+  paths, so each is recovered from git by matching the Dockerfile's content.
 - `v1.yaml`: the benchmark: candidates that built, passed their smoke test and
   measured cleanly with a no-op pipeline, chosen by `import/select`.
 
@@ -57,8 +60,20 @@ bin/sleeko-eval run --pipeline noop --reps 1 --build-timeout 10m --out filter.js
 
 # 3. keep what passed; prints why the rest failed and the diversity table
 go run ./eval/benchmark/import/select -results filter.jsonl -out eval/benchmark/v1.yaml \
-  eval/benchmark/candidates/demo.yaml eval/benchmark/candidates/d3.yaml
+  -keep eval/benchmark/v1.yaml -target 60 -max-per-language 9 \
+  eval/benchmark/candidates/*.yaml
 ```
+
+`select` favours variety over volume: the `-keep` manifest's passing items
+stay; the rest are added one at a time from the language with the fewest
+items so far, then the distro family with the fewest, then the smallest image.
+`-max-per-language` and `-target` leave out good candidates on purpose.
+It also drops images the scanner cannot see: a non-scratch image whose O′ scan
+finds nothing is almost always one Trivy has no advisories for (Ubuntu 14.04,
+16.04) or one that deleted its package database, and on such an image a
+candidate moving to a supported base would wrongly look worse
+(`-allow-zero-v` keeps them). `-exclude` leaves out named items regardless,
+for cases the tool cannot detect itself; say why in the manifest header.
 
 Docker Hub allows 100 anonymous pulls an hour, and every build pulls its base
 images; `docker login` raises that. A build that hits the limit is recorded as
