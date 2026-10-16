@@ -34,11 +34,17 @@ const (
 	// StatusOptimizerFailed: the pipeline under evaluation returned no
 	// candidate. It counts as an unsuccessful attempt.
 	StatusOptimizerFailed = "optimizer_failed"
-	// StatusInfraError: the harness could not measure the attempt (checkout,
-	// O′ build or scan, a failing O′ smoke test, a scan of C). It says
-	// nothing about the pipeline: the report leaves it out, and a resumed run
+	// StatusInfraError: the harness could not measure the attempt: a
+	// checkout, a scan, or a build the machine broke (BuildKit killed by the
+	// OOM killer, a registry rate limit, a full disk). It says nothing about
+	// the pipeline or the item: the report leaves it out, and a resumed run
 	// retries it.
 	StatusInfraError = "infra_error"
+	// StatusItemInvalid: the item itself cannot be measured today: its
+	// original Dockerfile does not parse, O′ does not build (or takes longer
+	// than the build timeout), or O′ fails its own smoke test. The report
+	// leaves it out, and a resumed run does not retry it.
+	StatusItemInvalid = "item_invalid"
 )
 
 // Record is one attempt: one pipeline run on one item, measured.
@@ -56,7 +62,9 @@ type Record struct {
 
 	Original  *ImageInfo `json:"original,omitempty"`
 	Candidate *ImageInfo `json:"candidate,omitempty"`
-	// CandidateDockerfile is kept so failures can be inspected and cited.
+	// OriginalDockerfile and CandidateDockerfile are kept so failures can be
+	// inspected, cited and turned into test fixtures.
+	OriginalDockerfile  string `json:"original_dockerfile,omitempty"`
 	CandidateDockerfile string `json:"candidate_dockerfile,omitempty"`
 
 	Diagnostics []string `json:"diagnostics,omitempty"`
@@ -115,9 +123,10 @@ func (r *Record) key() attemptKey {
 }
 
 // final reports whether the record settles its attempt, so a resumed run
-// skips it. Infrastructure errors do not: the attempt is retried.
+// skips it. Infrastructure errors do not: the attempt is retried. An invalid
+// item does: rebuilding a broken O′ would only fail again.
 func (r *Record) final() bool {
-	return r.Status == StatusMeasured || r.Status == StatusOptimizerFailed
+	return r.Status == StatusMeasured || r.Status == StatusOptimizerFailed || r.Status == StatusItemInvalid
 }
 
 // ReadRecords reads a JSONL file of records. A missing file reads as empty,
