@@ -49,8 +49,8 @@ type PipelineReport struct {
 	GateFailures map[score.GateID]int `json:"gate_failures"`
 	// OptimizerFailures counts attempts where the pipeline produced nothing.
 	OptimizerFailures int `json:"optimizer_failures"`
-	// Unmeasured counts attempts the harness could not measure; they are
-	// not part of any other number.
+	// Unmeasured counts attempts that could not be measured, through the
+	// harness's fault or the item's; they are not part of any other number.
 	Unmeasured int `json:"unmeasured"`
 }
 
@@ -82,7 +82,7 @@ func BuildReport(records []Record) []PipelineReport {
 		byDistro := map[string][]Record{}
 		for _, rec := range recs {
 			switch rec.Status {
-			case StatusInfraError:
+			case StatusInfraError, StatusItemInvalid:
 				pr.Unmeasured++
 				continue
 			case StatusOptimizerFailed:

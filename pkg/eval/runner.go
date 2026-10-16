@@ -16,6 +16,7 @@ package eval
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"os"
@@ -39,6 +40,10 @@ type Runner struct {
 
 	// WorkDir holds the candidate Dockerfiles and image archives.
 	WorkDir string
+	// ScanDir, when set, receives every O′ and C scan the records refer to,
+	// one <digest>.json per image, so the results can be analysed down to
+	// the individual CVE without the work directory's cache.
+	ScanDir string
 	// Pipeline names the configuration in records ("W0", "noop", ...).
 	Pipeline string
 	// Repetitions is the number of attempts per item.
@@ -52,6 +57,14 @@ type Runner struct {
 
 	Weights       score.Weights
 	SizeTolerance float64
+
+	// MaxOriginalAge rebuilds O′ when its cached build is older than this;
+	// 0 accepts any age. Builds pull base images, so an O′ built days earlier
+	// can differ from a C built now by more than the Dockerfile. With a
+	// limit of hours, the first run of a measurement session rebuilds O′,
+	// and a resumed run and the session's other pipelines reuse that build,
+	// so every attempt of the session compares against the same O′.
+	MaxOriginalAge time.Duration
 
 	// Model and PromptHash are copied into every record.
 	Model      string
@@ -141,29 +154,34 @@ func (r *Runner) runItem(ctx context.Context, it Item, reps []int, dbVersion str
 
 	src, err := r.Source.Checkout(ctx, it.Repo, it.Commit)
 	if err != nil {
-		return r.infraErrors(newRecord, reps, fmt.Errorf("checkout: %w", err))
+		return r.unmeasured(newRecord, reps, StatusInfraError, fmt.Errorf("checkout: %w", err))
 	}
 	original, err := os.ReadFile(filepath.Join(src, it.Dockerfile))
 	if err != nil {
-		return r.infraErrors(newRecord, reps, fmt.Errorf("read original Dockerfile: %w", err))
+		return r.unmeasured(newRecord, reps, StatusItemInvalid, fmt.Errorf("read original Dockerfile: %w", err))
 	}
 	oFile, err := dfparse.Parse(string(original))
 	if err != nil {
-		return r.infraErrors(newRecord, reps, fmt.Errorf("original Dockerfile does not parse: %w", err))
+		return r.unmeasured(newRecord, reps, StatusItemInvalid, fmt.Errorf("original Dockerfile does not parse: %w", err))
 	}
 
 	base, err := r.baseline(ctx, it, src, dbVersion)
 	if err != nil {
-		return r.infraErrors(newRecord, reps, fmt.Errorf("O′: %w", err))
+		status := StatusInfraError
+		var invalid *itemInvalidError
+		if errors.As(err, &invalid) {
+			status = StatusItemInvalid
+		}
+		return r.unmeasured(newRecord, reps, status, fmt.Errorf("O′: %w", err))
 	}
 	if base.SmokeError != "" {
 		// A smoke test O′ fails would fail every candidate's G5: the item
 		// is broken, not the pipeline.
-		return r.infraErrors(newRecord, reps, fmt.Errorf("O′ fails its own smoke test: %s", base.SmokeError))
+		return r.unmeasured(newRecord, reps, StatusItemInvalid, fmt.Errorf("O′ fails its own smoke test: %s", base.SmokeError))
 	}
 	report, err := base.Scan.HarborReport()
 	if err != nil {
-		return r.infraErrors(newRecord, reps, fmt.Errorf("O′ scan report: %w", err))
+		return r.unmeasured(newRecord, reps, StatusInfraError, fmt.Errorf("O′ scan report: %w", err))
 	}
 
 	for _, rep := range reps {
@@ -180,10 +198,12 @@ func (r *Runner) runItem(ctx context.Context, it Item, reps []int, dbVersion str
 	return nil
 }
 
-func (r *Runner) infraErrors(newRecord func(int) Record, reps []int, cause error) error {
+// unmeasured records every pending repetition of an item that could not be
+// measured, with the status saying whose fault it was.
+func (r *Runner) unmeasured(newRecord func(int) Record, reps []int, status string, cause error) error {
 	for _, rep := range reps {
 		rec := newRecord(rep)
-		rec.Status = StatusInfraError
+		rec.Status = status
 		rec.Error = cause.Error()
 		if err := r.Out.Write(rec); err != nil {
 			return fmt.Errorf("write record: %w", err)
@@ -201,20 +221,32 @@ func (r *Runner) baseline(ctx context.Context, it Item, src, dbVersion string) (
 	if ok, err := r.Cache.get("baseline", key, &b); err != nil {
 		return nil, err
 	} else if ok {
-		r.logf("%s: O′ from cache (built %s)", it.ID, b.Image.BuiltAt.Format(time.RFC3339))
-		return &b, nil
+		age := r.now().Sub(b.Image.BuiltAt)
+		if r.MaxOriginalAge <= 0 || age <= r.MaxOriginalAge {
+			r.logf("%s: O′ from cache (built %s)", it.ID, b.Image.BuiltAt.Format(time.RFC3339))
+			return &b, r.saveScan(b.Image.Digest, ScanOutput{Result: b.Scan, OS: b.Image.OS})
+		}
+		r.logf("%s: cached O′ is %s old, rebuilding", it.ID, age.Round(time.Minute))
 	}
 
 	r.logf("%s: building O′", it.ID)
 	img, err := r.build(ctx, r.spec(it, src, filepath.Join(src, it.Dockerfile), "o", key[:12]))
 	if err != nil {
-		return nil, fmt.Errorf("build: %w", err)
+		err = fmt.Errorf("build: %w", err)
+		if !machineFailure(err) {
+			// O′ itself does not build (or not in time): the item is broken.
+			err = &itemInvalidError{err}
+		}
+		return nil, err
 	}
 	defer r.remove(img)
 
 	scan, err := r.scan(ctx, img, dbVersion)
 	if err != nil {
 		return nil, fmt.Errorf("scan: %w", err)
+	}
+	if err := r.saveScan(img.Digest, scan); err != nil {
+		return nil, err
 	}
 
 	b = baseline{
@@ -248,6 +280,39 @@ func (r *Runner) scan(ctx context.Context, img Image, dbVersion string) (ScanOut
 		return out, err
 	}
 	return out, r.Cache.put("scan", key, out)
+}
+
+// saveScan writes a scan into ScanDir, once per digest.
+func (r *Runner) saveScan(digest string, scan ScanOutput) error {
+	if r.ScanDir == "" {
+		return nil
+	}
+	file := filepath.Join(r.ScanDir, strings.ReplaceAll(digest, ":", "-")+".json")
+	if _, err := os.Stat(file); err == nil {
+		return nil
+	}
+	if err := os.MkdirAll(r.ScanDir, 0o755); err != nil {
+		return err
+	}
+	data, err := json.MarshalIndent(scan, "", " ")
+	if err != nil {
+		return err
+	}
+	// A unique temporary file: two items can share an image digest.
+	tmp, err := os.CreateTemp(r.ScanDir, ".scan-*")
+	if err != nil {
+		return err
+	}
+	if _, err := tmp.Write(data); err != nil {
+		tmp.Close()
+		os.Remove(tmp.Name())
+		return err
+	}
+	if err := tmp.Close(); err != nil {
+		os.Remove(tmp.Name())
+		return err
+	}
+	return os.Rename(tmp.Name(), file)
 }
 
 func (r *Runner) spec(it Item, src, dockerfile, kind, suffix string) BuildSpec {
@@ -288,6 +353,7 @@ func (r *Runner) remove(img Image) {
 // Gates are evaluated in order; once one makes the rest impossible (no
 // parse, invented sources, no build), the remaining ones are NotChecked.
 func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfparse.File, original, report string, base *baseline, rec *Record) {
+	rec.OriginalDockerfile = original
 	start := r.now()
 	out, err := r.Optimizer.Optimize(ctx, OptimizeInput{Dockerfile: original, ScanReport: report})
 	rec.LatencyMS = r.now().Sub(start).Milliseconds()
@@ -303,6 +369,10 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 
 	gates := map[score.GateID]score.Gate{}
 	finish := func() {
+		if rec.Status == StatusInfraError {
+			// Not measured: gates evaluated so far say nothing.
+			return
+		}
 		for _, id := range score.AllGates {
 			g, ok := gates[id]
 			if !ok {
@@ -335,6 +405,12 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 		return
 	}
 	img, buildErr := r.build(ctx, r.spec(it, src, dockerfile, "c-"+sanitizeTag(r.Pipeline), fmt.Sprint(rec.Repetition)))
+	if machineFailure(buildErr) {
+		// The machine broke the build, not the candidate: retry it later
+		// rather than count a G4 failure against the pipeline.
+		rec.Status, rec.Error = StatusInfraError, fmt.Sprintf("build candidate: %v", buildErr)
+		return
+	}
 	gates[score.G4Build] = score.CheckBuild(buildErr)
 	if buildErr != nil {
 		return
@@ -342,6 +418,9 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	defer r.remove(img)
 
 	scan, err := r.scan(ctx, img, rec.TrivyDB)
+	if err == nil {
+		err = r.saveScan(img.Digest, scan)
+	}
 	if err != nil {
 		// The candidate built; failing to scan it is the harness's problem.
 		rec.Status, rec.Error = StatusInfraError, fmt.Sprintf("scan candidate: %v", err)
@@ -394,6 +473,41 @@ func (r *Runner) writeCandidate(it Item, src, content string, rep int) (string, 
 		return "", err
 	}
 	return file, nil
+}
+
+// itemInvalidError marks a baseline failure that is the item's own.
+type itemInvalidError struct{ err error }
+
+func (e *itemInvalidError) Error() string { return e.err.Error() }
+func (e *itemInvalidError) Unwrap() error { return e.err }
+
+// machineSignatures are the error texts of builds the machine broke rather
+// than the Dockerfile: BuildKit gone (killed by the kernel's OOM killer, or
+// restarted), the Docker daemon unreachable, a registry rate limit, a full
+// disk, or the run being cancelled. A network error inside a RUN step is not
+// among them: a download that fails is as often the Dockerfile's drift.
+var machineSignatures = []string{
+	"rpc error: code = Unavailable",
+	"error reading from server: EOF",
+	"failed to receive status",
+	"Cannot connect to the Docker daemon",
+	"toomanyrequests",
+	"no space left on device",
+	"context canceled",
+}
+
+// machineFailure reports whether a build error is the machine's fault.
+func machineFailure(err error) bool {
+	if err == nil {
+		return false
+	}
+	msg := err.Error()
+	for _, s := range machineSignatures {
+		if strings.Contains(msg, s) {
+			return true
+		}
+	}
+	return false
 }
 
 // sanitizeTag makes a pipeline name usable in an image tag and a path.

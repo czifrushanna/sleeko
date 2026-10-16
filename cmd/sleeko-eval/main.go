@@ -17,6 +17,7 @@
 //	sleeko-eval db     [--work DIR] [--trivy-image IMAGE]
 //	sleeko-eval run    --manifest FILE --pipeline STAGES|noop [--name NAME] [--reps N] [--out FILE] ...
 //	sleeko-eval report [--out FILE] RESULTS.jsonl...
+//	sleeko-eval failures [--gate G] [--out DIR] RESULTS.jsonl...
 //
 // `db` downloads Trivy's vulnerability database once; every later scan uses
 // that copy unchanged. `run` appends one JSONL record per attempt and skips
@@ -27,16 +28,20 @@ package main
 
 import (
 	"context"
+	"crypto/sha256"
 	"errors"
 	"flag"
 	"fmt"
 	"io"
 	"log"
 	"os"
+	"os/exec"
 	"os/signal"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 	"syscall"
+	"time"
 
 	"github.com/czifrushanna/sleeko/pkg/adapter"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
@@ -49,6 +54,7 @@ const usage = `usage:
   sleeko-eval db     [flags]                 download the Trivy database
   sleeko-eval run    [flags]                 measure a pipeline over the benchmark
   sleeko-eval report [flags] RESULTS.jsonl...  write the markdown report
+  sleeko-eval failures [flags] RESULTS.jsonl... list failed attempts, save them as fixtures
 
 Run 'sleeko-eval <command> -h' for the flags of a command.
 `
@@ -71,6 +77,8 @@ func main() {
 		err = runEval(ctx, os.Args[2:])
 	case "report":
 		err = runReport(os.Args[2:])
+	case "failures":
+		err = runFailures(os.Args[2:])
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(2)
@@ -116,11 +124,17 @@ func runDB(ctx context.Context, args []string) error {
 	fs := flag.NewFlagSet("db", flag.ExitOnError)
 	var common commonFlags
 	common.register(fs)
+	replace := fs.Bool("replace", false, "replace a database that is already there")
 	fs.Parse(args)
 
 	scanner, _, err := common.scanner()
 	if err != nil {
 		return err
+	}
+	// Every pipeline of a study must be scanned with the same database, so
+	// an existing one is only replaced on purpose.
+	if version, err := scanner.DBVersion(ctx); err == nil && !*replace {
+		return fmt.Errorf("a database is already there (%s); comparisons need the same one, pass --replace to download a new one anyway", version)
 	}
 	if err := scanner.DownloadDB(ctx); err != nil {
 		return err
@@ -145,6 +159,8 @@ func runEval(ctx context.Context, args []string) error {
 	out := fs.String("out", "results.jsonl", "JSONL file to append records to")
 	concurrency := fs.Int("concurrency", 1, "items processed at once")
 	buildTimeout := fs.Duration("build-timeout", 0, "limit for each image build, e.g. 10m (default: none)")
+	maxOriginalAge := fs.Duration("max-original-age", 0, "rebuild O′ when its cached build is older than this, e.g. 12h (default: any age)")
+	allowMixed := fs.Bool("allow-mixed-runs", false, "resume into --out even if code, pipeline, model, prompt, manifest or Trivy DB changed")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	fs.Parse(args)
 
@@ -168,13 +184,58 @@ func runEval(ctx context.Context, args []string) error {
 		return err
 	}
 
-	optimizer, model, promptHash, err := buildOptimizer(*stages)
+	optimizer, llm, err := buildOptimizer(*stages)
 	if err != nil {
 		return err
 	}
 
 	scanner, work, err := common.scanner()
 	if err != nil {
+		return err
+	}
+	dbVersion, err := scanner.DBVersion(ctx)
+	if err != nil {
+		return err
+	}
+
+	// Everything that produced the records goes next to them, once per
+	// invocation; a resume that would mix experiments is refused.
+	base := strings.TrimSuffix(*out, filepath.Ext(*out))
+	manifestData, err := os.ReadFile(*manifestFile)
+	if err != nil {
+		return err
+	}
+	selectedIDs := make([]string, 0, len(selected))
+	for _, it := range selected {
+		selectedIDs = append(selectedIDs, it.ID)
+	}
+	info := eval.RunInfo{
+		StartedAt:      time.Now().UTC(),
+		Code:           codeVersion(),
+		Pipeline:       *name,
+		Stages:         *stages,
+		Model:          llm.Model,
+		APIBaseURL:     llm.APIBaseURL,
+		MaxTokens:      llm.Budget.MaxTokens,
+		ContextWindow:  llm.Budget.ContextWindow,
+		Prompt:         llm.Prompt,
+		Manifest:       *manifestFile,
+		ManifestSHA256: fmt.Sprintf("%x", sha256.Sum256(manifestData)),
+		Items:          selectedIDs,
+		Repetitions:    *reps,
+		Concurrency:    *concurrency,
+		BuildTimeout:   buildTimeout.String(),
+		MaxOriginalAge: maxOriginalAge.String(),
+		SizeTolerance:  *tolerance,
+		Weights:        score.DefaultWeights,
+		TrivyImage:     common.trivyImage,
+		TrivyDB:        dbVersion,
+		Docker:         dockerVersion(ctx),
+	}
+	if llm.Prompt != "" {
+		info.PromptHash = eval.PromptHash(llm.Prompt)
+	}
+	if err := eval.AppendRunInfo(base+".runs.jsonl", info, *allowMixed); err != nil {
 		return err
 	}
 
@@ -189,56 +250,137 @@ func runEval(ctx context.Context, args []string) error {
 	defer f.Close()
 
 	r := &eval.Runner{
-		Source:        &eval.GitSource{Dir: filepath.Join(work, "src")},
-		Builder:       &eval.DockerBuilder{},
-		Scanner:       scanner,
-		Smoker:        &eval.DockerSmoker{},
-		Optimizer:     optimizer,
-		Cache:         &eval.Cache{Dir: filepath.Join(work, "cache")},
-		WorkDir:       work,
-		Pipeline:      *name,
-		Repetitions:   *reps,
-		Concurrency:   *concurrency,
-		BuildTimeout:  *buildTimeout,
-		Weights:       score.DefaultWeights,
-		SizeTolerance: *tolerance,
-		Model:         model,
-		PromptHash:    promptHash,
-		Out:           eval.NewRecordWriter(f),
-		Done:          done,
-		Logf:          log.Printf,
+		Source:         &eval.GitSource{Dir: filepath.Join(work, "src")},
+		Builder:        &eval.DockerBuilder{},
+		Scanner:        scanner,
+		Smoker:         &eval.DockerSmoker{},
+		Optimizer:      optimizer,
+		Cache:          &eval.Cache{Dir: filepath.Join(work, "cache")},
+		WorkDir:        work,
+		Pipeline:       *name,
+		Repetitions:    *reps,
+		Concurrency:    *concurrency,
+		BuildTimeout:   *buildTimeout,
+		MaxOriginalAge: *maxOriginalAge,
+		Weights:        score.DefaultWeights,
+		SizeTolerance:  *tolerance,
+		Model:          llm.Model,
+		PromptHash:     info.PromptHash,
+		ScanDir:        base + "-scans",
+		Out:            eval.NewRecordWriter(f),
+		Done:           done,
+		Logf:           log.Printf,
 	}
 	return r.Run(ctx, selected)
 }
 
-// buildOptimizer returns the optimizer for --pipeline, with the model and
-// prompt hash to record. A real pipeline reads the adapter's configuration.
-func buildOptimizer(stages string) (eval.Optimizer, string, string, error) {
+// buildOptimizer returns the optimizer for --pipeline and the LLM settings
+// it uses (empty for noop). A real pipeline reads the adapter's
+// configuration, so it runs exactly as it would there.
+func buildOptimizer(stages string) (eval.Optimizer, pipeline.LLM, error) {
 	if stages == "noop" {
-		return eval.NoopOptimizer{}, "", "", nil
+		return eval.NoopOptimizer{}, pipeline.LLM{}, nil
 	}
 
 	names, err := pipeline.ParseNames(stages)
 	if err != nil {
-		return nil, "", "", fmt.Errorf("--pipeline: %w", err)
+		return nil, pipeline.LLM{}, fmt.Errorf("--pipeline: %w", err)
 	}
 	cfg, err := adapter.LoadConfig()
 	if err != nil {
-		return nil, "", "", err
+		return nil, pipeline.LLM{}, err
 	}
-	p, err := pipeline.New(names, pipeline.Deps{
-		LLM: pipeline.LLM{
-			APIBaseURL: cfg.APIBaseURL,
-			APIKey:     cfg.APIKey,
-			Model:      cfg.Model,
-			Prompt:     cfg.Prompt,
-			Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
-		},
-	})
+	llm := pipeline.LLM{
+		APIBaseURL: cfg.APIBaseURL,
+		APIKey:     cfg.APIKey,
+		Model:      cfg.Model,
+		Prompt:     cfg.Prompt,
+		Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
+	}
+	p, err := pipeline.New(names, pipeline.Deps{LLM: llm})
 	if err != nil {
-		return nil, "", "", err
+		return nil, pipeline.LLM{}, err
 	}
-	return &eval.PipelineOptimizer{Pipeline: p}, cfg.Model, eval.PromptHash(cfg.Prompt), nil
+	return &eval.PipelineOptimizer{Pipeline: p}, llm, nil
+}
+
+// codeVersion is the commit this binary was built from, as `go build`
+// stamps it, with "-dirty" for uncommitted changes.
+func codeVersion() string {
+	bi, ok := debug.ReadBuildInfo()
+	if !ok {
+		return "unknown"
+	}
+	var rev, modified string
+	for _, s := range bi.Settings {
+		switch s.Key {
+		case "vcs.revision":
+			rev = s.Value
+		case "vcs.modified":
+			modified = s.Value
+		}
+	}
+	if rev == "" {
+		return "unknown (not built from a git checkout with go build)"
+	}
+	if modified == "true" {
+		rev += "-dirty"
+	}
+	return rev
+}
+
+// dockerVersion is the Docker server and buildx version, for the record.
+func dockerVersion(ctx context.Context) string {
+	out, err := exec.CommandContext(ctx, "docker", "version", "--format", "{{.Server.Version}}").Output()
+	if err != nil {
+		return ""
+	}
+	v := "server " + strings.TrimSpace(string(out))
+	if bx, err := exec.CommandContext(ctx, "docker", "buildx", "version").Output(); err == nil {
+		v += ", " + strings.TrimSpace(string(bx))
+	}
+	return v
+}
+
+// readAll reads and concatenates records from results files.
+func readAll(files []string) ([]eval.Record, error) {
+	var records []eval.Record
+	for _, file := range files {
+		recs, err := eval.ReadRecords(file)
+		if err != nil {
+			return nil, fmt.Errorf("%s: %w", file, err)
+		}
+		if recs == nil {
+			return nil, fmt.Errorf("%s: no records", file)
+		}
+		records = append(records, recs...)
+	}
+	return records, nil
+}
+
+func runFailures(args []string) error {
+	fs := flag.NewFlagSet("failures", flag.ExitOnError)
+	gate := fs.String("gate", "", "only attempts failing this gate, e.g. G2_no_invention (default: any)")
+	out := fs.String("out", "", "also save each failure as a fixture directory here")
+	fs.Parse(args)
+	if fs.NArg() == 0 {
+		return errors.New("give at least one results file")
+	}
+	records, err := readAll(fs.Args())
+	if err != nil {
+		return err
+	}
+	failures := eval.Failures(records, score.GateID(*gate))
+	if err := eval.WriteFailures(os.Stdout, failures); err != nil {
+		return err
+	}
+	if *out != "" {
+		if err := eval.SaveFailures(*out, failures); err != nil {
+			return err
+		}
+		log.Printf("saved %d failures under %s", len(failures), *out)
+	}
+	return nil
 }
 
 func runReport(args []string) error {
@@ -249,16 +391,9 @@ func runReport(args []string) error {
 		return errors.New("give at least one results file")
 	}
 
-	var records []eval.Record
-	for _, file := range fs.Args() {
-		recs, err := eval.ReadRecords(file)
-		if err != nil {
-			return fmt.Errorf("%s: %w", file, err)
-		}
-		if recs == nil {
-			return fmt.Errorf("%s: no records", file)
-		}
-		records = append(records, recs...)
+	records, err := readAll(fs.Args())
+	if err != nil {
+		return err
 	}
 
 	var w io.Writer = os.Stdout

@@ -97,6 +97,9 @@ func (w *world) Build(ctx context.Context, spec BuildSpec) (Image, error) {
 		<-ctx.Done()
 		return Image{}, ctx.Err()
 	}
+	if _, oom := marker(df, "OOMBUILD"); oom {
+		return Image{}, errors.New("failed to receive status: rpc error: code = Unavailable desc = error reading from server: EOF")
+	}
 	if _, fail := marker(df, "FAILBUILD"); fail {
 		return Image{}, errors.New("RUN failed: exit code 1")
 	}
@@ -396,24 +399,28 @@ func TestRun_OptimizerFailure(t *testing.T) {
 	require.Equal(t, 1, h.w.buildCount(), "only O′")
 }
 
-func TestRun_BaselineProblemsAreInfraErrors(t *testing.T) {
+func TestRun_BaselineProblems(t *testing.T) {
 	cases := []struct {
-		name    string
-		setup   func(h *harness)
-		wantErr string
+		name       string
+		setup      func(h *harness)
+		wantStatus string
+		wantErr    string
 	}{
-		{"checkout fails", func(h *harness) {
+		{"checkout fails: the harness's problem", func(h *harness) {
 			h.w.checkoutFn = func(string) error { return errors.New("repository not found") }
-		}, "checkout: repository not found"},
-		{"O′ does not build", func(h *harness) {
+		}, StatusInfraError, "checkout: repository not found"},
+		{"O′ does not build: the item is broken", func(h *harness) {
 			writeOriginal(h, originalDockerfile+"# FAILBUILD\n")
-		}, "O′: build: RUN failed"},
-		{"O′ fails its own smoke test", func(h *harness) {
+		}, StatusItemInvalid, "O′: build: RUN failed"},
+		{"O′ build killed by the machine: retried later", func(h *harness) {
+			writeOriginal(h, originalDockerfile+"# OOMBUILD\n")
+		}, StatusInfraError, "O′: build: failed to receive status: rpc error: code = Unavailable"},
+		{"O′ fails its own smoke test: the item is broken", func(h *harness) {
 			writeOriginal(h, originalDockerfile+"# FAILSMOKE\n")
-		}, "O′ fails its own smoke test"},
-		{"the original does not parse", func(h *harness) {
+		}, StatusItemInvalid, "O′ fails its own smoke test"},
+		{"the original does not parse: the item is broken", func(h *harness) {
 			writeOriginal(h, "FROM\n")
-		}, "original Dockerfile does not parse"},
+		}, StatusItemInvalid, "original Dockerfile does not parse"},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
@@ -425,12 +432,41 @@ func TestRun_BaselineProblemsAreInfraErrors(t *testing.T) {
 			recs := h.run(t)
 			require.Len(t, recs, 2, "one record per pending repetition")
 			for _, rec := range recs {
-				require.Equal(t, StatusInfraError, rec.Status)
+				require.Equal(t, c.wantStatus, rec.Status)
 				require.Contains(t, rec.Error, c.wantErr)
 			}
 			require.Zero(t, opt.calls, "the pipeline is not run without a valid O′")
 		})
 	}
+}
+
+// A candidate build the machine broke (BuildKit OOM-killed) is not the
+// pipeline's G4 failure: it is retried.
+func TestRun_CandidateBuildKilledByTheMachine(t *testing.T) {
+	h := newHarness(t, &fakeOptimizer{candidate: candidate("# OOMBUILD")})
+	recs := h.run(t)
+	require.Len(t, recs, 1)
+	require.Equal(t, StatusInfraError, recs[0].Status)
+	require.Contains(t, recs[0].Error, "build candidate:")
+	require.Empty(t, recs[0].Gates)
+	require.False(t, recs[0].final(), "retried by a resumed run")
+}
+
+func TestRun_ResumeSkipsInvalidItems(t *testing.T) {
+	opt := &fakeOptimizer{candidate: candidate("# vulns=")}
+	h := newHarness(t, opt)
+	h.done = []Record{{Item: "flask-app", Pipeline: "W0", Repetition: 1, Status: StatusItemInvalid}}
+	checkouts := h.w.checkouts
+	require.Empty(t, h.run(t))
+	require.Equal(t, checkouts, h.w.checkouts, "an invalid item is not even checked out again")
+}
+
+func TestMachineFailure(t *testing.T) {
+	require.True(t, machineFailure(errors.New("ERROR: failed to build: failed to receive status: rpc error: code = Unavailable desc = error reading from server: EOF")))
+	require.True(t, machineFailure(errors.New("toomanyrequests: You have reached your pull rate limit")))
+	require.False(t, machineFailure(errors.New(`process "/bin/sh -c curl -fsSL https://gone.example/x" did not complete successfully: exit code: 6`)))
+	require.False(t, machineFailure(errors.New("build took longer than 10m0s")))
+	require.False(t, machineFailure(nil))
 }
 
 func writeOriginal(h *harness, content string) {
@@ -545,6 +581,72 @@ func TestRun_BuildTimeout(t *testing.T) {
 	slow := newHarness(t, NoopOptimizer{})
 	writeOriginal(slow, originalDockerfile+"# SLOWBUILD\n")
 	recs = slow.run(t)
-	require.Equal(t, StatusInfraError, recs[0].Status)
+	require.Equal(t, StatusItemInvalid, recs[0].Status)
 	require.Contains(t, recs[0].Error, "took longer than 50ms")
+}
+
+func TestRun_MaxOriginalAge(t *testing.T) {
+	h := newHarness(t, NoopOptimizer{})
+	clock := time.Date(2026, 10, 16, 9, 0, 0, 0, time.UTC)
+	run := func() {
+		t.Helper()
+		h.done = nil
+		h.out.Reset()
+		h.runner = &Runner{
+			Source: h.w, Builder: h.w, Scanner: h.w, Smoker: h.w, Optimizer: h.opt,
+			Cache: &Cache{Dir: h.cache}, WorkDir: h.work, Pipeline: "W0", Repetitions: 1,
+			Weights: score.DefaultWeights, SizeTolerance: score.DefaultSizeTolerance,
+			MaxOriginalAge: 12 * time.Hour, Out: NewRecordWriter(&h.out),
+			now: func() time.Time { return clock },
+		}
+		require.NoError(t, h.runner.Run(context.Background(), []Item{testItem}))
+	}
+
+	run()
+	require.Equal(t, 2, h.w.buildCount(), "O′ and C")
+
+	clock = clock.Add(3 * time.Hour) // a resume, or the next pipeline of the session
+	run()
+	require.Equal(t, 3, h.w.buildCount(), "O′ reused")
+
+	clock = clock.Add(2 * 24 * time.Hour) // a session days later
+	run()
+	require.Equal(t, 5, h.w.buildCount(), "O′ rebuilt")
+}
+
+func TestRun_SavesTheScansItRefersTo(t *testing.T) {
+	h := newHarness(t, &fakeOptimizer{candidate: candidate("# vulns=CVE-2:high:")})
+	h.reps = 2
+	scans := filepath.Join(t.TempDir(), "w0-scans")
+
+	run := func() []Record {
+		h.out.Reset()
+		h.runner = &Runner{
+			Source: h.w, Builder: h.w, Scanner: h.w, Smoker: h.w, Optimizer: h.opt,
+			Cache: &Cache{Dir: h.cache}, WorkDir: h.work, ScanDir: scans, Pipeline: "W0", Repetitions: h.reps,
+			Weights: score.DefaultWeights, SizeTolerance: score.DefaultSizeTolerance, Out: NewRecordWriter(&h.out),
+		}
+		require.NoError(t, h.runner.Run(context.Background(), []Item{testItem}))
+		recs, err := DecodeRecords(&h.out)
+		require.NoError(t, err)
+		return recs
+	}
+	recs := run()
+	require.Len(t, recs, 2)
+
+	for _, digest := range []string{recs[0].Original.Digest, recs[0].Candidate.Digest} {
+		data, err := os.ReadFile(filepath.Join(scans, strings.ReplaceAll(digest, ":", "-")+".json"))
+		require.NoError(t, err, digest)
+		require.Contains(t, string(data), "CVE-")
+	}
+	entries, err := os.ReadDir(scans)
+	require.NoError(t, err)
+	require.Len(t, entries, 2, "one file per image, no temporary files left")
+
+	// O′ from the cache in a later run is saved too.
+	scans = filepath.Join(t.TempDir(), "w0+w1-scans")
+	h.done = nil
+	run()
+	_, err = os.Stat(filepath.Join(scans, strings.ReplaceAll(recs[0].Original.Digest, ":", "-")+".json"))
+	require.NoError(t, err)
 }

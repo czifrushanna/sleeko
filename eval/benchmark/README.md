@@ -90,7 +90,30 @@ bin/sleeko-eval report noop.jsonl
 ```
 
 For a real pipeline, set the adapter's `LLMGW_*` variables and pass its stages,
-e.g. `--pipeline generate --name W0`. Runs need git and Docker with buildx;
+e.g. `--pipeline generate --name W0`; `eval/runs/w0.sh` is the W0 measurement
+as one command. Record statuses: `measured`, `optimizer_failed` (counts as a
+failed attempt), `item_invalid` (the item's own O′ does not build or start;
+skipped on resume) and `infra_error` (the machine's fault, e.g. BuildKit
+OOM-killed; retried on resume). `--max-original-age 12h` rebuilds a cached O′
+older than that, so a session's attempts all compare against one snapshot of
+the base images. `sleeko-eval db` refuses to replace the pinned Trivy database
+without `--replace`. `sleeko-eval failures --gate G2_no_invention --out DIR`
+lists failed attempts with a diff and saves them as test fixtures.
+
+What a run leaves next to `--out results/w0.jsonl`:
+
+- `w0.jsonl`: one record per attempt: gates with reasons, components, O′/C
+  digests, sizes and severity counts, both Dockerfiles, LLM rounds, latency,
+  model, prompt hash, Trivy DB.
+- `w0.runs.jsonl`: one line per invocation: the sleeko commit (`-dirty` if
+  the tree had uncommitted changes), pipeline stages, model, API base URL (not
+  the key), token budget, the prompt text, the manifest's SHA-256 and items,
+  every flag, the weights, Trivy image and DB, Docker and buildx versions. A
+  resume whose code, pipeline, model, prompt, budget, manifest or DB differs
+  from the first is refused (`--allow-mixed-runs` overrides).
+- `w0-scans/<digest>.json`: the full scan of every O′ and C the records refer
+  to, so results can be analysed per CVE without the work directory.
+- `report` and `failures` derive the rest from these files. Runs need git and Docker with buildx;
 Trivy runs from its pinned container image unless `--trivy-image ""` selects a
 local `trivy` binary. The working directory (`--work`) defaults to the user
 cache directory, outside the repository.
