@@ -45,6 +45,10 @@ type Runner struct {
 	Repetitions int
 	// Concurrency bounds how many items are processed at once.
 	Concurrency int
+	// BuildTimeout bounds each image build; 0 means no limit. An O′ build
+	// that runs out is an infra error (the item is too slow for the
+	// benchmark), a candidate's is a G4 failure.
+	BuildTimeout time.Duration
 
 	Weights       score.Weights
 	SizeTolerance float64
@@ -202,7 +206,7 @@ func (r *Runner) baseline(ctx context.Context, it Item, src, dbVersion string) (
 	}
 
 	r.logf("%s: building O′", it.ID)
-	img, err := r.Builder.Build(ctx, r.spec(it, src, filepath.Join(src, it.Dockerfile), "o", key[:12]))
+	img, err := r.build(ctx, r.spec(it, src, filepath.Join(src, it.Dockerfile), "o", key[:12]))
 	if err != nil {
 		return nil, fmt.Errorf("build: %w", err)
 	}
@@ -216,7 +220,7 @@ func (r *Runner) baseline(ctx context.Context, it Item, src, dbVersion string) (
 	b = baseline{
 		Image: ImageInfo{
 			Digest: img.Digest, Size: img.Size, Severities: severityCounts(scan.Result),
-			OS: scan.OS, BuiltAt: r.now(),
+			OS: scan.OS, User: img.Contract.User, BuiltAt: r.now(),
 		},
 		Scan:     scan.Result,
 		Contract: img.Contract,
@@ -257,6 +261,20 @@ func (r *Runner) spec(it Item, src, dockerfile, kind, suffix string) BuildSpec {
 		Tag:        tag,
 		OutDir:     filepath.Join(r.WorkDir, "images", it.ID, kind+"-"+suffix),
 	}
+}
+
+// build runs one build under BuildTimeout.
+func (r *Runner) build(ctx context.Context, spec BuildSpec) (Image, error) {
+	if r.BuildTimeout <= 0 {
+		return r.Builder.Build(ctx, spec)
+	}
+	buildCtx, cancel := context.WithTimeout(ctx, r.BuildTimeout)
+	defer cancel()
+	img, err := r.Builder.Build(buildCtx, spec)
+	if err != nil && buildCtx.Err() != nil && ctx.Err() == nil {
+		return img, fmt.Errorf("build took longer than %s", r.BuildTimeout)
+	}
+	return img, err
 }
 
 func (r *Runner) remove(img Image) {
@@ -316,7 +334,7 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 		rec.Status, rec.Error = StatusInfraError, fmt.Sprintf("write candidate: %v", err)
 		return
 	}
-	img, buildErr := r.Builder.Build(ctx, r.spec(it, src, dockerfile, "c-"+sanitizeTag(r.Pipeline), fmt.Sprint(rec.Repetition)))
+	img, buildErr := r.build(ctx, r.spec(it, src, dockerfile, "c-"+sanitizeTag(r.Pipeline), fmt.Sprint(rec.Repetition)))
 	gates[score.G4Build] = score.CheckBuild(buildErr)
 	if buildErr != nil {
 		return
@@ -331,7 +349,7 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	}
 	rec.Candidate = &ImageInfo{
 		Digest: img.Digest, Size: img.Size, Severities: severityCounts(scan.Result),
-		OS: scan.OS, BuiltAt: r.now(),
+		OS: scan.OS, User: img.Contract.User, BuiltAt: r.now(),
 	}
 
 	gates[score.G5Behaviour] = score.CheckBehaviour(r.Smoker.Smoke(ctx, img, it.Platform, it.Smoke), base.Contract, img.Contract)

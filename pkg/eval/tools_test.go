@@ -391,3 +391,66 @@ type stageFunc func(*pipeline.State) error
 
 func (stageFunc) Name() string                                      { return "test" }
 func (f stageFunc) Run(_ context.Context, st *pipeline.State) error { return f(st) }
+
+func TestDockerSmoker_RunFor(t *testing.T) {
+	cases := []struct {
+		name    string
+		state   string // what docker inspect prints
+		wantErr string
+	}{
+		{"still running", "true 0", ""},
+		{"exited with the expected code", "false 0", ""},
+		{"exited with another code", "false 1", "exited with code 1 within 10ms, want it running or exit code 0: listen tcp :80: bind: permission denied"},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			rec := &recordingExec{answer: func(args []string) (execResult, error) {
+				switch args[1] {
+				case "inspect":
+					return execResult{Stdout: []byte(c.state + "\n")}, nil
+				case "logs":
+					return execResult{Stderr: []byte("listen tcp :80: bind: permission denied")}, nil
+				}
+				return execResult{}, nil
+			}}
+			err := (&DockerSmoker{exec: rec.run}).Smoke(context.Background(), Image{Tag: "img"}, "linux/amd64",
+				Smoke{RunFor: 10 * time.Millisecond, Command: []string{"serve"}})
+			if c.wantErr == "" {
+				require.NoError(t, err)
+			} else {
+				require.EqualError(t, err, c.wantErr)
+			}
+
+			name := rec.calls[0][4]
+			require.Equal(t, []string{"docker", "run", "--detach", "--name", name, "--platform", "linux/amd64", "img", "serve"}, rec.calls[0])
+			require.Equal(t, []string{"docker", "rm", "--force", name}, rec.calls[len(rec.calls)-1], "always removed")
+		})
+	}
+}
+
+func TestDockerSmoker_RunForStartFailure(t *testing.T) {
+	rec := &recordingExec{answer: func(args []string) (execResult, error) {
+		if args[1] == "run" {
+			return execResult{ExitCode: 125, Stderr: []byte("exec format error")}, nil
+		}
+		return execResult{}, nil
+	}}
+	err := (&DockerSmoker{exec: rec.run}).Smoke(context.Background(), Image{Tag: "img"}, "linux/amd64", Smoke{RunFor: time.Second})
+	require.ErrorContains(t, err, "exec format error")
+	require.Equal(t, "rm", rec.calls[len(rec.calls)-1][1])
+}
+
+// A cancelled command must return promptly even when a child it started
+// keeps running, as docker's buildx plugin does.
+func TestRunCommand_CancelKillsChildren(t *testing.T) {
+	if _, err := exec.LookPath("sh"); err != nil {
+		t.Skip("no sh")
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Millisecond)
+	defer cancel()
+
+	start := time.Now()
+	_, err := runCommand(ctx, "", "sh", "-c", "sleep 30 & wait")
+	require.ErrorIs(t, err, context.DeadlineExceeded)
+	require.Less(t, time.Since(start), 5*time.Second, "the child must not keep Wait blocked")
+}

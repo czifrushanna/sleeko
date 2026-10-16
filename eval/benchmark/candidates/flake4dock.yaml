@@ -1,0 +1,2031 @@
+# Candidates sampled from FLAKE4DOCK's non-flaky Dockerfiles on 2026-10-15 by
+# eval/benchmark/import/flake4dock (-sample ruby=30,php=30,rust=20,java=30,dotnet=20,node=25,elixir=10,ubuntu=10,debian=10,alpine=10,other=15,python=4,golang=4 -seed 1).
+# Not yet filtered: distro_family is filled in by eval/benchmark/import/select.
+items:
+    - id: f4d-18f-content-guide
+      source: flake4dock
+      repo: https://github.com/18F/content-guide
+      commit: 0129f1f63389233a30c5131d95eab122ad150b25
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-3scale-3scale-toolbox
+      source: flake4dock
+      repo: https://github.com/3scale/3scale_toolbox
+      commit: fca936acc2ca26c5f83b9e0bad92db8625799b7c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-40ants-weblocks
+      source: flake4dock
+      repo: https://github.com/40ants/weblocks
+      commit: 6c7754e968782bd000749d6f1bc72897404d96bc
+      context: .
+      dockerfile: Dockerfile-test
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-4oh4-jenkins-docker
+      source: flake4dock
+      repo: https://github.com/4OH4/jenkins-docker
+      commit: e561b1813c9c9b9654a338804334e0e7e06a3829
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-accelerationnet-access2csv
+      source: flake4dock
+      repo: https://github.com/AccelerationNet/access2csv
+      commit: 8582263632c21262c6b0a758b54774c9b07d055b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-adessoag-jenkinshue
+      source: flake4dock
+      repo: https://github.com/adessoAG/JenkinsHue
+      commit: 45a0a2264fa40f31138cfb842ded3aea450414a6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-adlered-bolo-solo
+      source: flake4dock
+      repo: https://github.com/adlered/bolo-solo
+      commit: 68fb2e5e034a69a72d1a415b8b3602c75d5795f0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-alexcheng1982-docker-magento
+      source: flake4dock
+      repo: https://github.com/alexcheng1982/docker-magento
+      commit: 19b81dd1c69b713537fd9cb407c3b5ab77264253
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-alexei-led-docker-oracle-xe-11g
+      source: flake4dock
+      repo: https://github.com/alexei-led/docker-oracle-xe-11g
+      commit: 05315b038b7be9a34fde87c508b8c1a80a2661b0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-alexr1712-messenger-to-telegram
+      source: flake4dock
+      repo: https://github.com/AlexR1712/messenger-to-telegram
+      commit: 01ab0477642aed47028af21e09936644af1c2546
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-amiralies-metalarchives-api
+      source: flake4dock
+      repo: https://github.com/amiralies/metalarchives-api
+      commit: ea1bb94e864f044d5ac979ceca67f789aa400513
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-andrewmcodes-rubocop-linter-action
+      source: flake4dock
+      repo: https://github.com/andrewmcodes/rubocop-linter-action
+      commit: 9a5d88e4ac23b72670e3e427239263136f7b8b6e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-applidium-pericles
+      source: flake4dock
+      repo: https://github.com/applidium/pericles
+      commit: d4f9e28377af2dd69760677e38c0849a7380a159
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-appwish-graphqlapi
+      source: flake4dock
+      repo: https://github.com/appwish/graphqlapi
+      commit: ed1df7947393666be734c27e8a8532c32b401837
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-apsops-filebeat-kubernetes
+      source: flake4dock
+      repo: https://github.com/ApsOps/filebeat-kubernetes
+      commit: e867833faa95bde551d70e0cd3249cd1ad116f24
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-ardalis-specification
+      source: flake4dock
+      repo: https://github.com/ardalis/Specification
+      commit: ad389cf5bccf753c839ab724e5109b553b574396
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-area39-webug4-0-docker
+      source: flake4dock
+      repo: https://github.com/Area39/Webug4.0-Docker
+      commit: 3d585518fcae431e686117f30250e4aab8746ed0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-atifaziz-linqpadless
+      source: flake4dock
+      repo: https://github.com/atifaziz/LinqPadless
+      commit: 3475f2525f7bf9d21a73b643061ab7c1a8ff585e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-atomheartother-wanwan-html5
+      source: flake4dock
+      repo: https://github.com/atomheartother/wanwan-html5
+      commit: cae285bbc964ffecb69cb028fd0e08055cff640e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-bangbang93-openbmclapi
+      source: flake4dock
+      repo: https://github.com/bangbang93/openbmclapi
+      commit: 68dd4e12764e4a97a57216a6a45ffe5c91c715b8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: f4d-beehiveforum-beehiveforum
+      source: flake4dock
+      repo: https://github.com/BeehiveForum/BeehiveForum
+      commit: bff18b86a5fcb88397409f20efa70847b3098350
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-bitcoinj-httpseed
+      source: flake4dock
+      repo: https://github.com/bitcoinj/httpseed
+      commit: 09500366beed896b29092ce4b4f311da1a7037fc
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: kotlin
+    - id: f4d-bizanc-bizanc-io-core
+      source: flake4dock
+      repo: https://github.com/bizanc/Bizanc.io.Core
+      commit: 521e10c3e48e7fcbbe5b8e0b2740c7d76a37ff3b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-bohbranch-boh-bay
+      source: flake4dock
+      repo: https://github.com/BoHBranch/BoH-Bay
+      commit: 42d1b3285c13aabdb5cae9c2f997c18ee9dfe3df
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-bountysource-core
+      source: flake4dock
+      repo: https://github.com/bountysource/core
+      commit: 4b90df5385417a01e4c06e5ace5684fb1366d210
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-bq-marlin
+      source: flake4dock
+      repo: https://github.com/bq/Marlin
+      commit: 79156b187626b8c485ec05de00bdd331719f5181
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: f4d-budabot-budabot
+      source: flake4dock
+      repo: https://github.com/Budabot/Budabot
+      commit: 89f9ebab73677d6e873cd08985c3b832f3c4afe6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-c4urself-bump2version
+      source: flake4dock
+      repo: https://github.com/c4urself/bump2version
+      commit: 1b06fc71223c79c78c5d2e569dca42e9f99f0b8c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-calidog-certstream-server
+      source: flake4dock
+      repo: https://github.com/CaliDog/certstream-server
+      commit: 825eeacb2032dab4792a5af9c934d72ac4cae46c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: elixir
+    - id: f4d-cellmigstandorg-biotracks
+      source: flake4dock
+      repo: https://github.com/CellMigStandOrg/biotracks
+      commit: b194a8f7e76af7363b5666066dac8d440073a145
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-centerforopenscience-cas-overlay
+      source: flake4dock
+      repo: https://github.com/CenterForOpenScience/cas-overlay
+      commit: d12de4165be6eb759b18e0e134faa73d1f86e66e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-charlieegan3-serializer
+      source: flake4dock
+      repo: https://github.com/charlieegan3/serializer
+      commit: 46347408352b2dbb32d059afc84200898710771b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-cleardevice-docker-asterisk-latest-pjsip-fail2ban
+      source: flake4dock
+      repo: https://github.com/cleardevice/docker-asterisk-latest-pjsip-fail2ban
+      commit: 81e327f9eb69e6fb1d6d0dda314186668b8c64c1
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-clearlydefined-website
+      source: flake4dock
+      repo: https://github.com/clearlydefined/website
+      commit: 0676b12c8b8d4a2ea4ad68c77519c90025d85c03
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-cloudposse-bastion
+      source: flake4dock
+      repo: https://github.com/cloudposse/bastion
+      commit: 6f980527ebe77c9ac892a22e710909b0d9691713
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-code4sac-codeforsacramento-org
+      source: flake4dock
+      repo: https://github.com/code4sac/codeforsacramento.org
+      commit: a78ee80ce004af612e52a0623c96e29ec54fdb1f
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-codecentric-codecentric-cv-latex
+      source: flake4dock
+      repo: https://github.com/codecentric/codecentric-cv-latex
+      commit: e115daf15505c848be9a35c8186c2968330ed38d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-couchrest-couchrest-model
+      source: flake4dock
+      repo: https://github.com/couchrest/couchrest_model
+      commit: 47c66598a65b4a650c95ba5156e0715f18be4728
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-covermymeds-dbdeployer
+      source: flake4dock
+      repo: https://github.com/covermymeds/dbdeployer
+      commit: ca8bd2aface6e077dc4f029307464fb21c0f7017
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-cw1427-slimer
+      source: flake4dock
+      repo: https://github.com/cw1427/Slimer
+      commit: 87e6208c7af093f244152433c6718c261c3f647e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-d12frosted-environment
+      source: flake4dock
+      repo: https://github.com/d12frosted/environment
+      commit: 89ba1ac703f493e905c4452ad0b728a1473f30c0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: haskell
+    - id: f4d-decc-twenty-fifty-new-look
+      source: flake4dock
+      repo: https://github.com/decc/twenty-fifty-new-look
+      commit: dfad0e55816a9a5be298df4f35e2d6e56db5f87f
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-derf-db-fakedisplay
+      source: flake4dock
+      repo: https://github.com/derf/db-fakedisplay
+      commit: 0fca16604b0757275bbe0023e23109d8ecd0bb0b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: perl
+    - id: f4d-devmasx-merge-branch
+      source: flake4dock
+      repo: https://github.com/devmasx/merge-branch
+      commit: ebc60ce7754940395dc68f47142ec33b7da79b2d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-digimarc-corp-whalerator
+      source: flake4dock
+      repo: https://github.com/digimarc-corp/whalerator
+      commit: a1b4fd89738f7ce2cdd29252c0dcf6d96dba8723
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-dimofte-polyglot-server
+      source: flake4dock
+      repo: https://github.com/dimofte/polyglot-server
+      commit: fac293eafb5e8d576a2d5e3d890854b96625d99b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-docker-hub-frolvlad-docker-alpine-python3
+      source: flake4dock
+      repo: https://github.com/Docker-Hub-frolvlad/docker-alpine-python3
+      commit: ffecbb00764a197c829bb777810298683bead796
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-domistyle-docker-idrac6
+      source: flake4dock
+      repo: https://github.com/DomiStyle/docker-idrac6
+      commit: 5173af3cce28bae015cbdb5170c93d2654739873
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: f4d-draganczukp-simply-shorten
+      source: flake4dock
+      repo: https://github.com/draganczukp/simply-shorten
+      commit: e9cf90cea7d7fce681fcb0e7d6219adaf169651d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-dsibilio-rsocket-demo
+      source: flake4dock
+      repo: https://github.com/dsibilio/rsocket-demo
+      commit: 7ecea33ab5227f0ca25b0b4a3a9f38cf99348e65
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-dtan4-dockerfile-terraforming
+      source: flake4dock
+      repo: https://github.com/dtan4/dockerfile-terraforming
+      commit: 47162d6cd4e5db7ae3ccf000f8593120ea4deb67
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-edirom-wega-webapp
+      source: flake4dock
+      repo: https://github.com/Edirom/WeGA-WebApp
+      commit: d027e05f17d99b8b608904ed0e32c59360cf99e9
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-eiriktsarpalis-typeshape
+      source: flake4dock
+      repo: https://github.com/eiriktsarpalis/TypeShape
+      commit: 6758196760bc954e5a0e4c091516d5e1d2770e8e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: f#
+    - id: f4d-elodina-scala-kafka
+      source: flake4dock
+      repo: https://github.com/elodina/scala-kafka
+      commit: cebaebc096b66dd1309e280d0d4e719d0ce4b506
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: scala
+    - id: f4d-emaijala-mlinvoice
+      source: flake4dock
+      repo: https://github.com/emaijala/MLInvoice
+      commit: 9e55dab7ae60814384dd4d5f9875da088b1dca27
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-emilio2hd-myinterviews
+      source: flake4dock
+      repo: https://github.com/emilio2hd/myinterviews
+      commit: 5624e631d9ca72a503a7cde520099dbbb4847954
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-erikap-docker-ruby-sinatra
+      source: flake4dock
+      repo: https://github.com/erikap/docker-ruby-sinatra
+      commit: 3bf0b190e9b1e00e238f30487c3507ee28f45d72
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-ety001-online-clipboard
+      source: flake4dock
+      repo: https://github.com/ety001/online-clipboard
+      commit: ee4c28740165076218b11c7abe6f030dcf09106d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-eventstore-eventstore
+      source: flake4dock
+      repo: https://github.com/EventStore/EventStore
+      commit: 8e2927283115167744334ac0a2ea3e223ad54862
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-flix-tech-avro-serde-php
+      source: flake4dock
+      repo: https://github.com/flix-tech/avro-serde-php
+      commit: b49d7c6f212cedba8afb679401db50b18bc18f2b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-flores-moarcats-app
+      source: flake4dock
+      repo: https://github.com/flores/moarcats-app
+      commit: e0871ea2d21e5168d3c9066e927b72998617983a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-fsprojects-argu
+      source: flake4dock
+      repo: https://github.com/fsprojects/Argu
+      commit: 2b949a81c23bb471905cabedd949e3dcf4761b1b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: f#
+    - id: f4d-gabrielrcouto-presentation-from-docker-to-kubernet
+      source: flake4dock
+      repo: https://github.com/gabrielrcouto/presentation-from-docker-to-kubernetes
+      commit: 868ebba91ad9ae9bef92675390dbe9afeea237d2
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-gdancik-shinygeo
+      source: flake4dock
+      repo: https://github.com/gdancik/shinyGEO
+      commit: cf65f688366595bb839f893217f67d59ca06db53
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: r
+    - id: f4d-geggo98-docker-ssh-vpn-jump-host
+      source: flake4dock
+      repo: https://github.com/geggo98/docker-ssh-vpn-jump-host
+      commit: d16b4b12759b2c0a61b7d9f13d652956798c5280
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-geotrekce-geotrek-admin
+      source: flake4dock
+      repo: https://github.com/GeotrekCE/Geotrek-admin
+      commit: 0ba95764b28713b369849d3628da4e74650759ae
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-getnelson-slipway
+      source: flake4dock
+      repo: https://github.com/getnelson/slipway
+      commit: aa63e315d5a6ac534dd541c34636423439a7592d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: f4d-getsentry-sentry-cli
+      source: flake4dock
+      repo: https://github.com/getsentry/sentry-cli
+      commit: cd544bd417d78abfa677fdb96e669098d23b870d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-getsentry-symbol-collector
+      source: flake4dock
+      repo: https://github.com/getsentry/symbol-collector
+      commit: 997b11c58263acec9bb0ce940e1eec1463424f97
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-gliderlabs-hostlocal
+      source: flake4dock
+      repo: https://github.com/gliderlabs/hostlocal
+      commit: 8280964831c3a1914bf29968384620f87caa6baf
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-gotzl-accservermanager
+      source: flake4dock
+      repo: https://github.com/gotzl/accservermanager
+      commit: c2695ad95642fa95c3de87ad26293134eb26c09e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-grgk-seo-analyzer
+      source: flake4dock
+      repo: https://github.com/grgk/seo-analyzer
+      commit: b09ec7a7fad22c90db15245fc97534fee71ab17f
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-gueils-whales
+      source: flake4dock
+      repo: https://github.com/Gueils/whales
+      commit: 465f14849ff1d51e5ca36861741516fffd6a15cf
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-guzart-docker-rails-app
+      source: flake4dock
+      repo: https://github.com/guzart/docker-rails-app
+      commit: fefc4c22a02fe1b12176d576a6b7811473e374c5
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-hakanensari-frankfurter
+      source: flake4dock
+      repo: https://github.com/hakanensari/frankfurter
+      commit: 6fdb258e6d7701fce39769a12c48aa9bad9214b9
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-hanhan1978-docker-laravel54-skelton
+      source: flake4dock
+      repo: https://github.com/hanhan1978/docker-laravel54-skelton
+      commit: 04ae9da929d53ca1bb0b88214b52d799a6967bb0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-headmelted-archie
+      source: flake4dock
+      repo: https://github.com/headmelted/archie
+      commit: 9ba42732e63ccf8f1a92fff02446f267c90622a4
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-hmbsbige-bilibilimangaautoclockin
+      source: flake4dock
+      repo: https://github.com/HMBSbige/BilibiliMangaAutoClockIn
+      commit: 336947dc4cacbe3d3c1b17ea2ae1628baac30176
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-home-assistant-operating-system
+      source: flake4dock
+      repo: https://github.com/home-assistant/operating-system
+      commit: 8f07d1617616288769a1b846786cb3a5351abcbc
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-huksley-camunda-spring-boot-example
+      source: flake4dock
+      repo: https://github.com/huksley/camunda-spring-boot-example
+      commit: 15b1d8395868b2dacd55c620d85a961911d7f519
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-hybirdcorp-docker-forticlient
+      source: flake4dock
+      repo: https://github.com/HybirdCorp/docker-forticlient
+      commit: e387db1c7efb3572750f71ff9d6530a6d2e79f7f
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-icemic-search-bakery-moe
+      source: flake4dock
+      repo: https://github.com/Icemic/search.bakery.moe
+      commit: 28210e3082bd32f761c9b05c9a6f1662b1d99c3b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-ideatosrl-idephix
+      source: flake4dock
+      repo: https://github.com/ideatosrl/Idephix
+      commit: 0a39a65ba9bef990b2477e83dd69c27c6543d1a1
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-idoop-docker-apollo
+      source: flake4dock
+      repo: https://github.com/idoop/docker-apollo
+      commit: 039adae8bf73119d0805f24be73b7595a7210d16
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-illumina-witty-er
+      source: flake4dock
+      repo: https://github.com/Illumina/witty.er
+      commit: 06a238fcff09c888b13b85d12fed2290d10160c6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-imatix-gsl
+      source: flake4dock
+      repo: https://github.com/imatix/gsl
+      commit: 0f511bf8f38ad215ec61379a607b224fb62534f3
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: f4d-in28minutes-azure-devops-kubernetes-terraform-pipe
+      source: flake4dock
+      repo: https://github.com/in28minutes/azure-devops-kubernetes-terraform-pipeline
+      commit: 7e79e98b804e177a7403f5d4e1c929dcd889fdd4
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-iotaledger-cliri
+      source: flake4dock
+      repo: https://github.com/iotaledger/cliri
+      commit: 1f974cafb1c17d96ae7e0a6856f563dcf3794238
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-jaymoulin-guzzlehttp-cloudflare
+      source: flake4dock
+      repo: https://github.com/jaymoulin/guzzlehttp-cloudflare
+      commit: 050ae3233a8e92fcd4ee791779e27a42cbbd0344
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-jeffreyksmithjr-galapagos-nao
+      source: flake4dock
+      repo: https://github.com/jeffreyksmithjr/galapagos_nao
+      commit: ad44b45a8c5756c8c307edbc58f3c075a0ba9500
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: elixir
+    - id: f4d-jetstack-cert-manager-csi
+      source: flake4dock
+      repo: https://github.com/jetstack/cert-manager-csi
+      commit: 36deb7772b064c00c193a99c688a06fe4287a728
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: f4d-jirareport-jirareport
+      source: flake4dock
+      repo: https://github.com/jirareport/jirareport
+      commit: c3167ff12958d02120a0a66567fa51e4be221570
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: kotlin
+    - id: f4d-joeattardi-github-pr-dashboard
+      source: flake4dock
+      repo: https://github.com/joeattardi/github-pr-dashboard
+      commit: cc2a404e6a660897c504e8dcd21571128d46b49c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-johnlpage-pocdriver
+      source: flake4dock
+      repo: https://github.com/johnlpage/POCDriver
+      commit: f8f3b3343b1677eb8adaa9ca04081c039eea94df
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-johnpapa-angular2-force
+      source: flake4dock
+      repo: https://github.com/johnpapa/angular2-force
+      commit: 28746e903d9616442d8776b934530fcda628d255
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: f4d-johnpapa-heroes-react
+      source: flake4dock
+      repo: https://github.com/johnpapa/heroes-react
+      commit: 3b1f3a625e112e8bc925b55a4195d47157022dd2
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-julianxhokaxhiu-lineageota
+      source: flake4dock
+      repo: https://github.com/julianxhokaxhiu/LineageOTA
+      commit: afd505987f0b696bb43c2fd15557e56e7337ae0b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-justinmad-phi
+      source: flake4dock
+      repo: https://github.com/Justinmad/phi
+      commit: 3164d24ddf8e8b7cc93dc6f126d110899b73a8b2
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: lua
+    - id: f4d-jxy918-swoft-ddz
+      source: flake4dock
+      repo: https://github.com/jxy918/swoft-ddz
+      commit: 381f88a2d0074a240d8c77ea73ffefdd3c8cd734
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-jxy918-swoft-game
+      source: flake4dock
+      repo: https://github.com/jxy918/swoft-game
+      commit: 0d0657c8907780ab2e56a47025d7301b6b4995a0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-kfkawalec-gitlab-ci-laravel-php
+      source: flake4dock
+      repo: https://github.com/kfkawalec/gitlab-ci-laravel-php
+      commit: 70bf331c93b29f6f9cc56e4b2898946339eaf123
+      context: "7.4"
+      dockerfile: 7.4/Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-kmlucy-docker-assistant-relay
+      source: flake4dock
+      repo: https://github.com/kmlucy/docker-assistant-relay
+      commit: 643a1d199d82cbd51a7969bdf4d22fa91113550e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-kompot-nhl-tv-geeky-streams
+      source: flake4dock
+      repo: https://github.com/kompot/nhl-tv-geeky-streams
+      commit: 59114e7c8cfaef0a7f952d95e69429d2ee8aac48
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: f4d-l3m0n-ctf-tools
+      source: flake4dock
+      repo: https://github.com/l3m0n/ctf-tools
+      commit: 88d0645bf43d62ee9fe533bdc92884240b40bf2f
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-ledermann-docker-vue
+      source: flake4dock
+      repo: https://github.com/ledermann/docker-vue
+      commit: 97578df0286363ecc8b0306143012b5534caa588
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-libapps-libapps-mirror
+      source: flake4dock
+      repo: https://github.com/libapps/libapps-mirror
+      commit: f52311c946b1ebd706ffc60cd0414d9c82961e90
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-linux-china-mail-catcher
+      source: flake4dock
+      repo: https://github.com/linux-china/mail-catcher
+      commit: e42d5fb1743bc0d6e43f24e538701913f45d0f48
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-lovetheidea-moadb
+      source: flake4dock
+      repo: https://github.com/lovetheidea/MoaDB
+      commit: 13c22d7a40c38fa69c10d99a32ba52f67a1f7a7c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-lucianweber-ldap-jwt
+      source: flake4dock
+      repo: https://github.com/lucianweber/ldap-jwt
+      commit: 23d5f958b63d2ee02f9042c1f3c6824842c6efff
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-lucid-kv-lucid
+      source: flake4dock
+      repo: https://github.com/lucid-kv/lucid
+      commit: 365ae22f060386b4ad0df1aa40b014c5c9050b34
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-madflojo-redis-tls-dockerfile
+      source: flake4dock
+      repo: https://github.com/madflojo/redis-tls-dockerfile
+      commit: cb27ffce6f82491fa61876763c2dcbadd10a0325
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-martinweindel-kudu-rpm
+      source: flake4dock
+      repo: https://github.com/MartinWeindel/kudu-rpm
+      commit: 19ecadffa4a8c734ddced34a0d18c8358c9f6deb
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-matteoolefloch-ft-server
+      source: flake4dock
+      repo: https://github.com/matteoolefloch/ft_server
+      commit: 96677efd75a146e538e3c12146206c717f2a3fdc
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-mbhall88-rasusa
+      source: flake4dock
+      repo: https://github.com/mbhall88/rasusa
+      commit: 4dae828eb76619d791467dd1ee6440705ee04d3b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-meemaw-react-redux-typescript-boilerplate
+      source: flake4dock
+      repo: https://github.com/Meemaw/react-redux-typescript-boilerplate
+      commit: fc71ab291ea476211a33e8f8022cf97a82f38dee
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: f4d-menezes-ssz-feature-express
+      source: flake4dock
+      repo: https://github.com/menezes-ssz/feature-express
+      commit: 59516b4cc16ea559edf8b40ea761fa29af0c3fac
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-mihaeu-dephpend
+      source: flake4dock
+      repo: https://github.com/mihaeu/dephpend
+      commit: 2f8f3e20fc0c4174dcb8170850f2797befba390c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-mikaelhg-broken-docker-jdk9-cacerts
+      source: flake4dock
+      repo: https://github.com/mikaelhg/broken-docker-jdk9-cacerts
+      commit: 7998bc41e5edc2b78627b6c7a6a11fd5ae083d22
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-minglecm-doc-to-dash
+      source: flake4dock
+      repo: https://github.com/minglecm/doc_to_dash
+      commit: 92fef15b5f195975940a304713f0780cbf6a7789
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-mixcore-mix-core
+      source: flake4dock
+      repo: https://github.com/mixcore/mix.core
+      commit: 961610fe8ce0d2fe962f480111387996a846c38a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-mlaccetti-rocksaw
+      source: flake4dock
+      repo: https://github.com/mlaccetti/rocksaw
+      commit: 22ef742ab1660ea68f91e9c2d9ec44ce9a6b768e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-mojotech-sass2stylus
+      source: flake4dock
+      repo: https://github.com/mojotech/sass2stylus
+      commit: 8ad3ad2e622c667837e49e38c6540a95ddbaaaca
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-mozilla-iot-gateway-docker
+      source: flake4dock
+      repo: https://github.com/mozilla-iot/gateway-docker
+      commit: 1c373db8c7d1dc9efa34fa4549eb8f64fd0fd48d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-mschwartau-keycloak-custom-protocol-mapper-example
+      source: flake4dock
+      repo: https://github.com/mschwartau/keycloak-custom-protocol-mapper-example
+      commit: e765661c0d4465b39702f9d96876d2940bc0f8df
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-mscoutermarsh-ruby-action-recipe
+      source: flake4dock
+      repo: https://github.com/mscoutermarsh/ruby-action-recipe
+      commit: a486617f2186b46d58b2217c081c6a1034fd2085
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-munsiwoo-simple-mvc-in-php
+      source: flake4dock
+      repo: https://github.com/munsiwoo/simple-mvc-in-php
+      commit: b0360c5636592e0198006b4bcc28fe3ce45c6aae
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-mysqludf-lib-mysqludf-ta
+      source: flake4dock
+      repo: https://github.com/mysqludf/lib_mysqludf_ta
+      commit: c8ebf8106decac86abe87247f73da8bcc5652a92
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: f4d-nanotools-nanonodemonitor
+      source: flake4dock
+      repo: https://github.com/NanoTools/nanoNodeMonitor
+      commit: 2de0b44f5a521f5cd69114bdecaf55137fddaa03
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-nazar-pc-docker-phpmyadmin
+      source: flake4dock
+      repo: https://github.com/nazar-pc/docker-phpmyadmin
+      commit: 52c8ccd4032cd778b67ebccb33ace16942c1c1ee
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-nerab-dropcaster
+      source: flake4dock
+      repo: https://github.com/nerab/dropcaster
+      commit: 061aa29adb7e59dd532d5314dd35c780623156b8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-netflix-skunkworks-aardvark
+      source: flake4dock
+      repo: https://github.com/Netflix-Skunkworks/aardvark
+      commit: 4351fe4958f4f24f5e8cbd00d961b603dfe2eae4
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-nexmo-community-deskmo
+      source: flake4dock
+      repo: https://github.com/nexmo-community/deskmo
+      commit: b2c8c1ea71f273c3790f38027592b0fca8769cad
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-nlplearn-qanet
+      source: flake4dock
+      repo: https://github.com/NLPLearn/QANet
+      commit: 289ece355ea0ab75447fd467cd731bf1fb980356
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-nopsolutions-nopcommerce
+      source: flake4dock
+      repo: https://github.com/nopSolutions/nopCommerce
+      commit: 4a8a7578fb8e036bda5a315587203eafdb1fe988
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-nymea-pi-gen
+      source: flake4dock
+      repo: https://github.com/nymea/pi-gen
+      commit: 5d044ba71b7eba33860fdbf222a9a29ae42691e9
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-oltarasenko-erlang-distribution-in-docker
+      source: flake4dock
+      repo: https://github.com/oltarasenko/erlang_distribution_in_docker
+      commit: ecbfbd44ad36050c42445d913d0f4257583ddf99
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: erlang
+    - id: f4d-ome-bioformats
+      source: flake4dock
+      repo: https://github.com/ome/bioformats
+      commit: 2c8ac46c8aeba7de840fa18917ee886c34d4cba8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-onfido-k8s-rabbit-pod-autoscaler
+      source: flake4dock
+      repo: https://github.com/onfido/k8s-rabbit-pod-autoscaler
+      commit: df49704a77c57853bdbb0b2ad334d41bbd181436
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-opendns-security-ninjas-appsec-training
+      source: flake4dock
+      repo: https://github.com/opendns/Security_Ninjas_AppSec_Training
+      commit: ac15897a057c522ed8fc3838685cf89177a93c01
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-openmf-mobile-wallet
+      source: flake4dock
+      repo: https://github.com/openMF/mobile-wallet
+      commit: 5bdf34df2559ba9c4be197455c854573b23aeab9
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-paulpierre-informer
+      source: flake4dock
+      repo: https://github.com/paulpierre/informer
+      commit: 73aba0011ebac327366cc7a161e227e1cc650fba
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-philpep-test-driven-infrastructure-example
+      source: flake4dock
+      repo: https://github.com/philpep/test-driven-infrastructure-example
+      commit: 240fbbffabe2ecddba55661392f682f9de335991
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-phpdave11-php-survey-builder
+      source: flake4dock
+      repo: https://github.com/phpdave11/php-survey-builder
+      commit: d8f3475daf329bb515ae97f6dbace3700e49d96e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-pilot-eventator
+      source: flake4dock
+      repo: https://github.com/pilot/eventator
+      commit: 7309258356dbf7ad29fa84fa3f4ac962874f8a4e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-pimcore-docker
+      source: flake4dock
+      repo: https://github.com/pimcore/docker
+      commit: e9de70a70d9ba58884767b319839da65a503873b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-ponkotuy-myfleetgirls
+      source: flake4dock
+      repo: https://github.com/ponkotuy/MyFleetGirls
+      commit: 5cd7d84e3bd921488aa27c1ad5247a352e71427d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: scala
+    - id: f4d-press-one-prsc
+      source: flake4dock
+      repo: https://github.com/Press-One/prsc
+      commit: d971a3cf180638187987e507233dcac301ec2e32
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: clojure
+    - id: f4d-proctorlabs-katalyst
+      source: flake4dock
+      repo: https://github.com/proctorlabs/katalyst
+      commit: 951868130a776866bc0b25583890aa8bbe37cf5d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-projectsidewalk-sidewalkwebpage
+      source: flake4dock
+      repo: https://github.com/ProjectSidewalk/SidewalkWebpage
+      commit: 5b170527e4b6410dd59044fa3a606700bcc131ef
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: scala
+    - id: f4d-prometheus-docs
+      source: flake4dock
+      repo: https://github.com/prometheus/docs
+      commit: 278728d4e86a3c91b6ad9683d9705809ccef79ff
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-prometheus-net-docker-exporter
+      source: flake4dock
+      repo: https://github.com/prometheus-net/docker_exporter
+      commit: 0daa2d2c189a234753ea18b184c7e4d3e831f76d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-pstauffer-docker-bind
+      source: flake4dock
+      repo: https://github.com/pstauffer/docker-bind
+      commit: 06eac21ac49b9bef296e4b5f81e2412ea67a7b8e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-pstauffer-docker-inotify
+      source: flake4dock
+      repo: https://github.com/pstauffer/docker-inotify
+      commit: 4fa7d75f0fc2e057cb9f0e9d44c95384f9a6fc02
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-quen2404-openapi-diff
+      source: flake4dock
+      repo: https://github.com/quen2404/openapi-diff
+      commit: 3a1ef030b68359886d91c8df90c7b063df5171b0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-rchatley-extreme-startup
+      source: flake4dock
+      repo: https://github.com/rchatley/extreme_startup
+      commit: 069468ab0d2c4cf8c6eadc065d42ec4917d46730
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-realestate-com-au-akamai-rspec
+      source: flake4dock
+      repo: https://github.com/realestate-com-au/akamai-rspec
+      commit: 05c35f46fc02fc4863067a34b921d1d16f3ef636
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-rebornix-dotbadge
+      source: flake4dock
+      repo: https://github.com/rebornix/DotBadge
+      commit: 82d64d398d767d383477daec937e700ca78897de
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-revelrylabs-revelry-phoenix-app-template
+      source: flake4dock
+      repo: https://github.com/revelrylabs/revelry_phoenix_app_template
+      commit: 1f7631182160ec5e241f9e3c4c97d6ade2a68455
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: elixir
+    - id: f4d-rmoriz-openra-dockerfile
+      source: flake4dock
+      repo: https://github.com/rmoriz/openra-dockerfile
+      commit: fd90d476b4e2f0f892320d043b2db24dd7e52f83
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-rnzsgh-eks-workshop-sample-api-service-go
+      source: flake4dock
+      repo: https://github.com/rnzsgh/eks-workshop-sample-api-service-go
+      commit: 3f29ddbff4cdbe497836d3d7edeb309f3677b11d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: f4d-rob3139-parse-server-example
+      source: flake4dock
+      repo: https://github.com/rob3139/parse-server-example
+      commit: 258924a4444a802308d077f630e6aebd4e8d7f85
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-robinmonjo-coincoin
+      source: flake4dock
+      repo: https://github.com/robinmonjo/coincoin
+      commit: 9d743e6d7740c19b544fa8d2f48fbbae27623b42
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: elixir
+    - id: f4d-robozonky-robozonky
+      source: flake4dock
+      repo: https://github.com/RoboZonky/robozonky
+      commit: eb65bdbdd00d2b5e9cb8eef75dcfb3f2e7204b5a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-root-gg-plik
+      source: flake4dock
+      repo: https://github.com/root-gg/plik
+      commit: af5cc56fbc8fa035a926d538fcc86849f16f275e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: f4d-ropensci-fishbaseapi
+      source: flake4dock
+      repo: https://github.com/ropensci/fishbaseapi
+      commit: 8b2db6ffcf7b9156d19d53ee48c143e9b0a64bb8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-rycus86-docker-pycharm
+      source: flake4dock
+      repo: https://github.com/rycus86/docker-pycharm
+      commit: e046fc553c4421e9936f41b4ace5228292cf7155
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-saltside-thrifter
+      source: flake4dock
+      repo: https://github.com/Saltside/thrifter
+      commit: a3ce6405eca6328a1dd98592743ce98113afa8b0
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-sanjusss-aria2-ariang-docker
+      source: flake4dock
+      repo: https://github.com/sanjusss/aria2-ariang-docker
+      commit: f5e39d616ffe371d972a66358e8d6099941ad59b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-sebazzz-return
+      source: flake4dock
+      repo: https://github.com/Sebazzz/Return
+      commit: 4f840e8c7b42fd3bdec9b5aadd7e3442c1c29a02
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-semver-semver-org
+      source: flake4dock
+      repo: https://github.com/semver/semver.org
+      commit: 5991a5905eb4591bbf652562aa40bdc781015100
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-senvardarsemih-generic-for-core
+      source: flake4dock
+      repo: https://github.com/senvardarsemih/generic-for-core
+      commit: 8a268b254e2524aa54943c8132580f67ddb29bbd
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-serebrov-emoji-mart-vue
+      source: flake4dock
+      repo: https://github.com/serebrov/emoji-mart-vue
+      commit: f3da016547b8511f5fcc3ff94616769402c2387e
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-simon987-much-assembly-required
+      source: flake4dock
+      repo: https://github.com/simon987/Much-Assembly-Required
+      commit: 1a5d12a19fb7202ac366e97fa922cdf230ec0524
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java
+    - id: f4d-skx-markdownshare-com
+      source: flake4dock
+      repo: https://github.com/skx/markdownshare.com
+      commit: e750fcb5851a66922970506c2aa30362aa20cf71
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-smashgg-developer-portal
+      source: flake4dock
+      repo: https://github.com/smashgg/developer-portal
+      commit: 306e1584bb2d6527c212a151a06d8990fc355ebb
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-suvash-hulaaki
+      source: flake4dock
+      repo: https://github.com/suvash/hulaaki
+      commit: b9dce2ab3d203a0af37c9f59a8db7f2e6c2eba3b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: elixir
+    - id: f4d-svartalf-unbound-telemetry
+      source: flake4dock
+      repo: https://github.com/svartalf/unbound-telemetry
+      commit: ee5de6d9c2348fa2f4ea08071f2e82426723706a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-testlinkopensourcetrms-testlink-code
+      source: flake4dock
+      repo: https://github.com/TestLinkOpenSourceTRMS/testlink-code
+      commit: 187f8e188220802f4c9623b7fe9538b077450708
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-thecreazy-chiccocoin
+      source: flake4dock
+      repo: https://github.com/thecreazy/chiccocoin
+      commit: 228ec514cd5902539a0b142ae39ed89a777e9284
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-thejf-antennas
+      source: flake4dock
+      repo: https://github.com/TheJF/antennas
+      commit: f6f1c1fad5e84ec05ff5765f6c8e872c2f2ba735
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-tiredofit-docker-freescout
+      source: flake4dock
+      repo: https://github.com/tiredofit/docker-freescout
+      commit: 02dc17e6e10026544fb9995b7b2fb66e6b890a05
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-travis-ci-travis-api
+      source: flake4dock
+      repo: https://github.com/travis-ci/travis-api
+      commit: 895ebf53d8664f69ffd3753e1e9f9014de247be2
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-troessner-reek
+      source: flake4dock
+      repo: https://github.com/troessner/reek
+      commit: 82e35516ce33144fb7519fe30a8bae8fc17db9ea
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: ruby
+    - id: f4d-tsathishkumar-myscontroller-rs
+      source: flake4dock
+      repo: https://github.com/tsathishkumar/MySController-rs
+      commit: 3da521a9d737b8652217a8ad21e381d732df1911
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-tumblr-collins
+      source: flake4dock
+      repo: https://github.com/tumblr/collins
+      commit: 8b23af99a5abb9e2e628a8df91699c293b0777a5
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: scala
+    - id: f4d-unacast-actions-github-deployment-status
+      source: flake4dock
+      repo: https://github.com/unacast/actions-github-deployment-status
+      commit: 2a9c6b7b19e05d49e9203b94039117fe9052de3c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-ushahidi-platform
+      source: flake4dock
+      repo: https://github.com/ushahidi/platform
+      commit: e1f32146cdc28383b1db086485221e1d7d262906
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-valeriansaliou-bloom
+      source: flake4dock
+      repo: https://github.com/valeriansaliou/bloom
+      commit: e23c422e9a445a8eb432dc2f5ece07534d57fc14
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-vegasbrianc-docker-compose-demo
+      source: flake4dock
+      repo: https://github.com/vegasbrianc/docker-compose-demo
+      commit: 9619be430c415ae5a829dd6e7d9083e7a849e597
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-vinicostaa-node-typescript-restify
+      source: flake4dock
+      repo: https://github.com/vinicostaa/node-typescript-restify
+      commit: d2b1ca45a3d709ff6461990bc0ae7551183876a1
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: typescript
+    - id: f4d-wdcommunity-wdpksrc
+      source: flake4dock
+      repo: https://github.com/WDCommunity/wdpksrc
+      commit: fd2cb82dd17730346f5226acaff4fc78002a9f67
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-weaveworks-watch
+      source: flake4dock
+      repo: https://github.com/weaveworks/Watch
+      commit: 7394fd7068d0e7e18e4dd7f350dbcd1e608422f8
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: go
+    - id: f4d-weihanli-sparktodo
+      source: flake4dock
+      repo: https://github.com/WeihanLi/SparkTodo
+      commit: 8af4bf661bb5f2fc5b8490eeee80a4bca5064244
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-wooga-atlas-unity
+      source: flake4dock
+      repo: https://github.com/wooga/atlas-unity
+      commit: e4b02a793613bac65b9159dfbd60373a50d28d4d
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: groovy
+    - id: f4d-wpscanteam-vulnerablewordpress
+      source: flake4dock
+      repo: https://github.com/wpscanteam/VulnerableWordpress
+      commit: 8179d10e17a1da360abb376837c2d896fc635499
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-wpsight-wpcasa
+      source: flake4dock
+      repo: https://github.com/wpsight/wpcasa
+      commit: f82cb07f98623a6e3bec3a1e12c78a352ce93f3a
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-wyhaya-updns
+      source: flake4dock
+      repo: https://github.com/wyhaya/updns
+      commit: e1ddde391404e8a1ff686354acdcdea540e9c7ea
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: rust
+    - id: f4d-wyveo-craftcms-docker
+      source: flake4dock
+      repo: https://github.com/wyveo/craftcms-docker
+      commit: 7c1ddcebb2290a05699dd1d203daba444590fbc6
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: php
+    - id: f4d-xaljer-docker-kodexplorer
+      source: flake4dock
+      repo: https://github.com/xaljer/docker-kodexplorer
+      commit: 513e4787ec77c4f78edf5bdd13e9a6c4c029c560
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-xiangrui120-v2ray-heroku-undone
+      source: flake4dock
+      repo: https://github.com/xiangrui120/v2ray-heroku-undone
+      commit: 0359375f70a86e4ab46671163e53aa2f3a685897
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+    - id: f4d-yebinama-paclair
+      source: flake4dock
+      repo: https://github.com/yebinama/paclair
+      commit: c4ba7b01a8f757d17305d5025f9513ada4beea82
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: python
+    - id: f4d-zachsaw-binaron-serializer
+      source: flake4dock
+      repo: https://github.com/zachsaw/Binaron.Serializer
+      commit: 441bcb286768494aa5b3bfdc5db034298343abad
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c#
+    - id: f4d-zhangyz-llvm-slicing
+      source: flake4dock
+      repo: https://github.com/zhangyz/llvm-slicing
+      commit: 17898bd0021cfb12ccafe9f4ec92338a1f03b313
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: c
+    - id: f4d-zillet-zillet
+      source: flake4dock
+      repo: https://github.com/zillet/zillet
+      commit: 1271502e9e982a7324a6da9d95c70194f9b3347c
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: javascript
+    - id: f4d-zotonic-zotonic
+      source: flake4dock
+      repo: https://github.com/zotonic/zotonic
+      commit: ad2926db56ecb48cea9a2401474513ba49f28afc
+      context: .
+      dockerfile: Dockerfile.dev
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: erlang
+    - id: f4d-zyclonite-nassh-relay
+      source: flake4dock
+      repo: https://github.com/zyclonite/nassh-relay
+      commit: 096c3e76939c9ae7604518c87a3e4245b53a799b
+      context: .
+      dockerfile: Dockerfile
+      smoke:
+        run_for: 10s
+      distro_family: unknown
+      language: java

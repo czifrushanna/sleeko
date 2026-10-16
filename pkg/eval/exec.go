@@ -21,6 +21,7 @@ import (
 	"fmt"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 // execResult is a finished command.
@@ -34,9 +35,18 @@ type execResult struct {
 // not be run at all or the context ended; a non-zero exit is in ExitCode.
 type execFunc func(ctx context.Context, dir, name string, args ...string) (execResult, error)
 
+// waitDelay bounds how long a cancelled command may keep its output open.
+const waitDelay = 10 * time.Second
+
 func runCommand(ctx context.Context, dir, name string, args ...string) (execResult, error) {
 	cmd := exec.CommandContext(ctx, name, args...)
 	cmd.Dir = dir
+	// Cancelling must stop the command's children too: `docker buildx` runs
+	// as a plugin child of `docker`, and killing only the parent leaves the
+	// build running and holding the output open, so Wait would block until
+	// it finished on its own, past any timeout.
+	killProcessGroup(cmd)
+	cmd.WaitDelay = waitDelay
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout, cmd.Stderr = &stdout, &stderr
 	err := cmd.Run()

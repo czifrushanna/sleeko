@@ -82,7 +82,7 @@ func (w *world) Checkout(_ context.Context, repo, _ string) (string, error) {
 	return w.src, nil
 }
 
-func (w *world) Build(_ context.Context, spec BuildSpec) (Image, error) {
+func (w *world) Build(ctx context.Context, spec BuildSpec) (Image, error) {
 	data, err := os.ReadFile(spec.Dockerfile)
 	if err != nil {
 		return Image{}, err
@@ -93,6 +93,10 @@ func (w *world) Build(_ context.Context, spec BuildSpec) (Image, error) {
 	w.builds = append(w.builds, df)
 	w.mu.Unlock()
 
+	if _, slow := marker(df, "SLOWBUILD"); slow {
+		<-ctx.Done()
+		return Image{}, ctx.Err()
+	}
 	if _, fail := marker(df, "FAILBUILD"); fail {
 		return Image{}, errors.New("RUN failed: exit code 1")
 	}
@@ -233,7 +237,7 @@ func (h *harness) run(t *testing.T, items ...Item) []Record {
 	h.runner = &Runner{
 		Source: h.w, Builder: h.w, Scanner: h.w, Smoker: h.w, Optimizer: h.opt,
 		Cache:   &Cache{Dir: h.cache},
-		WorkDir: h.work, Pipeline: "W0", Repetitions: h.reps, Concurrency: 2,
+		WorkDir: h.work, Pipeline: "W0", Repetitions: h.reps, Concurrency: 2, BuildTimeout: 50 * time.Millisecond,
 		Weights: score.DefaultWeights, SizeTolerance: score.DefaultSizeTolerance,
 		Model: "test-model", PromptHash: "abc123",
 		Out: NewRecordWriter(&h.out), Done: h.done,
@@ -527,4 +531,20 @@ func TestRun_RequiresRepetitions(t *testing.T) {
 func TestSanitizeTag(t *testing.T) {
 	require.Equal(t, "w0-w1", sanitizeTag("W0+W1"))
 	require.Equal(t, "generate-verify", sanitizeTag("generate,verify"))
+}
+
+func TestRun_BuildTimeout(t *testing.T) {
+	h := newHarness(t, &fakeOptimizer{candidate: candidate("# SLOWBUILD")})
+	h.reps = 1
+	recs := h.run(t)
+	require.Equal(t, StatusMeasured, recs[0].Status)
+	require.Equal(t, fail, gateStatuses(recs[0])[score.G4Build])
+	require.Contains(t, recs[0].Gates[3].Reason, "took longer than")
+
+	// A slow O′ makes the item unusable rather than failing the pipeline.
+	slow := newHarness(t, NoopOptimizer{})
+	writeOriginal(slow, originalDockerfile+"# SLOWBUILD\n")
+	recs = slow.run(t)
+	require.Equal(t, StatusInfraError, recs[0].Status)
+	require.Contains(t, recs[0].Error, "took longer than 50ms")
 }

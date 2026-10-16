@@ -57,27 +57,36 @@ type Item struct {
 	// Context and Dockerfile are paths relative to the repository root.
 	Context    string            `yaml:"context"`
 	Dockerfile string            `yaml:"dockerfile"`
-	BuildArgs  map[string]string `yaml:"build_args"`
+	BuildArgs  map[string]string `yaml:"build_args,omitempty"`
 	// Platform defaults to linux/amd64.
-	Platform string `yaml:"platform"`
+	Platform string `yaml:"platform,omitempty"`
 	// Target is the stage to build; empty builds the final stage.
-	Target string `yaml:"target"`
+	Target string `yaml:"target,omitempty"`
 	Smoke  Smoke  `yaml:"smoke"`
 	// DistroFamily is the final image's distribution family (debian, alpine,
 	// ...), the report's split.
 	DistroFamily string `yaml:"distro_family"`
+	// Language is the project's main programming language, for the
+	// benchmark's diversity table; optional.
+	Language string `yaml:"language,omitempty"`
 }
 
-// Smoke is the smoke test: run the image and compare the exit code.
+// Smoke is the smoke test: run the image and compare the exit code, or, with
+// RunFor, check that it starts and keeps running.
 type Smoke struct {
 	// Command replaces the image's CMD; empty runs the image as it is.
-	Command []string `yaml:"command"`
+	Command []string `yaml:"command,omitempty"`
 	// Entrypoint, when set, replaces the image's ENTRYPOINT.
-	Entrypoint string `yaml:"entrypoint"`
+	Entrypoint string `yaml:"entrypoint,omitempty"`
 	// ExitCode is the expected exit code.
-	ExitCode int `yaml:"exit_code"`
+	ExitCode int `yaml:"exit_code,omitempty"`
 	// Timeout bounds the run; defaults to DefaultSmokeTimeout.
-	Timeout time.Duration `yaml:"timeout"`
+	Timeout time.Duration `yaml:"timeout,omitempty"`
+	// RunFor switches to the "container starts" test for images that run a
+	// service and never exit: the test passes when the container is still
+	// running after RunFor, or when it has already exited with ExitCode.
+	// Timeout does not apply.
+	RunFor time.Duration `yaml:"run_for,omitempty"`
 }
 
 const (
@@ -152,8 +161,8 @@ func (it *Item) validate() error {
 		return errors.New("dockerfile is required")
 	case it.DistroFamily == "":
 		return errors.New("distro_family is required")
-	case it.Smoke.Timeout < 0:
-		return errors.New("smoke.timeout must not be negative")
+	case it.Smoke.Timeout < 0 || it.Smoke.RunFor < 0:
+		return errors.New("smoke.timeout and smoke.run_for must not be negative")
 	}
 	for _, p := range []string{it.Context, it.Dockerfile} {
 		if path.IsAbs(p) || strings.HasPrefix(path.Clean(p), "..") {

@@ -86,8 +86,12 @@ type ImageInfo struct {
 	Digest     string         `json:"digest"`
 	Size       int64          `json:"size"`
 	Severities map[string]int `json:"severities"`
-	// OS is what the scanner detected.
+	// OS is what the scanner detected; empty when it found no distribution
+	// (an image built FROM scratch).
 	OS string `json:"os,omitempty"`
+	// User is the image config's USER, inherited ones included; empty means
+	// root.
+	User string `json:"user,omitempty"`
 	// BuiltAt is when the image was built; O′ may come from the cache.
 	BuiltAt time.Time `json:"built_at"`
 }
