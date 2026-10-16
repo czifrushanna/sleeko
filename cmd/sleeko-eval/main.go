@@ -18,6 +18,7 @@
 //	sleeko-eval run    --manifest FILE --pipeline STAGES|noop [--name NAME] [--reps N] [--out FILE] ...
 //	sleeko-eval report [--out FILE] RESULTS.jsonl...
 //	sleeko-eval failures [--gate G] [--out DIR] RESULTS.jsonl...
+//	sleeko-eval compare --a W0 --b W0+W1 [--out FILE] RESULTS.jsonl...
 //
 // `db` downloads Trivy's vulnerability database once; every later scan uses
 // that copy unchanged. `run` appends one JSONL record per attempt and skips
@@ -46,8 +47,10 @@ import (
 	"github.com/czifrushanna/sleeko/pkg/adapter"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
 	"github.com/czifrushanna/sleeko/pkg/eval"
+	"github.com/czifrushanna/sleeko/pkg/lookup"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 const usage = `usage:
@@ -55,6 +58,7 @@ const usage = `usage:
   sleeko-eval run    [flags]                 measure a pipeline over the benchmark
   sleeko-eval report [flags] RESULTS.jsonl...  write the markdown report
   sleeko-eval failures [flags] RESULTS.jsonl... list failed attempts, save them as fixtures
+  sleeko-eval compare [flags] RESULTS.jsonl...  McNemar and Wilcoxon of pipeline B against A
 
 Run 'sleeko-eval <command> -h' for the flags of a command.
 `
@@ -79,6 +83,8 @@ func main() {
 		err = runReport(os.Args[2:])
 	case "failures":
 		err = runFailures(os.Args[2:])
+	case "compare":
+		err = runCompare(os.Args[2:])
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(2)
@@ -161,6 +167,7 @@ func runEval(ctx context.Context, args []string) error {
 	buildTimeout := fs.Duration("build-timeout", 0, "limit for each image build, e.g. 10m (default: none)")
 	maxOriginalAge := fs.Duration("max-original-age", 0, "rebuild O′ when its cached build is older than this, e.g. 12h (default: any age)")
 	allowMixed := fs.Bool("allow-mixed-runs", false, "resume into --out even if code, pipeline, model, prompt, manifest or Trivy DB changed")
+	hadolintImage := fs.String("hadolint-image", verify.DefaultHadolintImage, "Hadolint container image for the verify stage's lint check; empty uses hadolint on PATH, or skips lint without it")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	fs.Parse(args)
 
@@ -184,7 +191,7 @@ func runEval(ctx context.Context, args []string) error {
 		return err
 	}
 
-	optimizer, llm, err := buildOptimizer(*stages)
+	optimizer, llm, vcfg, err := buildOptimizer(*stages, *hadolintImage)
 	if err != nil {
 		return err
 	}
@@ -210,27 +217,29 @@ func runEval(ctx context.Context, args []string) error {
 		selectedIDs = append(selectedIDs, it.ID)
 	}
 	info := eval.RunInfo{
-		StartedAt:      time.Now().UTC(),
-		Code:           codeVersion(),
-		Pipeline:       *name,
-		Stages:         *stages,
-		Model:          llm.Model,
-		APIBaseURL:     llm.APIBaseURL,
-		MaxTokens:      llm.Budget.MaxTokens,
-		ContextWindow:  llm.Budget.ContextWindow,
-		Prompt:         llm.Prompt,
-		Manifest:       *manifestFile,
-		ManifestSHA256: fmt.Sprintf("%x", sha256.Sum256(manifestData)),
-		Items:          selectedIDs,
-		Repetitions:    *reps,
-		Concurrency:    *concurrency,
-		BuildTimeout:   buildTimeout.String(),
-		MaxOriginalAge: maxOriginalAge.String(),
-		SizeTolerance:  *tolerance,
-		Weights:        score.DefaultWeights,
-		TrivyImage:     common.trivyImage,
-		TrivyDB:        dbVersion,
-		Docker:         dockerVersion(ctx),
+		StartedAt:       time.Now().UTC(),
+		Code:            codeVersion(),
+		Pipeline:        *name,
+		Stages:          *stages,
+		Model:           llm.Model,
+		APIBaseURL:      llm.APIBaseURL,
+		MaxTokens:       llm.Budget.MaxTokens,
+		ContextWindow:   llm.Budget.ContextWindow,
+		Prompt:          llm.Prompt,
+		MaxRepairRounds: vcfg.maxRepairRounds,
+		Lint:            vcfg.lint,
+		Manifest:        *manifestFile,
+		ManifestSHA256:  fmt.Sprintf("%x", sha256.Sum256(manifestData)),
+		Items:           selectedIDs,
+		Repetitions:     *reps,
+		Concurrency:     *concurrency,
+		BuildTimeout:    buildTimeout.String(),
+		MaxOriginalAge:  maxOriginalAge.String(),
+		SizeTolerance:   *tolerance,
+		Weights:         score.DefaultWeights,
+		TrivyImage:      common.trivyImage,
+		TrivyDB:         dbVersion,
+		Docker:          dockerVersion(ctx),
 	}
 	if llm.Prompt != "" {
 		info.PromptHash = eval.PromptHash(llm.Prompt)
@@ -274,21 +283,29 @@ func runEval(ctx context.Context, args []string) error {
 	return r.Run(ctx, selected)
 }
 
-// buildOptimizer returns the optimizer for --pipeline and the LLM settings
-// it uses (empty for noop). A real pipeline reads the adapter's
-// configuration, so it runs exactly as it would there.
-func buildOptimizer(stages string) (eval.Optimizer, pipeline.LLM, error) {
+// verifyConfig is what the run records about the verify stage.
+type verifyConfig struct {
+	maxRepairRounds int
+	lint            string
+}
+
+// buildOptimizer returns the optimizer for --pipeline and the LLM and verify
+// settings it uses (empty for noop). A real pipeline reads the adapter's
+// configuration, so it runs exactly as it would there; only the lint check
+// differs, running Hadolint from its container image, which the adapter's
+// image cannot (D2).
+func buildOptimizer(stages, hadolintImage string) (eval.Optimizer, pipeline.LLM, verifyConfig, error) {
 	if stages == "noop" {
-		return eval.NoopOptimizer{}, pipeline.LLM{}, nil
+		return eval.NoopOptimizer{}, pipeline.LLM{}, verifyConfig{}, nil
 	}
 
 	names, err := pipeline.ParseNames(stages)
 	if err != nil {
-		return nil, pipeline.LLM{}, fmt.Errorf("--pipeline: %w", err)
+		return nil, pipeline.LLM{}, verifyConfig{}, fmt.Errorf("--pipeline: %w", err)
 	}
 	cfg, err := adapter.LoadConfig()
 	if err != nil {
-		return nil, pipeline.LLM{}, err
+		return nil, pipeline.LLM{}, verifyConfig{}, err
 	}
 	llm := pipeline.LLM{
 		APIBaseURL: cfg.APIBaseURL,
@@ -297,11 +314,29 @@ func buildOptimizer(stages string) (eval.Optimizer, pipeline.LLM, error) {
 		Prompt:     cfg.Prompt,
 		Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
 	}
-	p, err := pipeline.New(names, pipeline.Deps{LLM: llm})
-	if err != nil {
-		return nil, pipeline.LLM{}, err
+
+	verifier := &verify.Verifier{Lookups: &lookup.Client{}}
+	var vcfg verifyConfig
+	for _, n := range names {
+		if n != pipeline.VerifyStageName {
+			continue
+		}
+		vcfg.maxRepairRounds = cfg.MaxRepairRounds
+		switch h := verify.FindHadolint(); {
+		case hadolintImage != "":
+			verifier.Lint = &verify.Hadolint{Command: []string{"docker", "run", "--rm", "-i", hadolintImage, "hadolint"}}
+			vcfg.lint = hadolintImage
+		case h != nil:
+			verifier.Lint = h
+			vcfg.lint = h.Command[0]
+		}
 	}
-	return &eval.PipelineOptimizer{Pipeline: p}, llm, nil
+
+	p, err := pipeline.New(names, pipeline.Deps{LLM: llm, Verifier: verifier, MaxRepairRounds: cfg.MaxRepairRounds})
+	if err != nil {
+		return nil, pipeline.LLM{}, verifyConfig{}, err
+	}
+	return &eval.PipelineOptimizer{Pipeline: p}, llm, vcfg, nil
 }
 
 // codeVersion is the commit this binary was built from, as `go build`
@@ -356,6 +391,31 @@ func readAll(files []string) ([]eval.Record, error) {
 		records = append(records, recs...)
 	}
 	return records, nil
+}
+
+func runCompare(args []string) error {
+	fs := flag.NewFlagSet("compare", flag.ExitOnError)
+	a := fs.String("a", "", "baseline pipeline name, e.g. W0")
+	b := fs.String("b", "", "pipeline compared against it, e.g. W0+W1")
+	out := fs.String("out", "", "write the markdown here instead of stdout")
+	fs.Parse(args)
+	if *a == "" || *b == "" || fs.NArg() == 0 {
+		return errors.New("usage: sleeko-eval compare --a W0 --b W0+W1 RESULTS.jsonl...")
+	}
+	records, err := readAll(fs.Args())
+	if err != nil {
+		return err
+	}
+	var w io.Writer = os.Stdout
+	if *out != "" {
+		f, err := os.Create(*out)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+		w = f
+	}
+	return eval.WriteComparison(w, eval.Compare(records, *a, *b))
 }
 
 func runFailures(args []string) error {

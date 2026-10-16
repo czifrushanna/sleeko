@@ -52,6 +52,8 @@ type PipelineReport struct {
 	// Unmeasured counts attempts that could not be measured, through the
 	// harness's fault or the item's; they are not part of any other number.
 	Unmeasured int `json:"unmeasured"`
+	// Verify holds W1's metrics, for pipelines with a verify stage.
+	Verify *VerifyStats `json:"verify,omitempty"`
 }
 
 // BuildReport aggregates records into per-pipeline reports, sorted by
@@ -98,6 +100,7 @@ func BuildReport(records []Record) []PipelineReport {
 		}
 
 		pr.All = group(counted)
+		pr.Verify = verifyStats(counted)
 		for distro, rs := range byDistro {
 			pr.ByDistro[distro] = group(rs)
 		}
@@ -167,7 +170,11 @@ func WriteMarkdown(w io.Writer, reports []PipelineReport) error {
 			writeFailureRow(&b, string(id), pr.GateFailures[id], pr.All.Attempts)
 		}
 		writeFailureRow(&b, "optimizer produced no candidate", pr.OptimizerFailures, pr.All.Attempts)
-		fmt.Fprintf(&b, "\nNot measured (harness errors, excluded above): %d attempts.\n\n", pr.Unmeasured)
+		fmt.Fprintf(&b, "\nNot measured (harness errors or invalid items, excluded above): %d attempts.\n", pr.Unmeasured)
+		if pr.Verify != nil {
+			writeVerifyStats(&b, pr.Verify)
+		}
+		b.WriteString("\n")
 	}
 	_, err := io.WriteString(w, b.String())
 	return err

@@ -91,7 +91,12 @@ bin/sleeko-eval report noop.jsonl
 
 For a real pipeline, set the adapter's `LLMGW_*` variables and pass its stages,
 e.g. `--pipeline generate --name W0`; `eval/runs/w0.sh` is the W0 measurement
-as one command. Record statuses: `measured`, `optimizer_failed` (counts as a
+as one command, and `eval/runs/w1.sh` (`generate,verify`) is W0+W1, to run
+right after it so both use the same O′ builds. W1 records each verify round
+per attempt; the report adds per-check failure rates before and after repair
+and the repair rounds used. `sleeko-eval compare --a W0 --b W0+W1` gives
+McNemar on per-image success (an image succeeds when most repetitions do) and
+Wilcoxon signed-rank on per-image ΔV and ΔS, both exact. Record statuses: `measured`, `optimizer_failed` (counts as a
 failed attempt), `item_invalid` (the item's own O′ does not build or start;
 skipped on resume) and `infra_error` (the machine's fault, e.g. BuildKit
 OOM-killed; retried on resume). `--max-original-age 12h` rebuilds a cached O′

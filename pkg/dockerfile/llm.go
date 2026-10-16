@@ -28,10 +28,13 @@ import (
 	"github.com/czifrushanna/sleeko/pkg/scanreport"
 )
 
-type chatMessage struct {
-	Role    string `json:"role"`
+// Message is one turn of a chat with the gateway.
+type Message struct {
+	Role    string `json:"role"` // "user" or "assistant"
 	Content string `json:"content"`
 }
+
+type chatMessage = Message
 
 type chatRequest struct {
 	Model     string        `json:"model"`
@@ -114,15 +117,26 @@ func (b Budget) scanReportBudget(promptPrefix, dockerfile string) int {
 // the prompt - a full report for a real base image is larger than any model's
 // context window (see pkg/scanreport).
 func OptimizeDockerfile(ctx context.Context, apiBaseURL, apiKey, model, promptPrefix, dockerfile, scanReport string, budget Budget) (string, error) {
+	prompt := BuildPrompt(promptPrefix, dockerfile, scanReport, budget)
+	return Chat(ctx, apiBaseURL, apiKey, model, []Message{{Role: "user", Content: prompt}}, budget.MaxTokens)
+}
+
+// BuildPrompt is the optimization prompt: the instructions, the Dockerfile,
+// and the scan report condensed and fitted to the budget.
+func BuildPrompt(promptPrefix, dockerfile, scanReport string, budget Budget) string {
 	condensed := scanreport.Condense(scanReport, budget.scanReportBudget(promptPrefix, dockerfile))
-	prompt := promptPrefix + dockerfile + scanReportHeading + condensed
+	return promptPrefix + dockerfile + scanReportHeading + condensed
+}
+
+// Chat sends a conversation to the gateway and returns the reply, streamed
+// and joined. A follow-up turn (a repair round) sends the whole conversation
+// so far, ending with the new user message. maxTokens of 0 omits the field.
+func Chat(ctx context.Context, apiBaseURL, apiKey, model string, messages []Message, maxTokens int) (string, error) {
 	reqBody := chatRequest{
-		Model: model,
-		Messages: []chatMessage{
-			{Role: "user", Content: prompt},
-		},
+		Model:     model,
+		Messages:  messages,
 		Stream:    true,
-		MaxTokens: budget.MaxTokens,
+		MaxTokens: maxTokens,
 	}
 
 	body, err := json.Marshal(reqBody)

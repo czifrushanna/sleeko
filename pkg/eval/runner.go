@@ -359,6 +359,7 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	rec.LatencyMS = r.now().Sub(start).Milliseconds()
 	rec.LLMRounds = out.LLMRounds
 	rec.Diagnostics = out.Diagnostics
+	rec.Verification = out.Verification
 	if err != nil {
 		rec.Status = StatusOptimizerFailed
 		rec.Error = err.Error()

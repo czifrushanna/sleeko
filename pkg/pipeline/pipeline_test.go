@@ -93,7 +93,7 @@ func TestParseNames(t *testing.T) {
 		{"default", "generate", []string{"generate"}, ""},
 		{"whitespace and empty entries", " generate ,, ", []string{"generate"}, ""},
 		{"repeated stage is kept", "generate,generate", []string{"generate", "generate"}, ""},
-		{"unknown", "generate,nope", nil, `unknown stage "nope" (known: generate)`},
+		{"unknown", "generate,nope", nil, `unknown stage "nope" (known: generate, verify)`},
 		{"empty", "", nil, "no stages configured"},
 		{"only separators", " , ", nil, "no stages configured"},
 	}
@@ -123,5 +123,5 @@ func TestNew(t *testing.T) {
 }
 
 func TestKnownNames(t *testing.T) {
-	require.Equal(t, []string{GenerateStageName}, KnownNames())
+	require.Equal(t, []string{GenerateStageName, VerifyStageName}, KnownNames())
 }
