@@ -17,6 +17,7 @@ package eval
 import (
 	"context"
 
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
 )
 
@@ -97,6 +98,8 @@ type OptimizeOutput struct {
 	Candidate   string
 	LLMRounds   int
 	Diagnostics []string
+	// Verification is the verify stage's rounds, when the pipeline has one.
+	Verification []pipeline.VerifyRound
 }
 
 // Optimizer runs the pipeline under evaluation.

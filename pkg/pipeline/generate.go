@@ -49,12 +49,15 @@ func NewGenerate(llm LLM) *Generate {
 func (g *Generate) Name() string { return GenerateStageName }
 
 func (g *Generate) Run(ctx context.Context, st *State) error {
-	optimized, err := dockerfile.OptimizeDockerfile(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, g.llm.Prompt, st.Original, st.ScanReport, g.llm.Budget)
+	prompt := dockerfile.BuildPrompt(g.llm.Prompt, st.Original, st.ScanReport, g.llm.Budget)
+	messages := []dockerfile.Message{{Role: "user", Content: prompt}}
+	optimized, err := dockerfile.Chat(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, messages, g.llm.Budget.MaxTokens)
 	st.LLMRounds++
 	if err != nil {
 		return err
 	}
 
+	st.Messages = append(messages, dockerfile.Message{Role: "assistant", Content: optimized})
 	st.Candidate = stripCodeFences(optimized)
 	return nil
 }

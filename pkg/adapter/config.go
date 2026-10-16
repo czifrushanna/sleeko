@@ -27,6 +27,8 @@ const (
 	envMaxTokens      = "LLMGW_MAX_TOKENS"
 	envContextWindow  = "LLMGW_CONTEXT_WINDOW"
 	envPipeline       = "OPTIMIZER_PIPELINE"
+	envRepairRounds   = "OPTIMIZER_MAX_REPAIR_ROUNDS"
+	envWorkerTimeout  = "OPTIMIZER_ADAPTER_WORKER_TIMEOUT"
 
 	defaultListenAddr     = ":8080"
 	defaultJobTTL         = time.Hour
@@ -38,6 +40,9 @@ const (
 	// inside it anyway (see pkg/scanreport), so this only bites on pathological
 	// images - and then it trims the report rather than failing the request.
 	defaultContextWindow = 32768
+	// defaultWorkerTimeout bounds one optimization end to end: registry
+	// pulls and every LLM call, repair rounds included.
+	defaultWorkerTimeout = 5 * time.Minute
 )
 
 // Config carries the adapter service configuration, resolved from environment
@@ -70,6 +75,13 @@ type Config struct {
 	// instructions and the Dockerfile leave inside it. Set LLMGW_CONTEXT_WINDOW
 	// to 0 to disable trimming entirely.
 	ContextWindow int
+	// MaxRepairRounds bounds the verify stage's repair rounds
+	// (OPTIMIZER_MAX_REPAIR_ROUNDS); 0 only checks.
+	MaxRepairRounds int
+	// WorkerTimeout bounds one optimization end to end
+	// (OPTIMIZER_ADAPTER_WORKER_TIMEOUT). Repair rounds are extra LLM calls,
+	// so a pipeline with verify may need more than the default.
+	WorkerTimeout time.Duration
 	// Pipeline is the ordered list of optimization stages run after extraction
 	// (see pkg/pipeline), set as a comma-separated OPTIMIZER_PIPELINE. It defaults
 	// to pipeline.DefaultNames(), the single LLM call.
@@ -79,20 +91,38 @@ type Config struct {
 // LoadConfig resolves the adapter configuration from the environment.
 func LoadConfig() (*Config, error) {
 	cfg := &Config{
-		ListenAddr:     defaultListenAddr,
-		JobTTL:         defaultJobTTL,
-		MaxConcurrency: defaultMaxConcurrency,
-		MaxTokens:      defaultMaxTokens,
-		ContextWindow:  defaultContextWindow,
-		APIKey:         os.Getenv(envAPIKey),
-		APIBaseURL:     os.Getenv(envAPIBaseURL),
-		Model:          os.Getenv(envModel),
-		Prompt:         dockerfile.DefaultPrompt,
-		Pipeline:       pipeline.DefaultNames(),
+		ListenAddr:      defaultListenAddr,
+		JobTTL:          defaultJobTTL,
+		MaxConcurrency:  defaultMaxConcurrency,
+		MaxTokens:       defaultMaxTokens,
+		ContextWindow:   defaultContextWindow,
+		APIKey:          os.Getenv(envAPIKey),
+		APIBaseURL:      os.Getenv(envAPIBaseURL),
+		Model:           os.Getenv(envModel),
+		Prompt:          dockerfile.DefaultPrompt,
+		Pipeline:        pipeline.DefaultNames(),
+		MaxRepairRounds: pipeline.DefaultMaxRepairRounds,
+		WorkerTimeout:   defaultWorkerTimeout,
 	}
 
 	if v := os.Getenv(envPrompt); v != "" {
 		cfg.Prompt = v
+	}
+
+	if v := os.Getenv(envRepairRounds); v != "" {
+		n, err := strconv.Atoi(v)
+		if err != nil || n < 0 {
+			return nil, fmt.Errorf("invalid %s %q: must be a non-negative integer", envRepairRounds, v)
+		}
+		cfg.MaxRepairRounds = n
+	}
+
+	if v := os.Getenv(envWorkerTimeout); v != "" {
+		d, err := time.ParseDuration(v)
+		if err != nil || d <= 0 {
+			return nil, fmt.Errorf("invalid %s %q: must be a positive duration like 10m", envWorkerTimeout, v)
+		}
+		cfg.WorkerTimeout = d
 	}
 
 	if v := os.Getenv(envPipeline); v != "" {

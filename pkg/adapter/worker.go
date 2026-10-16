@@ -5,16 +5,12 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"time"
 
 	v1 "github.com/czifrushanna/sleeko/pkg/api/v1"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/registry"
 )
-
-// workerTimeout bounds one optimization end to end (registry pulls + LLM call).
-const workerTimeout = 5 * time.Minute
 
 // newRegistryClient constructs the registry client used to pull artifact blobs.
 // Extracted as a var (rather than calling registry.NewClient directly in run())
@@ -28,7 +24,11 @@ var newRegistryClient = func(url, authorization string, insecure bool) registry.
 // terminal report. All pipeline failures become Failed reports, never HTTP errors,
 // so the polling Harbor job can always persist an outcome.
 func (s *Server) process(id string, req *v1.OptimizeRequest) {
-	ctx, cancel := context.WithTimeout(context.Background(), workerTimeout)
+	timeout := s.cfg.WorkerTimeout
+	if timeout <= 0 {
+		timeout = defaultWorkerTimeout
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 
 	report := s.run(ctx, req)

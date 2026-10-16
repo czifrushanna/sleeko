@@ -109,7 +109,7 @@ func TestWriteMarkdown(t *testing.T) {
 		"| G6_no_new_severe | 1 | 16.7% |",
 		"| G1_parse | 0 | 0.0% |",
 		"| optimizer produced no candidate | 1 | 16.7% |",
-		"Not measured (harness errors, excluded above): 3 attempts.",
+		"Not measured (harness errors or invalid items, excluded above): 3 attempts.",
 		"## Pipeline `noop`",
 		"| all | 1 | 1 | 0.0% | [0.0%, 79.3%] | – | – | 0 | – |",
 	} {

@@ -14,7 +14,7 @@ import (
 // regardless of what the surrounding environment has set.
 func setBaseEnv(t *testing.T) {
 	t.Helper()
-	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow, envPipeline} {
+	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow, envPipeline, envRepairRounds, envWorkerTimeout} {
 		t.Setenv(k, "")
 	}
 }
@@ -74,6 +74,8 @@ func TestLoadConfig_Defaults(t *testing.T) {
 	require.Equal(t, defaultMaxTokens, cfg.MaxTokens)
 	require.Equal(t, defaultContextWindow, cfg.ContextWindow)
 	require.Equal(t, pipeline.DefaultNames(), cfg.Pipeline)
+	require.Equal(t, pipeline.DefaultMaxRepairRounds, cfg.MaxRepairRounds)
+	require.Equal(t, defaultWorkerTimeout, cfg.WorkerTimeout)
 }
 
 func TestLoadConfig_PromptOverride(t *testing.T) {
@@ -94,9 +96,13 @@ func TestLoadConfig_Overrides(t *testing.T) {
 	t.Setenv(envMaxConcurrency, "8")
 	t.Setenv(envMaxTokens, "2048")
 	t.Setenv(envContextWindow, "131072")
+	t.Setenv(envRepairRounds, "0")
+	t.Setenv(envWorkerTimeout, "15m")
 
 	cfg, err := LoadConfig()
 	require.NoError(t, err)
+	require.Equal(t, 0, cfg.MaxRepairRounds)
+	require.Equal(t, 15*time.Minute, cfg.WorkerTimeout)
 	require.Equal(t, ":9090", cfg.ListenAddr)
 	require.Equal(t, 30*time.Minute, cfg.JobTTL)
 	require.Equal(t, 8, cfg.MaxConcurrency)
@@ -133,6 +139,8 @@ func TestLoadConfig_InvalidValues(t *testing.T) {
 		envMaxConcurrency: "-1",
 		envMaxTokens:      "0",
 		envContextWindow:  "-1",
+		envRepairRounds:   "-1",
+		envWorkerTimeout:  "soon",
 	}
 	for env, bad := range cases {
 		t.Run(env, func(t *testing.T) {

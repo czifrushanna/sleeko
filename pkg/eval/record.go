@@ -24,6 +24,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
 )
 
@@ -68,7 +69,10 @@ type Record struct {
 	CandidateDockerfile string `json:"candidate_dockerfile,omitempty"`
 
 	Diagnostics []string `json:"diagnostics,omitempty"`
-	LLMRounds   int      `json:"llm_rounds"`
+	// Verification is W1's verify rounds: round 0 checks the generated
+	// candidate, round n the n-th repair. Empty for pipelines without verify.
+	Verification []pipeline.VerifyRound `json:"verification,omitempty"`
+	LLMRounds    int                    `json:"llm_rounds"`
 	// LatencyMS is the pipeline's run time, in milliseconds.
 	LatencyMS  int64  `json:"latency_ms"`
 	Model      string `json:"model,omitempty"`

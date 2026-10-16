@@ -11,7 +11,9 @@ import (
 
 	v1 "github.com/czifrushanna/sleeko/pkg/api/v1"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/lookup"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 const (
@@ -45,6 +47,11 @@ func NewServer(cfg *Config) *Server {
 	if len(names) == 0 {
 		names = pipeline.DefaultNames()
 	}
+	verifier := &verify.Verifier{Lookups: &lookup.Client{}}
+	if h := verify.FindHadolint(); h != nil {
+		// The adapter image has no binaries, so lint is optional (D2).
+		verifier.Lint = h
+	}
 	p, err := pipeline.New(names, pipeline.Deps{
 		LLM: pipeline.LLM{
 			APIBaseURL: cfg.APIBaseURL,
@@ -53,6 +60,8 @@ func NewServer(cfg *Config) *Server {
 			Prompt:     cfg.Prompt,
 			Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
 		},
+		Verifier:        verifier,
+		MaxRepairRounds: cfg.MaxRepairRounds,
 	})
 	if err != nil {
 		panic(fmt.Sprintf("sleeko: build pipeline: %v", err))

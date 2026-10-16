@@ -27,6 +27,9 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+
+	"github.com/czifrushanna/sleeko/pkg/dockerfile"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 // State is what flows through the stages of one optimization. Stages read the
@@ -50,6 +53,18 @@ type State struct {
 	Diagnostics []Diagnostic
 	// LLMRounds counts the gateway calls made for this optimization.
 	LLMRounds int
+	// Messages is the conversation with the gateway so far, for stages that
+	// follow up on it (a repair round).
+	Messages []dockerfile.Message
+	// Verification records each verify round: round 0 checks the generated
+	// candidate, round n the n-th repair.
+	Verification []VerifyRound
+}
+
+// VerifyRound is the verification of one candidate.
+type VerifyRound struct {
+	Round  int           `json:"round"`
+	Result verify.Result `json:"result"`
 }
 
 // Diagnostic is a non-fatal finding recorded by a stage.
@@ -117,12 +132,19 @@ func (p *Pipeline) Names() []string {
 // parts it uses.
 type Deps struct {
 	LLM LLM
+	// Verifier checks candidates; the verify stage needs it.
+	Verifier *verify.Verifier
+	// MaxRepairRounds bounds the verify stage's repair rounds.
+	MaxRepairRounds int
 }
 
 // constructors maps every stage name accepted in configuration to its
 // constructor.
 var constructors = map[string]func(Deps) Stage{
 	GenerateStageName: func(d Deps) Stage { return NewGenerate(d.LLM) },
+	VerifyStageName: func(d Deps) Stage {
+		return &Verify{llm: d.LLM, verifier: d.Verifier, maxRounds: d.MaxRepairRounds}
+	},
 }
 
 // DefaultNames returns the pipeline used when none is configured: the single
