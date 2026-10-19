@@ -220,11 +220,13 @@ func (r *Runner) baseline(ctx context.Context, it Item, src, dbVersion string) (
 	var b baseline
 	if ok, err := r.Cache.get("baseline", key, &b); err != nil {
 		return nil, err
+	} else if ok && b.Image.EOSL == nil {
+		r.logf("%s: cached O′ predates the end-of-life flag, rebuilding", it.ID)
 	} else if ok {
 		age := r.now().Sub(b.Image.BuiltAt)
 		if r.MaxOriginalAge <= 0 || age <= r.MaxOriginalAge {
 			r.logf("%s: O′ from cache (built %s)", it.ID, b.Image.BuiltAt.Format(time.RFC3339))
-			return &b, r.saveScan(b.Image.Digest, ScanOutput{Result: b.Scan, OS: b.Image.OS})
+			return &b, r.saveScan(b.Image.Digest, ScanOutput{Result: b.Scan, OS: b.Image.OS, EOSL: b.Image.EOSL})
 		}
 		r.logf("%s: cached O′ is %s old, rebuilding", it.ID, age.Round(time.Minute))
 	}
@@ -252,7 +254,7 @@ func (r *Runner) baseline(ctx context.Context, it Item, src, dbVersion string) (
 	b = baseline{
 		Image: ImageInfo{
 			Digest: img.Digest, Size: img.Size, Severities: severityCounts(scan.Result),
-			OS: scan.OS, User: img.Contract.User, BuiltAt: r.now(),
+			OS: scan.OS, EOSL: scan.EOSL, User: img.Contract.User, BuiltAt: r.now(),
 		},
 		Scan:     scan.Result,
 		Contract: img.Contract,
@@ -272,7 +274,7 @@ func (r *Runner) scan(ctx context.Context, img Image, dbVersion string) (ScanOut
 	var out ScanOutput
 	if ok, err := r.Cache.get("scan", key, &out); err != nil {
 		return out, err
-	} else if ok {
+	} else if ok && out.EOSL != nil {
 		return out, nil
 	}
 	out, err := r.Scanner.Scan(ctx, img)
@@ -367,6 +369,9 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	}
 	rec.CandidateDockerfile = out.Candidate
 	rec.Status = StatusMeasured
+	if out.BaseTable != nil {
+		rec.BaseImage = newBaseChoice(*out.BaseTable, out.Candidate, it.Target)
+	}
 
 	gates := map[score.GateID]score.Gate{}
 	finish := func() {
@@ -429,7 +434,7 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	}
 	rec.Candidate = &ImageInfo{
 		Digest: img.Digest, Size: img.Size, Severities: severityCounts(scan.Result),
-		OS: scan.OS, User: img.Contract.User, BuiltAt: r.now(),
+		OS: scan.OS, EOSL: scan.EOSL, User: img.Contract.User, BuiltAt: r.now(),
 	}
 
 	gates[score.G5Behaviour] = score.CheckBehaviour(r.Smoker.Smoke(ctx, img, it.Platform, it.Smoke), base.Contract, img.Contract)

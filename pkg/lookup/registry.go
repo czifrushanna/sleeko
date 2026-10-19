@@ -49,6 +49,7 @@ type Client struct {
 	PyPI                  string // default https://pypi.org/pypi
 
 	mu       sync.Mutex
+	tokens   map[string]string
 	tags     map[string]bool
 	indexes  map[string]*aptIndex
 	inflight map[string]*sync.Mutex
@@ -256,4 +257,166 @@ func (c *Client) anonymousToken(ctx context.Context, challenge string) (string, 
 		return "", fmt.Errorf("token response: %w", err)
 	}
 	return or(t.Token, t.AccessToken), nil
+}
+
+// get fetches a registry URL, getting an anonymous token when challenged.
+// Tokens are reused per repository: listing a repository's tags takes many
+// paginated requests.
+func (c *Client) get(ctx context.Context, r ImageRef, u, accept string) (*http.Response, error) {
+	do := func(token string) (*http.Response, error) {
+		req, err := http.NewRequestWithContext(ctx, http.MethodGet, u, nil)
+		if err != nil {
+			return nil, err
+		}
+		if accept != "" {
+			req.Header.Set("Accept", accept)
+		}
+		if token != "" {
+			req.Header.Set("Authorization", "Bearer "+token)
+		}
+		return c.http().Do(req)
+	}
+	key := r.Registry + "/" + r.Repository
+	c.mu.Lock()
+	token := c.tokens[key]
+	c.mu.Unlock()
+
+	resp, err := do(token)
+	if err != nil {
+		return nil, err
+	}
+	if resp.StatusCode != http.StatusUnauthorized {
+		return resp, nil
+	}
+	challenge := resp.Header.Get("WWW-Authenticate")
+	resp.Body.Close()
+	if token, err = c.anonymousToken(ctx, challenge); err != nil {
+		return nil, err
+	}
+	c.mu.Lock()
+	if c.tokens == nil {
+		c.tokens = map[string]string{}
+	}
+	c.tokens[key] = token
+	c.mu.Unlock()
+	return do(token)
+}
+
+func (c *Client) registryURL(r ImageRef, path string) string {
+	scheme := "https"
+	if c.PlainHTTPRegistries[r.Registry] {
+		scheme = "http"
+	}
+	return fmt.Sprintf("%s://%s/v2/%s/%s", scheme, r.Registry, r.Repository, path)
+}
+
+var nextLink = regexp.MustCompile(`<([^>]+)>;\s*rel="next"`)
+
+// ListTags lists a repository's tags (ref's tag, if any, is ignored),
+// following the registry's pagination.
+func (c *Client) ListTags(ctx context.Context, ref string) ([]string, error) {
+	r, err := ParseImageRef(ref)
+	if err != nil {
+		return nil, err
+	}
+	u := c.registryURL(r, "tags/list?n=1000")
+	var tags []string
+	for pages := 0; u != "" && pages < 100; pages++ {
+		resp, err := c.get(ctx, r, u, "")
+		if err != nil {
+			return nil, err
+		}
+		var page struct {
+			Tags []string `json:"tags"`
+		}
+		err = json.NewDecoder(io.LimitReader(resp.Body, 32<<20)).Decode(&page)
+		link := resp.Header.Get("Link")
+		status := resp.Status
+		resp.Body.Close()
+		if resp.StatusCode != http.StatusOK {
+			return nil, fmt.Errorf("list tags of %s: %s", r.Repository, status)
+		}
+		if err != nil {
+			return nil, fmt.Errorf("list tags of %s: %w", r.Repository, err)
+		}
+		tags = append(tags, page.Tags...)
+
+		u = ""
+		if m := nextLink.FindStringSubmatch(link); m != nil {
+			next, err := url.Parse(m[1])
+			if err != nil {
+				return nil, err
+			}
+			base, _ := url.Parse(c.registryURL(r, ""))
+			u = base.ResolveReference(next).String()
+		}
+	}
+	return tags, nil
+}
+
+// ImageSize is an image's linux/amd64 manifest digest and compressed size.
+type ImageSize struct {
+	Digest string
+	// Size is the sum of the manifest's compressed layer sizes, the size
+	// the metric compares.
+	Size int64
+}
+
+// ImageSize resolves ref to its linux/amd64 image manifest and sums its
+// layers. A multi-platform index is followed to the amd64 entry.
+func (c *Client) ImageSize(ctx context.Context, ref string) (ImageSize, error) {
+	r, err := ParseImageRef(ref)
+	if err != nil {
+		return ImageSize{}, err
+	}
+	reference := r.Reference
+	for depth := 0; depth < 2; depth++ {
+		resp, err := c.get(ctx, r, c.registryURL(r, "manifests/"+reference), manifestTypes)
+		if err != nil {
+			return ImageSize{}, err
+		}
+		var m struct {
+			MediaType string `json:"mediaType"`
+			Manifests []struct {
+				Digest   string `json:"digest"`
+				Platform struct {
+					OS           string `json:"os"`
+					Architecture string `json:"architecture"`
+				} `json:"platform"`
+			} `json:"manifests"`
+			Layers []struct {
+				Size int64 `json:"size"`
+			} `json:"layers"`
+		}
+		err = json.NewDecoder(io.LimitReader(resp.Body, 8<<20)).Decode(&m)
+		digest := resp.Header.Get("Docker-Content-Digest")
+		resp.Body.Close()
+		if resp.StatusCode != http.StatusOK {
+			return ImageSize{}, fmt.Errorf("manifest of %s: %s", ref, resp.Status)
+		}
+		if err != nil {
+			return ImageSize{}, fmt.Errorf("manifest of %s: %w", ref, err)
+		}
+		if len(m.Manifests) == 0 {
+			var size int64
+			for _, l := range m.Layers {
+				size += l.Size
+			}
+			if digest == "" && strings.HasPrefix(reference, "sha256:") {
+				digest = reference
+			}
+			return ImageSize{Digest: digest, Size: size}, nil
+		}
+		reference = ""
+		for _, e := range m.Manifests {
+			if e.Platform.OS == "linux" && e.Platform.Architecture == "amd64" {
+				reference = e.Digest
+				break
+			}
+		}
+		if reference == "" {
+			return ImageSize{}, fmt.Errorf("%s has no linux/amd64 image", ref)
+		}
+	}
+	return ImageSize{}, fmt.Errorf("%s: nested manifest lists", ref)
 }

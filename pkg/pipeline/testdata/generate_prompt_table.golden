@@ -1,0 +1,72 @@
+You are an expert in Dockerfile and container image optimization. You will be given a
+Dockerfile, followed by a condensed vulnerability summary for the image built from it,
+under the heading "Vulnerability scan summary:".
+
+How to read the summary:
+- The opening lines give the total number of findings, how many of them have a fix
+  available, and the severity totals for the whole image.
+- Each line under "Packages with a fix available" reads:
+  <package> <installed version> -> <version to upgrade to at least> (<findings by severity>).
+- A line starting with "(+" means further affected packages were left out for length.
+  Assume they exist and resemble the ones listed.
+- A "No fix available" line covers findings that no Dockerfile change can resolve. Do not
+  attempt to fix those and do not mention them.
+
+Rewrite the Dockerfile to:
+- Address the reported vulnerabilities where a fix is available, worst severity first.
+  Prefer a single base image upgrade over many per-package pins, especially when the
+  summary says packages were left out for length. Only pin a version the summary actually
+  offers as a fix, and do not guess at fixes the summary does not support.
+- Reduce final image size (prefer minimal/slim base images, multi-stage builds where it
+  helps, combining and cleaning up package-manager layers, e.g. `apk add --no-cache`).
+- Minimize the number of layers and improve build cache efficiency (order instructions
+  from least to most frequently changing).
+- Apply Dockerfile security best practices (avoid running as root when practical, pin
+  base image versions explicitly, avoid unnecessary packages/tools in the final stage).
+- Preserve the original image's functionality: keep the same ENTRYPOINT/CMD behavior and
+  exposed ports, and keep existing ARG/ENV values unless a change is required for a fix.
+  You cannot see the build context, so keep every COPY/ADD source path exactly as it is —
+  do not invent, rename, or drop files.
+- The Dockerfile may itself be a best-effort reconstruction from image history and can
+  contain unusual RUN lines; preserve anything you do not understand rather than
+  deleting it.
+- Do not invent base images, package names, or versions that don't plausibly exist.
+
+Output ONLY the complete rewritten Dockerfile — no explanations, no markdown code fences,
+no commentary before or after.
+
+Dockerfile:
+
+FROM python:3.11-slim
+
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+
+EXPOSE 8000
+CMD ["python", "-m", "app"]
+
+
+Vulnerability scan summary:
+Vulnerability summary (condensed from the artifact's scan report):
+6 findings in 5 packages; 4 in 3 packages have a fix available.
+Totals by severity: 2 Critical, 2 High, 1 Medium, 1 Low.
+
+Packages with a fix available (installed version -> upgrade to at least):
+libssl3 3.0.13-1~deb12u1 -> 3.0.14-1~deb12u2 (1 Critical, 1 High)
+setuptools 65.5.1 -> 70.0.0 (1 High)
+curl 7.88.1-10+deb12u5 -> 7.88.1-10+deb12u6 (1 Medium)
+
+No fix available for 2 packages / 2 findings (1 Critical, 1 Low) - no Dockerfile change resolves these.
+
+
+Base image candidates for the final stage, measured with the same vulnerability scanner (same image, same distribution family, no older than the current base; V = 10×critical + 5×high + 2×medium + 1×low):
+| Base image | Compressed size | Critical | High | Medium | Low | V |
+|---|---:|---:|---:|---:|---:|---:|
+| python:3.11-slim (current) | 40.0 MB | 0 | 1 | 0 | 0 | 5 |
+| python:3.12-slim-trixie | 40.0 MB | 0 | 0 | 0 | 0 | 0 |
+| python:3.13-slim-trixie | 40.0 MB | 0 | 1 | 0 | 0 | 5 |
+To change the final stage's base image, choose one from this table and write it exactly as shown. Prefer the lowest V; a smaller image breaks ties. Keep the current base if no candidate is better. Build stages do not ship and need no change.

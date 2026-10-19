@@ -30,6 +30,7 @@ package main
 import (
 	"context"
 	"crypto/sha256"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -45,6 +46,7 @@ import (
 	"time"
 
 	"github.com/czifrushanna/sleeko/pkg/adapter"
+	"github.com/czifrushanna/sleeko/pkg/baseimage"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
 	"github.com/czifrushanna/sleeko/pkg/eval"
 	"github.com/czifrushanna/sleeko/pkg/lookup"
@@ -56,6 +58,7 @@ import (
 const usage = `usage:
   sleeko-eval db     [flags]                 download the Trivy database
   sleeko-eval run    [flags]                 measure a pipeline over the benchmark
+  sleeko-eval bases  [flags]                 measure the base image tables W2 will offer
   sleeko-eval report [flags] RESULTS.jsonl...  write the markdown report
   sleeko-eval failures [flags] RESULTS.jsonl... list failed attempts, save them as fixtures
   sleeko-eval compare [flags] RESULTS.jsonl...  McNemar and Wilcoxon of pipeline B against A
@@ -79,6 +82,8 @@ func main() {
 		err = runDB(ctx, os.Args[2:])
 	case "run":
 		err = runEval(ctx, os.Args[2:])
+	case "bases":
+		err = runBases(ctx, os.Args[2:])
 	case "report":
 		err = runReport(os.Args[2:])
 	case "failures":
@@ -168,6 +173,7 @@ func runEval(ctx context.Context, args []string) error {
 	maxOriginalAge := fs.Duration("max-original-age", 0, "rebuild O′ when its cached build is older than this, e.g. 12h (default: any age)")
 	allowMixed := fs.Bool("allow-mixed-runs", false, "resume into --out even if code, pipeline, model, prompt, manifest or Trivy DB changed")
 	hadolintImage := fs.String("hadolint-image", verify.DefaultHadolintImage, "Hadolint container image for the verify stage's lint check; empty uses hadolint on PATH, or skips lint without it")
+	maxBases := fs.Int("max-base-candidates", baseimage.DefaultMaxCandidates, "base image candidates the baseimage stage offers besides the current base")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	fs.Parse(args)
 
@@ -191,16 +197,17 @@ func runEval(ctx context.Context, args []string) error {
 		return err
 	}
 
-	optimizer, llm, vcfg, err := buildOptimizer(*stages, *hadolintImage)
-	if err != nil {
-		return err
-	}
-
 	scanner, work, err := common.scanner()
 	if err != nil {
 		return err
 	}
 	dbVersion, err := scanner.DBVersion(ctx)
+	if err != nil {
+		return err
+	}
+	cache := &eval.Cache{Dir: filepath.Join(work, "cache")}
+
+	optimizer, llm, vcfg, err := buildOptimizer(*stages, *hadolintImage, newProposer(scanner, dbVersion, cache, work, *maxBases))
 	if err != nil {
 		return err
 	}
@@ -217,29 +224,30 @@ func runEval(ctx context.Context, args []string) error {
 		selectedIDs = append(selectedIDs, it.ID)
 	}
 	info := eval.RunInfo{
-		StartedAt:       time.Now().UTC(),
-		Code:            codeVersion(),
-		Pipeline:        *name,
-		Stages:          *stages,
-		Model:           llm.Model,
-		APIBaseURL:      llm.APIBaseURL,
-		MaxTokens:       llm.Budget.MaxTokens,
-		ContextWindow:   llm.Budget.ContextWindow,
-		Prompt:          llm.Prompt,
-		MaxRepairRounds: vcfg.maxRepairRounds,
-		Lint:            vcfg.lint,
-		Manifest:        *manifestFile,
-		ManifestSHA256:  fmt.Sprintf("%x", sha256.Sum256(manifestData)),
-		Items:           selectedIDs,
-		Repetitions:     *reps,
-		Concurrency:     *concurrency,
-		BuildTimeout:    buildTimeout.String(),
-		MaxOriginalAge:  maxOriginalAge.String(),
-		SizeTolerance:   *tolerance,
-		Weights:         score.DefaultWeights,
-		TrivyImage:      common.trivyImage,
-		TrivyDB:         dbVersion,
-		Docker:          dockerVersion(ctx),
+		StartedAt:         time.Now().UTC(),
+		Code:              codeVersion(),
+		Pipeline:          *name,
+		Stages:            *stages,
+		Model:             llm.Model,
+		APIBaseURL:        llm.APIBaseURL,
+		MaxTokens:         llm.Budget.MaxTokens,
+		ContextWindow:     llm.Budget.ContextWindow,
+		Prompt:            llm.Prompt,
+		MaxRepairRounds:   vcfg.maxRepairRounds,
+		Lint:              vcfg.lint,
+		MaxBaseCandidates: vcfg.maxBaseCandidates,
+		Manifest:          *manifestFile,
+		ManifestSHA256:    fmt.Sprintf("%x", sha256.Sum256(manifestData)),
+		Items:             selectedIDs,
+		Repetitions:       *reps,
+		Concurrency:       *concurrency,
+		BuildTimeout:      buildTimeout.String(),
+		MaxOriginalAge:    maxOriginalAge.String(),
+		SizeTolerance:     *tolerance,
+		Weights:           score.DefaultWeights,
+		TrivyImage:        common.trivyImage,
+		TrivyDB:           dbVersion,
+		Docker:            dockerVersion(ctx),
 	}
 	if llm.Prompt != "" {
 		info.PromptHash = eval.PromptHash(llm.Prompt)
@@ -264,7 +272,7 @@ func runEval(ctx context.Context, args []string) error {
 		Scanner:        scanner,
 		Smoker:         &eval.DockerSmoker{},
 		Optimizer:      optimizer,
-		Cache:          &eval.Cache{Dir: filepath.Join(work, "cache")},
+		Cache:          cache,
 		WorkDir:        work,
 		Pipeline:       *name,
 		Repetitions:    *reps,
@@ -283,18 +291,159 @@ func runEval(ctx context.Context, args []string) error {
 	return r.Run(ctx, selected)
 }
 
-// verifyConfig is what the run records about the verify stage.
+// runBases measures each item's base image table, as the baseimage stage
+// will: it fills the scan cache before a W2 run, so the run's latency is the
+// pipeline's and not the first scans', and shows which items get a table.
+func runBases(ctx context.Context, args []string) error {
+	fs := flag.NewFlagSet("bases", flag.ExitOnError)
+	var common commonFlags
+	common.register(fs)
+	manifestFile := fs.String("manifest", "", "benchmark manifest (YAML)")
+	items := fs.String("items", "", "comma-separated item ids (default: all)")
+	maxBases := fs.Int("max-base-candidates", baseimage.DefaultMaxCandidates, "base image candidates per table")
+	out := fs.String("out", "", "JSONL file to write the tables to (default: none)")
+	fs.Parse(args)
+
+	if *manifestFile == "" {
+		return errors.New("--manifest is required")
+	}
+	manifest, err := eval.LoadManifest(*manifestFile)
+	if err != nil {
+		return err
+	}
+	var ids []string
+	if *items != "" {
+		ids = strings.Split(*items, ",")
+	}
+	selected, err := manifest.Select(ids)
+	if err != nil {
+		return err
+	}
+	scanner, work, err := common.scanner()
+	if err != nil {
+		return err
+	}
+	dbVersion, err := scanner.DBVersion(ctx)
+	if err != nil {
+		return err
+	}
+	proposer := newProposer(scanner, dbVersion, &eval.Cache{Dir: filepath.Join(work, "cache")}, work, *maxBases)
+	source := &eval.GitSource{Dir: filepath.Join(work, "src")}
+
+	var enc *json.Encoder
+	if *out != "" {
+		f, err := os.Create(*out)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+		enc = json.NewEncoder(f)
+	}
+	var tables, empty, none int
+	for _, it := range selected {
+		if ctx.Err() != nil {
+			return ctx.Err()
+		}
+		line := struct {
+			Item string `json:"item"`
+			Base string `json:"base,omitempty"`
+			// TargetBase is the built target's base when it differs from
+			// the final stage's: the table then offers the wrong image.
+			TargetBase string           `json:"target_base,omitempty"`
+			Table      *baseimage.Table `json:"table,omitempty"`
+			Error      string           `json:"error,omitempty"`
+		}{Item: it.ID}
+		func() {
+			src, err := source.Checkout(ctx, it.Repo, it.Commit)
+			if err != nil {
+				line.Error = err.Error()
+				return
+			}
+			data, err := os.ReadFile(filepath.Join(src, it.Dockerfile))
+			if err != nil {
+				line.Error = err.Error()
+				return
+			}
+			if line.Base, err = pipeline.FinalBase(string(data)); err != nil {
+				line.Error = err.Error()
+				return
+			}
+			if it.Target != "" {
+				if tb, err := pipeline.StageBase(string(data), it.Target); err == nil && tb != line.Base {
+					line.TargetBase = tb
+					log.Printf("%s: target %s builds on %s, not the final stage's %s", it.ID, it.Target, tb, line.Base)
+				}
+			}
+			t, err := proposer.Propose(ctx, line.Base)
+			if err != nil {
+				line.Error = err.Error()
+				return
+			}
+			line.Table = &t
+		}()
+		switch {
+		case line.Error != "":
+			none++
+			log.Printf("%s: no table: %s", it.ID, line.Error)
+		case len(line.Table.Candidates) == 0:
+			empty++
+			log.Printf("%s: %s (V %d%s): no candidates", it.ID, line.Base, line.Table.Current.V, eolMark(line.Table.Current))
+		default:
+			tables++
+			var cs []string
+			for _, c := range line.Table.Candidates {
+				cs = append(cs, fmt.Sprintf("%s (V %d%s)", c.Ref, c.V, eolMark(c)))
+			}
+			log.Printf("%s: %s (V %d%s) → %s", it.ID, line.Base, line.Table.Current.V, eolMark(line.Table.Current), strings.Join(cs, ", "))
+		}
+		if line.Table != nil {
+			for _, d := range line.Table.Dropped {
+				log.Printf("%s: candidate not measured: %s", it.ID, d)
+			}
+		}
+		if enc != nil {
+			if err := enc.Encode(line); err != nil {
+				return err
+			}
+		}
+	}
+	log.Printf("%d items: %d with a table, %d with no candidates, %d with no table", len(selected), tables, empty, none)
+	return nil
+}
+
+func eolMark(m baseimage.Measurement) string {
+	if m.EOSL {
+		return ", end of life"
+	}
+	return ""
+}
+
+// verifyConfig is what the run records about the verify and baseimage
+// stages.
 type verifyConfig struct {
-	maxRepairRounds int
-	lint            string
+	maxRepairRounds   int
+	lint              string
+	maxBaseCandidates int
+}
+
+// newProposer measures base images as the harness measures O′ and C: the
+// same Trivy and database, over image archives, with scans cached.
+func newProposer(scanner *eval.TrivyScanner, dbVersion string, cache *eval.Cache, work string, max int) *baseimage.Proposer {
+	return &baseimage.Proposer{
+		Registry: &eval.DockerRegistry{Tags: &lookup.Client{}},
+		Scanner:  &eval.BaseScanner{Scanner: scanner, DBVersion: dbVersion, Cache: cache, Dir: filepath.Join(work, "bases")},
+		Weights:  score.DefaultWeights,
+		Max:      max,
+	}
 }
 
 // buildOptimizer returns the optimizer for --pipeline and the LLM and verify
 // settings it uses (empty for noop). A real pipeline reads the adapter's
 // configuration, so it runs exactly as it would there; only the lint check
 // differs, running Hadolint from its container image, which the adapter's
-// image cannot (D2).
-func buildOptimizer(stages, hadolintImage string) (eval.Optimizer, pipeline.LLM, verifyConfig, error) {
+// image cannot (D2), and the baseimage stage has the harness's scanner,
+// which the adapter has none of (D2).
+func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) (eval.Optimizer, pipeline.LLM, verifyConfig, error) {
 	if stages == "noop" {
 		return eval.NoopOptimizer{}, pipeline.LLM{}, verifyConfig{}, nil
 	}
@@ -318,6 +467,9 @@ func buildOptimizer(stages, hadolintImage string) (eval.Optimizer, pipeline.LLM,
 	verifier := &verify.Verifier{Lookups: &lookup.Client{}}
 	var vcfg verifyConfig
 	for _, n := range names {
+		if n == pipeline.BaseImageStageName {
+			vcfg.maxBaseCandidates = proposer.Max
+		}
 		if n != pipeline.VerifyStageName {
 			continue
 		}
@@ -332,7 +484,7 @@ func buildOptimizer(stages, hadolintImage string) (eval.Optimizer, pipeline.LLM,
 		}
 	}
 
-	p, err := pipeline.New(names, pipeline.Deps{LLM: llm, Verifier: verifier, MaxRepairRounds: cfg.MaxRepairRounds})
+	p, err := pipeline.New(names, pipeline.Deps{LLM: llm, Verifier: verifier, MaxRepairRounds: cfg.MaxRepairRounds, Proposer: proposer})
 	if err != nil {
 		return nil, pipeline.LLM{}, verifyConfig{}, err
 	}

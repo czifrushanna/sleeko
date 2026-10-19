@@ -17,6 +17,7 @@ package eval
 import (
 	"context"
 
+	"github.com/czifrushanna/sleeko/pkg/baseimage"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
 )
@@ -69,6 +70,10 @@ type ScanOutput struct {
 	// OS is the distribution the scanner detected ("debian 12.8"), for
 	// checking the manifest's distro family.
 	OS string
+	// EOSL: the scanner reports OS past its end of life (as of the scan),
+	// so findings disclosed since are missing. Nil in scans cached before
+	// it was recorded, which are scanned again.
+	EOSL *bool
 }
 
 // Scanner scans images with a fixed scanner version and database.
@@ -100,6 +105,8 @@ type OptimizeOutput struct {
 	Diagnostics []string
 	// Verification is the verify stage's rounds, when the pipeline has one.
 	Verification []pipeline.VerifyRound
+	// BaseTable is the base image table W2 offered, when it offered one.
+	BaseTable *baseimage.Table
 }
 
 // Optimizer runs the pipeline under evaluation.
