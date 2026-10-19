@@ -21,9 +21,11 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"slices"
 	"sync"
 	"time"
 
+	"github.com/czifrushanna/sleeko/pkg/baseimage"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
 )
@@ -73,6 +75,9 @@ type Record struct {
 	// candidate, round n the n-th repair. Empty for pipelines without verify.
 	Verification []pipeline.VerifyRound `json:"verification,omitempty"`
 	LLMRounds    int                    `json:"llm_rounds"`
+	// BaseImage is W2's base image table and what the candidate chose;
+	// absent when no table was offered.
+	BaseImage *BaseChoice `json:"base_image,omitempty"`
 	// LatencyMS is the pipeline's run time, in milliseconds.
 	LatencyMS  int64  `json:"latency_ms"`
 	Model      string `json:"model,omitempty"`
@@ -93,6 +98,34 @@ type Components struct {
 	FixRate    score.FixRate `json:"fix_rate"`
 }
 
+// BaseChoice is the base image table offered and the candidate's final
+// base. A final base that is neither the current one nor in the table was
+// written from the model's memory, which the table exists to prevent.
+type BaseChoice struct {
+	Table baseimage.Table `json:"table"`
+	// Chosen is the candidate's final base; empty when it cannot be read
+	// (the candidate does not parse, or uses unresolved variables).
+	Chosen string `json:"chosen,omitempty"`
+	// Changed: Chosen is not the current base.
+	Changed bool `json:"changed"`
+	// OffTable: Chosen changed to an image the table did not offer.
+	OffTable bool `json:"off_table"`
+}
+
+// newBaseChoice reads the base of the stage the harness builds (target, or
+// the final stage), which is the image C ships.
+func newBaseChoice(t baseimage.Table, candidate, target string) *BaseChoice {
+	c := &BaseChoice{Table: t}
+	chosen, err := pipeline.StageBase(candidate, target)
+	if err != nil {
+		return c
+	}
+	c.Chosen = chosen
+	c.Changed = chosen != t.Current.Ref
+	c.OffTable = c.Changed && !slices.Contains(t.Refs(), chosen)
+	return c
+}
+
 // ImageInfo describes O′ or C.
 type ImageInfo struct {
 	Digest     string         `json:"digest"`
@@ -101,6 +134,10 @@ type ImageInfo struct {
 	// OS is what the scanner detected; empty when it found no distribution
 	// (an image built FROM scratch).
 	OS string `json:"os,omitempty"`
+	// EOSL: the scanner reported OS past its end of life when it scanned
+	// the image, so V misses the findings disclosed since. Nil in records
+	// written before it was recorded.
+	EOSL *bool `json:"eosl,omitempty"`
 	// User is the image config's USER, inherited ones included; empty means
 	// root.
 	User string `json:"user,omitempty"`

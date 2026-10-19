@@ -124,8 +124,15 @@ func OptimizeDockerfile(ctx context.Context, apiBaseURL, apiKey, model, promptPr
 // BuildPrompt is the optimization prompt: the instructions, the Dockerfile,
 // and the scan report condensed and fitted to the budget.
 func BuildPrompt(promptPrefix, dockerfile, scanReport string, budget Budget) string {
-	condensed := scanreport.Condense(scanReport, budget.scanReportBudget(promptPrefix, dockerfile))
-	return promptPrefix + dockerfile + scanReportHeading + condensed
+	return BuildPromptWith(promptPrefix, dockerfile, scanReport, budget, "")
+}
+
+// BuildPromptWith is BuildPrompt with extra sections after the scan report
+// (a base image table). The report's budget shrinks by their length, so the
+// prompt still fits the window.
+func BuildPromptWith(promptPrefix, dockerfile, scanReport string, budget Budget, extra string) string {
+	condensed := scanreport.Condense(scanReport, budget.scanReportBudget(promptPrefix+extra, dockerfile))
+	return promptPrefix + dockerfile + scanReportHeading + condensed + extra
 }
 
 // Chat sends a conversation to the gateway and returns the reply, streamed

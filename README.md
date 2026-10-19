@@ -68,7 +68,7 @@ All configuration is via environment variables:
 | `LLMGW_API_KEY` | yes | — | LLM gateway API key |
 | `LLMGW_MODEL` | yes | — | Model identifier |
 | `OPTIMIZER_PROMPT` | no | [built-in](pkg/dockerfile/prompt.txt) | Instruction text prepended to the Dockerfile; overrides the default entirely |
-| `OPTIMIZER_PIPELINE` | no | `generate` | Comma-separated optimization stages run after extraction (see `pkg/pipeline`): `generate`, and `verify` to check the candidate and let the model repair it; an unknown name stops the adapter from starting |
+| `OPTIMIZER_PIPELINE` | no | `generate` | Comma-separated optimization stages run after extraction (see `pkg/pipeline`): `generate`, and `verify` to check the candidate and let the model repair it; `baseimage` (before `generate`) needs a scanner the adapter does not have yet, so here it only logs that it was skipped; an unknown name stops the adapter from starting |
 | `OPTIMIZER_MAX_REPAIR_ROUNDS` | no | `2` | Repair rounds the `verify` stage may use; `0` only checks |
 | `OPTIMIZER_ADAPTER_WORKER_TIMEOUT` | no | `5m` | Time limit for one optimization, all LLM calls included; raise it when `verify` repairs |
 | `LLMGW_MAX_TOKENS` | no | `4096` | Completion budget, sent as `max_tokens` |

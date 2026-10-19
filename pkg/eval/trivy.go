@@ -128,15 +128,18 @@ func (t *TrivyScanner) Scan(ctx context.Context, img Image) (ScanOutput, error) 
 			OS *struct {
 				Family string `json:"Family"`
 				Name   string `json:"Name"`
+				EOSL   bool   `json:"EOSL"`
 			} `json:"OS"`
 		} `json:"Metadata"`
 	}
 	if err := json.Unmarshal(res.Stdout, &meta); err != nil {
 		return ScanOutput{}, err
 	}
-	out := ScanOutput{Result: result}
+	eosl := false
+	out := ScanOutput{Result: result, EOSL: &eosl}
 	if os := meta.Metadata.OS; os != nil {
 		out.OS = os.Family + " " + os.Name
+		eosl = os.EOSL
 	}
 	return out, nil
 }

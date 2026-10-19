@@ -35,7 +35,7 @@ func (p *PipelineOptimizer) Optimize(ctx context.Context, in OptimizeInput) (Opt
 	st := &pipeline.State{Original: in.Dockerfile, ScanReport: in.ScanReport}
 	err := p.Pipeline.Run(ctx, st)
 
-	out := OptimizeOutput{Candidate: st.Candidate, LLMRounds: st.LLMRounds, Verification: st.Verification}
+	out := OptimizeOutput{Candidate: st.Candidate, LLMRounds: st.LLMRounds, Verification: st.Verification, BaseTable: st.BaseTable}
 	for _, d := range st.Diagnostics {
 		out.Diagnostics = append(out.Diagnostics, d.Stage+": "+d.Message)
 	}

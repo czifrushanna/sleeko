@@ -38,6 +38,7 @@ import (
 //	# size=1200                       compressed size (default 1000)
 //	# vulns=CVE-1:critical:1.2,CVE-2:high:   findings (id:severity:fixed)
 //	# FAILBUILD / # FAILSMOKE         the build / the smoke test fails
+//	# EOSL                            the scanner reports the OS end of life
 type world struct {
 	t   *testing.T
 	src string // the checkout
@@ -140,7 +141,8 @@ func (w *world) Scan(_ context.Context, img Image) (ScanOutput, error) {
 			})
 		}
 	}
-	return ScanOutput{Result: score.NewScanResult(vulns), OS: "debian 12.8"}, nil
+	_, eosl := marker(w.content[img.Digest], "EOSL")
+	return ScanOutput{Result: score.NewScanResult(vulns), OS: "debian 12.8", EOSL: &eosl}, nil
 }
 
 func (w *world) DBVersion(context.Context) (string, error) { return w.dbVersion, nil }
@@ -190,6 +192,7 @@ func (f *fakeOptimizer) Optimize(_ context.Context, in OptimizeInput) (OptimizeO
 }
 
 const originalDockerfile = `FROM python:3.11-slim
+# EOSL
 # vulns=CVE-1:critical:1.2,CVE-2:high:,CVE-3:low:
 # size=1000
 WORKDIR /app
@@ -292,6 +295,8 @@ func TestRun_SuccessfulAttempt(t *testing.T) {
 	require.Equal(t, map[string]int{"Critical": 1, "High": 1, "Low": 1}, rec.Original.Severities)
 	require.Equal(t, int64(900), rec.Candidate.Size)
 	require.Equal(t, "debian 12.8", rec.Candidate.OS)
+	require.Equal(t, ptr(true), rec.Original.EOSL)
+	require.Equal(t, ptr(false), rec.Candidate.EOSL)
 	require.Contains(t, rec.CandidateDockerfile, "FROM python:3.12-slim")
 	require.Equal(t, 1, rec.LLMRounds)
 	require.Equal(t, []string{"generate: note"}, rec.Diagnostics)
@@ -649,4 +654,26 @@ func TestRun_SavesTheScansItRefersTo(t *testing.T) {
 	run()
 	_, err = os.Stat(filepath.Join(scans, strings.ReplaceAll(recs[0].Original.Digest, ":", "-")+".json"))
 	require.NoError(t, err)
+}
+
+func ptr[T any](v T) *T { return &v }
+
+// TestRun_RebuildsBaselineCachedWithoutEOSL: an O′ cached before the
+// end-of-life flag was recorded would read as supported; it is rebuilt.
+func TestRun_RebuildsBaselineCachedWithoutEOSL(t *testing.T) {
+	h := newHarness(t, NoopOptimizer{})
+	h.run(t)
+	require.Equal(t, 2, h.w.buildCount())
+
+	key := baselineKey(testItem, "db-1")
+	var b baseline
+	ok, err := h.runner.Cache.get("baseline", key, &b)
+	require.NoError(t, err)
+	require.True(t, ok)
+	b.Image.EOSL = nil
+	require.NoError(t, h.runner.Cache.put("baseline", key, b))
+
+	h.runner.Pipeline = "other"
+	require.NoError(t, h.runner.Run(context.Background(), []Item{testItem}))
+	require.Equal(t, 4, h.w.buildCount(), "O′ rebuilt")
 }

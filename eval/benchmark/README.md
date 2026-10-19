@@ -94,7 +94,20 @@ e.g. `--pipeline generate --name W0`; `eval/runs/w0.sh` is the W0 measurement
 as one command, and `eval/runs/w1.sh` (`generate,verify`) is W0+W1, to run
 right after it so both use the same O′ builds. W1 records each verify round
 per attempt; the report adds per-check failure rates before and after repair
-and the repair rounds used. `sleeko-eval compare --a W0 --b W0+W1` gives
+and the repair rounds used. `eval/runs/w2.sh` (`baseimage,generate,verify`)
+is W0+W1+W2: first `sleeko-eval bases` measures each item's base image table
+(official images only; same image, distribution family and major version, no
+older than the current base; up to 4 candidates, the current release line
+first) with the same Trivy and database, pulling by digest through the Docker
+login, and caching scans by digest; then the run offers each table in the
+prompt. Records carry `base_image` (the table, the chosen final base of the
+built target, `changed`, `off_table`), and the report counts kept, from-table,
+off-table and lowest-V choices. Every scanned image (O′, C, table rows) records
+`eosl`: Trivy reports its distribution release past its end of life, where
+advisories stop and V reads low (31 of the 57 items' O′). The report splits
+results by O′ end of life / supported and counts candidates that moved off an
+end-of-life release, or onto one; V, the gates and the prompt are unchanged.
+`sleeko-eval compare --a W0 --b W0+W1` gives
 McNemar on per-image success (an image succeeds when most repetitions do) and
 Wilcoxon signed-rank on per-image ΔV and ΔS, both exact. Record statuses: `measured`, `optimizer_failed` (counts as a
 failed attempt), `item_invalid` (the item's own O′ does not build or start;

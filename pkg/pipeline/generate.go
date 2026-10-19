@@ -49,7 +49,7 @@ func NewGenerate(llm LLM) *Generate {
 func (g *Generate) Name() string { return GenerateStageName }
 
 func (g *Generate) Run(ctx context.Context, st *State) error {
-	prompt := dockerfile.BuildPrompt(g.llm.Prompt, st.Original, st.ScanReport, g.llm.Budget)
+	prompt := dockerfile.BuildPromptWith(g.llm.Prompt, st.Original, st.ScanReport, g.llm.Budget, strings.Join(st.PromptSections, ""))
 	messages := []dockerfile.Message{{Role: "user", Content: prompt}}
 	optimized, err := dockerfile.Chat(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, messages, g.llm.Budget.MaxTokens)
 	st.LLMRounds++

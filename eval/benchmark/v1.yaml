@@ -12,8 +12,13 @@
 # - f4d-decc-twenty-fifty-new-look: Ubuntu 16.04, whose OS packages Trivy does
 #   not cover (a bare ubuntu:16.04 scans with 0 findings);
 # - d3-dgtlmoon-changedetection-io: O′ build took 12m50s, over the ~10 min limit.
-# Heavy items (omnigres, unitycatalog) need the Docker VM's memory to
-# themselves: run them at --concurrency 1, or give Docker more than 8 GB.
+# - d3-omnigres-omnigres-builder (removed 2026-10-16, before any W0 run): its
+#   target stage builds on debian:bookworm-slim, but the final stage, the only
+#   one the pipeline can know to ship, on postgres:17-bookworm, so W2 would
+#   offer base images for a stage that is never built. No other passing
+#   candidate qualified as a replacement (same selection, 57 items).
+# The heavy item unitycatalog needs the Docker VM's memory to itself: run it
+# at --concurrency 1, or give Docker more than 8 GB.
 items:
     - id: demo-flask
       source: demo
@@ -324,22 +329,6 @@ items:
         run_for: 10s
       distro_family: alpine
       language: python
-    - id: d3-omnigres-omnigres-builder
-      source: d3
-      repo: https://github.com/omnigres/omnigres
-      commit: 0e2e47f48ce13897213e5dc0eff19594af92d535
-      context: .
-      dockerfile: Dockerfile
-      build_args:
-        BUILD_PARALLEL_LEVEL: "4"
-        PG: "17"
-      platform: linux/amd64
-      target: builder
-      smoke:
-        timeout: 2m0s
-        run_for: 10s
-      distro_family: debian
-      language: c
     - id: d3-projectdiscovery-httpx
       source: d3
       repo: https://github.com/projectdiscovery/httpx

@@ -28,6 +28,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/czifrushanna/sleeko/pkg/baseimage"
 	"github.com/czifrushanna/sleeko/pkg/dockerfile"
 	"github.com/czifrushanna/sleeko/pkg/verify"
 )
@@ -59,6 +60,11 @@ type State struct {
 	// Verification records each verify round: round 0 checks the generated
 	// candidate, round n the n-th repair.
 	Verification []VerifyRound
+	// PromptSections are added to the generate prompt after the scan report
+	// by earlier stages (the base image table).
+	PromptSections []string
+	// BaseTable is the base image candidate table offered, if any.
+	BaseTable *baseimage.Table
 }
 
 // VerifyRound is the verification of one candidate.
@@ -136,12 +142,16 @@ type Deps struct {
 	Verifier *verify.Verifier
 	// MaxRepairRounds bounds the verify stage's repair rounds.
 	MaxRepairRounds int
+	// Proposer builds base image candidate tables; without one the
+	// baseimage stage is skipped (the adapter has no scanner, D2).
+	Proposer *baseimage.Proposer
 }
 
 // constructors maps every stage name accepted in configuration to its
 // constructor.
 var constructors = map[string]func(Deps) Stage{
-	GenerateStageName: func(d Deps) Stage { return NewGenerate(d.LLM) },
+	GenerateStageName:  func(d Deps) Stage { return NewGenerate(d.LLM) },
+	BaseImageStageName: func(d Deps) Stage { return &BaseImage{proposer: d.Proposer} },
 	VerifyStageName: func(d Deps) Stage {
 		return &Verify{llm: d.LLM, verifier: d.Verifier, maxRounds: d.MaxRepairRounds}
 	},

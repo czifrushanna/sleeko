@@ -140,3 +140,40 @@ func TestRecordWriterAndReader(t *testing.T) {
 	require.NoError(t, err)
 	require.Nil(t, missing)
 }
+
+func TestReport_EndOfLife(t *testing.T) {
+	yes, no := true, false
+	rec := func(item string, rep int, o, c *bool, success bool) Record {
+		r := Record{Item: item, Pipeline: "W2", Repetition: rep, Status: StatusMeasured, Success: success,
+			Original: &ImageInfo{EOSL: o}}
+		if c != nil {
+			r.Candidate = &ImageInfo{EOSL: c}
+		}
+		return r
+	}
+	recs := []Record{
+		rec("a", 1, &yes, &no, true),   // moved off
+		rec("a", 2, &yes, &yes, false), // stayed
+		rec("b", 1, &no, &yes, false),  // moved onto
+		rec("c", 1, &no, nil, false),   // C not built: not counted in moves
+		rec("d", 1, nil, &no, true),    // record without the flag
+	}
+	pr := BuildReport(recs)[0]
+	require.Equal(t, EOSLStats{Scanned: 3, OriginalEOSL: 2, MovedOff: 1, MovedOnto: 1}, pr.EOSL)
+	require.Equal(t, 2, pr.ByOriginalEOSL[eoslYes].Attempts)
+	require.Equal(t, 0.5, pr.ByOriginalEOSL[eoslYes].SuccessRate)
+	require.Equal(t, 2, pr.ByOriginalEOSL[eoslNo].Items)
+	require.Equal(t, 1, pr.ByOriginalEOSL[eoslUnknown].Attempts)
+
+	var buf bytes.Buffer
+	require.NoError(t, WriteMarkdown(&buf, []PipelineReport{pr}))
+	out := buf.String()
+	require.Contains(t, out, "| O′ end of life | 1 | 2 | 50.0% |")
+	require.Contains(t, out, "| O′ supported | 2 | 2 | 0.0% |")
+	require.Contains(t, out, "| O′ unknown | 1 | 1 | 100.0% |")
+	require.Contains(t, out, "O′ is past its end of life in 2 of 3 attempts with C scanned; C moved off it in 1 (50.0% of those), and onto it from a supported O′ in 1.")
+
+	buf.Reset()
+	require.NoError(t, WriteMarkdown(&buf, BuildReport([]Record{rec("x", 1, nil, nil, false)})))
+	require.NotContains(t, buf.String(), "End of life", "nothing to say without flags")
+}

@@ -50,6 +50,8 @@ type RunInfo struct {
 	// one: Lint is the Hadolint used, or empty when lint is skipped.
 	MaxRepairRounds int    `json:"max_repair_rounds,omitempty"`
 	Lint            string `json:"lint,omitempty"`
+	// MaxBaseCandidates configures the baseimage stage, when there is one.
+	MaxBaseCandidates int `json:"max_base_candidates,omitempty"`
 
 	Manifest       string   `json:"manifest"`
 	ManifestSHA256 string   `json:"manifest_sha256"`
@@ -86,6 +88,7 @@ func conflicts(first, next RunInfo) []string {
 	check("prompt_hash", first.PromptHash, next.PromptHash)
 	check("max_repair_rounds", first.MaxRepairRounds, next.MaxRepairRounds)
 	check("lint", first.Lint, next.Lint)
+	check("max_base_candidates", first.MaxBaseCandidates, next.MaxBaseCandidates)
 	check("manifest_sha256", first.ManifestSHA256, next.ManifestSHA256)
 	check("repetitions", first.Repetitions, next.Repetitions)
 	check("build_timeout", first.BuildTimeout, next.BuildTimeout)

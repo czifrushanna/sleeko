@@ -68,6 +68,24 @@ func fakeRegistry(t *testing.T) (*httptest.Server, *atomic.Int32) {
 		case r.Method == http.MethodHead && r.URL.Path == "/v2/library/python/manifests/3.12-slim":
 			require.Contains(t, r.Header.Get("Accept"), "application/vnd.oci.image.index.v1+json")
 			w.WriteHeader(http.StatusOK)
+		case r.URL.Path == "/v2/library/python/tags/list" && r.URL.Query().Get("last") == "":
+			w.Header().Set("Link", `</v2/library/python/tags/list?n=1000&last=3.12>; rel="next"`)
+			fmt.Fprint(w, `{"name":"library/python","tags":["3.11","3.12"]}`)
+		case r.URL.Path == "/v2/library/python/tags/list":
+			fmt.Fprint(w, `{"name":"library/python","tags":["3.12-slim"]}`)
+		case r.Method == http.MethodGet && r.URL.Path == "/v2/library/python/manifests/3.12-slim":
+			w.Header().Set("Docker-Content-Digest", "sha256:index")
+			fmt.Fprint(w, `{"mediaType":"application/vnd.oci.image.index.v1+json","manifests":[`+
+				`{"digest":"sha256:arm","platform":{"os":"linux","architecture":"arm64"}},`+
+				`{"digest":"sha256:amd","platform":{"os":"linux","architecture":"amd64"}}]}`)
+		case r.Method == http.MethodGet && r.URL.Path == "/v2/library/python/manifests/sha256:amd":
+			fmt.Fprint(w, `{"layers":[{"size":100},{"size":23}]}`)
+		case r.URL.Path == "/v2/library/python/manifests/windows":
+			fmt.Fprint(w, `{"manifests":[{"digest":"sha256:win","platform":{"os":"windows","architecture":"amd64"}}]}`)
+		case r.URL.Path == "/v2/library/python/manifests/nested":
+			fmt.Fprint(w, `{"manifests":[{"digest":"nested","platform":{"os":"linux","architecture":"amd64"}}]}`)
+		case r.URL.Path == "/v2/library/python/manifests/garbage":
+			fmt.Fprint(w, `{`)
 		default:
 			w.WriteHeader(http.StatusNotFound)
 		}
@@ -95,6 +113,46 @@ func TestTagExists(t *testing.T) {
 	require.Equal(t, int32(2), tokens.Load(), "answers are cached")
 
 	_, err = c.TagExists(ctx, "python:${TAG}")
+	require.Error(t, err)
+}
+
+func TestListTags(t *testing.T) {
+	srv, tokens := fakeRegistry(t)
+	host := strings.TrimPrefix(srv.URL, "http://")
+	c := &Client{PlainHTTPRegistries: map[string]bool{host: true}}
+	ctx := context.Background()
+
+	tags, err := c.ListTags(ctx, host+"/library/python:3.12")
+	require.NoError(t, err)
+	require.Equal(t, []string{"3.11", "3.12", "3.12-slim"}, tags, "both pages")
+	require.Equal(t, int32(1), tokens.Load(), "the token is reused across pages")
+
+	_, err = c.ListTags(ctx, host+"/library/nothere")
+	require.ErrorContains(t, err, "404 Not Found")
+	_, err = c.ListTags(ctx, "python:${TAG}")
+	require.Error(t, err)
+}
+
+func TestImageSize(t *testing.T) {
+	srv, _ := fakeRegistry(t)
+	host := strings.TrimPrefix(srv.URL, "http://")
+	c := &Client{PlainHTTPRegistries: map[string]bool{host: true}}
+	ctx := context.Background()
+
+	got, err := c.ImageSize(ctx, host+"/library/python:3.12-slim")
+	require.NoError(t, err)
+	require.Equal(t, ImageSize{Digest: "sha256:amd", Size: 123}, got, "the index is followed to amd64")
+
+	for ref, want := range map[string]string{
+		"windows": "has no linux/amd64 image",
+		"nested":  "nested manifest lists",
+		"garbage": "unexpected EOF",
+		"3.99":    "404",
+	} {
+		_, err := c.ImageSize(ctx, host+"/library/python:"+ref)
+		require.ErrorContains(t, err, want, ref)
+	}
+	_, err = c.ImageSize(ctx, "python:${TAG}")
 	require.Error(t, err)
 }
 

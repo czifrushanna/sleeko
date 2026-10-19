@@ -45,6 +45,14 @@ type PipelineReport struct {
 	Pipeline string           `json:"pipeline"`
 	All      Group            `json:"all"`
 	ByDistro map[string]Group `json:"by_distro"`
+	// ByOriginalEOSL splits the attempts by whether O′'s distribution
+	// release was past its end of life when scanned ("end of life",
+	// "supported"; "unknown" for records without the flag). There the
+	// scanner misses findings disclosed since, so a candidate that moves to
+	// a supported release can show a higher V.
+	ByOriginalEOSL map[string]Group `json:"by_original_eosl"`
+	// EOSL counts moves off and onto end-of-life releases.
+	EOSL EOSLStats `json:"eosl"`
 	// GateFailures counts measured attempts failing each gate.
 	GateFailures map[score.GateID]int `json:"gate_failures"`
 	// OptimizerFailures counts attempts where the pipeline produced nothing.
@@ -54,6 +62,8 @@ type PipelineReport struct {
 	Unmeasured int `json:"unmeasured"`
 	// Verify holds W1's metrics, for pipelines with a verify stage.
 	Verify *VerifyStats `json:"verify,omitempty"`
+	// Bases holds W2's metrics, for pipelines that offered base image tables.
+	Bases *BaseStats `json:"bases,omitempty"`
 }
 
 // BuildReport aggregates records into per-pipeline reports, sorted by
@@ -78,10 +88,11 @@ func BuildReport(records []Record) []PipelineReport {
 
 	var out []PipelineReport
 	for name, recs := range byPipeline {
-		pr := PipelineReport{Pipeline: name, ByDistro: map[string]Group{}, GateFailures: map[score.GateID]int{}}
+		pr := PipelineReport{Pipeline: name, ByDistro: map[string]Group{}, ByOriginalEOSL: map[string]Group{}, GateFailures: map[score.GateID]int{}}
 
 		var counted []Record
 		byDistro := map[string][]Record{}
+		byEOSL := map[string][]Record{}
 		for _, rec := range recs {
 			switch rec.Status {
 			case StatusInfraError, StatusItemInvalid:
@@ -97,17 +108,86 @@ func BuildReport(records []Record) []PipelineReport {
 			}
 			counted = append(counted, rec)
 			byDistro[rec.DistroFamily] = append(byDistro[rec.DistroFamily], rec)
+			byEOSL[originalEOSL(rec)] = append(byEOSL[originalEOSL(rec)], rec)
+			pr.EOSL.add(rec)
 		}
 
 		pr.All = group(counted)
 		pr.Verify = verifyStats(counted)
+		pr.Bases = baseStats(counted)
 		for distro, rs := range byDistro {
 			pr.ByDistro[distro] = group(rs)
+		}
+		for k, rs := range byEOSL {
+			pr.ByOriginalEOSL[k] = group(rs)
 		}
 		out = append(out, pr)
 	}
 	sort.Slice(out, func(i, j int) bool { return out[i].Pipeline < out[j].Pipeline })
 	return out
+}
+
+const (
+	eoslYes     = "end of life"
+	eoslNo      = "supported"
+	eoslUnknown = "unknown"
+)
+
+func originalEOSL(rec Record) string {
+	switch {
+	case rec.Original == nil || rec.Original.EOSL == nil:
+		return eoslUnknown
+	case *rec.Original.EOSL:
+		return eoslYes
+	}
+	return eoslNo
+}
+
+// EOSLStats count, over attempts whose O′ and C were both scanned, how
+// often C moved between end-of-life and supported distribution releases. A
+// move off an end-of-life release is a security gain V can understate.
+type EOSLStats struct {
+	// Scanned counts attempts with both flags known; OriginalEOSL those
+	// whose O′ is end of life.
+	Scanned      int `json:"scanned"`
+	OriginalEOSL int `json:"original_eosl"`
+	// MovedOff: O′ end of life, C supported. MovedOnto: the reverse.
+	MovedOff  int `json:"moved_off"`
+	MovedOnto int `json:"moved_onto"`
+}
+
+func (s *EOSLStats) add(rec Record) {
+	if rec.Original == nil || rec.Original.EOSL == nil || rec.Candidate == nil || rec.Candidate.EOSL == nil {
+		return
+	}
+	o, c := *rec.Original.EOSL, *rec.Candidate.EOSL
+	s.Scanned++
+	if o {
+		s.OriginalEOSL++
+	}
+	switch {
+	case o && !c:
+		s.MovedOff++
+	case !o && c:
+		s.MovedOnto++
+	}
+}
+
+func writeEOSLStats(b *strings.Builder, s EOSLStats) {
+	if s.Scanned == 0 {
+		return
+	}
+	fmt.Fprintf(b, "\nEnd of life (as the scanner reports it; V misses findings disclosed since): "+
+		"O′ is past its end of life in %d of %d attempts with C scanned; C moved off it in %d (%s of those), "+
+		"and onto it from a supported O′ in %d.\n",
+		s.OriginalEOSL, s.Scanned, s.MovedOff, percent(ratio(s.MovedOff, s.OriginalEOSL)), s.MovedOnto)
+}
+
+func ratio(n, d int) float64 {
+	if d == 0 {
+		return 0
+	}
+	return float64(n) / float64(d)
 }
 
 func group(recs []Record) Group {
@@ -164,6 +244,11 @@ func WriteMarkdown(w io.Writer, reports []PipelineReport) error {
 		for _, d := range distros {
 			writeGroupRow(&b, d, pr.ByDistro[d])
 		}
+		for _, k := range []string{eoslYes, eoslNo, eoslUnknown} {
+			if g, ok := pr.ByOriginalEOSL[k]; ok {
+				writeGroupRow(&b, "O′ "+k, g)
+			}
+		}
 
 		b.WriteString("\n| Failure | Attempts | Share of attempts |\n|---|---:|---:|\n")
 		for _, id := range score.AllGates {
@@ -171,8 +256,12 @@ func WriteMarkdown(w io.Writer, reports []PipelineReport) error {
 		}
 		writeFailureRow(&b, "optimizer produced no candidate", pr.OptimizerFailures, pr.All.Attempts)
 		fmt.Fprintf(&b, "\nNot measured (harness errors or invalid items, excluded above): %d attempts.\n", pr.Unmeasured)
+		writeEOSLStats(&b, pr.EOSL)
 		if pr.Verify != nil {
 			writeVerifyStats(&b, pr.Verify)
+		}
+		if pr.Bases != nil {
+			writeBaseStats(&b, pr.Bases)
 		}
 		b.WriteString("\n")
 	}
