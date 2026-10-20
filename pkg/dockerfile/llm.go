@@ -19,8 +19,10 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"strings"
 	"time"
@@ -37,10 +39,20 @@ type Message struct {
 type chatMessage = Message
 
 type chatRequest struct {
-	Model     string        `json:"model"`
-	Messages  []chatMessage `json:"messages"`
-	Stream    bool          `json:"stream"`
-	MaxTokens int           `json:"max_tokens,omitempty"`
+	Model       string        `json:"model"`
+	Messages    []chatMessage `json:"messages"`
+	Stream      bool          `json:"stream"`
+	MaxTokens   int           `json:"max_tokens,omitempty"`
+	Temperature *float64      `json:"temperature,omitempty"`
+	Seed        *int64        `json:"seed,omitempty"`
+}
+
+// Sampling sets how the gateway samples the reply. A nil field is not sent,
+// so the gateway's own default applies: setting both makes a call
+// repeatable, which an evaluation needs to be reproducible.
+type Sampling struct {
+	Temperature *float64
+	Seed        *int64
 }
 
 type chatResponse struct {
@@ -118,7 +130,7 @@ func (b Budget) scanReportBudget(promptPrefix, dockerfile string) int {
 // context window (see pkg/scanreport).
 func OptimizeDockerfile(ctx context.Context, apiBaseURL, apiKey, model, promptPrefix, dockerfile, scanReport string, budget Budget) (string, error) {
 	prompt := BuildPrompt(promptPrefix, dockerfile, scanReport, budget)
-	return Chat(ctx, apiBaseURL, apiKey, model, []Message{{Role: "user", Content: prompt}}, budget.MaxTokens)
+	return Chat(ctx, apiBaseURL, apiKey, model, []Message{{Role: "user", Content: prompt}}, budget.MaxTokens, Sampling{})
 }
 
 // BuildPrompt is the optimization prompt: the instructions, the Dockerfile,
@@ -135,15 +147,30 @@ func BuildPromptWith(promptPrefix, dockerfile, scanReport string, budget Budget,
 	return promptPrefix + dockerfile + scanReportHeading + condensed + extra
 }
 
+// Unreachable reports an error from a call that never reached the gateway:
+// the connection could not be made (no route, DNS failure, refused, timed
+// out while dialling). It says nothing about the request, so an evaluation
+// retries such an attempt rather than count it against the pipeline.
+func Unreachable(err error) bool {
+	var op *net.OpError
+	if errors.As(err, &op) && op.Op == "dial" {
+		return true
+	}
+	var dns *net.DNSError
+	return errors.As(err, &dns)
+}
+
 // Chat sends a conversation to the gateway and returns the reply, streamed
 // and joined. A follow-up turn (a repair round) sends the whole conversation
 // so far, ending with the new user message. maxTokens of 0 omits the field.
-func Chat(ctx context.Context, apiBaseURL, apiKey, model string, messages []Message, maxTokens int) (string, error) {
+func Chat(ctx context.Context, apiBaseURL, apiKey, model string, messages []Message, maxTokens int, sampling Sampling) (string, error) {
 	reqBody := chatRequest{
-		Model:     model,
-		Messages:  messages,
-		Stream:    true,
-		MaxTokens: maxTokens,
+		Model:       model,
+		Messages:    messages,
+		Stream:      true,
+		MaxTokens:   maxTokens,
+		Temperature: sampling.Temperature,
+		Seed:        sampling.Seed,
 	}
 
 	body, err := json.Marshal(reqBody)

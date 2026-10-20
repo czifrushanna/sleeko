@@ -60,6 +60,14 @@ type State struct {
 	// Verification records each verify round: round 0 checks the generated
 	// candidate, round n the n-th repair.
 	Verification []VerifyRound
+	// GatewayUnreachable is set when an LLM call never reached the gateway
+	// (see dockerfile.Unreachable), including a repair call whose failure
+	// the verify stage otherwise absorbs: an evaluation must not count such
+	// a run against the pipeline.
+	GatewayUnreachable bool
+	// SeedOffset is added to the configured base seed for every LLM call of
+	// this optimization; an evaluation sets it to the repetition number.
+	SeedOffset int64
 	// PromptSections are added to the generate prompt after the scan report
 	// by earlier stages (the base image table).
 	PromptSections []string

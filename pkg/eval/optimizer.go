@@ -32,10 +32,11 @@ type PipelineOptimizer struct {
 // Optimize runs the pipeline. A pipeline error, or a run that produced no
 // candidate, is an optimizer failure: the attempt is unsuccessful.
 func (p *PipelineOptimizer) Optimize(ctx context.Context, in OptimizeInput) (OptimizeOutput, error) {
-	st := &pipeline.State{Original: in.Dockerfile, ScanReport: in.ScanReport}
+	st := &pipeline.State{Original: in.Dockerfile, ScanReport: in.ScanReport, SeedOffset: int64(in.Repetition)}
 	err := p.Pipeline.Run(ctx, st)
 
-	out := OptimizeOutput{Candidate: st.Candidate, LLMRounds: st.LLMRounds, Verification: st.Verification, BaseTable: st.BaseTable}
+	out := OptimizeOutput{Candidate: st.Candidate, LLMRounds: st.LLMRounds, Verification: st.Verification, BaseTable: st.BaseTable,
+		GatewayUnreachable: st.GatewayUnreachable}
 	for _, d := range st.Diagnostics {
 		out.Diagnostics = append(out.Diagnostics, d.Stage+": "+d.Message)
 	}

@@ -20,9 +20,10 @@ package score
 const DefaultSizeTolerance = 0.10
 
 // GatesPassed reports whether an attempt's gates allow it to succeed: every
-// gate is present and passed, except G3, which may be NotChecked until the
-// version lookups exist. Any other NotChecked gate means the attempt was not
-// fully measured, so it cannot count as a success.
+// gate is present and passed, except G3, which is NotChecked when the
+// harness runs without version lookups (records from before G3 was checked).
+// Any other NotChecked gate means the attempt was not fully measured, so it
+// cannot count as a success.
 func GatesPassed(gates []Gate) bool {
 	byID := map[GateID]Gate{}
 	for _, g := range gates {

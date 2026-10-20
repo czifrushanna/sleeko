@@ -19,6 +19,11 @@ out=${1:?usage: eval/runs/w2.sh RESULTS_DIR}
 : "${LLMGW_API_KEY:?set LLMGW_API_KEY}"
 : "${LLMGW_MODEL:?set LLMGW_MODEL}"
 concurrency=${CONCURRENCY:-3}
+# Sampling is fixed so runs are reproducible (paper notes, point 6): the
+# Qwen3 family's recommended temperature for non-reasoning use, and a base
+# seed; repetition n uses seed + n, so the repetitions differ (pass@3).
+export LLMGW_TEMPERATURE="${LLMGW_TEMPERATURE:-0.7}"
+export LLMGW_SEED="${LLMGW_SEED:-1000}"
 
 cd "$(dirname "$0")/../.."
 mkdir -p "$out"
@@ -30,7 +35,7 @@ go build -o "$out/sleeko-eval" ./cmd/sleeko-eval
 	--manifest eval/benchmark/v1.yaml \
 	--pipeline baseimage,generate,verify --name W0+W1+W2 --reps 3 \
 	--concurrency "$concurrency" --build-timeout 10m \
-	--max-original-age 12h \
+	--max-original-age "${MAX_ORIGINAL_AGE:-12h}" \
 	--out "$out/w2.jsonl"
 
 "$out/sleeko-eval" report --out "$out/w2-report.md" "$out/w2.jsonl"

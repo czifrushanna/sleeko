@@ -22,6 +22,7 @@ package lookup
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -99,6 +100,10 @@ var digestRef = regexp.MustCompile(`^sha256:[0-9a-f]{64}$`)
 // ParseImageRef resolves a FROM reference the way Docker does: no registry
 // means Docker Hub, a single-name repository there means library/, no tag
 // means latest.
+// ErrBadDigest is a reference whose digest is malformed: it can never be
+// pulled.
+var ErrBadDigest = errors.New("bad digest")
+
 func ParseImageRef(ref string) (ImageRef, error) {
 	ref = strings.TrimSpace(ref)
 	if ref == "" || strings.ContainsAny(ref, "$ ") {
@@ -108,7 +113,11 @@ func ParseImageRef(ref string) (ImageRef, error) {
 	if i := strings.Index(ref, "@"); i >= 0 {
 		name, reference = ref[:i], ref[i+1:]
 		if !digestRef.MatchString(reference) {
-			return ImageRef{}, fmt.Errorf("bad digest in %q", ref)
+			return ImageRef{}, fmt.Errorf("%w in %q", ErrBadDigest, ref)
+		}
+		// "name:tag@digest": Docker pulls by the digest and ignores the tag.
+		if j := strings.LastIndex(name, ":"); j > strings.LastIndex(name, "/") {
+			name = name[:j]
 		}
 	} else if i := strings.LastIndex(ref, ":"); i > strings.LastIndex(ref, "/") {
 		name, reference = ref[:i], ref[i+1:]

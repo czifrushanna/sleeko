@@ -82,7 +82,11 @@ type Record struct {
 	LatencyMS  int64  `json:"latency_ms"`
 	Model      string `json:"model,omitempty"`
 	PromptHash string `json:"prompt_hash,omitempty"`
-	TrivyDB    string `json:"trivy_db,omitempty"`
+	// Temperature and Seed are the LLM sampling of this attempt; absent
+	// when the gateway's defaults applied.
+	Temperature *float64 `json:"temperature,omitempty"`
+	Seed        *int64   `json:"seed,omitempty"`
+	TrivyDB     string   `json:"trivy_db,omitempty"`
 
 	StartedAt time.Time `json:"started_at"`
 }

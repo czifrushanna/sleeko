@@ -17,8 +17,10 @@ package dockerfile
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -302,4 +304,30 @@ func TestOptimizeDockerfile_StreamAbortedMidResponse(t *testing.T) {
 
 	_, err := OptimizeDockerfile(context.Background(), ts.URL, "key", "model", "p:\n", "FROM scratch\n", "report", Budget{})
 	require.Error(t, err)
+}
+
+func TestUnreachable(t *testing.T) {
+	// A listener closed before the call: the connection is refused.
+	ln, err := net.Listen("tcp", "127.0.0.1:0")
+	require.NoError(t, err)
+	addr := ln.Addr().String()
+	require.NoError(t, ln.Close())
+	_, err = Chat(context.Background(), "http://"+addr, "k", "m", []Message{{Role: "user", Content: "x"}}, 0, Sampling{})
+	require.Error(t, err)
+	require.True(t, Unreachable(err), "%v", err)
+	require.True(t, Unreachable(fmt.Errorf("stage generate: %w", err)), "wrapped")
+
+	_, err = Chat(context.Background(), "http://no-such-host.invalid", "k", "m", nil, 0, Sampling{})
+	require.True(t, Unreachable(err), "DNS failure: %v", err)
+
+	// The gateway answered: not unreachable, whatever it said.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		w.WriteHeader(http.StatusInternalServerError)
+	}))
+	defer ts.Close()
+	_, err = Chat(context.Background(), ts.URL, "k", "m", nil, 0, Sampling{})
+	require.Error(t, err)
+	require.False(t, Unreachable(err))
+	require.False(t, Unreachable(nil))
+	require.False(t, Unreachable(errors.New("context deadline exceeded")))
 }

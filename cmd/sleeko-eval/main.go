@@ -233,9 +233,12 @@ func runEval(ctx context.Context, args []string) error {
 		MaxTokens:         llm.Budget.MaxTokens,
 		ContextWindow:     llm.Budget.ContextWindow,
 		Prompt:            llm.Prompt,
+		Temperature:       llm.Sampling.Temperature,
+		Seed:              llm.Sampling.Seed,
 		MaxRepairRounds:   vcfg.maxRepairRounds,
 		Lint:              vcfg.lint,
 		MaxBaseCandidates: vcfg.maxBaseCandidates,
+		G3:                g3Checks,
 		Manifest:          *manifestFile,
 		ManifestSHA256:    fmt.Sprintf("%x", sha256.Sum256(manifestData)),
 		Items:             selectedIDs,
@@ -272,6 +275,7 @@ func runEval(ctx context.Context, args []string) error {
 		Scanner:        scanner,
 		Smoker:         &eval.DockerSmoker{},
 		Optimizer:      optimizer,
+		Versions:       &verify.Verifier{Lookups: &lookup.Client{}},
 		Cache:          cache,
 		WorkDir:        work,
 		Pipeline:       *name,
@@ -283,6 +287,8 @@ func runEval(ctx context.Context, args []string) error {
 		SizeTolerance:  *tolerance,
 		Model:          llm.Model,
 		PromptHash:     info.PromptHash,
+		Temperature:    llm.Sampling.Temperature,
+		Seed:           llm.Sampling.Seed,
 		ScanDir:        base + "-scans",
 		Out:            eval.NewRecordWriter(f),
 		Done:           done,
@@ -418,6 +424,9 @@ func eolMark(m baseimage.Measurement) string {
 	return ""
 }
 
+// g3Checks is what G3 checks, as the run info records it.
+const g3Checks = "base image tags (any registry), apt pins (Debian, Ubuntu), pip pins (PyPI); pins skipped when the Dockerfile adds package sources"
+
 // verifyConfig is what the run records about the verify and baseimage
 // stages.
 type verifyConfig struct {
@@ -462,6 +471,7 @@ func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) 
 		Model:      cfg.Model,
 		Prompt:     cfg.Prompt,
 		Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
+		Sampling:   dockerfile.Sampling{Temperature: cfg.Temperature, Seed: cfg.Seed},
 	}
 
 	verifier := &verify.Verifier{Lookups: &lookup.Client{}}

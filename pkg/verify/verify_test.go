@@ -38,6 +38,9 @@ func (f *fakeLookups) TagExists(_ context.Context, ref string) (bool, error) {
 	if strings.Contains(ref, "broken") {
 		return false, errors.New("registry unreachable")
 	}
+	if _, err := lookup.ParseImageRef(ref); err != nil {
+		return false, err
+	}
 	return f.tags[ref], nil
 }
 
@@ -149,6 +152,9 @@ func TestVerify_BaseTags(t *testing.T) {
 
 	r = verify(t, candidate(map[string]string{"FROM python:3.11-slim": "ARG TAG\nFROM python:${TAG}"}), lookups(), nil)
 	require.Contains(t, r.Skipped[CheckBaseTag], "unresolved")
+
+	r = verify(t, candidate(map[string]string{"FROM python:3.11-slim": "FROM python:3.11-slim@sha256:your-verified-digest-here"}), lookups(), nil)
+	require.Equal(t, []string{"fail: the base image python:3.11-slim@sha256:your-verified-digest-here has a malformed digest and cannot be pulled; use a tag, or a digest that exists"}, messages(r, CheckBaseTag))
 }
 
 func TestVerify_AptVersions(t *testing.T) {
@@ -263,4 +269,55 @@ func TestBadness(t *testing.T) {
 	require.Equal(t, 2, r.Badness(), "distinct failing checks; warnings do not count")
 	require.Equal(t, len(AllChecks), Result{Findings: []Finding{{Check: CheckParse, Severity: Fail}}}.Badness())
 	require.Zero(t, Result{}.Badness())
+}
+
+// TestVerify_ExtraSources: a version missing from the official index can
+// install from a source the Dockerfile adds, so the pin is skipped, not failed.
+func TestVerify_ExtraSources(t *testing.T) {
+	aptPin := map[string]string{
+		"FROM python:3.11-slim":   "FROM python:3.12-slim-bookworm",
+		"apt-get install -y curl": "apt-get install -y curl=9.9",
+	}
+	for name, add := range map[string]string{
+		"sources.list.d": `RUN echo "deb [signed-by=/usr/share/keyrings/x.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/node.list`,
+		"plain deb line": `RUN echo 'deb http://repo.example/debian stable main' >> /etc/apt/sources.list`,
+		"ppa":            "RUN add-apt-repository ppa:deadsnakes/ppa",
+		"backports":      "RUN apt-get install -y -t bookworm-backports curl",
+	} {
+		c := candidate(aptPin)
+		c = strings.Replace(c, "RUN apt-get update", add+"\nRUN apt-get update", 1)
+		r := verify(t, c, lookups(), nil)
+		require.Empty(t, messages(r, CheckAptVersion), name)
+		require.Contains(t, r.Skipped[CheckAptVersion], "adds apt sources", name)
+	}
+	r := verify(t, candidate(aptPin), lookups(), nil)
+	require.Len(t, messages(r, CheckAptVersion), 1, "without extra sources it fails")
+
+	for name, add := range map[string]string{
+		"extra index": "RUN pip install --extra-index-url https://download.pytorch.org/whl/cpu torch==2.99.0+cpu",
+		"env":         "ENV PIP_INDEX_URL=https://pypi.internal/simple\nRUN pip install torch==2.99.0",
+		"short -i":    "RUN pip install -i https://pypi.internal/simple torch==2.99.0",
+		"find-links":  "RUN pip install --find-links /wheels torch==2.99.0",
+	} {
+		r := verify(t, candidate(nil, add+"\n"), lookups(), nil)
+		require.Empty(t, messages(r, CheckPipVersion), name)
+		require.Contains(t, r.Skipped[CheckPipVersion], "besides PyPI", name)
+	}
+}
+
+func TestExistence(t *testing.T) {
+	v := &Verifier{Lookups: lookups(), Lint: &fakeLinter{}}
+	c := candidate(map[string]string{
+		"FROM python:3.11-slim": "FROM python:3.99-slim",
+		"EXPOSE 8000":           "EXPOSE 9000", // a contract change: not an existence check
+	}, "RUN pip install requests==2.99.0\n")
+	r := v.Existence(context.Background(), Input{Original: original, Candidate: c, Scan: scan})
+	require.Equal(t, []string{CheckBaseTag, CheckPipVersion}, r.FailedChecks())
+
+	r = v.Existence(context.Background(), Input{Original: original, Candidate: "FROM", Scan: scan})
+	require.True(t, r.Passed())
+	require.Equal(t, "the Dockerfile does not parse", r.Skipped[CheckBaseTag])
+
+	r = (&Verifier{}).Existence(context.Background(), Input{Original: original, Candidate: original})
+	require.Equal(t, "no lookups configured", r.Skipped[CheckBaseTag])
 }

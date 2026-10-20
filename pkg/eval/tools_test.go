@@ -357,14 +357,17 @@ func TestGitSource(t *testing.T) {
 }
 
 func TestPipelineOptimizer(t *testing.T) {
+	var offset int64
 	ok := pipeline.NewPipeline(stageFunc(func(st *pipeline.State) error {
+		offset = st.SeedOffset
 		st.Candidate = "FROM alpine:3.21\n"
 		st.LLMRounds = 2
 		st.Diagnostics = append(st.Diagnostics, pipeline.Diagnostic{Stage: "verify", Message: "dropped RUN"})
 		return nil
 	}))
-	out, err := (&PipelineOptimizer{Pipeline: ok}).Optimize(context.Background(), OptimizeInput{Dockerfile: "FROM alpine:3.20\n"})
+	out, err := (&PipelineOptimizer{Pipeline: ok}).Optimize(context.Background(), OptimizeInput{Dockerfile: "FROM alpine:3.20\n", Repetition: 3})
 	require.NoError(t, err)
+	require.Equal(t, int64(3), offset, "the repetition becomes the seed offset")
 	require.Equal(t, OptimizeOutput{Candidate: "FROM alpine:3.21\n", LLMRounds: 2, Diagnostics: []string{"verify: dropped RUN"}}, out)
 
 	empty := pipeline.NewPipeline(stageFunc(func(*pipeline.State) error { return nil }))

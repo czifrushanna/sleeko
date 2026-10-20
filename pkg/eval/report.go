@@ -26,14 +26,22 @@ import (
 // Group is the report for one set of attempts: a whole pipeline, or one
 // distro family within it.
 type Group struct {
-	// Items is the number of images; the unit of the success rate.
+	// Items is the number of images; the unit of the solved rate.
 	Items    int `json:"items"`
 	Attempts int `json:"attempts"`
-	// SuccessRate is the mean over images of each image's success rate
-	// across its repetitions, which are not independent samples.
-	SuccessRate float64 `json:"success_rate"`
-	WilsonLow   float64 `json:"wilson_low"`
-	WilsonHigh  float64 `json:"wilson_high"`
+	// Solved counts images with at least one successful repetition
+	// (pass@k): the primary binary outcome per image, since repetitions are
+	// not independent samples. SolvedRate is Solved/Items, with its Wilson
+	// interval.
+	Solved     int     `json:"solved"`
+	SolvedRate float64 `json:"solved_rate"`
+	WilsonLow  float64 `json:"wilson_low"`
+	WilsonHigh float64 `json:"wilson_high"`
+	// AttemptRate is successful attempts over attempts: what one call gives.
+	AttemptRate float64 `json:"attempt_rate"`
+	// MajorityRate is the share of images where most repetitions succeed, a
+	// sensitivity analysis.
+	MajorityRate float64 `json:"majority_rate"`
 	// DeltaV, FixRate and DeltaS summarise the successful attempts only.
 	DeltaV  score.Summary        `json:"delta_v"`
 	FixRate score.FixRateSummary `json:"fix_rate"`
@@ -191,27 +199,26 @@ func ratio(n, d int) float64 {
 }
 
 func group(recs []Record) Group {
-	perItem := map[string][]bool{}
+	perItem := map[string]*itemOutcome{}
 	var dV, dS []float64
 	var fix []score.FixRate
+	successes := 0
 	for _, rec := range recs {
-		perItem[rec.Item] = append(perItem[rec.Item], rec.Success)
+		o := perItem[rec.Item]
+		if o == nil {
+			o = &itemOutcome{}
+			perItem[rec.Item] = o
+		}
+		o.attempts++
+		if rec.Success {
+			o.successes++
+			successes++
+		}
 		if rec.Success && rec.Components != nil {
 			dV = append(dV, rec.Components.DeltaV)
 			dS = append(dS, rec.Components.DeltaS)
 			fix = append(fix, rec.Components.FixRate)
 		}
-	}
-
-	var successes float64
-	for _, outcomes := range perItem {
-		n := 0
-		for _, ok := range outcomes {
-			if ok {
-				n++
-			}
-		}
-		successes += float64(n) / float64(len(outcomes))
 	}
 
 	g := Group{
@@ -221,10 +228,23 @@ func group(recs []Record) Group {
 		FixRate:  score.SummarizeFixRates(fix),
 		DeltaS:   score.Summarize(dS),
 	}
-	if g.Items > 0 {
-		g.SuccessRate = successes / float64(g.Items)
+	majority := 0
+	for _, o := range perItem {
+		if o.solved() {
+			g.Solved++
+		}
+		if o.majority() {
+			majority++
+		}
 	}
-	g.WilsonLow, g.WilsonHigh = score.Wilson(successes, g.Items)
+	if g.Items > 0 {
+		g.SolvedRate = float64(g.Solved) / float64(g.Items)
+		g.MajorityRate = float64(majority) / float64(g.Items)
+	}
+	if g.Attempts > 0 {
+		g.AttemptRate = float64(successes) / float64(g.Attempts)
+	}
+	g.WilsonLow, g.WilsonHigh = score.Wilson(float64(g.Solved), g.Items)
 	return g
 }
 
@@ -233,8 +253,11 @@ func WriteMarkdown(w io.Writer, reports []PipelineReport) error {
 	var b strings.Builder
 	for _, pr := range reports {
 		fmt.Fprintf(&b, "## Pipeline `%s`\n\n", pr.Pipeline)
-		b.WriteString("| Group | Images | Attempts | Success rate | 95% CI (Wilson) | ΔV median (IQR) | Fix rate median (IQR) | Nothing to fix | ΔS median (IQR) |\n")
-		b.WriteString("|---|---:|---:|---:|---|---|---|---:|---|\n")
+		b.WriteString("Solved: images with at least one successful repetition (pass@k), with its 95% Wilson interval. " +
+			"Per attempt: successful attempts over attempts, what one call gives. Majority: images where most repetitions succeed (sensitivity). " +
+			"ΔV, fix rate and ΔS summarise the successful attempts.\n\n")
+		b.WriteString("| Group | Images | Attempts | Solved | 95% CI (Wilson) | Per attempt | Majority | ΔV median (IQR) | Fix rate median (IQR) | Nothing to fix | ΔS median (IQR) |\n")
+		b.WriteString("|---|---:|---:|---:|---|---:|---:|---|---|---:|---|\n")
 		writeGroupRow(&b, "all", pr.All)
 		distros := make([]string, 0, len(pr.ByDistro))
 		for d := range pr.ByDistro {
@@ -270,8 +293,9 @@ func WriteMarkdown(w io.Writer, reports []PipelineReport) error {
 }
 
 func writeGroupRow(b *strings.Builder, name string, g Group) {
-	fmt.Fprintf(b, "| %s | %d | %d | %s | [%s, %s] | %s | %s | %d | %s |\n",
-		name, g.Items, g.Attempts, percent(g.SuccessRate), percent(g.WilsonLow), percent(g.WilsonHigh),
+	fmt.Fprintf(b, "| %s | %d | %d | %d (%s) | [%s, %s] | %s | %s | %s | %s | %d | %s |\n",
+		name, g.Items, g.Attempts, g.Solved, percent(g.SolvedRate), percent(g.WilsonLow), percent(g.WilsonHigh),
+		percent(g.AttemptRate), percent(g.MajorityRate),
 		summary(g.DeltaV), summary(g.FixRate.Summary), g.FixRate.NothingToFix, summary(g.DeltaS))
 }
 

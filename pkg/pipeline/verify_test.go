@@ -18,6 +18,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -172,4 +173,81 @@ func TestRepairMessage(t *testing.T) {
 		"\nAlso check these; keep them only if they were intended:\n"+
 		"- the original's RUN at line 5 is gone: make\n"+
 		"\nReturn the complete corrected Dockerfile and nothing else. Keep the improvements that were not part of these problems.\n", msg)
+}
+
+// TestSampling: every LLM call of an optimization, repairs included, sends
+// the temperature and the base seed plus the state's offset; unset sampling
+// sends neither field, leaving the gateway's defaults.
+func TestSampling(t *testing.T) {
+	run := func(sampling dockerfile.Sampling, offset int64) []map[string]any {
+		var mu sync.Mutex
+		var bodies []map[string]any
+		replies := []string{invented, good}
+		srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			var body map[string]any
+			require.NoError(t, json.NewDecoder(r.Body).Decode(&body))
+			mu.Lock()
+			bodies = append(bodies, body)
+			reply := replies[0]
+			replies = replies[1:]
+			mu.Unlock()
+			payload, _ := json.Marshal(map[string]any{"choices": []map[string]any{{"delta": map[string]string{"content": reply}}}})
+			fmt.Fprintf(w, "data: %s\ndata: [DONE]\n", payload)
+		}))
+		defer srv.Close()
+		p, err := New([]string{GenerateStageName, VerifyStageName}, Deps{
+			LLM:             LLM{APIBaseURL: srv.URL, APIKey: "k", Model: "m", Prompt: "optimize:\n", Sampling: sampling},
+			Verifier:        &verify.Verifier{},
+			MaxRepairRounds: 2,
+		})
+		require.NoError(t, err)
+		st := &State{Original: verifyOriginal, ScanReport: `{"vulnerabilities": []}`, SeedOffset: offset}
+		require.NoError(t, p.Run(context.Background(), st))
+		return bodies
+	}
+
+	temp, seed := 0.7, int64(100)
+	bodies := run(dockerfile.Sampling{Temperature: &temp, Seed: &seed}, 2)
+	require.Len(t, bodies, 2, "generate and one repair")
+	for _, b := range bodies {
+		require.Equal(t, 0.7, b["temperature"])
+		require.Equal(t, 102.0, b["seed"], "base seed + offset, the same for the repair")
+	}
+	require.Equal(t, int64(100), seed, "the configured base seed is not changed")
+
+	for _, b := range run(dockerfile.Sampling{}, 2) {
+		require.NotContains(t, b, "temperature")
+		require.NotContains(t, b, "seed")
+	}
+
+	zero := 0.0
+	bodies = run(dockerfile.Sampling{Temperature: &zero}, 0)
+	require.Equal(t, 0.0, bodies[0]["temperature"], "a temperature of 0 is sent, not omitted")
+	require.NotContains(t, bodies[0], "seed")
+}
+
+// TestGatewayUnreachable: a call that never reaches the gateway is flagged,
+// both when generate fails and when a repair call fails and verify keeps
+// the earlier candidate.
+func TestGatewayUnreachable(t *testing.T) {
+	ln, err := net.Listen("tcp", "127.0.0.1:0")
+	require.NoError(t, err)
+	dead := "http://" + ln.Addr().String()
+	require.NoError(t, ln.Close())
+
+	st := &State{Original: verifyOriginal, ScanReport: `{"vulnerabilities": []}`}
+	err = NewGenerate(LLM{APIBaseURL: dead, Model: "m", Prompt: "p:\n"}).Run(context.Background(), st)
+	require.Error(t, err)
+	require.True(t, st.GatewayUnreachable)
+
+	st = &State{Original: verifyOriginal, Candidate: invented,
+		Messages: []dockerfile.Message{{Role: "user", Content: "p"}, {Role: "assistant", Content: invented}}}
+	v := &Verify{llm: LLM{APIBaseURL: dead, Model: "m"}, verifier: &verify.Verifier{}, maxRounds: 2}
+	require.NoError(t, v.Run(context.Background(), st), "a failed repair keeps the candidate")
+	require.Equal(t, invented, st.Candidate)
+	require.True(t, st.GatewayUnreachable)
+
+	// A gateway that answers with an error is not unreachable.
+	stOK, _ := runVerify(t, 2, "```dockerfile\n"+invented+"```", "ERROR")
+	require.False(t, stOK.GatewayUnreachable)
 }

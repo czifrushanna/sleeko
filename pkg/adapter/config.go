@@ -29,6 +29,8 @@ const (
 	envPipeline       = "OPTIMIZER_PIPELINE"
 	envRepairRounds   = "OPTIMIZER_MAX_REPAIR_ROUNDS"
 	envWorkerTimeout  = "OPTIMIZER_ADAPTER_WORKER_TIMEOUT"
+	envTemperature    = "LLMGW_TEMPERATURE"
+	envSeed           = "LLMGW_SEED"
 
 	defaultListenAddr     = ":8080"
 	defaultJobTTL         = time.Hour
@@ -82,6 +84,11 @@ type Config struct {
 	// (OPTIMIZER_ADAPTER_WORKER_TIMEOUT). Repair rounds are extra LLM calls,
 	// so a pipeline with verify may need more than the default.
 	WorkerTimeout time.Duration
+	// Temperature (LLMGW_TEMPERATURE) and Seed (LLMGW_SEED) set the
+	// gateway's sampling; unset, they are not sent and the gateway's defaults
+	// apply. Setting both makes a call repeatable.
+	Temperature *float64
+	Seed        *int64
 	// Pipeline is the ordered list of optimization stages run after extraction
 	// (see pkg/pipeline), set as a comma-separated OPTIMIZER_PIPELINE. It defaults
 	// to pipeline.DefaultNames(), the single LLM call.
@@ -123,6 +130,22 @@ func LoadConfig() (*Config, error) {
 			return nil, fmt.Errorf("invalid %s %q: must be a positive duration like 10m", envWorkerTimeout, v)
 		}
 		cfg.WorkerTimeout = d
+	}
+
+	if v := os.Getenv(envTemperature); v != "" {
+		t, err := strconv.ParseFloat(v, 64)
+		if err != nil || t < 0 || t > 2 {
+			return nil, fmt.Errorf("invalid %s %q: must be a number from 0 to 2", envTemperature, v)
+		}
+		cfg.Temperature = &t
+	}
+
+	if v := os.Getenv(envSeed); v != "" {
+		n, err := strconv.ParseInt(v, 10, 64)
+		if err != nil || n < 0 {
+			return nil, fmt.Errorf("invalid %s %q: must be a non-negative integer", envSeed, v)
+		}
+		cfg.Seed = &n
 	}
 
 	if v := os.Getenv(envPipeline); v != "" {
