@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/czifrushanna/sleeko/pkg/dfparse"
+	"github.com/czifrushanna/sleeko/pkg/dockerfile"
 	"github.com/czifrushanna/sleeko/pkg/score"
 	"github.com/czifrushanna/sleeko/pkg/verify"
 )
@@ -371,6 +372,16 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	rec.LLMRounds = out.LLMRounds
 	rec.Diagnostics = out.Diagnostics
 	rec.Verification = out.Verification
+	if out.GatewayUnreachable || dockerfile.Unreachable(err) {
+		// The LLM gateway could not be reached (off the network, an
+		// outage): the attempt measured nothing about the pipeline, so it
+		// is retried on resume rather than counted as its failure.
+		rec.Status, rec.Error = StatusInfraError, "LLM gateway unreachable"
+		if err != nil {
+			rec.Error += ": " + err.Error()
+		}
+		return
+	}
 	if err != nil {
 		rec.Status = StatusOptimizerFailed
 		rec.Error = err.Error()

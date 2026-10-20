@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"net"
 	"os"
 	"path/filepath"
 	"sort"
@@ -755,4 +756,29 @@ func TestRun_SamplingPerRepetition(t *testing.T) {
 	rec := h2.run(t)[0]
 	require.Nil(t, rec.Temperature, "unset: not recorded")
 	require.Nil(t, rec.Seed)
+}
+
+// outageOptimizer reports that the gateway could not be reached, either as
+// the error or as a repair call the pipeline absorbed.
+type outageOptimizer struct{ absorbed bool }
+
+func (o outageOptimizer) Optimize(context.Context, OptimizeInput) (OptimizeOutput, error) {
+	if o.absorbed {
+		return OptimizeOutput{Candidate: "FROM python:3.12-slim\n", GatewayUnreachable: true}, nil
+	}
+	return OptimizeOutput{GatewayUnreachable: true}, &net.OpError{Op: "dial", Net: "tcp", Err: errors.New("i/o timeout")}
+}
+
+// TestRun_GatewayUnreachableIsInfraError: an attempt whose LLM call never
+// reached the gateway is a harness error, retried on resume, not a pipeline
+// failure.
+func TestRun_GatewayUnreachableIsInfraError(t *testing.T) {
+	for _, absorbed := range []bool{false, true} {
+		h := newHarness(t, outageOptimizer{absorbed: absorbed})
+		rec := h.run(t)[0]
+		require.Equal(t, StatusInfraError, rec.Status, "absorbed=%v", absorbed)
+		require.Contains(t, rec.Error, "LLM gateway unreachable")
+		require.False(t, rec.final(), "retried on resume")
+		require.Empty(t, rec.Gates, "nothing was measured")
+	}
 }

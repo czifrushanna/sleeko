@@ -111,6 +111,9 @@ type OptimizeOutput struct {
 	Verification []pipeline.VerifyRound
 	// BaseTable is the base image table W2 offered, when it offered one.
 	BaseTable *baseimage.Table
+	// GatewayUnreachable: an LLM call never reached the gateway, so the
+	// attempt says nothing about the pipeline.
+	GatewayUnreachable bool
 }
 
 // VersionChecker checks that what a candidate pins exists (G3);

@@ -18,6 +18,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -223,4 +224,30 @@ func TestSampling(t *testing.T) {
 	bodies = run(dockerfile.Sampling{Temperature: &zero}, 0)
 	require.Equal(t, 0.0, bodies[0]["temperature"], "a temperature of 0 is sent, not omitted")
 	require.NotContains(t, bodies[0], "seed")
+}
+
+// TestGatewayUnreachable: a call that never reaches the gateway is flagged,
+// both when generate fails and when a repair call fails and verify keeps
+// the earlier candidate.
+func TestGatewayUnreachable(t *testing.T) {
+	ln, err := net.Listen("tcp", "127.0.0.1:0")
+	require.NoError(t, err)
+	dead := "http://" + ln.Addr().String()
+	require.NoError(t, ln.Close())
+
+	st := &State{Original: verifyOriginal, ScanReport: `{"vulnerabilities": []}`}
+	err = NewGenerate(LLM{APIBaseURL: dead, Model: "m", Prompt: "p:\n"}).Run(context.Background(), st)
+	require.Error(t, err)
+	require.True(t, st.GatewayUnreachable)
+
+	st = &State{Original: verifyOriginal, Candidate: invented,
+		Messages: []dockerfile.Message{{Role: "user", Content: "p"}, {Role: "assistant", Content: invented}}}
+	v := &Verify{llm: LLM{APIBaseURL: dead, Model: "m"}, verifier: &verify.Verifier{}, maxRounds: 2}
+	require.NoError(t, v.Run(context.Background(), st), "a failed repair keeps the candidate")
+	require.Equal(t, invented, st.Candidate)
+	require.True(t, st.GatewayUnreachable)
+
+	// A gateway that answers with an error is not unreachable.
+	stOK, _ := runVerify(t, 2, "```dockerfile\n"+invented+"```", "ERROR")
+	require.False(t, stOK.GatewayUnreachable)
 }

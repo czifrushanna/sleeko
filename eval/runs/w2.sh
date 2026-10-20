@@ -35,7 +35,7 @@ go build -o "$out/sleeko-eval" ./cmd/sleeko-eval
 	--manifest eval/benchmark/v1.yaml \
 	--pipeline baseimage,generate,verify --name W0+W1+W2 --reps 3 \
 	--concurrency "$concurrency" --build-timeout 10m \
-	--max-original-age 12h \
+	--max-original-age "${MAX_ORIGINAL_AGE:-12h}" \
 	--out "$out/w2.jsonl"
 
 "$out/sleeko-eval" report --out "$out/w2-report.md" "$out/w2.jsonl"

@@ -7,8 +7,9 @@
 #   LLMGW_API_BASE_URL=... LLMGW_API_KEY=... LLMGW_MODEL=... eval/runs/w1.sh RESULTS_DIR
 #
 # Run it right after eval/runs/w0.sh with the same RESULTS_DIR, model and
-# committed code: within 12 hours both reuse the same O′ builds, so the two
-# pipelines are compared against the same baseline images. Lint runs Hadolint
+# committed code: within MAX_ORIGINAL_AGE (default 12h) both reuse the same O′
+# builds, so the two pipelines are compared against the same baseline images
+# (eval/runs/study.sh runs all three pipelines on one snapshot). Lint runs Hadolint
 # from its pinned container image. Run from a committed tree.
 set -eu
 
@@ -31,7 +32,7 @@ go build -o "$out/sleeko-eval" ./cmd/sleeko-eval
 	--manifest eval/benchmark/v1.yaml \
 	--pipeline generate,verify --name W0+W1 --reps 3 \
 	--concurrency "$concurrency" --build-timeout 10m \
-	--max-original-age 12h \
+	--max-original-age "${MAX_ORIGINAL_AGE:-12h}" \
 	--out "$out/w1.jsonl"
 
 "$out/sleeko-eval" report --out "$out/w1-report.md" "$out/w1.jsonl"

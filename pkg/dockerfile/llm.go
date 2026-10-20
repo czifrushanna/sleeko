@@ -19,8 +19,10 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"strings"
 	"time"
@@ -143,6 +145,19 @@ func BuildPrompt(promptPrefix, dockerfile, scanReport string, budget Budget) str
 func BuildPromptWith(promptPrefix, dockerfile, scanReport string, budget Budget, extra string) string {
 	condensed := scanreport.Condense(scanReport, budget.scanReportBudget(promptPrefix+extra, dockerfile))
 	return promptPrefix + dockerfile + scanReportHeading + condensed + extra
+}
+
+// Unreachable reports an error from a call that never reached the gateway:
+// the connection could not be made (no route, DNS failure, refused, timed
+// out while dialling). It says nothing about the request, so an evaluation
+// retries such an attempt rather than count it against the pipeline.
+func Unreachable(err error) bool {
+	var op *net.OpError
+	if errors.As(err, &op) && op.Op == "dial" {
+		return true
+	}
+	var dns *net.DNSError
+	return errors.As(err, &dns)
 }
 
 // Chat sends a conversation to the gateway and returns the reply, streamed

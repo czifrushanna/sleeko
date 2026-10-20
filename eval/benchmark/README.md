@@ -115,6 +115,13 @@ The run scripts fix the LLM's sampling (`LLMGW_TEMPERATURE` 0.7,
 `LLMGW_SEED` 1000); repetition n of an attempt uses seed 1000 + n for all its
 LLM calls, so repetitions differ but every attempt can be replayed. Records
 and run info carry both.
+`eval/runs/study.sh` is the whole study: it refuses to start when the LLM
+gateway does not answer, runs w0.sh, w1.sh and w2.sh with
+`MAX_ORIGINAL_AGE=96h` so all three share W0's O′ images, then runs them once
+more to retry harness errors. An attempt whose LLM call never reached the
+gateway (off the network, an outage) is a harness error, retried on resume,
+not a pipeline failure; that includes a repair call the pipeline would
+otherwise absorb.
 `sleeko-eval compare --a W0 --b W0+W1` gives
 McNemar on per-image success (an image is solved when at least one repetition
 succeeds, pass@k; majority is reported as a sensitivity analysis) and

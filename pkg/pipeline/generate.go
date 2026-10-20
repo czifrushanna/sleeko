@@ -69,6 +69,7 @@ func (g *Generate) Run(ctx context.Context, st *State) error {
 	optimized, err := dockerfile.Chat(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, messages, g.llm.Budget.MaxTokens, g.llm.sampling(st))
 	st.LLMRounds++
 	if err != nil {
+		st.GatewayUnreachable = dockerfile.Unreachable(err)
 		return err
 	}
 
