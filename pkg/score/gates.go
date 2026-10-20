@@ -119,17 +119,24 @@ func covered(src string, oSources []string) bool {
 	return false
 }
 
-// CheckVersions is G3: every pinned base image tag and apt/pip version
-// exists. The lookups are made elsewhere (S7); failures lists what was not
-// found. Pass checked=false until those lookups exist.
-func CheckVersions(checked bool, failures []string) Gate {
+// CheckVersions is G3: every base image tag and apt/pip version the
+// candidate pins exists. The lookups are made elsewhere (pkg/verify's
+// existence checks); failures lists what was not found, skipped what could
+// not be checked and why, which a pass records so coverage can be reported.
+// Pass checked=false when no lookups are configured. Other package managers
+// are not checked here: a missing version there fails the build (G4).
+func CheckVersions(checked bool, failures, skipped []string) Gate {
 	if !checked {
 		return Gate{ID: G3Versions, Status: NotChecked, Reason: "version lookups not available"}
 	}
 	if len(failures) > 0 {
-		return fail(G3Versions, "not found: %s", strings.Join(failures, ", "))
+		return fail(G3Versions, "not found: %s", strings.Join(failures, "; "))
 	}
-	return pass(G3Versions)
+	g := pass(G3Versions)
+	if len(skipped) > 0 {
+		g.Reason = "skipped: " + strings.Join(skipped, "; ")
+	}
+	return g
 }
 
 // CheckBuild is G4: C builds the same way O′ did. buildErr is the build's

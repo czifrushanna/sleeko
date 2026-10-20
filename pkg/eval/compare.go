@@ -31,7 +31,15 @@ type itemOutcome struct {
 	deltaV, deltaS      []float64 // of the successful attempts
 }
 
-func (o itemOutcome) succeeded() bool { return 2*o.successes > o.attempts }
+// solved is the primary per-image outcome (decided 2026-10-20): the image
+// succeeds under a pipeline when at least one of its repetitions does
+// (pass@k, k = the repetitions). It measures whether the pipeline can solve
+// the image at all; the per-attempt success rate, reported beside it, is what
+// one call gives.
+func (o itemOutcome) solved() bool { return o.successes > 0 }
+
+// majority is the sensitivity outcome: most repetitions succeed.
+func (o itemOutcome) majority() bool { return 2*o.successes > o.attempts }
 
 func mean(xs []float64) float64 {
 	var s float64
@@ -80,15 +88,34 @@ type PairedComponent struct {
 	Test       score.WilcoxonResult `json:"wilcoxon"`
 }
 
+// PairedOutcomes is McNemar's 2×2 table of per-image outcomes.
+type PairedOutcomes struct {
+	BothSucceed, OnlyA, OnlyB, Neither int
+	McNemarP                           float64
+}
+
+func (p *PairedOutcomes) add(a, b bool) {
+	switch {
+	case a && b:
+		p.BothSucceed++
+	case a:
+		p.OnlyA++
+	case b:
+		p.OnlyB++
+	default:
+		p.Neither++
+	}
+}
+
 // Comparison is the schedule's paired comparison of pipeline B against A.
 type Comparison struct {
 	A, B string
 	// Images is the number measured under both.
 	Images int
-	// An image succeeds under a pipeline when most of its repetitions do.
-	BothSucceed, OnlyA, OnlyB, Neither int
-	McNemarP                           float64
-	DeltaV, DeltaS                     PairedComponent
+	// Solved is the primary table: an image succeeds when at least one of
+	// its repetitions does. Majority, a sensitivity analysis: when most do.
+	Solved, Majority PairedOutcomes
+	DeltaV, DeltaS   PairedComponent
 }
 
 // Compare compares pipeline b against pipeline a on the images both
@@ -105,22 +132,15 @@ func Compare(records []Record, a, b string) Comparison {
 			continue
 		}
 		c.Images++
-		switch xs, ys := x.succeeded(), y.succeeded(); {
-		case xs && ys:
-			c.BothSucceed++
-		case xs:
-			c.OnlyA++
-		case ys:
-			c.OnlyB++
-		default:
-			c.Neither++
-		}
+		c.Solved.add(x.solved(), y.solved())
+		c.Majority.add(x.majority(), y.majority())
 		if len(x.deltaV) > 0 && len(y.deltaV) > 0 {
 			dv = append(dv, mean(y.deltaV)-mean(x.deltaV))
 			ds = append(ds, mean(y.deltaS)-mean(x.deltaS))
 		}
 	}
-	c.McNemarP = score.McNemar(c.OnlyA, c.OnlyB)
+	c.Solved.McNemarP = score.McNemar(c.Solved.OnlyA, c.Solved.OnlyB)
+	c.Majority.McNemarP = score.McNemar(c.Majority.OnlyA, c.Majority.OnlyB)
 	c.DeltaV = paired(dv)
 	c.DeltaS = paired(ds)
 	return c
@@ -134,11 +154,13 @@ func paired(diffs []float64) PairedComponent {
 func WriteComparison(w io.Writer, c Comparison) error {
 	var b strings.Builder
 	fmt.Fprintf(&b, "## `%s` vs `%s`\n\n", c.B, c.A)
-	fmt.Fprintf(&b, "Images measured by both: %d. An image succeeds when most of its repetitions do.\n\n", c.Images)
-	fmt.Fprintf(&b, "| | `%s` succeeds | `%s` fails |\n|---|---:|---:|\n", c.B, c.B)
-	fmt.Fprintf(&b, "| **`%s` succeeds** | %d | %d |\n", c.A, c.BothSucceed, c.OnlyA)
-	fmt.Fprintf(&b, "| **`%s` fails** | %d | %d |\n\n", c.A, c.OnlyB, c.Neither)
-	fmt.Fprintf(&b, "McNemar (exact, two-sided): discordant images %d vs %d, p = %.4g\n\n", c.OnlyB, c.OnlyA, c.McNemarP)
+	fmt.Fprintf(&b, "Images measured by both: %d. An image is solved when at least one of its repetitions succeeds (pass@k).\n\n", c.Images)
+	fmt.Fprintf(&b, "| | `%s` solves | `%s` does not |\n|---|---:|---:|\n", c.B, c.B)
+	fmt.Fprintf(&b, "| **`%s` solves** | %d | %d |\n", c.A, c.Solved.BothSucceed, c.Solved.OnlyA)
+	fmt.Fprintf(&b, "| **`%s` does not** | %d | %d |\n\n", c.A, c.Solved.OnlyB, c.Solved.Neither)
+	fmt.Fprintf(&b, "McNemar (exact, two-sided): discordant images %d vs %d, p = %.4g\n\n", c.Solved.OnlyB, c.Solved.OnlyA, c.Solved.McNemarP)
+	fmt.Fprintf(&b, "Sensitivity, an image succeeding when most repetitions do: discordant images %d vs %d, p = %.4g\n\n",
+		c.Majority.OnlyB, c.Majority.OnlyA, c.Majority.McNemarP)
 	b.WriteString("| Component (B − A) | Paired images | Median difference | Wilcoxon W+ | p (exact) |\n|---|---:|---:|---:|---:|\n")
 	for _, row := range []struct {
 		name string

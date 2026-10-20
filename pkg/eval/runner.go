@@ -27,6 +27,7 @@ import (
 
 	"github.com/czifrushanna/sleeko/pkg/dfparse"
 	"github.com/czifrushanna/sleeko/pkg/score"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 // Runner measures one pipeline configuration over benchmark items.
@@ -36,7 +37,9 @@ type Runner struct {
 	Scanner   Scanner
 	Smoker    Smoker
 	Optimizer Optimizer
-	Cache     *Cache
+	// Versions runs G3's existence checks; nil leaves G3 not checked.
+	Versions VersionChecker
+	Cache    *Cache
 
 	// WorkDir holds the candidate Dockerfiles and image archives.
 	WorkDir string
@@ -69,6 +72,11 @@ type Runner struct {
 	// Model and PromptHash are copied into every record.
 	Model      string
 	PromptHash string
+	// Temperature and Seed are the LLM's sampling, recorded with every
+	// attempt; an attempt's seed is Seed plus its repetition number, so the
+	// repetitions sample differently yet reproducibly.
+	Temperature *float64
+	Seed        *int64
 
 	Out *RecordWriter
 	// Done holds the records of earlier runs; attempts they settle are
@@ -149,6 +157,7 @@ func (r *Runner) runItem(ctx context.Context, it Item, reps []int, dbVersion str
 		return Record{
 			Item: it.ID, Pipeline: r.Pipeline, Repetition: rep, DistroFamily: it.DistroFamily,
 			Model: r.Model, PromptHash: r.PromptHash, TrivyDB: dbVersion, StartedAt: started,
+			Temperature: r.Temperature, Seed: r.attemptSeed(rep),
 		}
 	}
 
@@ -357,7 +366,7 @@ func (r *Runner) remove(img Image) {
 func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfparse.File, original, report string, base *baseline, rec *Record) {
 	rec.OriginalDockerfile = original
 	start := r.now()
-	out, err := r.Optimizer.Optimize(ctx, OptimizeInput{Dockerfile: original, ScanReport: report})
+	out, err := r.Optimizer.Optimize(ctx, OptimizeInput{Dockerfile: original, ScanReport: report, Repetition: rec.Repetition})
 	rec.LatencyMS = r.now().Sub(start).Milliseconds()
 	rec.LLMRounds = out.LLMRounds
 	rec.Diagnostics = out.Diagnostics
@@ -402,8 +411,10 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 	if g2.Status == score.Fail {
 		return
 	}
-	g3 := score.CheckVersions(false, nil)
-	gates[g3.ID] = g3
+	// G3 does not stop the attempt: C is still built and measured, so G3's
+	// own false failures stay visible (G3 fails, C builds) and every later
+	// gate and component is recorded for the analysis.
+	gates[score.G3Versions] = r.checkVersions(ctx, original, out.Candidate, base.Scan)
 
 	dockerfile, err := r.writeCandidate(it, src, out.Candidate, rec.Repetition)
 	if err != nil {
@@ -452,6 +463,33 @@ func (r *Runner) attempt(ctx context.Context, it Item, src string, oFile *dfpars
 		DeltaS:  dS,
 		FixRate: score.ComputeFixRate(base.Scan, scan.Result),
 	}
+}
+
+// attemptSeed is the seed the LLM calls of repetition rep use.
+func (r *Runner) attemptSeed(rep int) *int64 {
+	if r.Seed == nil {
+		return nil
+	}
+	s := *r.Seed + int64(rep)
+	return &s
+}
+
+// checkVersions is G3, from pkg/verify's existence checks.
+func (r *Runner) checkVersions(ctx context.Context, original, candidate string, scan score.ScanResult) score.Gate {
+	if r.Versions == nil {
+		return score.CheckVersions(false, nil, nil)
+	}
+	res := r.Versions.Existence(ctx, verify.Input{Original: original, Candidate: candidate, Scan: scan})
+	var failures, skipped []string
+	for _, f := range res.Failures() {
+		failures = append(failures, f.Message)
+	}
+	for _, c := range []string{verify.CheckBaseTag, verify.CheckAptVersion, verify.CheckPipVersion} {
+		if why, ok := res.Skipped[c]; ok {
+			skipped = append(skipped, c+": "+why)
+		}
+	}
+	return score.CheckVersions(true, failures, skipped)
 }
 
 // writeCandidate writes C outside the build context, so the file cannot end

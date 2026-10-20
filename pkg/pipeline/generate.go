@@ -32,6 +32,21 @@ type LLM struct {
 	// Prompt is the instruction text prepended to the Dockerfile.
 	Prompt string
 	Budget dockerfile.Budget
+	// Sampling is the temperature and base seed; unset fields leave the
+	// gateway's defaults.
+	Sampling dockerfile.Sampling
+}
+
+// sampling is the sampling for one optimization: the base seed plus the
+// state's seed offset, so repeated optimizations of the same input (an
+// evaluation's repetitions) sample differently yet reproducibly.
+func (l LLM) sampling(st *State) dockerfile.Sampling {
+	s := l.Sampling
+	if s.Seed != nil {
+		seed := *s.Seed + st.SeedOffset
+		s.Seed = &seed
+	}
+	return s
 }
 
 // Generate asks the LLM gateway for an optimized Dockerfile in a single call:
@@ -51,7 +66,7 @@ func (g *Generate) Name() string { return GenerateStageName }
 func (g *Generate) Run(ctx context.Context, st *State) error {
 	prompt := dockerfile.BuildPromptWith(g.llm.Prompt, st.Original, st.ScanReport, g.llm.Budget, strings.Join(st.PromptSections, ""))
 	messages := []dockerfile.Message{{Role: "user", Content: prompt}}
-	optimized, err := dockerfile.Chat(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, messages, g.llm.Budget.MaxTokens)
+	optimized, err := dockerfile.Chat(ctx, g.llm.APIBaseURL, g.llm.APIKey, g.llm.Model, messages, g.llm.Budget.MaxTokens, g.llm.sampling(st))
 	st.LLMRounds++
 	if err != nil {
 		return err

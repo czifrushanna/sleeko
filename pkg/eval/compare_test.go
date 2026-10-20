@@ -45,10 +45,11 @@ func TestCompare(t *testing.T) {
 			recs = append(recs, r...)
 		}
 	}
-	// Five images only W0+W1 gets right, one only W0: McNemar(1, 5).
+	// Five images only W0+W1 solves.
 	for _, item := range []string{"b1", "b2", "b3", "b4", "b5"} {
 		add(attempts(item, "W0", "fff", 0, 0), attempts(item, "W0+W1", "ssf", 0.4, 0.1))
 	}
+	// Both solve a1, but only W0 succeeds in most repetitions.
 	add(attempts("a1", "W0", "ssf", 0.2, 0), attempts("a1", "W0+W1", "sff", 0.3, 0))
 	// Both succeed on three images; W0+W1 reduces vulnerabilities more.
 	add(attempts("both1", "W0", "sss", 0.10, 0.05), attempts("both1", "W0+W1", "sss", 0.30, 0.05))
@@ -62,11 +63,13 @@ func TestCompare(t *testing.T) {
 
 	c := Compare(recs, "W0", "W0+W1")
 	require.Equal(t, 10, c.Images)
-	require.Equal(t, 3, c.BothSucceed)
-	require.Equal(t, 1, c.OnlyA)
-	require.Equal(t, 5, c.OnlyB)
-	require.Equal(t, 1, c.Neither)
-	require.InDelta(t, 0.21875, c.McNemarP, 1e-12, "the SciPy reference for 1 vs 5")
+	// Solved (≥ 1 success): a1 and both1–3 by both, b1–b5 only by W0+W1.
+	require.Equal(t, PairedOutcomes{BothSucceed: 4, OnlyA: 0, OnlyB: 5, Neither: 1, McNemarP: 0.0625}, c.Solved, "exact: 2 × (1/2)^5")
+	// Majority: a1 becomes W0-only.
+	require.Equal(t, 3, c.Majority.BothSucceed)
+	require.Equal(t, 1, c.Majority.OnlyA)
+	require.Equal(t, 5, c.Majority.OnlyB)
+	require.InDelta(t, 0.21875, c.Majority.McNemarP, 1e-12, "the SciPy reference for 1 vs 5")
 
 	// Pairs: a1 (B 0.3 − A 0.2), both1 (+0.2), both2 (+0.05), both3 (−0.05):
 	// |0.05| twice ties at rank 1.5, so W+ = 3 + 4 + 1.5.
@@ -80,9 +83,11 @@ func TestCompare(t *testing.T) {
 	require.NoError(t, WriteComparison(&buf, c))
 	md := buf.String()
 	require.Contains(t, md, "## `W0+W1` vs `W0`")
-	require.Contains(t, md, "| **`W0` succeeds** | 3 | 1 |")
-	require.Contains(t, md, "| **`W0` fails** | 5 | 1 |")
-	require.Contains(t, md, "discordant images 5 vs 1, p = 0.2188")
+	require.Contains(t, md, "An image is solved when at least one of its repetitions succeeds (pass@k).")
+	require.Contains(t, md, "| **`W0` solves** | 4 | 0 |")
+	require.Contains(t, md, "| **`W0` does not** | 5 | 1 |")
+	require.Contains(t, md, "McNemar (exact, two-sided): discordant images 5 vs 0, p = 0.0625")
+	require.Contains(t, md, "Sensitivity, an image succeeding when most repetitions do: discordant images 5 vs 1, p = 0.2188")
 	require.Contains(t, md, "| ΔV | 4 | 7.5% | 8.5 |")
 }
 

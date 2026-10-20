@@ -20,6 +20,7 @@ import (
 	"github.com/czifrushanna/sleeko/pkg/baseimage"
 	"github.com/czifrushanna/sleeko/pkg/pipeline"
 	"github.com/czifrushanna/sleeko/pkg/score"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 // Source checks out an item's repository at its commit.
@@ -96,6 +97,9 @@ type OptimizeInput struct {
 	Dockerfile string
 	// ScanReport is the Harbor-shape report of O′.
 	ScanReport string
+	// Repetition is the attempt's repetition number, added to the LLM's
+	// base seed so repetitions sample differently.
+	Repetition int
 }
 
 // OptimizeOutput is one pipeline run's result.
@@ -107,6 +111,12 @@ type OptimizeOutput struct {
 	Verification []pipeline.VerifyRound
 	// BaseTable is the base image table W2 offered, when it offered one.
 	BaseTable *baseimage.Table
+}
+
+// VersionChecker checks that what a candidate pins exists (G3);
+// *verify.Verifier implements it.
+type VersionChecker interface {
+	Existence(ctx context.Context, in verify.Input) verify.Result
 }
 
 // Optimizer runs the pipeline under evaluation.

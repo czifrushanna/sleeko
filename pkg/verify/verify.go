@@ -26,6 +26,7 @@ package verify
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"regexp"
 	"sort"
@@ -251,6 +252,27 @@ func checkContract(res *Result, o, c *dfparse.File) {
 	}
 }
 
+// Existence runs only the checks that what the candidate pins exists: base
+// image tags, apt and pip versions. It is the evaluation's G3; Verify runs
+// the same checks among the others.
+func (v *Verifier) Existence(ctx context.Context, in Input) Result {
+	var res Result
+	cFile, err := dfparse.Parse(in.Candidate)
+	if err != nil {
+		for _, c := range []string{CheckBaseTag, CheckAptVersion, CheckPipVersion} {
+			res.skip(c, "the Dockerfile does not parse")
+		}
+		return res
+	}
+	oFile, err := dfparse.Parse(in.Original)
+	if err != nil {
+		oFile = nil
+	}
+	v.checkBaseTags(ctx, &res, cFile)
+	v.checkPins(ctx, &res, in, oFile, cFile, cFile.PackageInstalls())
+	return res
+}
+
 func (v *Verifier) checkBaseTags(ctx context.Context, res *Result, c *dfparse.File) {
 	if v.Lookups == nil {
 		res.skip(CheckBaseTag, "no lookups configured")
@@ -271,6 +293,8 @@ func (v *Verifier) checkBaseTags(ctx context.Context, res *Result, c *dfparse.Fi
 		}
 		ok, err := v.Lookups.TagExists(ctx, ref.Image)
 		switch {
+		case errors.Is(err, lookup.ErrBadDigest):
+			res.add(CheckBaseTag, Fail, ref.Line, "the base image %s has a malformed digest and cannot be pulled; use a tag, or a digest that exists", ref.Image)
 		case err != nil:
 			res.skip(CheckBaseTag, fmt.Sprintf("%s: %v", ref.Image, err))
 		case !ok:
@@ -325,12 +349,24 @@ func releaseFor(stage int, refs []dfparse.FromRef, oRefs []dfparse.FromRef, scan
 	return lookup.ReleaseOf("debian", best)
 }
 
+// Package sources besides the distribution's archive and PyPI: a version
+// missing from those can still install from these, so pins are not judged
+// against the official indexes when a Dockerfile adds any (anywhere in the
+// file: a RUN, an ENV, a copied config). Backports count too: AptHas does
+// not search them.
+var (
+	extraAptSource = regexp.MustCompile(`sources\.list|/etc/apt/|add-apt-repository|apt-key|signed-by=|(?m)(^|["'\s])deb(-src)?\s+(\[[^\]]*\]\s+)?https?://|backports|--target-release|apt-get\s+(\S+\s+)*-t\s`)
+	extraPipSource = regexp.MustCompile(`--index-url|--extra-index-url|PIP_INDEX_URL|PIP_EXTRA_INDEX_URL|PIP_FIND_LINKS|pip\.conf|--find-links|--no-index|\s-i\s+https?://|\s-f\s+\S`)
+)
+
 func (v *Verifier) checkPins(ctx context.Context, res *Result, in Input, o, c *dfparse.File, pins []dfparse.PackageInstall) {
 	if v.Lookups == nil {
 		res.skip(CheckAptVersion, "no lookups configured")
 		res.skip(CheckPipVersion, "no lookups configured")
 		return
 	}
+	aptExtra := extraAptSource.MatchString(in.Candidate)
+	pipExtra := extraPipSource.MatchString(in.Candidate)
 	refs, err := c.FromRefs(nil)
 	if err != nil {
 		res.skip(CheckAptVersion, err.Error())
@@ -347,6 +383,10 @@ func (v *Verifier) checkPins(ctx context.Context, res *Result, in Input, o, c *d
 		}
 		switch p.Manager {
 		case dfparse.ManagerApt:
+			if aptExtra {
+				res.skip(CheckAptVersion, "the Dockerfile adds apt sources besides the distribution's archive")
+				continue
+			}
 			rel, ok := releaseFor(p.Stage, refs, oRefs, in.Scan)
 			if !ok {
 				res.skip(CheckAptVersion, fmt.Sprintf("the Debian/Ubuntu release of stage %d's base image is not known", p.Stage))
@@ -360,6 +400,10 @@ func (v *Verifier) checkPins(ctx context.Context, res *Result, in Input, o, c *d
 				res.add(CheckAptVersion, Fail, p.Line, "apt cannot install %s=%s: that version is not in %s %s (or its -updates/-security); pin a version the archive has, or leave the version out", p.Name, p.Version, rel.Distro, rel.Suite)
 			}
 		case dfparse.ManagerPip:
+			if pipExtra {
+				res.skip(CheckPipVersion, "the Dockerfile installs from package indexes besides PyPI")
+				continue
+			}
 			has, err := v.Lookups.PipHas(ctx, p.Name, p.Version)
 			switch {
 			case err != nil:

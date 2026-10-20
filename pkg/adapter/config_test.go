@@ -14,7 +14,7 @@ import (
 // regardless of what the surrounding environment has set.
 func setBaseEnv(t *testing.T) {
 	t.Helper()
-	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow, envPipeline, envRepairRounds, envWorkerTimeout} {
+	for _, k := range []string{envAPIKey, envModel, envAPIBaseURL, envPrompt, envListenAddr, envJobTTL, envMaxConcurrency, envMaxTokens, envContextWindow, envPipeline, envRepairRounds, envWorkerTimeout, envTemperature, envSeed} {
 		t.Setenv(k, "")
 	}
 }
@@ -76,6 +76,25 @@ func TestLoadConfig_Defaults(t *testing.T) {
 	require.Equal(t, pipeline.DefaultNames(), cfg.Pipeline)
 	require.Equal(t, pipeline.DefaultMaxRepairRounds, cfg.MaxRepairRounds)
 	require.Equal(t, defaultWorkerTimeout, cfg.WorkerTimeout)
+	require.Nil(t, cfg.Temperature, "unset: the gateway's default, not sent")
+	require.Nil(t, cfg.Seed)
+}
+
+func TestLoadConfig_Sampling(t *testing.T) {
+	setBaseEnv(t)
+	setRequiredEnv(t)
+	t.Setenv(envTemperature, "0.7")
+	t.Setenv(envSeed, "20261020")
+
+	cfg, err := LoadConfig()
+	require.NoError(t, err)
+	require.Equal(t, 0.7, *cfg.Temperature)
+	require.Equal(t, int64(20261020), *cfg.Seed)
+
+	t.Setenv(envTemperature, "0")
+	cfg, err = LoadConfig()
+	require.NoError(t, err)
+	require.Equal(t, 0.0, *cfg.Temperature, "0 is a setting, not unset")
 }
 
 func TestLoadConfig_PromptOverride(t *testing.T) {
@@ -141,6 +160,8 @@ func TestLoadConfig_InvalidValues(t *testing.T) {
 		envContextWindow:  "-1",
 		envRepairRounds:   "-1",
 		envWorkerTimeout:  "soon",
+		envTemperature:    "3",
+		envSeed:           "-5",
 	}
 	for env, bad := range cases {
 		t.Run(env, func(t *testing.T) {

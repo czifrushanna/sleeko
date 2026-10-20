@@ -19,6 +19,11 @@ out=${1:?usage: eval/runs/w2.sh RESULTS_DIR}
 : "${LLMGW_API_KEY:?set LLMGW_API_KEY}"
 : "${LLMGW_MODEL:?set LLMGW_MODEL}"
 concurrency=${CONCURRENCY:-3}
+# Sampling is fixed so runs are reproducible (paper notes, point 6): the
+# Qwen3 family's recommended temperature for non-reasoning use, and a base
+# seed; repetition n uses seed + n, so the repetitions differ (pass@3).
+export LLMGW_TEMPERATURE="${LLMGW_TEMPERATURE:-0.7}"
+export LLMGW_SEED="${LLMGW_SEED:-1000}"
 
 cd "$(dirname "$0")/../.."
 mkdir -p "$out"

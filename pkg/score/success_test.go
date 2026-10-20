@@ -105,7 +105,7 @@ func TestSuccess_FixtureEndToEnd(t *testing.T) {
 	dS, err := DeltaS(120_000_000, 128_000_000)
 	require.NoError(t, err)
 
-	gates := gatesWith(CheckNoNewSevere(o, c), CheckVersions(false, nil))
+	gates := gatesWith(CheckNoNewSevere(o, c), CheckVersions(false, nil, nil))
 	require.True(t, Success(gates, dV, dS, DefaultSizeTolerance))
 
 	require.Equal(t, FixRate{Fixable: 5, Fixed: 4}, ComputeFixRate(o, c))

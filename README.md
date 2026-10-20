@@ -72,6 +72,8 @@ All configuration is via environment variables:
 | `OPTIMIZER_MAX_REPAIR_ROUNDS` | no | `2` | Repair rounds the `verify` stage may use; `0` only checks |
 | `OPTIMIZER_ADAPTER_WORKER_TIMEOUT` | no | `5m` | Time limit for one optimization, all LLM calls included; raise it when `verify` repairs |
 | `LLMGW_MAX_TOKENS` | no | `4096` | Completion budget, sent as `max_tokens` |
+| `LLMGW_TEMPERATURE` | no | unset | Sampling temperature (0–2); unset, it is not sent and the gateway's default applies |
+| `LLMGW_SEED` | no | unset | Sampling seed; unset, it is not sent. Setting it and `LLMGW_TEMPERATURE` makes a call repeatable |
 | `LLMGW_CONTEXT_WINDOW` | no | `32768` | Model's total token window, used to bound the prompt; `0` disables trimming |
 | `OPTIMIZER_ADAPTER_LISTEN_ADDR` | no | `:8080` | HTTP listen address |
 | `OPTIMIZER_ADAPTER_JOB_TTL` | no | `1h` | How long finished results are kept in the in-memory store |

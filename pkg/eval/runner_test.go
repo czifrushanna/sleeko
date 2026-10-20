@@ -20,6 +20,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"sync"
@@ -30,6 +31,7 @@ import (
 
 	"github.com/czifrushanna/sleeko/pkg/dfparse"
 	"github.com/czifrushanna/sleeko/pkg/score"
+	"github.com/czifrushanna/sleeko/pkg/verify"
 )
 
 // world is the fake environment. A Dockerfile drives what its image looks
@@ -220,14 +222,17 @@ var testItem = Item{
 }
 
 type harness struct {
-	w      *world
-	opt    Optimizer
-	cache  string
-	work   string
-	out    bytes.Buffer
-	done   []Record
-	reps   int
-	runner *Runner
+	w           *world
+	opt         Optimizer
+	cache       string
+	work        string
+	out         bytes.Buffer
+	done        []Record
+	reps        int
+	versions    VersionChecker
+	temperature *float64
+	seed        *int64
+	runner      *Runner
 }
 
 func newHarness(t *testing.T, opt Optimizer) *harness {
@@ -241,11 +246,11 @@ func (h *harness) run(t *testing.T, items ...Item) []Record {
 	}
 	h.out.Reset()
 	h.runner = &Runner{
-		Source: h.w, Builder: h.w, Scanner: h.w, Smoker: h.w, Optimizer: h.opt,
+		Source: h.w, Builder: h.w, Scanner: h.w, Smoker: h.w, Optimizer: h.opt, Versions: h.versions,
 		Cache:   &Cache{Dir: h.cache},
 		WorkDir: h.work, Pipeline: "W0", Repetitions: h.reps, Concurrency: 2, BuildTimeout: 50 * time.Millisecond,
 		Weights: score.DefaultWeights, SizeTolerance: score.DefaultSizeTolerance,
-		Model: "test-model", PromptHash: "abc123",
+		Model: "test-model", PromptHash: "abc123", Temperature: h.temperature, Seed: h.seed,
 		Out: NewRecordWriter(&h.out), Done: h.done,
 	}
 	require.NoError(t, h.runner.Run(context.Background(), items))
@@ -676,4 +681,78 @@ func TestRun_RebuildsBaselineCachedWithoutEOSL(t *testing.T) {
 	h.runner.Pipeline = "other"
 	require.NoError(t, h.runner.Run(context.Background(), []Item{testItem}))
 	require.Equal(t, 4, h.w.buildCount(), "O′ rebuilt")
+}
+
+// stubVersions fails every candidate pinning python:3.12-slim.
+type stubVersions struct{ calls int }
+
+func (s *stubVersions) Existence(_ context.Context, in verify.Input) verify.Result {
+	s.calls++
+	if strings.Contains(in.Candidate, "FROM python:3.12-slim\n") {
+		return verify.Result{Findings: []verify.Finding{{Check: verify.CheckBaseTag, Severity: verify.Fail, Message: "the base image python:3.12-slim does not exist"}}}
+	}
+	return verify.Result{Skipped: map[string]string{verify.CheckAptVersion: "release unknown"}}
+}
+
+// TestRun_G3FailsButCIsStillMeasured: a G3 failure fails the attempt, but C
+// is still built, smoke-tested and scanned, so G3's false failures stay
+// visible and every component is recorded.
+func TestRun_G3FailsButCIsStillMeasured(t *testing.T) {
+	h := newHarness(t, &fakeOptimizer{candidate: candidate("# vulns=CVE-2:high:,CVE-3:low:\n# size=900")})
+	versions := &stubVersions{}
+	h.versions = versions
+	recs := h.run(t)
+	rec := recs[0]
+
+	require.Equal(t, 1, versions.calls)
+	require.Equal(t, allGates(pass, pass, fail, pass, pass, pass), gateStatuses(rec))
+	require.Contains(t, rec.Gates[2].Reason, "python:3.12-slim does not exist")
+	require.False(t, rec.Success, "a G3 failure fails the attempt")
+	require.NotNil(t, rec.Components, "C was measured anyway")
+	require.Equal(t, 2, h.w.buildCount())
+
+	// A clean candidate passes and records what was skipped.
+	h2 := newHarness(t, NoopOptimizer{})
+	h2.versions = &stubVersions{}
+	rec = h2.run(t)[0]
+	require.Equal(t, score.Gate{ID: score.G3Versions, Status: pass, Reason: "skipped: apt_version_exists: release unknown"}, rec.Gates[2])
+}
+
+// repetitionOptimizer records the repetition each call was made for.
+type repetitionOptimizer struct {
+	mu   sync.Mutex
+	reps []int
+}
+
+func (o *repetitionOptimizer) Optimize(_ context.Context, in OptimizeInput) (OptimizeOutput, error) {
+	o.mu.Lock()
+	o.reps = append(o.reps, in.Repetition)
+	o.mu.Unlock()
+	return OptimizeOutput{Candidate: in.Dockerfile}, nil
+}
+
+// TestRun_SamplingPerRepetition: the optimizer learns each attempt's
+// repetition (the pipeline adds it to the base seed), and every record
+// carries the temperature and that attempt's seed.
+func TestRun_SamplingPerRepetition(t *testing.T) {
+	opt := &repetitionOptimizer{}
+	h := newHarness(t, opt)
+	h.reps = 3
+	temp, seed := 0.7, int64(100)
+	h.temperature, h.seed = &temp, &seed
+	recs := h.run(t)
+
+	sort.Ints(opt.reps)
+	require.Equal(t, []int{1, 2, 3}, opt.reps)
+	seeds := map[int]int64{}
+	for _, r := range recs {
+		require.Equal(t, 0.7, *r.Temperature)
+		seeds[r.Repetition] = *r.Seed
+	}
+	require.Equal(t, map[int]int64{1: 101, 2: 102, 3: 103}, seeds)
+
+	h2 := newHarness(t, NoopOptimizer{})
+	rec := h2.run(t)[0]
+	require.Nil(t, rec.Temperature, "unset: not recorded")
+	require.Nil(t, rec.Seed)
 }

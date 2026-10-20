@@ -40,6 +40,9 @@ func TestParseImageRef(t *testing.T) {
 		"mcr.microsoft.com/dotnet/aspnet:8.0":       {"mcr.microsoft.com", "dotnet/aspnet", "8.0"},
 		"localhost:5000/app:dev":                    {"localhost:5000", "app", "dev"},
 		"alpine@sha256:" + strings.Repeat("a", 64):  {"registry-1.docker.io", "library/alpine", "sha256:" + strings.Repeat("a", 64)},
+		// A tag beside a digest is ignored: Docker pulls by the digest.
+		"golang:1.27.2@sha256:" + strings.Repeat("b", 64):          {"registry-1.docker.io", "library/golang", "sha256:" + strings.Repeat("b", 64)},
+		"localhost:5000/app:dev@sha256:" + strings.Repeat("c", 64): {"localhost:5000", "app", "sha256:" + strings.Repeat("c", 64)},
 	}
 	for in, want := range cases {
 		got, err := ParseImageRef(in)
@@ -50,6 +53,8 @@ func TestParseImageRef(t *testing.T) {
 		_, err := ParseImageRef(bad)
 		require.Error(t, err, bad)
 	}
+	_, err := ParseImageRef("python:3.11-slim@sha256:your-verified-digest-here")
+	require.ErrorIs(t, err, ErrBadDigest)
 }
 
 // fakeRegistry demands an anonymous token, like Docker Hub, and knows one tag.

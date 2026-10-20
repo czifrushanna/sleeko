@@ -59,6 +59,7 @@ func NewServer(cfg *Config) *Server {
 			Model:      cfg.Model,
 			Prompt:     cfg.Prompt,
 			Budget:     dockerfile.Budget{MaxTokens: cfg.MaxTokens, ContextWindow: cfg.ContextWindow},
+			Sampling:   dockerfile.Sampling{Temperature: cfg.Temperature, Seed: cfg.Seed},
 		},
 		Verifier:        verifier,
 		MaxRepairRounds: cfg.MaxRepairRounds,

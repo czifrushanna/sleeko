@@ -77,9 +77,10 @@ func TestCheckNoInvention(t *testing.T) {
 }
 
 func TestCheckVersions(t *testing.T) {
-	require.Equal(t, Gate{ID: G3Versions, Status: NotChecked, Reason: "version lookups not available"}, CheckVersions(false, nil))
-	require.Equal(t, Gate{ID: G3Versions, Status: Pass}, CheckVersions(true, nil))
-	require.Equal(t, Gate{ID: G3Versions, Status: Fail, Reason: "not found: python:3.99, curl=9.9"}, CheckVersions(true, []string{"python:3.99", "curl=9.9"}))
+	require.Equal(t, Gate{ID: G3Versions, Status: NotChecked, Reason: "version lookups not available"}, CheckVersions(false, nil, nil))
+	require.Equal(t, Gate{ID: G3Versions, Status: Pass}, CheckVersions(true, nil, nil))
+	require.Equal(t, Gate{ID: G3Versions, Status: Pass, Reason: "skipped: apt_version_exists: extra sources"}, CheckVersions(true, nil, []string{"apt_version_exists: extra sources"}))
+	require.Equal(t, Gate{ID: G3Versions, Status: Fail, Reason: "not found: python:3.99; curl=9.9"}, CheckVersions(true, []string{"python:3.99", "curl=9.9"}, []string{"ignored on failure"}))
 }
 
 func TestCheckBuild(t *testing.T) {

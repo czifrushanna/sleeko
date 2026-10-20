@@ -70,7 +70,7 @@ func (v *Verify) Run(ctx context.Context, st *State) error {
 	for round := 1; round <= v.maxRounds && !current.Passed(); round++ {
 		messages := append(append([]dockerfile.Message{}, st.Messages...),
 			dockerfile.Message{Role: "user", Content: RepairMessage(current)})
-		reply, err := dockerfile.Chat(ctx, v.llm.APIBaseURL, v.llm.APIKey, v.llm.Model, messages, v.llm.Budget.MaxTokens)
+		reply, err := dockerfile.Chat(ctx, v.llm.APIBaseURL, v.llm.APIKey, v.llm.Model, messages, v.llm.Budget.MaxTokens, v.llm.sampling(st))
 		st.LLMRounds++
 		if err != nil {
 			// Keep what we have: a failed repair call is not a failed run.

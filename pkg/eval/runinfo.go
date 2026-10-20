@@ -45,11 +45,18 @@ type RunInfo struct {
 	MaxTokens     int    `json:"max_tokens,omitempty"`
 	ContextWindow int    `json:"context_window,omitempty"`
 	PromptHash    string `json:"prompt_hash,omitempty"`
-	Prompt        string `json:"prompt,omitempty"`
+	// Temperature and Seed are the LLM sampling; Seed is the base seed, an
+	// attempt using Seed plus its repetition number. Absent: the gateway's
+	// defaults.
+	Temperature *float64 `json:"temperature,omitempty"`
+	Seed        *int64   `json:"seed,omitempty"`
+	Prompt      string   `json:"prompt,omitempty"`
 	// MaxRepairRounds and Lint configure the verify stage, when there is
 	// one: Lint is the Hadolint used, or empty when lint is skipped.
 	MaxRepairRounds int    `json:"max_repair_rounds,omitempty"`
 	Lint            string `json:"lint,omitempty"`
+	// G3 is what the versions gate checks, or empty when it is not checked.
+	G3 string `json:"g3,omitempty"`
 	// MaxBaseCandidates configures the baseimage stage, when there is one.
 	MaxBaseCandidates int `json:"max_base_candidates,omitempty"`
 
@@ -86,9 +93,12 @@ func conflicts(first, next RunInfo) []string {
 	check("max_tokens", first.MaxTokens, next.MaxTokens)
 	check("context_window", first.ContextWindow, next.ContextWindow)
 	check("prompt_hash", first.PromptHash, next.PromptHash)
+	check("temperature", deref(first.Temperature), deref(next.Temperature))
+	check("seed", deref(first.Seed), deref(next.Seed))
 	check("max_repair_rounds", first.MaxRepairRounds, next.MaxRepairRounds)
 	check("lint", first.Lint, next.Lint)
 	check("max_base_candidates", first.MaxBaseCandidates, next.MaxBaseCandidates)
+	check("g3", first.G3, next.G3)
 	check("manifest_sha256", first.ManifestSHA256, next.ManifestSHA256)
 	check("repetitions", first.Repetitions, next.Repetitions)
 	check("build_timeout", first.BuildTimeout, next.BuildTimeout)
@@ -97,6 +107,14 @@ func conflicts(first, next RunInfo) []string {
 	check("trivy_image", first.TrivyImage, next.TrivyImage)
 	check("trivy_db", first.TrivyDB, next.TrivyDB)
 	return diffs
+}
+
+// deref shows an optional setting, "unset" for nil.
+func deref[T any](p *T) any {
+	if p == nil {
+		return "unset"
+	}
+	return *p
 }
 
 // AppendRunInfo records a run's info in file, one JSON object per line. When

@@ -60,6 +60,9 @@ type State struct {
 	// Verification records each verify round: round 0 checks the generated
 	// candidate, round n the n-th repair.
 	Verification []VerifyRound
+	// SeedOffset is added to the configured base seed for every LLM call of
+	// this optimization; an evaluation sets it to the repetition number.
+	SeedOffset int64
 	// PromptSections are added to the generate prompt after the scan report
 	// by earlier stages (the base image table).
 	PromptSections []string
