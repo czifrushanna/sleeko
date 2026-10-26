@@ -122,6 +122,15 @@ more to retry harness errors. An attempt whose LLM call never reached the
 gateway (off the network, an outage) is a harness error, retried on resume,
 not a pipeline failure; that includes a repair call the pipeline would
 otherwise absorb.
+After a study, `sleeko-eval analyze --out analysis.md w0.jsonl w1.jsonl
+w2.jsonl` runs the S9 analyses from the records: success under other
+definitions (with G7, a lint gate computed afterwards with the pinned
+Hadolint; without G6; a softer G6; G5 accepting shell/exec forms of the same
+command), each with pass@3 and McNemar per pipeline pair; G3 failures with
+paired tests; and an audit of G5's runtime-contract failures. It first checks
+that recomputing the recorded success reproduces it exactly. Figures for the
+paper: `python3 eval/plots/figures.py RESULTS_DIR` (requirements in
+`eval/plots/requirements.txt`) writes PDF and PNG to `RESULTS_DIR/figures/`.
 `sleeko-eval compare --a W0 --b W0+W1` gives
 McNemar on per-image success (an image is solved when at least one repetition
 succeeds, pass@k; majority is reported as a sensitivity analysis) and

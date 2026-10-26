@@ -40,10 +40,17 @@ func (w Weights) V(r ScanResult) int {
 }
 
 // DeltaV is the relative vulnerability reduction from O′ to C,
-// (V_O′ − V_C) / V_O′; 0 when O′ has nothing to reduce. Negative when C is
-// worse.
+// (V_O′ − V_C) / V_O′. Negative when C is worse.
+//
+// When O′ has no findings the ratio is undefined. It is 0 when C has none
+// either, and -1 when C has any: a candidate that adds vulnerabilities to a
+// clean image must count as worse, so the success rule (ΔV ≥ 0) rejects it,
+// however much smaller the image becomes. Vulnerabilities come before size.
 func DeltaV(vO, vC int) float64 {
 	if vO == 0 {
+		if vC > 0 {
+			return -1
+		}
 		return 0
 	}
 	return float64(vO-vC) / float64(vO)
