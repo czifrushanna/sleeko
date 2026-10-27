@@ -312,6 +312,12 @@ go test ./...
 docker build -t sleeko:dev .   # static binary on scratch, listens on :8080
 ```
 
+## Evaluation
+
+`cmd/sleeko-eval` measures the optimization pipelines on the benchmark in
+`eval/benchmark/`. [`eval/REPRODUCE.md`](eval/REPRODUCE.md) describes how to
+reproduce the evaluation of the TDK paper, from the runs to the figures.
+
 ## Limitations
 
 - **Single replica.** In-flight jobs are kept in an in-memory store, so run

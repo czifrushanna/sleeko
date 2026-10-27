@@ -1,0 +1,112 @@
+# Reproducing the evaluation
+
+This guide reproduces the evaluation of the TDK paper *Automated Generation of
+Optimized Dockerfiles in Harbor* (BME VIK, 2026): the W0, W0+W1 and W0+W1+W2
+pipelines on the benchmark in `eval/benchmark/v1.yaml`, the reports, the
+statistical analyses and the figures. Everything below runs from this
+branch (`pipeline`).
+
+## Requirements
+
+- Go 1.26 (see `go.mod`) and Docker with `buildx`. Give Docker at least 8 GB
+  of memory, or run with `CONCURRENCY=1`.
+- A Docker Hub login (`docker login`): base images are pulled and listed with
+  it, since anonymous pulls are rate limited.
+- An OpenAI-compatible chat completion endpoint serving the model. The paper
+  used Qwen3.8-27B (`qwen3.8-27b-fp16`) through CERN's LLM gateway.
+- Python 3.9–3.12 for the figures, with
+  `pip install -r eval/plots/requirements.txt` (the pinned NumPy has no
+  release for newer Pythons).
+- Network access to GitHub (the benchmark projects are cloned at the recorded
+  commits), and enough free disk for the images of 56 projects and the
+  Trivy cache (several GB).
+
+Trivy (`aquasec/trivy:0.75.0`) and Hadolint (`hadolint/hadolint:v2.12.0`) run
+from their pinned container images; nothing else needs to be installed.
+
+## 1. Download the vulnerability database
+
+```sh
+go build -o bin/sleeko-eval ./cmd/sleeko-eval
+bin/sleeko-eval db
+```
+
+The database is downloaded once and then frozen: every scan of a study uses
+the same version, which is recorded in every result. It is kept, with the
+checkouts and caches, in the default working directory
+(`~/Library/Caches/sleeko-eval` on macOS, `~/.cache/sleeko-eval` on Linux),
+which the run scripts also use. If a database is already there, `db` keeps
+it; `bin/sleeko-eval db -replace` downloads a new one.
+
+## 2. Run the study
+
+```sh
+export LLMGW_API_BASE_URL=https://<gateway>/chat/completions
+export LLMGW_API_KEY=<key>
+export LLMGW_MODEL=<model>
+eval/runs/study.sh RESULTS_DIR
+```
+
+Run it from a committed tree, so that the code version recorded with the
+results names a commit. `study.sh` runs `eval/runs/w0.sh`, `w1.sh` and
+`w2.sh` (3 repetitions each,
+temperature 0.7, seed 1000 + repetition, a 10-minute build limit) against one
+snapshot of the base images, then runs them once more to retry harness errors.
+The paper's study took about 6.5 hours. Running the script again resumes it.
+
+It writes, for each pipeline `wN`:
+
+| File | Content |
+|---|---|
+| `wN.jsonl` | one record per attempt: both Dockerfiles, every gate with its reason, the measurements, model, seed and prompt hash |
+| `wN.runs.jsonl` | what produced the run: code commit, model, full prompt, benchmark checksum, Trivy and database versions, flags |
+| `wN-scans/` | the full scan of every image referenced by the records |
+| `wN-report.md` | success rates with Wilson intervals, ΔV, ΔS, fix rate, gate failures |
+| `wN-failures.txt` | the failed attempts with their diffs |
+
+and the pairwise comparisons `w0-vs-w1.md`, `w1-vs-w2.md` and `w0-vs-w2.md`
+(McNemar and Wilcoxon).
+
+## 3. Analyses and figures
+
+```sh
+bin/sleeko-eval analyze -lint-gates RESULTS_DIR/lint-gates.jsonl \
+  -out RESULTS_DIR/analysis.md \
+  RESULTS_DIR/w0.jsonl RESULTS_DIR/w1.jsonl RESULTS_DIR/w2.jsonl
+python3 eval/plots/figures.py RESULTS_DIR
+```
+
+`analyze` computes G7 (no new lint errors) with the pinned Hadolint, success
+under alternative definitions, the G3 tests and the G5 audit. It first checks
+that recomputing the recorded success reproduces it exactly. The first run
+lints every Dockerfile with the Hadolint container (about 20 minutes);
+the findings are cached, so later runs take seconds. `figures.py` writes the
+paper's figures to `RESULTS_DIR/figures/`.
+
+## Where the paper's numbers come from
+
+| In the paper | File |
+|---|---|
+| Success rates (Table 6 and its figure) | `wN-report.md`, `figures/fig1-success` |
+| Pairwise tests | `w0-vs-w1.md`, `w1-vs-w2.md`, `w0-vs-w2.md` |
+| Gate failures and G7 | `wN-report.md`, `analysis.md`, `figures/fig3-gates` |
+| Verification and repair, base image tables | the W1 and W2 sections of `w1-report.md`, `w2-report.md` |
+| End-of-life split | `wN-report.md`, `figures/fig4-eol` |
+| ΔV and ΔS of the successful attempts | `wN-report.md`, `figures/fig2-components` |
+| Invented tags and versions, sensitivity analysis | `analysis.md` |
+
+## What will differ
+
+The procedure is fixed, but a new run will not give exactly the paper's
+numbers:
+
+- base image tags move to newer images, so the rebuilt originals change;
+- `sleeko-eval db` downloads the current vulnerability database, not the one
+  of 20 October 2026 that the paper used;
+- seeded requests usually return the same answer, but the model server does
+  not guarantee it under load.
+
+The benchmark manifest lists 57 projects. One of them,
+`d3-unitycatalog-unitycatalog`, did not build within the 10-minute limit in
+the paper's study and is reported as an invalid item, so the results cover
+56 projects.
