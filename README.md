@@ -11,6 +11,13 @@ can drive it end to end, but the service itself is self-contained and speaks
 plain HTTP, so it can also be used against any Docker Registry v2 endpoint
 without Harbor in the loop.
 
+This branch runs a single LLM call per optimization. The
+[`pipeline`](https://github.com/czifrushanna/sleeko/tree/pipeline) branch adds
+the verification and repair of the model's answer and measured base image
+candidates, together with the evaluation harness, the benchmark and
+[`eval/REPRODUCE.md`](https://github.com/czifrushanna/sleeko/blob/pipeline/eval/REPRODUCE.md),
+a guide to reproducing the evaluation of the TDK paper.
+
 ## How an optimization runs
 
 For each request the adapter:
