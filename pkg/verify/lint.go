@@ -78,6 +78,29 @@ func (h *Hadolint) Lint(ctx context.Context, dockerfile string) ([]LintFinding, 
 	return findings, nil
 }
 
+// NewLintFindings are the error- and warning-level findings of after whose
+// rule codes before does not have, one per code, in line order: the lint
+// problems a rewrite introduces. W1's lint check and the evaluation's G7 use
+// the same rule.
+func NewLintFindings(before, after []LintFinding) []LintFinding {
+	had := map[string]bool{}
+	for _, f := range before {
+		had[f.Code] = true
+	}
+	sorted := append([]LintFinding{}, after...)
+	sort.SliceStable(sorted, func(i, j int) bool { return sorted[i].Line < sorted[j].Line })
+	reported := map[string]bool{}
+	var out []LintFinding
+	for _, f := range sorted {
+		if had[f.Code] || reported[f.Code] || (f.Level != "error" && f.Level != "warning") {
+			continue
+		}
+		reported[f.Code] = true
+		out = append(out, f)
+	}
+	return out
+}
+
 // checkLint reports lint problems the candidate introduces: codes the
 // original does not have. New errors fail; new warnings are only reported.
 func (v *Verifier) checkLint(ctx context.Context, res *Result, in Input) {
@@ -96,24 +119,11 @@ func (v *Verifier) checkLint(ctx context.Context, res *Result, in Input) {
 		return
 	}
 
-	had := map[string]bool{}
-	for _, f := range before {
-		had[f.Code] = true
-	}
-	sort.SliceStable(after, func(i, j int) bool { return after[i].Line < after[j].Line })
-	reported := map[string]bool{}
-	for _, f := range after {
-		if had[f.Code] || reported[f.Code] {
-			continue
-		}
-		switch f.Level {
-		case "error":
+	for _, f := range NewLintFindings(before, after) {
+		if f.Level == "error" {
 			res.add(CheckLint, Fail, f.Line, "new lint error %s at line %d: %s", f.Code, f.Line, f.Message)
-		case "warning":
+		} else {
 			res.add(CheckLint, Warn, f.Line, "new lint warning %s at line %d: %s", f.Code, f.Line, f.Message)
-		default:
-			continue
 		}
-		reported[f.Code] = true
 	}
 }

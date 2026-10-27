@@ -53,7 +53,8 @@ func TestDeltaV(t *testing.T) {
 		want   float64
 	}{
 		{"V_O′ = 0: nothing to reduce", 0, 0, 0},
-		{"V_O′ = 0 even if C is worse", 0, 7, 0},
+		{"V_O′ = 0 and C adds findings: worse", 0, 7, -1},
+		{"V_O′ = 0 and C adds one low finding: still worse", 0, 1, -1},
 		{"identical", 48, 48, 0},
 		{"fixtures", 48, 13, 35.0 / 48},
 		{"everything fixed", 48, 0, 1},

@@ -62,6 +62,7 @@ const usage = `usage:
   sleeko-eval report [flags] RESULTS.jsonl...  write the markdown report
   sleeko-eval failures [flags] RESULTS.jsonl... list failed attempts, save them as fixtures
   sleeko-eval compare [flags] RESULTS.jsonl...  McNemar and Wilcoxon of pipeline B against A
+  sleeko-eval analyze [flags] RESULTS.jsonl...  S9 analyses: other success definitions, G7 lint, G3, G5 audit
 
 Run 'sleeko-eval <command> -h' for the flags of a command.
 `
@@ -90,6 +91,8 @@ func main() {
 		err = runFailures(os.Args[2:])
 	case "compare":
 		err = runCompare(os.Args[2:])
+	case "analyze":
+		err = runAnalyze(ctx, os.Args[2:])
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(2)
@@ -603,6 +606,55 @@ func runFailures(args []string) error {
 		log.Printf("saved %d failures under %s", len(failures), *out)
 	}
 	return nil
+}
+
+func runAnalyze(ctx context.Context, args []string) error {
+	fs := flag.NewFlagSet("analyze", flag.ExitOnError)
+	out := fs.String("out", "", "write the markdown here instead of stdout")
+	order := fs.String("pipelines", "W0,W0+W1,W0+W1+W2", "pipelines to analyse, in order")
+	hadolintImage := fs.String("hadolint-image", verify.DefaultHadolintImage, "Hadolint container image for G7; empty uses hadolint on PATH, or leaves G7 not checked")
+	work := fs.String("work", defaultWorkDir(), "working directory; Hadolint's findings are cached under it")
+	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
+	lintWorkers := fs.Int("lint-workers", 6, "Hadolint runs at once")
+	fs.Parse(args)
+	if fs.NArg() == 0 {
+		return errors.New("give at least one results file")
+	}
+	records, err := readAll(fs.Args())
+	if err != nil {
+		return err
+	}
+
+	var linter verify.Linter
+	version := ""
+	switch h := verify.FindHadolint(); {
+	case *hadolintImage != "":
+		linter = &verify.Hadolint{Command: []string{"docker", "run", "--rm", "-i", *hadolintImage, "hadolint"}}
+		version = *hadolintImage
+	case h != nil:
+		linter, version = h, h.Command[0]
+	}
+	if linter != nil {
+		linter = &eval.CachedLinter{Linter: linter, Version: version, Cache: &eval.Cache{Dir: filepath.Join(*work, "cache")}}
+		if err := eval.PrefetchLint(ctx, records, linter, *lintWorkers); err != nil {
+			return err
+		}
+	}
+
+	a, err := eval.Analyze(ctx, records, strings.Split(*order, ","), linter, *tolerance)
+	if err != nil {
+		return err
+	}
+	var w io.Writer = os.Stdout
+	if *out != "" {
+		f, err := os.Create(*out)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+		w = f
+	}
+	return eval.WriteAnalysis(w, a)
 }
 
 func runReport(args []string) error {

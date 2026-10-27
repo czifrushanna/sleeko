@@ -1,0 +1,238 @@
+#!/usr/bin/env python3
+# Copyright Project Harbor Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"""Figures for the paper (implementation plan S9), read from the records.
+
+    python3 eval/plots/figures.py RESULTS_DIR
+
+reads RESULTS_DIR/w0.jsonl, w1.jsonl and w2.jsonl and writes PDF and PNG
+figures to RESULTS_DIR/figures/. The numbers match `sleeko-eval report`: the
+last record of each attempt counts, harness errors and invalid items are left
+out, and an image is solved when one of its repetitions succeeds (pass@3).
+Requirements: eval/plots/requirements.txt.
+"""
+
+import json
+import math
+import os
+import sys
+from collections import defaultdict
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+
+PIPELINES = [("w0", "W0"), ("w1", "W0+W1"), ("w2", "W0+W1+W2")]
+
+# Colours: the first three categorical slots of the dataviz reference palette,
+# validated all-pairs on white (CVD ΔE ≥ 9.2, normal vision ≥ 24.0). Aqua is
+# below 3:1 contrast on white, so every series also has a marker shape and a
+# legend, and the reports are the table view.
+SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]
+MARKERS = ["o", "s", "^"]
+INK, INK2, MUTED, GRID, BASELINE = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
+
+plt.rcParams.update({
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+    "font.size": 9,
+    "axes.edgecolor": BASELINE,
+    "axes.labelcolor": INK2,
+    "axes.titlecolor": INK,
+    "axes.titlesize": 10,
+    "axes.titleweight": "bold",
+    "axes.titlelocation": "left",
+    "xtick.color": MUTED,
+    "ytick.color": MUTED,
+    "xtick.labelcolor": INK2,
+    "ytick.labelcolor": INK2,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.grid": True,
+    "grid.color": GRID,
+    "grid.linewidth": 0.6,
+    "legend.frameon": False,
+    "legend.labelcolor": INK2,
+    "figure.facecolor": "white",
+    "savefig.facecolor": "white",
+})
+
+
+def load(path):
+    last = {}
+    with open(path) as f:
+        for line in f:
+            if line.strip():
+                r = json.loads(line)
+                last[(r["item"], r["repetition"])] = r
+    return [r for r in last.values() if r["status"] in ("measured", "optimizer_failed")]
+
+
+def wilson(k, n, z=1.959964):
+    if n == 0:
+        return 0.0, 1.0
+    p = k / n
+    d = 1 + z * z / n
+    c = p + z * z / (2 * n)
+    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return (c - h) / d, (c + h) / d
+
+
+def solved(records):
+    per = defaultdict(list)
+    for r in records:
+        per[r["item"]].append(r["success"])
+    k = sum(any(v) for v in per.values())
+    return k, len(per)
+
+
+def save(fig, out, name):
+    for ext in ("pdf", "png"):
+        fig.savefig(os.path.join(out, f"{name}.{ext}"), dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
+def fig_success(data, out):
+    """Fig. 1: solved (pass@3) with Wilson 95% CI, and the per-attempt rate."""
+    fig, ax = plt.subplots(figsize=(4.8, 3.0))
+    xs = range(len(PIPELINES))
+    for i, (key, name) in enumerate(PIPELINES):
+        recs = data[key]
+        k, n = solved(recs)
+        lo, hi = wilson(k, n)
+        p = k / n
+        ax.errorbar(i - 0.1, p, yerr=[[p - lo], [hi - p]], fmt=MARKERS[0], color=SERIES[0], ms=7,
+                    elinewidth=1.5, capsize=4, label="solved (pass@3), 95% CI" if i == 0 else None)
+        ax.annotate(f"{k}/{n}", (i - 0.1, p), xytext=(-8, 0), textcoords="offset points",
+                    ha="right", va="center", color=INK2, fontsize=8)
+        att = sum(r["success"] for r in recs) / len(recs)
+        ax.plot(i + 0.1, att, MARKERS[1], color=SERIES[1], ms=7, label="per attempt" if i == 0 else None)
+    ax.set_xticks(list(xs), [name for _, name in PIPELINES])
+    ax.set_xlim(-0.5, len(PIPELINES) - 0.5)
+    ax.set_ylim(0, None)
+    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
+    ax.set_ylabel("successful")
+    ax.grid(axis="x", visible=False)
+    ax.set_title("Success rate per pipeline", pad=24)
+    handles, labels = ax.get_legend_handles_labels()
+    order = sorted(range(len(labels)), key=lambda i: not labels[i].startswith("solved"))
+    ax.legend([handles[i] for i in order], [labels[i] for i in order],
+              loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2)
+    save(fig, out, "fig1-success")
+
+
+def fig_components(data, out):
+    """Fig. 2: ΔV and ΔS of the successful attempts, every attempt a dot."""
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 3.0))
+    for ax, field, title in ((axes[0], "delta_v", "ΔV: vulnerability reduction"),
+                             (axes[1], "delta_s", "ΔS: size reduction")):
+        for i, (key, name) in enumerate(PIPELINES):
+            vals = sorted(r["components"][field] for r in data[key]
+                          if r["success"] and r.get("components"))
+            jitter = [((j % 5) - 2) * 0.045 for j in range(len(vals))]
+            ax.scatter([i + d for d in jitter], vals, s=22, color=SERIES[i], marker=MARKERS[i],
+                       edgecolors="white", linewidths=0.6, zorder=3)
+            if vals:
+                m = vals[len(vals) // 2] if len(vals) % 2 else (vals[len(vals) // 2 - 1] + vals[len(vals) // 2]) / 2
+                ax.plot([i - 0.25, i + 0.25], [m, m], color=INK, lw=1.5, zorder=4)
+                ax.annotate(f"n = {len(vals)}", (i, 1.0), xycoords=("data", "axes fraction"),
+                            ha="center", va="bottom", color=MUTED, fontsize=7.5)
+        ax.axhline(0, color=BASELINE, lw=0.8, zorder=1)
+        ax.set_xticks(range(len(PIPELINES)), [name for _, name in PIPELINES], fontsize=8)
+        ax.set_xlim(-0.6, len(PIPELINES) - 0.4)
+        ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
+        ax.grid(axis="x", visible=False)
+        ax.set_title(title, pad=14)
+    axes[0].set_ylabel("of O′ (successful attempts; bar = median)")
+    fig.tight_layout()
+    save(fig, out, "fig2-components")
+
+
+GATES = [("G1_parse", "G1 parses"), ("G2_no_invention", "G2 no invented sources"),
+         ("G3_versions_exist", "G3 tags/versions exist"), ("G4_build", "G4 builds"),
+         ("G5_behaviour", "G5 behaves the same"), ("G6_no_new_severe", "G6 no new severe CVE")]
+
+
+def fig_gates(data, out):
+    """Fig. 3: share of attempts failing each gate, per pipeline."""
+    fig, ax = plt.subplots(figsize=(5.6, 3.2))
+    rows = GATES + [("optimizer", "no candidate (LLM error or timeout)")]
+    for i, (key, name) in enumerate(PIPELINES):
+        recs = data[key]
+        shares = []
+        for gid, _ in rows:
+            if gid == "optimizer":
+                n = sum(r["status"] == "optimizer_failed" for r in recs)
+            else:
+                n = sum(any(g["id"] == gid and g["status"] == "fail" for g in r.get("gates") or []) for r in recs)
+            shares.append(n / len(recs))
+        ys = [len(rows) - 1 - j + (1 - i) * 0.22 for j in range(len(rows))]
+        ax.scatter(shares, ys, s=40, color=SERIES[i], marker=MARKERS[i], edgecolors="white",
+                   linewidths=0.8, zorder=3, label=name)
+    ax.set_yticks(range(len(rows)), [label for _, label in reversed(rows)])
+    ax.xaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
+    ax.set_xlim(-0.015, None)
+    ax.set_ylim(-0.6, len(rows) - 0.4)
+    ax.set_xlabel("attempts failing the gate")
+    ax.grid(axis="y", visible=False)
+    ax.set_title("Why attempts fail")
+    ax.legend(loc="lower right")
+    save(fig, out, "fig3-gates")
+
+
+def fig_eol(data, out):
+    """Fig. 4: solved per pipeline, split by whether O′ is on an end-of-life release."""
+    fig, ax = plt.subplots(figsize=(4.8, 3.0))
+    groups = [(True, "O′ end of life"), (False, "O′ supported")]
+    for gi, (flag, label) in enumerate(groups):
+        for i, (key, _) in enumerate(PIPELINES):
+            recs = [r for r in data[key] if (r.get("original") or {}).get("eosl") is flag]
+            k, n = solved(recs)
+            if n == 0:
+                continue
+            lo, hi = wilson(k, n)
+            p = k / n
+            x = i + (gi - 0.5) * 0.2
+            ax.errorbar(x, p, yerr=[[p - lo], [hi - p]], fmt=MARKERS[gi], color=SERIES[gi], ms=7,
+                        elinewidth=1.5, capsize=4, label=label if i == 0 else None)
+            ax.annotate(f"{k}/{n}", (x, hi), xytext=(0, 3), textcoords="offset points",
+                        ha="center", va="bottom", color=INK2, fontsize=7.5)
+    ax.set_xticks(range(len(PIPELINES)), [name for _, name in PIPELINES])
+    ax.set_xlim(-0.5, len(PIPELINES) - 0.5)
+    ax.set_ylim(0, None)
+    ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
+    ax.set_ylabel("images solved (pass@3), 95% CI")
+    ax.grid(axis="x", visible=False)
+    ax.set_title("End-of-life base images")
+    ax.legend(loc="upper left")
+    save(fig, out, "fig4-eol")
+
+
+def main():
+    if len(sys.argv) != 2:
+        sys.exit(__doc__)
+    results = sys.argv[1]
+    data = {key: load(os.path.join(results, f"{key}.jsonl")) for key, _ in PIPELINES}
+    out = os.path.join(results, "figures")
+    os.makedirs(out, exist_ok=True)
+    fig_success(data, out)
+    fig_components(data, out)
+    fig_gates(data, out)
+    fig_eol(data, out)
+    print(f"figures written to {out}")
+
+
+if __name__ == "__main__":
+    main()

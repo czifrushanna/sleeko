@@ -96,6 +96,17 @@ func TestSuccess_ToleranceBoundaryFromSizes(t *testing.T) {
 	}
 }
 
+// TestSuccess_CleanImageMadeVulnerable: when O′ has no findings, a candidate
+// that adds even one low-severity finding fails, however much smaller it is.
+// G6 alone would not catch it (no new critical or high finding), so ΔV must.
+func TestSuccess_CleanImageMadeVulnerable(t *testing.T) {
+	dS, err := DeltaS(100_000_000, 40_000_000)
+	require.NoError(t, err)
+	require.False(t, Success(gatesWith(), DeltaV(0, 1), dS, DefaultSizeTolerance))
+	require.True(t, Success(gatesWith(), DeltaV(0, 0), dS, DefaultSizeTolerance),
+		"a clean image that stays clean and shrinks is still a success")
+}
+
 // TestSuccess_FixtureEndToEnd scores the fixture pair the way the harness
 // will: gates, then components, then the rule.
 func TestSuccess_FixtureEndToEnd(t *testing.T) {
