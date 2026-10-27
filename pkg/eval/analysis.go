@@ -352,6 +352,9 @@ type Analysis struct {
 	// differs from the recorded one: a check that the recomputation is
 	// right; it must be 0.
 	Mismatches int
+	// LintGates is G7 for every counted attempt, in pipeline order, for
+	// eval/plots/figures.py: the records themselves hold G1–G6 only.
+	LintGates []LintGate
 	// LintNotChecked counts candidates G7 could not be checked for.
 	LintNotChecked map[string]int
 	LintFailed     map[string]int
@@ -362,6 +365,15 @@ type Analysis struct {
 	Contract         map[string]map[string]int
 	ContractFailures map[string]int
 	SmokeFailures    map[string]int
+}
+
+// LintGate is G7 for one counted attempt.
+type LintGate struct {
+	Pipeline   string       `json:"pipeline"`
+	Item       string       `json:"item"`
+	Repetition int          `json:"repetition"`
+	Status     score.Status `json:"status"`
+	Reason     string       `json:"reason,omitempty"`
 }
 
 // Analyze computes the analyses. pipelines gives the order; lint may be nil,
@@ -405,6 +417,7 @@ func Analyze(ctx context.Context, records []Record, pipelines []string, lint ver
 				}
 				v.g7 = g
 			}
+			a.LintGates = append(a.LintGates, LintGate{Pipeline: p, Item: r.Item, Repetition: r.Repetition, Status: v.g7.Status, Reason: v.g7.Reason})
 			switch v.g7.Status {
 			case score.NotChecked:
 				a.LintNotChecked[p]++

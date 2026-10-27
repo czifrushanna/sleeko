@@ -126,6 +126,9 @@ func TestAnalyze(t *testing.T) {
 	require.Equal(t, []PairResult{{A: "A", B: "B", OnlyA: 0, OnlyB: 1, P: 1}}, a.Pairs["as measured (G1–G6)"])
 
 	require.Equal(t, 1, a.LintFailed["B"])
+	require.Len(t, a.LintGates, 6, "one per counted attempt; the harness error is left out")
+	require.Equal(t, LintGate{Pipeline: "B", Item: "y", Repetition: 1, Status: score.Fail, Reason: a.LintGates[4].Reason}, a.LintGates[4])
+	require.Equal(t, score.Pass, a.LintGates[0].Status)
 	require.Equal(t, G3Result{Checked: 3, Failed: 1, ImagesFailing: 1}, a.G3["A"])
 	require.Equal(t, 1, a.G3Pairs[0].OnlyA)
 	require.Equal(t, 1, a.ContractFailures["B"])

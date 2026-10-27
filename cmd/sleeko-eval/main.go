@@ -616,6 +616,7 @@ func runAnalyze(ctx context.Context, args []string) error {
 	work := fs.String("work", defaultWorkDir(), "working directory; Hadolint's findings are cached under it")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	lintWorkers := fs.Int("lint-workers", 6, "Hadolint runs at once")
+	lintGates := fs.String("lint-gates", "", "also write each attempt's G7 result here as JSONL; eval/plots/figures.py draws G7 from RESULTS_DIR/lint-gates.jsonl")
 	fs.Parse(args)
 	if fs.NArg() == 0 {
 		return errors.New("give at least one results file")
@@ -645,6 +646,11 @@ func runAnalyze(ctx context.Context, args []string) error {
 	if err != nil {
 		return err
 	}
+	if *lintGates != "" {
+		if err := writeLintGates(*lintGates, a.LintGates); err != nil {
+			return err
+		}
+	}
 	var w io.Writer = os.Stdout
 	if *out != "" {
 		f, err := os.Create(*out)
@@ -655,6 +661,22 @@ func runAnalyze(ctx context.Context, args []string) error {
 		w = f
 	}
 	return eval.WriteAnalysis(w, a)
+}
+
+// writeLintGates writes one JSON line per attempt's G7 result.
+func writeLintGates(path string, gates []eval.LintGate) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	enc := json.NewEncoder(f)
+	for _, g := range gates {
+		if err := enc.Encode(g); err != nil {
+			f.Close()
+			return err
+		}
+	}
+	return f.Close()
 }
 
 func runReport(args []string) error {

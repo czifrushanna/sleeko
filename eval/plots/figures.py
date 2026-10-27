@@ -17,7 +17,9 @@
     python3 eval/plots/figures.py RESULTS_DIR
 
 reads RESULTS_DIR/w0.jsonl, w1.jsonl and w2.jsonl and writes PDF and PNG
-figures to RESULTS_DIR/figures/. The numbers match `sleeko-eval report`: the
+figures to RESULTS_DIR/figures/. The records hold G1–G6; the gate figure also
+shows G7 when RESULTS_DIR/lint-gates.jsonl exists, written by
+`sleeko-eval analyze -lint-gates RESULTS_DIR/lint-gates.jsonl ...`. The numbers match `sleeko-eval report`: the
 last record of each attempt counts, harness errors and invalid items are left
 out, and an image is solved when one of its repetitions succeeds (pass@3).
 Requirements: eval/plots/requirements.txt.
@@ -80,6 +82,14 @@ def load(path):
     return [r for r in last.values() if r["status"] in ("measured", "optimizer_failed")]
 
 
+def load_lint(path):
+    """G7 per attempt from `sleeko-eval analyze -lint-gates`, or None."""
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        return {(g["pipeline"], g["item"], g["repetition"]): g["status"] for g in map(json.loads, f) if g}
+
+
 def wilson(k, n, z=1.959964):
     if n == 0:
         return 0.0, 1.0
@@ -125,7 +135,6 @@ def fig_success(data, out):
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
     ax.set_ylabel("successful")
     ax.grid(axis="x", visible=False)
-    ax.set_title("Success rate per pipeline", pad=24)
     handles, labels = ax.get_legend_handles_labels()
     order = sorted(range(len(labels)), key=lambda i: not labels[i].startswith("solved"))
     ax.legend([handles[i] for i in order], [labels[i] for i in order],
@@ -165,16 +174,19 @@ GATES = [("G1_parse", "G1 parses"), ("G2_no_invention", "G2 no invented sources"
          ("G5_behaviour", "G5 behaves the same"), ("G6_no_new_severe", "G6 no new severe CVE")]
 
 
-def fig_gates(data, out):
+def fig_gates(data, out, lint=None):
     """Fig. 3: share of attempts failing each gate, per pipeline."""
     fig, ax = plt.subplots(figsize=(5.6, 3.2))
-    rows = GATES + [("optimizer", "no candidate (LLM error or timeout)")]
+    rows = GATES + ([("G7_no_new_lint_errors", "G7 no new lint error")] if lint else []) \
+        + [("optimizer", "no candidate (LLM error or timeout)")]
     for i, (key, name) in enumerate(PIPELINES):
         recs = data[key]
         shares = []
         for gid, _ in rows:
             if gid == "optimizer":
                 n = sum(r["status"] == "optimizer_failed" for r in recs)
+            elif gid == "G7_no_new_lint_errors":
+                n = sum(lint.get((r["pipeline"], r["item"], r["repetition"])) == "fail" for r in recs)
             else:
                 n = sum(any(g["id"] == gid and g["status"] == "fail" for g in r.get("gates") or []) for r in recs)
             shares.append(n / len(recs))
@@ -187,7 +199,6 @@ def fig_gates(data, out):
     ax.set_ylim(-0.6, len(rows) - 0.4)
     ax.set_xlabel("attempts failing the gate")
     ax.grid(axis="y", visible=False)
-    ax.set_title("Why attempts fail")
     ax.legend(loc="lower right")
     save(fig, out, "fig3-gates")
 
@@ -215,7 +226,6 @@ def fig_eol(data, out):
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
     ax.set_ylabel("images solved (pass@3), 95% CI")
     ax.grid(axis="x", visible=False)
-    ax.set_title("End-of-life base images")
     ax.legend(loc="upper left")
     save(fig, out, "fig4-eol")
 
@@ -229,7 +239,7 @@ def main():
     os.makedirs(out, exist_ok=True)
     fig_success(data, out)
     fig_components(data, out)
-    fig_gates(data, out)
+    fig_gates(data, out, load_lint(os.path.join(results, "lint-gates.jsonl")))
     fig_eol(data, out)
     print(f"figures written to {out}")
 
