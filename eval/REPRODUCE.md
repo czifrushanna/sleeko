@@ -2,8 +2,8 @@
 
 This guide reproduces the evaluation of the TDK paper *Automated Generation of
 Optimized Dockerfiles in Harbor* (BME VIK, 2026): the W0, W0+W1 and W0+W1+W2
-pipelines on the benchmark in `eval/benchmark/v1.yaml`, the reports, the
-statistical analyses and the figures. Everything below runs from this
+pipelines on the benchmark in `eval/benchmark/v1.yaml`, the rule-based
+baseline for W2, the reports, the statistical analyses and the figures. Everything below runs from this
 branch (`pipeline`).
 
 ## Requirements
@@ -67,13 +67,36 @@ It writes, for each pipeline `wN`:
 and the pairwise comparisons `w0-vs-w1.md`, `w1-vs-w2.md` and `w0-vs-w2.md`
 (McNemar and Wilcoxon).
 
-## 3. Analyses and figures
+## 3. Run the rule-based baseline
+
+```sh
+eval/runs/baseline.sh BASELINE_DIR RESULTS_DIR/w2.jsonl
+```
+
+The baseline (pipeline `baseimage,rebase`, named `Rebase` in the records)
+moves the final stage to the best candidate of the base image table and
+changes nothing else. It makes no model call, so it needs no gateway. It does
+not measure the tables again: it replays the ones recorded in `w2.jsonl`, so
+it faces exactly the choices W0+W1+W2 had, and a registry rate limit cannot
+change them. It is deterministic, so it runs once per project, and the script
+runs twice to retry harness errors, as `study.sh` does. The paper ran it a
+week after the study, into its own directory; it took about 75 minutes.
+Like the study, run it from a committed tree.
+
+It writes `baseline.jsonl`, `baseline.runs.jsonl` (which also records the
+replayed file and its checksum), `baseline-scans/`, `baseline-report.md` and
+`baseline-failures.txt`, as in step 2.
+
+## 4. Analyses and figures
 
 ```sh
 bin/sleeko-eval analyze -lint-gates RESULTS_DIR/lint-gates.jsonl \
   -out RESULTS_DIR/analysis.md \
   RESULTS_DIR/w0.jsonl RESULTS_DIR/w1.jsonl RESULTS_DIR/w2.jsonl
-python3 eval/plots/figures.py RESULTS_DIR
+bin/sleeko-eval analyze -pipelines Rebase \
+  -lint-gates BASELINE_DIR/lint-gates.jsonl \
+  -out BASELINE_DIR/analysis.md BASELINE_DIR/baseline.jsonl
+python3 eval/plots/figures.py RESULTS_DIR --baseline BASELINE_DIR
 ```
 
 `analyze` computes G7 (no new lint errors) with the pinned Hadolint, success
@@ -81,7 +104,8 @@ under alternative definitions, the G3 tests and the G5 audit. It first checks
 that recomputing the recorded success reproduces it exactly. The first run
 lints every Dockerfile with the Hadolint container (about 20 minutes);
 the findings are cached, so later runs take seconds. `figures.py` writes the
-paper's figures to `RESULTS_DIR/figures/`.
+paper's figures to `RESULTS_DIR/figures/`; with `--baseline`, every figure
+also shows the baseline next to the pipelines.
 
 ## Where the paper's numbers come from
 
@@ -94,6 +118,7 @@ paper's figures to `RESULTS_DIR/figures/`.
 | End-of-life split | `wN-report.md`, `figures/fig4-eol` |
 | ΔV and ΔS of the successful attempts | `wN-report.md`, `figures/fig2-components` |
 | Invented tags and versions, sensitivity analysis | `analysis.md` |
+| Rule-based baseline (Table 7 and the figures) | `baseline-report.md`, `BASELINE_DIR/analysis.md`, `baseline.jsonl` compared with `w0.jsonl`–`w2.jsonl` on the projects both measured |
 
 ## What will differ
 
@@ -110,3 +135,12 @@ The benchmark manifest lists 57 projects. One of them,
 `d3-unitycatalog-unitycatalog`, did not build within the 10-minute limit in
 the paper's study and is reported as an invalid item, so the results cover
 56 projects.
+
+The baseline rebuilds the originals in its own session. When it ran, a week
+after the study, two more projects could not be measured:
+`d3-vogler-free-games-claimer` did not build within the limit, and
+`f4d-icemic-search-bakery-moe` no longer passed its smoke test. The paper
+therefore compares the baseline with the pipelines on 54 projects. An
+original whose build runs out of time while other projects build next to it
+can be measured on its own with `sleeko-eval run --items ID --concurrency 1`
+and the same flags as the script.
