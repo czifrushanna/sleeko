@@ -465,6 +465,19 @@ func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) 
 	if err != nil {
 		return nil, pipeline.LLM{}, verifyConfig{}, fmt.Errorf("--pipeline: %w", err)
 	}
+	// A pipeline without an LLM stage (the rule-based baseline) needs no
+	// gateway, and must not record a model, prompt or sampling it never used.
+	if !slices.Contains(names, pipeline.GenerateStageName) && !slices.Contains(names, pipeline.VerifyStageName) {
+		p, err := pipeline.New(names, pipeline.Deps{Proposer: proposer})
+		if err != nil {
+			return nil, pipeline.LLM{}, verifyConfig{}, err
+		}
+		var vcfg verifyConfig
+		if slices.Contains(names, pipeline.BaseImageStageName) {
+			vcfg.maxBaseCandidates = proposer.Max
+		}
+		return &eval.PipelineOptimizer{Pipeline: p}, pipeline.LLM{}, vcfg, nil
+	}
 	cfg, err := adapter.LoadConfig()
 	if err != nil {
 		return nil, pipeline.LLM{}, verifyConfig{}, err
@@ -501,11 +514,6 @@ func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) 
 	p, err := pipeline.New(names, pipeline.Deps{LLM: llm, Verifier: verifier, MaxRepairRounds: cfg.MaxRepairRounds, Proposer: proposer})
 	if err != nil {
 		return nil, pipeline.LLM{}, verifyConfig{}, err
-	}
-	// A pipeline without an LLM stage (the rule-based baseline) must not
-	// record a model, prompt or sampling it never used.
-	if !slices.Contains(names, pipeline.GenerateStageName) && !slices.Contains(names, pipeline.VerifyStageName) {
-		llm = pipeline.LLM{}
 	}
 	return &eval.PipelineOptimizer{Pipeline: p}, llm, vcfg, nil
 }
