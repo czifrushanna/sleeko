@@ -41,6 +41,7 @@ import (
 	"os/signal"
 	"path/filepath"
 	"runtime/debug"
+	"slices"
 	"strings"
 	"syscall"
 	"time"
@@ -177,6 +178,7 @@ func runEval(ctx context.Context, args []string) error {
 	allowMixed := fs.Bool("allow-mixed-runs", false, "resume into --out even if code, pipeline, model, prompt, manifest or Trivy DB changed")
 	hadolintImage := fs.String("hadolint-image", verify.DefaultHadolintImage, "Hadolint container image for the verify stage's lint check; empty uses hadolint on PATH, or skips lint without it")
 	maxBases := fs.Int("max-base-candidates", baseimage.DefaultMaxCandidates, "base image candidates the baseimage stage offers besides the current base")
+	tablesFile := fs.String("tables", "", "records (JSONL) whose base image tables the baseimage stage replays instead of measuring new ones")
 	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
 	fs.Parse(args)
 
@@ -210,7 +212,23 @@ func runEval(ctx context.Context, args []string) error {
 	}
 	cache := &eval.Cache{Dir: filepath.Join(work, "cache")}
 
-	optimizer, llm, vcfg, err := buildOptimizer(*stages, *hadolintImage, newProposer(scanner, dbVersion, cache, work, *maxBases))
+	var proposer pipeline.TableProposer = newProposer(scanner, dbVersion, cache, work, *maxBases)
+	var tablesSHA string
+	if *tablesFile != "" {
+		data, err := os.ReadFile(*tablesFile)
+		if err != nil {
+			return err
+		}
+		tablesSHA = fmt.Sprintf("%x", sha256.Sum256(data))
+		recs, err := eval.ReadRecords(*tablesFile)
+		if err != nil {
+			return fmt.Errorf("read %s: %w", *tablesFile, err)
+		}
+		if proposer, err = eval.LoadRecordedTables(recs); err != nil {
+			return fmt.Errorf("%s: %w", *tablesFile, err)
+		}
+	}
+	optimizer, llm, vcfg, err := buildOptimizer(*stages, *hadolintImage, proposer, *maxBases)
 	if err != nil {
 		return err
 	}
@@ -241,6 +259,8 @@ func runEval(ctx context.Context, args []string) error {
 		MaxRepairRounds:   vcfg.maxRepairRounds,
 		Lint:              vcfg.lint,
 		MaxBaseCandidates: vcfg.maxBaseCandidates,
+		Tables:            *tablesFile,
+		TablesSHA256:      tablesSHA,
 		G3:                g3Checks,
 		Manifest:          *manifestFile,
 		ManifestSHA256:    fmt.Sprintf("%x", sha256.Sum256(manifestData)),
@@ -455,7 +475,7 @@ func newProposer(scanner *eval.TrivyScanner, dbVersion string, cache *eval.Cache
 // differs, running Hadolint from its container image, which the adapter's
 // image cannot (D2), and the baseimage stage has the harness's scanner,
 // which the adapter has none of (D2).
-func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) (eval.Optimizer, pipeline.LLM, verifyConfig, error) {
+func buildOptimizer(stages, hadolintImage string, proposer pipeline.TableProposer, maxBases int) (eval.Optimizer, pipeline.LLM, verifyConfig, error) {
 	if stages == "noop" {
 		return eval.NoopOptimizer{}, pipeline.LLM{}, verifyConfig{}, nil
 	}
@@ -463,6 +483,19 @@ func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) 
 	names, err := pipeline.ParseNames(stages)
 	if err != nil {
 		return nil, pipeline.LLM{}, verifyConfig{}, fmt.Errorf("--pipeline: %w", err)
+	}
+	// A pipeline without an LLM stage (the rule-based baseline) needs no
+	// gateway, and must not record a model, prompt or sampling it never used.
+	if !slices.Contains(names, pipeline.GenerateStageName) && !slices.Contains(names, pipeline.VerifyStageName) {
+		p, err := pipeline.New(names, pipeline.Deps{Proposer: proposer})
+		if err != nil {
+			return nil, pipeline.LLM{}, verifyConfig{}, err
+		}
+		var vcfg verifyConfig
+		if slices.Contains(names, pipeline.BaseImageStageName) {
+			vcfg.maxBaseCandidates = maxBases
+		}
+		return &eval.PipelineOptimizer{Pipeline: p}, pipeline.LLM{}, vcfg, nil
 	}
 	cfg, err := adapter.LoadConfig()
 	if err != nil {
@@ -481,7 +514,7 @@ func buildOptimizer(stages, hadolintImage string, proposer *baseimage.Proposer) 
 	var vcfg verifyConfig
 	for _, n := range names {
 		if n == pipeline.BaseImageStageName {
-			vcfg.maxBaseCandidates = proposer.Max
+			vcfg.maxBaseCandidates = maxBases
 		}
 		if n != pipeline.VerifyStageName {
 			continue

@@ -33,7 +33,14 @@ const BaseImageStageName = "baseimage"
 // base it cannot resolve, nothing newer in the family — it says why in a
 // diagnostic and the prompt stays as it is.
 type BaseImage struct {
-	proposer *baseimage.Proposer
+	proposer TableProposer
+}
+
+// TableProposer gives the base image table for a current base image.
+// *baseimage.Proposer measures it; the evaluation can replay the tables an
+// earlier run measured instead.
+type TableProposer interface {
+	Propose(ctx context.Context, current string) (baseimage.Table, error)
 }
 
 func (b *BaseImage) Name() string { return BaseImageStageName }
@@ -76,13 +83,23 @@ func FinalBase(dockerfile string) (string, error) {
 // target is empty), following FROM <stage> back to an image. The harness
 // knows each item's build target and uses it to tell which base C ships.
 func StageBase(dockerfile, target string) (string, error) {
-	f, err := dfparse.Parse(dockerfile)
+	_, ref, err := baseRef(dockerfile, target)
 	if err != nil {
 		return "", err
 	}
+	return ref.Image, nil
+}
+
+// baseRef is the FROM that names the image the named stage (the final stage
+// when target is empty) is built on, following FROM <stage> back to an image.
+func baseRef(dockerfile, target string) (*dfparse.File, dfparse.FromRef, error) {
+	f, err := dfparse.Parse(dockerfile)
+	if err != nil {
+		return nil, dfparse.FromRef{}, err
+	}
 	refs, err := f.FromRefs(nil)
 	if err != nil {
-		return "", err
+		return nil, dfparse.FromRef{}, err
 	}
 	i := len(refs) - 1
 	if target != "" {
@@ -93,7 +110,7 @@ func StageBase(dockerfile, target string) (string, error) {
 			}
 		}
 		if i < 0 {
-			return "", fmt.Errorf("no stage named %s", target)
+			return nil, dfparse.FromRef{}, fmt.Errorf("no stage named %s", target)
 		}
 	}
 	for refs[i].BaseStage >= 0 {
@@ -101,10 +118,10 @@ func StageBase(dockerfile, target string) (string, error) {
 	}
 	switch r := refs[i]; {
 	case r.Scratch:
-		return "", fmt.Errorf("the final stage is built FROM scratch")
+		return nil, dfparse.FromRef{}, fmt.Errorf("the final stage is built FROM scratch")
 	case len(r.Unresolved) > 0:
-		return "", fmt.Errorf("the final stage's base %s uses unresolved variables", r.Raw)
+		return nil, dfparse.FromRef{}, fmt.Errorf("the final stage's base %s uses unresolved variables", r.Raw)
 	default:
-		return r.Image, nil
+		return f, r, nil
 	}
 }

@@ -94,7 +94,7 @@ func TestStageBase(t *testing.T) {
 func TestBaseImage_Skips(t *testing.T) {
 	cases := []struct {
 		name       string
-		proposer   *baseimage.Proposer
+		proposer   TableProposer
 		dockerfile string
 		diagnostic string
 	}{

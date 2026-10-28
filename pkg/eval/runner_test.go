@@ -475,6 +475,7 @@ func TestRun_ResumeSkipsInvalidItems(t *testing.T) {
 func TestMachineFailure(t *testing.T) {
 	require.True(t, machineFailure(errors.New("ERROR: failed to build: failed to receive status: rpc error: code = Unavailable desc = error reading from server: EOF")))
 	require.True(t, machineFailure(errors.New("toomanyrequests: You have reached your pull rate limit")))
+	require.True(t, machineFailure(errors.New("failed to resolve source metadata for docker.io/library/php:8.0.9-apache: unexpected status from HEAD request to https://registry-1.docker.io/v2/library/php/manifests/8.0.9-apache: 429 Too Many Requests")))
 	require.False(t, machineFailure(errors.New(`process "/bin/sh -c curl -fsSL https://gone.example/x" did not complete successfully: exit code: 6`)))
 	require.False(t, machineFailure(errors.New("build took longer than 10m0s")))
 	require.False(t, machineFailure(nil))

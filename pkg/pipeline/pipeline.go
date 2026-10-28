@@ -150,9 +150,10 @@ type Deps struct {
 	Verifier *verify.Verifier
 	// MaxRepairRounds bounds the verify stage's repair rounds.
 	MaxRepairRounds int
-	// Proposer builds base image candidate tables; without one the
+	// Proposer builds base image candidate tables (a *baseimage.Proposer,
+	// or tables recorded by an earlier run); without one the
 	// baseimage stage is skipped (the adapter has no scanner, D2).
-	Proposer *baseimage.Proposer
+	Proposer TableProposer
 }
 
 // constructors maps every stage name accepted in configuration to its
@@ -160,6 +161,7 @@ type Deps struct {
 var constructors = map[string]func(Deps) Stage{
 	GenerateStageName:  func(d Deps) Stage { return NewGenerate(d.LLM) },
 	BaseImageStageName: func(d Deps) Stage { return &BaseImage{proposer: d.Proposer} },
+	RebaseStageName:    func(Deps) Stage { return Rebase{} },
 	VerifyStageName: func(d Deps) Stage {
 		return &Verify{llm: d.LLM, verifier: d.Verifier, maxRounds: d.MaxRepairRounds}
 	},
