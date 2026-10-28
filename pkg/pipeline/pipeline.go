@@ -160,6 +160,7 @@ type Deps struct {
 var constructors = map[string]func(Deps) Stage{
 	GenerateStageName:  func(d Deps) Stage { return NewGenerate(d.LLM) },
 	BaseImageStageName: func(d Deps) Stage { return &BaseImage{proposer: d.Proposer} },
+	RebaseStageName:    func(Deps) Stage { return Rebase{} },
 	VerifyStageName: func(d Deps) Stage {
 		return &Verify{llm: d.LLM, verifier: d.Verifier, maxRounds: d.MaxRepairRounds}
 	},

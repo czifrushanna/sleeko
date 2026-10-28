@@ -75,6 +75,22 @@ func (t Table) Refs() []string {
 	return out
 }
 
+// Best is the candidate the table recommends by the rule the prompt states:
+// the lowest V, a smaller image breaking ties. It reports false when no
+// candidate is better than the current base, which is then kept.
+func (t Table) Best() (Measurement, bool) {
+	better := func(a, b Measurement) bool {
+		return a.V < b.V || a.V == b.V && a.Size < b.Size
+	}
+	best, found := t.Current, false
+	for _, c := range t.Candidates {
+		if better(c, best) {
+			best, found = c, true
+		}
+	}
+	return best, found
+}
+
 // Proposer builds candidate tables.
 type Proposer struct {
 	Registry Registry
