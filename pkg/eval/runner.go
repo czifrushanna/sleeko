@@ -547,6 +547,8 @@ var machineSignatures = []string{
 	"failed to receive status",
 	"Cannot connect to the Docker daemon",
 	"toomanyrequests",
+	// BuildKit's wording when a registry rate-limits its HEAD request.
+	"429 Too Many Requests",
 	"no space left on device",
 	"context canceled",
 }

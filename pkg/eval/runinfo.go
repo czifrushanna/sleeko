@@ -59,6 +59,10 @@ type RunInfo struct {
 	G3 string `json:"g3,omitempty"`
 	// MaxBaseCandidates configures the baseimage stage, when there is one.
 	MaxBaseCandidates int `json:"max_base_candidates,omitempty"`
+	// Tables names the records whose base image tables were replayed
+	// instead of measured, with their checksum; empty when measured.
+	Tables       string `json:"tables,omitempty"`
+	TablesSHA256 string `json:"tables_sha256,omitempty"`
 
 	Manifest       string   `json:"manifest"`
 	ManifestSHA256 string   `json:"manifest_sha256"`
@@ -98,6 +102,7 @@ func conflicts(first, next RunInfo) []string {
 	check("max_repair_rounds", first.MaxRepairRounds, next.MaxRepairRounds)
 	check("lint", first.Lint, next.Lint)
 	check("max_base_candidates", first.MaxBaseCandidates, next.MaxBaseCandidates)
+	check("tables_sha256", first.TablesSHA256, next.TablesSHA256)
 	check("g3", first.G3, next.G3)
 	check("manifest_sha256", first.ManifestSHA256, next.ManifestSHA256)
 	check("repetitions", first.Repetitions, next.Repetitions)

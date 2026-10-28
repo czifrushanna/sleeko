@@ -150,9 +150,10 @@ type Deps struct {
 	Verifier *verify.Verifier
 	// MaxRepairRounds bounds the verify stage's repair rounds.
 	MaxRepairRounds int
-	// Proposer builds base image candidate tables; without one the
+	// Proposer builds base image candidate tables (a *baseimage.Proposer,
+	// or tables recorded by an earlier run); without one the
 	// baseimage stage is skipped (the adapter has no scanner, D2).
-	Proposer *baseimage.Proposer
+	Proposer TableProposer
 }
 
 // constructors maps every stage name accepted in configuration to its

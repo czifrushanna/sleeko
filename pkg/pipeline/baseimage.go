@@ -33,7 +33,14 @@ const BaseImageStageName = "baseimage"
 // base it cannot resolve, nothing newer in the family — it says why in a
 // diagnostic and the prompt stays as it is.
 type BaseImage struct {
-	proposer *baseimage.Proposer
+	proposer TableProposer
+}
+
+// TableProposer gives the base image table for a current base image.
+// *baseimage.Proposer measures it; the evaluation can replay the tables an
+// earlier run measured instead.
+type TableProposer interface {
+	Propose(ctx context.Context, current string) (baseimage.Table, error)
 }
 
 func (b *BaseImage) Name() string { return BaseImageStageName }
