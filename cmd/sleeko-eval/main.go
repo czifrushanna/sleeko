@@ -66,6 +66,7 @@ const usage = `usage:
   sleeko-eval analyze [flags] RESULTS.jsonl...  S9 analyses: other success definitions, G7 lint, G3, G5 audit
   sleeko-eval visibility [flags] RESULTS.jsonl...  G6 failures split by what the scanner could see in O′ (scans in RESULTS-scans/)
   sleeko-eval inventory [flags]               rebuild O′ of chosen items and list every package in it, for visibility -inventory
+  sleeko-eval prompts [flags] RESULTS.jsonl...  reconstruct every model call of the attempts, for eval/plots/tokens.py
 
 Run 'sleeko-eval <command> -h' for the flags of a command.
 `
@@ -100,6 +101,8 @@ func main() {
 		err = runVisibility(os.Args[2:])
 	case "inventory":
 		err = runInventory(ctx, os.Args[2:])
+	case "prompts":
+		err = runPrompts(os.Args[2:])
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(2)
@@ -852,6 +855,54 @@ func runInventory(ctx context.Context, args []string) error {
 	}
 	if len(failed) > 0 {
 		return fmt.Errorf("no inventory for %d items: %s", len(failed), strings.Join(failed, ", "))
+	}
+	return nil
+}
+
+// runPrompts reconstructs the model calls of every counted attempt, from the
+// records, the run info next to them (RESULTS.runs.jsonl: prompt and
+// budget) and O′'s saved scan, as JSONL for eval/plots/tokens.py.
+func runPrompts(args []string) error {
+	fs := flag.NewFlagSet("prompts", flag.ExitOnError)
+	out := fs.String("out", "", "JSONL file to write")
+	fs.Parse(args)
+	if fs.NArg() == 0 || *out == "" {
+		return errors.New("--out and at least one results file are required")
+	}
+	f, err := os.Create(*out)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	enc := json.NewEncoder(f)
+	for _, file := range fs.Args() {
+		base := strings.TrimSuffix(file, filepath.Ext(file))
+		infos, err := eval.ReadRunInfo(base + ".runs.jsonl")
+		if err != nil || len(infos) == 0 {
+			return fmt.Errorf("%s.runs.jsonl: %v", base, err)
+		}
+		info := infos[0]
+		budget := dockerfile.Budget{MaxTokens: info.MaxTokens, ContextWindow: info.ContextWindow}
+		recs, err := eval.ReadRecords(file)
+		if err != nil {
+			return err
+		}
+		for _, r := range eval.Counted(recs, info.Pipeline) {
+			if r.Original == nil {
+				continue
+			}
+			o, err := eval.LoadScan(base+"-scans", r.Original.Digest)
+			if err != nil {
+				return fmt.Errorf("%s %s #%d: %w", r.Pipeline, r.Item, r.Repetition, err)
+			}
+			ac, err := eval.ReconstructCalls(r, o, info.Prompt, budget)
+			if err != nil {
+				return err
+			}
+			if err := enc.Encode(ac); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
