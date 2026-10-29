@@ -58,6 +58,11 @@ REFERENCE = ("baseline", "Baseline")
 REF_COLOUR, REF_MARKER = INK2, "D"
 
 
+# With the baseline in a figure, "solved" means pass@3 for the pipelines and
+# the single attempt for the baseline; the legend title says so.
+SOLVED_NOTE = "solved: pass@3 for the pipelines, one attempt per project for the baseline"
+
+
 def columns(data):
     """The pipelines in data, then the baseline when it is there."""
     return [c for c in PIPELINES + [REFERENCE] if c[0] in data]
@@ -153,8 +158,10 @@ def fig_success(data, out):
         k, n = solved(recs)
         lo, hi = wilson(k, n)
         p = k / n
+        ref = REFERENCE[0] in data
         ax.errorbar(i - 0.1, p, yerr=[[p - lo], [hi - p]], fmt=MARKERS[0], color=SERIES[0], ms=7,
-                    elinewidth=1.5, capsize=4, label="solved (pass@3), 95% CI" if i == 0 else None)
+                    elinewidth=1.5, capsize=4,
+                    label=("solved, 95% CI" if ref else "solved (pass@3), 95% CI") if i == 0 else None)
         ax.annotate(f"{k}/{n}", (i - 0.1, p), xytext=(-8, 0), textcoords="offset points",
                     ha="right", va="center", color=INK2, fontsize=8)
         att = sum(r["success"] for r in recs) / len(recs)
@@ -169,7 +176,9 @@ def fig_success(data, out):
     handles, labels = ax.get_legend_handles_labels()
     order = sorted(range(len(labels)), key=lambda i: not labels[i].startswith("solved"))
     ax.legend([handles[i] for i in order], [labels[i] for i in order],
-              loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2)
+              loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
+              title=SOLVED_NOTE if REFERENCE[0] in data else None,
+              title_fontproperties={"size": 8}, alignment="left").get_title().set_color(INK2)
     save(fig, out, "fig1-success")
 
 
@@ -198,7 +207,7 @@ def fig_components(data, out):
         ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
         ax.grid(axis="x", visible=False)
         ax.set_title(title, pad=14)
-    axes[0].set_ylabel("of O′ (successful attempts; bar = median)")
+    axes[0].set_ylabel("reduction relative to O′")
     fig.tight_layout()
     save(fig, out, "fig2-components")
 
@@ -263,9 +272,16 @@ def fig_eol(data, out):
     separate(ax, data)
     ax.set_ylim(0, None)
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
-    ax.set_ylabel("images solved (pass@3), 95% CI")
+    ref = REFERENCE[0] in data
+    ax.set_ylabel("images solved, 95% CI" if ref else "images solved (pass@3), 95% CI")
     ax.grid(axis="x", visible=False)
-    ax.legend(loc="upper left")
+    if ref:
+        # Above the plot, as in Fig. 1: the note is wider than the free corner.
+        leg = ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
+                        title=SOLVED_NOTE, title_fontproperties={"size": 8}, alignment="left")
+        leg.get_title().set_color(INK2)
+    else:
+        ax.legend(loc="upper left")
     save(fig, out, "fig4-eol")
 
 
