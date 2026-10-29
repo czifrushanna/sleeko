@@ -58,10 +58,6 @@ REFERENCE = ("baseline", "Baseline")
 REF_COLOUR, REF_MARKER = INK2, "D"
 
 
-# With the baseline in a figure, "solved" means pass@3 for the pipelines and
-# the single attempt for the baseline; the legend title says so.
-SOLVED_NOTE = "solved: pass@3 for the pipelines,\none attempt per project for the baseline"
-
 # Each figure is drawn at the width it is printed at in the paper (A4 with a
 # 15 cm text block), so its text keeps the size set here, close to the
 # 11 pt body text, instead of being scaled down.
@@ -179,24 +175,24 @@ def fig_success(data, out):
         ref = REFERENCE[0] in data
         ax.errorbar(i - 0.1, p, yerr=[[p - lo], [hi - p]], fmt=MARKERS[0], color=SERIES[0], ms=7,
                     elinewidth=1.5, capsize=4,
-                    label=("solved, 95% CI" if ref else "solved (pass@3), 95% CI") if i == 0 else None)
+                    label=("solved projects (pass@3 for the pipelines), 95% CI" if ref
+                           else "solved projects (pass@3), 95% CI") if i == 0 else None)
         ax.annotate(f"{k}/{n}", (i - 0.1, p), xytext=(-8, 0), textcoords="offset points",
                     ha="right", va="center", color=INK2, fontsize=9)
         att = sum(r["success"] for r in recs) / len(recs)
-        ax.plot(i + 0.1, att, MARKERS[1], color=SERIES[1], ms=7, label="per attempt" if i == 0 else None)
+        ax.plot(i + 0.1, att, MARKERS[1], color=SERIES[1], ms=7, label="solved attempts" if i == 0 else None)
     ax.set_xticks(list(xs), [name for _, name in cols])
     ax.set_xlim(-0.5, len(cols) - 0.5)
     separate(ax, data)
     ax.set_ylim(0, None)
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
-    ax.set_ylabel("successful")
+    ax.set_ylabel("solved")
     ax.grid(axis="x", visible=False)
+    # Solved projects first, one entry per line: it is too long to share one.
     handles, labels = ax.get_legend_handles_labels()
-    order = sorted(range(len(labels)), key=lambda i: not labels[i].startswith("solved"))
+    order = sorted(range(len(labels)), key=lambda i: not labels[i].startswith("solved projects"))
     ax.legend([handles[i] for i in order], [labels[i] for i in order],
-              loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
-              title=SOLVED_NOTE if REFERENCE[0] in data else None,
-              title_fontproperties={"size": 9}, alignment="left").get_title().set_color(INK2)
+              loc="lower left", bbox_to_anchor=(0, 1.0), ncol=1, borderaxespad=0.2)
     save(fig, out, "fig1-success")
 
 
@@ -293,10 +289,8 @@ def fig_eol(data, out):
     ax.set_ylabel("projects solved, 95% CI" if ref else "projects solved (pass@3), 95% CI")
     ax.grid(axis="x", visible=False)
     if ref:
-        # Above the plot, as in Fig. 1: the note is wider than the free corner.
-        leg = ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
-                        title=SOLVED_NOTE, title_fontproperties={"size": 9}, alignment="left")
-        leg.get_title().set_color(INK2)
+        # Above the plot, as in Fig. 1: with four columns no corner is free.
+        ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2)
     else:
         ax.legend(loc="upper left")
     save(fig, out, "fig4-eol")
