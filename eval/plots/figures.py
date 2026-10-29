@@ -60,7 +60,17 @@ REF_COLOUR, REF_MARKER = INK2, "D"
 
 # With the baseline in a figure, "solved" means pass@3 for the pipelines and
 # the single attempt for the baseline; the legend title says so.
-SOLVED_NOTE = "solved: pass@3 for the pipelines, one attempt per project for the baseline"
+SOLVED_NOTE = "solved: pass@3 for the pipelines,\none attempt per project for the baseline"
+
+# Each figure is drawn at the width it is printed at in the paper (A4 with a
+# 15 cm text block), so its text keeps the size set here, close to the
+# 11 pt body text, instead of being scaled down.
+TEXT_WIDTH = 150 / 25.4  # inches
+WIDTH = {"fig1-success": 0.72, "fig2-components": 0.95, "fig3-gates": 0.92, "fig4-eol": 0.72}
+
+
+def figsize(name, height):
+    return (WIDTH[name] * TEXT_WIDTH, height)
 
 
 def columns(data):
@@ -83,11 +93,14 @@ def separate(ax, data):
 plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
-    "font.size": 9,
+    "font.size": 10,
     "axes.edgecolor": BASELINE,
     "axes.labelcolor": INK2,
     "axes.titlecolor": INK,
-    "axes.titlesize": 10,
+    "axes.titlesize": 10.5,
+    "xtick.labelsize": 9.5,
+    "ytick.labelsize": 9.5,
+    "legend.fontsize": 9.5,
     "axes.titleweight": "bold",
     "axes.titlelocation": "left",
     "xtick.color": MUTED,
@@ -144,14 +157,16 @@ def solved(records):
 
 def save(fig, out, name):
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(out, f"{name}.{ext}"), dpi=300, bbox_inches="tight")
+        # No tight bounding box: the figure keeps the printed width it was
+        # drawn at, and constrained layout keeps labels inside it.
+        fig.savefig(os.path.join(out, f"{name}.{ext}"), dpi=300)
     plt.close(fig)
 
 
 def fig_success(data, out):
     """Fig. 1: solved (pass@3) with Wilson 95% CI, and the per-attempt rate."""
     cols = columns(data)
-    fig, ax = plt.subplots(figsize=(4.8 if len(cols) == len(PIPELINES) else 5.6, 3.0))
+    fig, ax = plt.subplots(figsize=figsize("fig1-success", 3.3), layout="constrained")
     xs = range(len(cols))
     for i, (key, name) in enumerate(cols):
         recs = data[key]
@@ -163,7 +178,7 @@ def fig_success(data, out):
                     elinewidth=1.5, capsize=4,
                     label=("solved, 95% CI" if ref else "solved (pass@3), 95% CI") if i == 0 else None)
         ax.annotate(f"{k}/{n}", (i - 0.1, p), xytext=(-8, 0), textcoords="offset points",
-                    ha="right", va="center", color=INK2, fontsize=8)
+                    ha="right", va="center", color=INK2, fontsize=9)
         att = sum(r["success"] for r in recs) / len(recs)
         ax.plot(i + 0.1, att, MARKERS[1], color=SERIES[1], ms=7, label="per attempt" if i == 0 else None)
     ax.set_xticks(list(xs), [name for _, name in cols])
@@ -178,14 +193,14 @@ def fig_success(data, out):
     ax.legend([handles[i] for i in order], [labels[i] for i in order],
               loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
               title=SOLVED_NOTE if REFERENCE[0] in data else None,
-              title_fontproperties={"size": 8}, alignment="left").get_title().set_color(INK2)
+              title_fontproperties={"size": 9}, alignment="left").get_title().set_color(INK2)
     save(fig, out, "fig1-success")
 
 
 def fig_components(data, out):
     """Fig. 2: ΔV and ΔS of the successful attempts, every attempt a dot."""
     cols = columns(data)
-    fig, axes = plt.subplots(1, 2, figsize=(6.4 if len(cols) == len(PIPELINES) else 7.4, 3.0))
+    fig, axes = plt.subplots(1, 2, figsize=figsize("fig2-components", 3.4), layout="constrained")
     for ax, field, title in ((axes[0], "delta_v", "ΔV: vulnerability reduction"),
                              (axes[1], "delta_s", "ΔS: size reduction")):
         for i, (key, name) in enumerate(cols):
@@ -199,16 +214,15 @@ def fig_components(data, out):
                 m = vals[len(vals) // 2] if len(vals) % 2 else (vals[len(vals) // 2 - 1] + vals[len(vals) // 2]) / 2
                 ax.plot([i - 0.25, i + 0.25], [m, m], color=INK, lw=1.5, zorder=4)
                 ax.annotate(f"n = {len(vals)}", (i, 1.0), xycoords=("data", "axes fraction"),
-                            ha="center", va="bottom", color=MUTED, fontsize=7.5)
+                            ha="center", va="bottom", color=MUTED, fontsize=8.5)
         ax.axhline(0, color=BASELINE, lw=0.8, zorder=1)
-        ax.set_xticks(range(len(cols)), [name for _, name in cols], fontsize=8)
+        ax.set_xticks(range(len(cols)), [name.replace("+", "+\n", 1) if len(name) > 6 else name for _, name in cols], fontsize=9)
         ax.set_xlim(-0.6, len(cols) - 0.4)
         separate(ax, data)
         ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
         ax.grid(axis="x", visible=False)
         ax.set_title(title, pad=14)
     axes[0].set_ylabel("reduction relative to O′")
-    fig.tight_layout()
     save(fig, out, "fig2-components")
 
 
@@ -219,7 +233,7 @@ GATES = [("G1_parse", "G1 parses"), ("G2_no_invention", "G2 no invented sources"
 
 def fig_gates(data, out, lint=None):
     """Fig. 3: share of attempts failing each gate, per pipeline."""
-    fig, ax = plt.subplots(figsize=(5.6, 3.2 if REFERENCE[0] not in data else 3.6))
+    fig, ax = plt.subplots(figsize=figsize("fig3-gates", 3.6 if REFERENCE[0] not in data else 4.0), layout="constrained")
     rows = GATES + ([("G7_no_new_lint_errors", "G7 no new lint error")] if lint else []) \
         + [("optimizer", "no candidate (LLM error or timeout)")]
     cols = columns(data)
@@ -252,7 +266,7 @@ def fig_gates(data, out, lint=None):
 def fig_eol(data, out):
     """Fig. 4: solved per pipeline, split by whether O′ is on an end-of-life release."""
     cols = columns(data)
-    fig, ax = plt.subplots(figsize=(4.8 if len(cols) == len(PIPELINES) else 5.6, 3.0))
+    fig, ax = plt.subplots(figsize=figsize("fig4-eol", 3.4), layout="constrained")
     groups = [(True, "O′ end of life"), (False, "O′ supported")]
     for gi, (flag, label) in enumerate(groups):
         for i, (key, _) in enumerate(cols):
@@ -266,19 +280,19 @@ def fig_eol(data, out):
             ax.errorbar(x, p, yerr=[[p - lo], [hi - p]], fmt=MARKERS[gi], color=SERIES[gi], ms=7,
                         elinewidth=1.5, capsize=4, label=label if i == 0 else None)
             ax.annotate(f"{k}/{n}", (x, hi), xytext=(0, 3), textcoords="offset points",
-                        ha="center", va="bottom", color=INK2, fontsize=7.5)
+                        ha="center", va="bottom", color=INK2, fontsize=8.5)
     ax.set_xticks(range(len(cols)), [name for _, name in cols])
     ax.set_xlim(-0.5, len(cols) - 0.5)
     separate(ax, data)
     ax.set_ylim(0, None)
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
     ref = REFERENCE[0] in data
-    ax.set_ylabel("images solved, 95% CI" if ref else "images solved (pass@3), 95% CI")
+    ax.set_ylabel("projects solved, 95% CI" if ref else "projects solved (pass@3), 95% CI")
     ax.grid(axis="x", visible=False)
     if ref:
         # Above the plot, as in Fig. 1: the note is wider than the free corner.
         leg = ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, borderaxespad=0.2,
-                        title=SOLVED_NOTE, title_fontproperties={"size": 8}, alignment="left")
+                        title=SOLVED_NOTE, title_fontproperties={"size": 9}, alignment="left")
         leg.get_title().set_color(INK2)
     else:
         ax.legend(loc="upper left")
