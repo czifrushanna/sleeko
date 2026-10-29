@@ -159,7 +159,10 @@ def save(fig, out, name):
     for ext in ("pdf", "png"):
         # No tight bounding box: the figure keeps the printed width it was
         # drawn at, and constrained layout keeps labels inside it.
-        fig.savefig(os.path.join(out, f"{name}.{ext}"), dpi=300)
+        # No creation date in the PDF, so the same records give the same
+        # file byte for byte.
+        meta = {"CreationDate": None} if ext == "pdf" else None
+        fig.savefig(os.path.join(out, f"{name}.{ext}"), dpi=300, metadata=meta)
     plt.close(fig)
 
 
