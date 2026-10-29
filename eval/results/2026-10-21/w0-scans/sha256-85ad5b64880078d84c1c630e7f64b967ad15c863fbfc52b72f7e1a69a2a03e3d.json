@@ -1,0 +1,50 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2025-47273",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "78.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-59890",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "83.0.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97687",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-97688",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97689",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-6v7p-g79w-8964",
+    "Package": "msgpack",
+    "InstalledVersion": "1.1.2",
+    "FixedVersion": "1.2.1",
+    "Severity": 3
+   }
+  ]
+ },
+ "OS": "alpine 3.24.2",
+ "EOSL": false
+}

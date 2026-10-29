@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 57.21 \n57.21 * Get more help at https://help.gradle.org\n57.21 \n57.21 BUILD FAILED in 56s\n57.26 3 actionable tasks: 1 executed, 2 up-to-date\n------\nDockerfile:13\n--------------------\n  11 |     \n  12 |     COPY . .\n  13 | \u003e\u003e\u003e RUN ./gradlew shadowJar\n  14 |     \n  15 |     FROM azul/zulu-openjdk-alpine:11-jre\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c ./gradlew shadowJar\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,351 @@
+{
+ "item": "demo-flask",
+ "digest": "sha256:a2a69b7ca199bc979f240819c89cdbe23c9894436eca37dc773b01b3710f6b17",
+ "os": "alpine 3.24.2",
+ "eosl": false,
+ "trivy_db": "trivy 0.75.0 db 2026-10-20T07:17:35.368599961Z",
+ "built_at": "2026-10-29T15:04:30.233078Z",
+ "packages": [
+  {
+   "name": ".python-rundeps",
+   "version": "20261001.220130"
+  },
+  {
+   "name": "alpine-baselayout",
+   "version": "3.7.2-r1"
+  },
+  {
+   "name": "alpine-baselayout-data",
+   "version": "3.7.2-r1"
+  },
+  {
+   "name": "alpine-keys",
+   "version": "2.6-r0"
+  },
+  {
+   "name": "alpine-release",
+   "version": "3.24.2-r0"
+  },
+  {
+   "name": "apk-tools",
+   "version": "3.0.8-r0"
+  },
+  {
+   "name": "busybox",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "busybox-binsh",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "ca-certificates",
+   "version": "20260909-r0"
+  },
+  {
+   "name": "ca-certificates-bundle",
+   "version": "20260909-r0"
+  },
+  {
+   "name": "gdbm",
+   "version": "1.26-r0"
+  },
+  {
+   "name": "keyutils-libs",
+   "version": "1.6.3-r4"
+  },
+  {
+   "name": "krb5-conf",
+   "version": "1.0-r2"
+  },
+  {
+   "name": "krb5-libs",
+   "version": "1.22.2-r1"
+  },
+  {
+   "name": "libapk",
+   "version": "3.0.8-r0"
+  },
+  {
+   "name": "libbz2",
+   "version": "1.0.8-r6"
+  },
+  {
+   "name": "libcom_err",
+   "version": "1.47.4-r0"
+  },
+  {
+   "name": "libcrypto3",
+   "version": "3.5.9-r0"
+  },
+  {
+   "name": "libffi",
+   "version": "3.5.2-r1"
+  },
+  {
+   "name": "libintl",
+   "version": "1.0-r0"
+  },
+  {
+   "name": "libncursesw",
+   "version": "6.6_p20260516-r0"
+  },
+  {
+   "name": "libnsl",
+   "version": "2.0.1-r2"
+  },
+  {
+   "name": "libpanelw",
+   "version": "6.6_p20260516-r0"
+  },
+  {
+   "name": "libssl3",
+   "version": "3.5.9-r0"
+  },
+  {
+   "name": "libtirpc",
+   "version": "1.3.5-r1"
+  },
+  {
+   "name": "libtirpc-conf",
+   "version": "1.3.5-r1"
+  },
+  {
+   "name": "libuuid",
+   "version": "2.42.3-r1"
+  },
+  {
+   "name": "libverto",
+   "version": "0.3.2-r2"
+  },
+  {
+   "name": "musl",
+   "version": "1.2.6-r2"
+  },
+  {
+   "name": "musl-utils",
+   "version": "1.2.6-r2"
+  },
+  {
+   "name": "ncurses-terminfo-base",
+   "version": "6.6_p20260516-r0"
+  },
+  {
+   "name": "readline",
+   "version": "8.3.3-r1"
+  },
+  {
+   "name": "scanelf",
+   "version": "1.3.9-r1"
+  },
+  {
+   "name": "sqlite-libs",
+   "version": "3.53.4-r0"
+  },
+  {
+   "name": "ssl_client",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "tzdata",
+   "version": "2026d-r0"
+  },
+  {
+   "name": "xz-libs",
+   "version": "5.8.4-r0"
+  },
+  {
+   "name": "zlib",
+   "version": "1.3.2-r0"
+  },
+  {
+   "name": "Flask",
+   "version": "3.1.3"
+  },
+  {
+   "name": "Jinja2",
+   "version": "3.1.6"
+  },
+  {
+   "name": "MarkupSafe",
+   "version": "3.0.4"
+  },
+  {
+   "name": "Werkzeug",
+   "version": "3.1.9"
+  },
+  {
+   "name": "autocommand",
+   "version": "2.2.2"
+  },
+  {
+   "name": "backports.tarfile",
+   "version": "1.2.0"
+  },
+  {
+   "name": "blinker",
+   "version": "1.9.0"
+  },
+  {
+   "name": "click",
+   "version": "8.5.0"
+  },
+  {
+   "name": "importlib_metadata",
+   "version": "8.0.0"
+  },
+  {
+   "name": "inflect",
+   "version": "7.3.1"
+  },
+  {
+   "name": "itsdangerous",
+   "version": "2.2.0"
+  },
+  {
+   "name": "jaraco.collections",
+   "version": "5.1.0"
+  },
+  {
+   "name": "jaraco.context",
+   "version": "5.3.0"
+  },
+  {
+   "name": "jaraco.functools",
+   "version": "4.0.1"
+  },
+  {
+   "name": "jaraco.text",
+   "version": "3.12.1"
+  },
+  {
+   "name": "more-itertools",
+   "version": "10.3.0"
+  },
+  {
+   "name": "packaging",
+   "version": "24.2"
+  },
+  {
+   "name": "packaging",
+   "version": "26.3"
+  },
+  {
+   "name": "pip",
+   "version": "23.0.1"
+  },
+  {
+   "name": "platformdirs",
+   "version": "4.2.2"
+  },
+  {
+   "name": "setuptools",
+   "version": "79.0.1"
+  },
+  {
+   "name": "tomli",
+   "version": "2.0.1"
+  },
+  {
+   "name": "typeguard",
+   "version": "4.3.0"
+  },
+  {
+   "name": "typing_extensions",
+   "version": "4.12.2"
+  },
+  {
+   "name": "wheel",
+   "version": "0.45.1"
+  },
+  {
+   "name": "wheel",
+   "version": "0.46.3"
+  },
+  {
+   "name": "zipp",
+   "version": "3.19.2"
+  }
+ ],
+ "scan": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2023-5752",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "23.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-8869",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "25.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13346",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "26.2.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1703",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "26.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-23949",
+    "Package": "jaraco.context",
+    "InstalledVersion": "5.3.0",
+    "FixedVersion": "6.1.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-24049",
+    "Package": "wheel",
+    "InstalledVersion": "0.45.1",
+    "FixedVersion": "0.46.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-3219",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59890",
+    "Package": "setuptools",
+    "InstalledVersion": "79.0.1",
+    "FixedVersion": "83.0.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6357",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.2-r0",
+    "FixedVersion": "1.3.2-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8643",
+    "Package": "pip",
+    "InstalledVersion": "23.0.1",
+    "FixedVersion": "26.1.2",
+    "Severity": 2
+   }
+  ]
+ }
+}

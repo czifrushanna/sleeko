@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:  \u003e [build 5/5] RUN CGO_ENABLED=0 GOOS=linux go build -o yt-dlp-webui:\n3.215 go: go.mod requires go \u003e= 1.24 (running go 1.23.6; GOTOOLCHAIN=local)\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV \"JWT_SECRET\") (line 38)\nDockerfile:21\n--------------------\n  19 |     COPY --from=ui /usr/src/yt-dlp-webui/frontend /usr/src/yt-dlp-webui/frontend\n  20 |     \n  21 | \u003e\u003e\u003e RUN CGO_ENABLED=0 GOOS=linux go build -o yt-dlp-webui\n  22 |     # -----------------------------------------------------------------------------\n  23 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c CGO_ENABLED=0 GOOS=linux go build -o yt-dlp-webui\" did not complete successfully: exit code: 1"
+  }
+]

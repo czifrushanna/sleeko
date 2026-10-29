@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\nDockerfile:9\n--------------------\n   8 |     \n   9 | \u003e\u003e\u003e RUN apk add --no-cache \\\n  10 | \u003e\u003e\u003e     tar=7.5.21-r0 \\\n  11 | \u003e\u003e\u003e     openssl=1.1.1t-r2 \\\n  12 | \u003e\u003e\u003e     zlib=1.2.12-r2 \\\n  13 | \u003e\u003e\u003e     apk-tools=2.12.6-r0 \\\n  14 | \u003e\u003e\u003e     busybox=1.33.1-r7 \\\n  15 | \u003e\u003e\u003e     ssl_client=1.33.1-r7 \\\n  16 | \u003e\u003e\u003e     libretls=3.3.3p1-r3\n  17 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache     tar=7.5.21-r0     openssl=1.1.1t-r2     zlib=1.2.12-r2     apk-tools=2.12.6-r0     busybox=1.33.1-r7     ssl_client=1.33.1-r7     libretls=3.3.3p1-r3\" did not complete successfully: exit code: 7"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2018-25032, CVE-2022-0778, CVE-2022-28391, CVE-2022-29458, CVE-2022-30065, CVE-2022-37434"
+  }
+]

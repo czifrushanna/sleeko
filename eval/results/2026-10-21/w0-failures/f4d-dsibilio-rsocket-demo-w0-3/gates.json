@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: ENTRYPOINT [\"/usr/local/bin/mvn-entrypoint.sh\"] -\u003e [\"java\" \"-Djava.security.egd=file:/dev/./urandom\" \"-jar\" \"/app/rsocket-demo.jar\"]; CMD [\"java\" \"-Djava.security.egd=file:/dev/./urandom\" \"-jar\" \"./target/rsocket-demo.jar\"] -\u003e []; WORKDIR \"\" -\u003e \"/app\""
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-68973, CVE-2026-45447, CVE-2026-84782"
+  }
+]

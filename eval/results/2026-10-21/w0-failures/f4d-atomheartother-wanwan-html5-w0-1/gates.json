@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 5.496     breaks: world[libxpm=3.5.20-r0]\n5.496     satisfies: libgd-2.3.3-r9[so:libXpm.so.4]\n------\nDockerfile:3\n--------------------\n   2 |     \n   3 | \u003e\u003e\u003e RUN apk upgrade --no-cache \u0026\u0026 \\\n   4 | \u003e\u003e\u003e     apk add --no-cache \\\n   5 | \u003e\u003e\u003e     libx11=1.8.14-r0 \\\n   6 | \u003e\u003e\u003e     libexpat=2.9.0-r0 \\\n   7 | \u003e\u003e\u003e     libxpm=3.5.20-r0 \\\n   8 | \u003e\u003e\u003e     zlib=1.3.2-r1\n   9 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk upgrade --no-cache \u0026\u0026     apk add --no-cache     libx11=1.8.14-r0     libexpat=2.9.0-r0     libxpm=3.5.20-r0     zlib=1.3.2-r1\" did not complete successfully: exit code: 6"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 1.081 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz\n1.940 ERROR: unable to select packages:\n1.941   zlib-1.3.2-r0:\n1.941     breaks: world[zlib=1.3.2-r1]\n1.942     satisfies: apk-tools-2.14.4-r1[so:libz.so.1]\n------\nDockerfile:17\n--------------------\n  15 |     \n  16 |     FROM alpine:3.20\n  17 | \u003e\u003e\u003e RUN apk add --no-cache zlib=1.3.2-r1\n  18 |     COPY --from=web-build /broadcast-box/web/build /broadcast-box/web/build\n  19 |     COPY --from=go-build /broadcast-box/broadcast-box /broadcast-box/broadcast-box\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache zlib=1.3.2-r1\" did not complete successfully: exit code: 2"
+  }
+]

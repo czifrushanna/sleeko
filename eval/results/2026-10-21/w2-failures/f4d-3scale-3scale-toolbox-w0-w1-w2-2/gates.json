@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)\nDockerfile:17\n--------------------\n  16 |     # bundler is pinned to 2.3.5 as per original intent\n  17 | \u003e\u003e\u003e RUN gem install bundler --version 2.3.5 --no-document \u0026\u0026 \\\n  18 | \u003e\u003e\u003e     gem install nokogiri -v '\u003e= 1.19.4' --no-document \u0026\u0026 \\\n  19 | \u003e\u003e\u003e     gem install concurrent-ruby -v '\u003e= 1.3.7' --no-document \u0026\u0026 \\\n  20 | \u003e\u003e\u003e     gem install addressable -v '\u003e= 2.9.0' --no-document \u0026\u0026 \\\n  21 | \u003e\u003e\u003e     gem cleanup\n  22 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c gem install bundler --version 2.3.5 --no-document \u0026\u0026     gem install nokogiri -v '\u003e= 1.19.4' --no-document \u0026\u0026     gem install concurrent-ruby -v '\u003e= 1.3.7' --no-document \u0026\u0026     gem install addressable -v '\u003e= 2.9.0' --no-document \u0026\u0026     gem cleanup\" did not complete successfully: exit code: 1"
+  }
+]

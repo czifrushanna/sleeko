@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 1 within 10s, want it running or exit code 0: error: exec: \"ofscraper\": executable file not found in $PATH"
+  }
+]

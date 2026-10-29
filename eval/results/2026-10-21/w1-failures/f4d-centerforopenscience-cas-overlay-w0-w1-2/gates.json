@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 27.97 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n27.97 [ERROR] Re-run Maven using the -X switch to enable full debug logging.\n27.97 [ERROR] \n27.97 [ERROR] For more information about the errors and possible solutions, please read the following articles:\n27.97 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginResolutionException\n------\nDockerfile:11\n--------------------\n   9 |     ENV MAVEN_OPTS=-Dmaven.repo.local=/root/.m2repo/\n  10 |     \n  11 | \u003e\u003e\u003e RUN mvn clean package -P nocheck\n  12 |     \n  13 |     ### Dist\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c mvn clean package -P nocheck\" did not complete successfully: exit code: 1"
+  }
+]

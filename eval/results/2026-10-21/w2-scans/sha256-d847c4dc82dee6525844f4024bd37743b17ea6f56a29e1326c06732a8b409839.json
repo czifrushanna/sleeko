@@ -1,0 +1,2171 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2021-30465",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.0-rc93",
+    "FixedVersion": "1.0.0-rc95",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-31525",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.0.0-20210428140749-89ef3d95e781",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-32760",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.0",
+    "FixedVersion": "1.4.8, 1.5.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-33194",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.0.0-20210520170846-37e1c6afe023",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-33195",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.13, 1.16.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-33196",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.13, 1.16.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-33197",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.13, 1.16.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-33198",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.13, 1.16.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-34558",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.14, 1.16.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-36221",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.4",
+    "FixedVersion": "1.15.15, 1.16.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-38561",
+    "Package": "golang.org/x/text",
+    "InstalledVersion": "v0.3.4",
+    "FixedVersion": "0.3.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-39293",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.8, 1.17.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-41089",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-41091",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-41092",
+    "Package": "github.com/docker/cli",
+    "InstalledVersion": "v20.10.3-0.20210702143511-f782d1355eff+incompatible",
+    "FixedVersion": "20.10.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-41103",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.4.11, 1.5.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-41771",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.10, 1.17.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-41772",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.10, 1.17.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-43565",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.0.0-20211202192323-5770296d904e",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-43784",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.0.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-43816",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-44716",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.0.0-20211209124913-491a49abca63",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-44716",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.12, 1.17.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-44717",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.12, 1.17.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-1705",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-1962",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21698",
+    "Package": "github.com/prometheus/client_golang",
+    "InstalledVersion": "v1.7.1",
+    "FixedVersion": "1.11.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-23471",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.16, 1.6.12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-23648",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.4.13, 1.5.10, 1.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-23772",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.14, 1.17.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-23806",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.14, 1.17.7",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-24675",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.9, 1.18.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-24769",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-24921",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.16.15, 1.17.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27191",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.0.0-20220314234659-1baeb1ce4c0b",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27664",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.0.0-20220906165146-f3363e06e74c",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27664",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.6, 1.19.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-28131",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-28327",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.9, 1.18.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2879",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.7, 1.19.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2880",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.7, 1.19.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-28948",
+    "Package": "gopkg.in/yaml.v3",
+    "InstalledVersion": "v3.0.0-20200313102051-9f266ea9e77c",
+    "FixedVersion": "3.0.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29162",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-29526",
+    "Package": "golang.org/x/sys",
+    "InstalledVersion": "v0.0.0-20210403161142-5e06dd20ab57",
+    "FixedVersion": "0.0.0-20220412211240-33da011f77ad",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-29526",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.10, 1.18.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-29804",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.11, 1.18.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30580",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.11, 1.18.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30629",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.11, 1.18.3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-30630",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30631",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30632",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30633",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30634",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.11, 1.18.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30635",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30636",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.0.0-20220525230936-793ad666bf5e",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2022-31030",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.13, 1.6.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32148",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.12, 1.18.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32149",
+    "Package": "golang.org/x/text",
+    "InstalledVersion": "v0.3.4",
+    "FixedVersion": "0.3.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-32189",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.17.13, 1.18.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-34265",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.14, 4.0.6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-36109",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-36359",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.15, 4.0.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41323",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.16, 4.0.8, 4.1.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41715",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.7, 1.19.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41716",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.8, 1.19.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41717",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-41717",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.9, 1.19.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-41720",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.18.9, 1.19.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41722",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.6, 1.20.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41723",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.7.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41723",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.6, 1.20.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41724",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.6, 1.20.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41725",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.6, 1.20.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-2253",
+    "Package": "github.com/docker/distribution",
+    "InstalledVersion": "v2.7.1+incompatible",
+    "FixedVersion": "2.8.2-beta.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-23969",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.17, 4.0.9, 4.1.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-24532",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.7, 1.20.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-24534",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.8, 1.20.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-24536",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.8, 1.20.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-24537",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.8, 1.20.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-24538",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.8, 1.20.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-24539",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.9, 1.20.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-24540",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.9, 1.20.4",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-24580",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.18, 4.1.7, 4.0.10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-25153",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.18, 1.6.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-25173",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.18, 1.6.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-25809",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-27561",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-28642",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28840",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.24, 23.0.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-28841",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.24, 23.0.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28842",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.24, 23.0.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29400",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.9, 1.20.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29403",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.10, 1.20.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29406",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.11, 1.20.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29409",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.19.12, 1.20.7, 1.21.0-rc.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-31047",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.19, 4.1.9, 4.2.1",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-36053",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.20, 4.1.10, 4.2.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-39318",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.8, 1.21.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-39319",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.8, 1.21.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-39325",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.17.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-39325",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.10, 1.21.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-39326",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.12, 1.21.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3978",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.13.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-41164",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.21, 4.1.11, 4.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-43665",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.22, 4.1.12, 4.2.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-45283",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.11, 1.21.4, 1.20.12, 1.21.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-45284",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.11, 1.21.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-45287",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.20.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-45288",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.23.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-45288",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.9, 1.22.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-45289",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.8, 1.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-45290",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.8, 1.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46695",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.23, 4.1.13, 4.2.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-48795",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.17.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21626",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-23650",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.12.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-23651",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.12.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-23652",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.12.5",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-23653",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.12.5",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-24557",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "24.0.9, 25.0.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24680",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.24, 4.2.10, 5.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-24783",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.8, 1.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24784",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.8, 1.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24785",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.8, 1.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24786",
+    "Package": "google.golang.org/protobuf",
+    "InstalledVersion": "v1.26.0",
+    "FixedVersion": "1.33.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24789",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.11, 1.22.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24790",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.11, 1.22.4",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-24791",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.21.12, 1.22.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-25621",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.29",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-27351",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "3.2.25, 4.2.11, 5.0.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-28180",
+    "Package": "gopkg.in/square/go-jose.v2",
+    "InstalledVersion": "v2.6.0",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-29018",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "26.0.0-rc3, 25.0.5, 23.0.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-34155",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.7, 1.23.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-34156",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.7, 1.23.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-34158",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.7, 1.23.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-40635",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.27, 1.6.38",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-41110",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "23.0.15, 26.1.5, 27.1.1, 25.0.6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-45231",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.1.1, 5.0.9, 4.2.16",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45310",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.1.14, 1.2.0-rc.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45336",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.11, 1.23.5, 1.24.0-rc.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45337",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.31.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-45338",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.33.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-45341",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.11, 1.23.5, 1.24.0-rc.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-0495",
+    "Package": "github.com/docker/buildx",
+    "InstalledVersion": "v0.6.3",
+    "FixedVersion": "0.21.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0913",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.10, 1.24.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15558",
+    "Package": "github.com/docker/cli",
+    "InstalledVersion": "v20.10.3-0.20210702143511-f782d1355eff+incompatible",
+    "FixedVersion": "29.2.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-22866",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.22.12, 1.23.6, 1.24.0-rc.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22868",
+    "Package": "golang.org/x/oauth2",
+    "InstalledVersion": "v0.0.0-20200107190931-bf48bf16ab8d",
+    "FixedVersion": "0.27.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-22869",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.35.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-22870",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.36.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22870",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.7, 1.24.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22871",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.8, 1.24.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22872",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.38.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22873",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.9, 1.24.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-31133",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.2.8, 1.3.3, 1.4.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-4673",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.10, 1.24.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-47906",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.12, 1.24.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-47907",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.23.12, 1.24.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-47911",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-47912",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-47913",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.43.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-47914",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-48432",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.2, 5.1.10, 4.2.22",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-52565",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.2.8, 1.3.3, 1.4.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-52881",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.2.8, 1.3.3, 1.4.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-54410",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "25.0.13, 28.0.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-57833",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "4.2.24, 5.1.12, 5.2.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-58181",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58183",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58185",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58186",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-58187",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.9, 1.25.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58188",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58189",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58190",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61723",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61724",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61725",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.8, 1.25.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61726",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.12, 1.25.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61727",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.11, 1.25.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61728",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.12, 1.25.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61729",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.11, 1.25.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61730",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.12, 1.25.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64329",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.29",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64458",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.8, 5.1.14, 4.2.26",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-64459",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.8, 5.1.14, 4.2.26",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-65637",
+    "Package": "github.com/sirupsen/logrus",
+    "InstalledVersion": "v1.8.1",
+    "FixedVersion": "1.8.3, 1.9.1, 1.9.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-68121",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.24.13, 1.25.7, 1.26.0-rc.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-8869",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "25.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13346",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.2.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15307",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.17, 6.0.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-15830",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.17, 6.0.8, 6.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1703",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-25679",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25680",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-25681",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27136",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27139",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-27142",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27145",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-3219",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32280",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32281",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32282",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32283",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32288",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32289",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33186",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.79.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-33540",
+    "Package": "github.com/distribution/distribution/v3",
+    "InstalledVersion": "v3.0.0-20210316161203-a01c71e2477e",
+    "FixedVersion": "3.1.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33747",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.28.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33748",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.28.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33811",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33814",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.53.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33814",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33818",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33997",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "29.3.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35172",
+    "Package": "github.com/distribution/distribution/v3",
+    "InstalledVersion": "v3.0.0-20210316161203-a01c71e2477e",
+    "FixedVersion": "3.1.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39820",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39821",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39821",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39822",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.12, 1.26.5, 1.27.0-rc.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39823",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39824",
+    "Package": "golang.org/x/sys",
+    "InstalledVersion": "v0.0.0-20210403161142-5e06dd20ab57",
+    "FixedVersion": "0.44.0",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-39825",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39826",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39827",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39828",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39829",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39830",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39831",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39832",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39833",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39834",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39835",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39836",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39882",
+    "Package": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+    "InstalledVersion": "v1.0.0-RC1",
+    "FixedVersion": "1.43.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41567",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41568",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41579",
+    "Package": "github.com/opencontainers/runc",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.3.6, 1.4.3, 1.5.0-rc.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41888",
+    "Package": "github.com/distribution/distribution/v3",
+    "InstalledVersion": "v3.0.0-20210316161203-a01c71e2477e",
+    "FixedVersion": "3.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42306",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42499",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42502",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42504",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42505",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.12, 1.26.5, 1.27.0-rc.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42506",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.55.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42507",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42508",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46595",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46597",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46598",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-46600",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.56.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48587",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.15, 6.0.6",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-48588",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.16, 6.0.7",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-53493",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.36",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53495",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.35",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53877",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.16, 6.0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53878",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.16, 6.0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56851",
+    "Package": "golang.org/x/text",
+    "InstalledVersion": "v0.3.4",
+    "FixedVersion": "0.41.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56852",
+    "Package": "golang.org/x/text",
+    "InstalledVersion": "v0.3.4",
+    "FixedVersion": "0.39.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56853",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56854",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.55.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56855",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.56.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56857",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-56858",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56859",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56860",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56862",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56866",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-61711",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.31.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-61712",
+    "Package": "github.com/moby/buildkit",
+    "InstalledVersion": "v0.8.2-0.20210702160134-1a7543a10527",
+    "FixedVersion": "0.31.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-6357",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6873",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.15, 6.0.6",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-78659",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.60.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78659",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78660",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.60.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78660",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78662",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.0.0-20210322153248-0c34fe9e7dc2",
+    "FixedVersion": "0.56.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78663",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.60.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78663",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78667",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78669",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.60.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78669",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8404",
+    "Package": "Django",
+    "InstalledVersion": "3.2.13",
+    "FixedVersion": "5.2.15, 6.0.6",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-84303",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.83.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-84304",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.83.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84445",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.82.2, 1.83.2, 1.84.0-dev.0.20260825144003-d5a41119e0e3, 1.85.0-dev.0.20260825072537-93e31b48545e",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.2-r0",
+    "FixedVersion": "1.3.2-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85747",
+    "Package": "github.com/distribution/distribution/v3",
+    "InstalledVersion": "v3.0.0-20210316161203-a01c71e2477e",
+    "FixedVersion": "3.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85747",
+    "Package": "github.com/docker/distribution",
+    "InstalledVersion": "v2.7.1+incompatible",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8643",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94439",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94440",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94448",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95838",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.7.35",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97030",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97031",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-97032",
+    "Package": "golang.org/x/net",
+    "InstalledVersion": "v0.0.0-20210226172049-e18ecbb05110",
+    "FixedVersion": "0.60.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97032",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.16.7",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-5j5w-g665-5m35",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.4.12, 1.5.8",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-77vh-xpmg-72qh",
+    "Package": "github.com/opencontainers/image-spec",
+    "InstalledVersion": "v1.0.1",
+    "FixedVersion": "1.0.2",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-7ww5-4wqc-m92c",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.6.26, 1.7.11",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-c9cp-9c75-9v8c",
+    "Package": "github.com/containerd/containerd",
+    "InstalledVersion": "v1.5.4",
+    "FixedVersion": "1.5.11, 1.6.2",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-hrxh-6v49-42gf",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.82.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-jq35-85cj-fj4p",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "24.0.7, 23.0.8, 20.10.27",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-m425-mq94-257g",
+    "Package": "google.golang.org/grpc",
+    "InstalledVersion": "v1.38.0",
+    "FixedVersion": "1.56.3, 1.57.1, 1.58.3",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-qq97-vm5h-rrhg",
+    "Package": "github.com/docker/distribution",
+    "InstalledVersion": "v2.7.1+incompatible",
+    "FixedVersion": "2.8.0",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-vp35-85q5-9f25",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.20",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-xmmx-7jpf-fx42",
+    "Package": "github.com/docker/docker",
+    "InstalledVersion": "v20.10.3-0.20210609100121-ef4d47340142+incompatible",
+    "FixedVersion": "20.10.11",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "alpine 3.24.2",
+ "EOSL": false
+}

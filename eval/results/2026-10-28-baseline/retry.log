@@ -1,0 +1,26 @@
+13:18:12 d3-vogler-free-games-claimer: cached O′ is 180h50m0s old, rebuilding
+13:18:12 d3-vogler-free-games-claimer: building O′
+13:28:12 O′: build: build took longer than 10m0s
+13:28:13 f4d-dsibilio-rsocket-demo: cached O′ is 180h33m0s old, rebuilding
+13:28:13 f4d-dsibilio-rsocket-demo: building O′
+13:38:40 f4d-dsibilio-rsocket-demo #1: measured success=false 
+13:38:40 f4d-icemic-search-bakery-moe: O′ from cache (built 2026-10-28T12:52:10+01:00)
+13:38:40 O′ fails its own smoke test: exited with code 1 within 10s, want it running or exit code 0: at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on NativeConnection instance at:
+    at Immediate.<anonymous> (/app/node_modules/mongoose/lib/connection.js:325:19)
+    at processImmediate (internal/timers.js:461:21)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! search.bakery.moe@1.0.0 server-prod: `NODE_ENV=production node server/server.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the search.bakery.moe@1.0.0 server-prod script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2026-10-28T11_52_13_989Z-debug.log
+13:38:42 f4d-mixcore-mix-core: cached O′ is 180h22m0s old, rebuilding
+13:38:42 f4d-mixcore-mix-core: building O′
+13:42:46 f4d-mixcore-mix-core #1: measured success=false 
+exit 0

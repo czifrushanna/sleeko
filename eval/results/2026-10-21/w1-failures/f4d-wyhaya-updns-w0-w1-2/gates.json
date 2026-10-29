@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image rust:1.27.2-buster does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #3 [internal] load metadata for docker.io/library/rust:1.27.2-buster\n#3 ERROR: docker.io/library/rust:1.27.2-buster: not found\n\n#2 [internal] load metadata for docker.io/library/ubuntu:20.04\n#2 CANCELED\n------\n \u003e [internal] load metadata for docker.io/library/rust:1.27.2-buster:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM rust:1.27.2-buster AS builder\n   2 |     WORKDIR /root\n   3 |     COPY . /root\n--------------------\nERROR: failed to build: failed to solve: rust:1.27.2-buster: failed to resolve source metadata for docker.io/library/rust:1.27.2-buster: docker.io/library/rust:1.27.2-buster: not found"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: --------------------\n   5 |     COPY package*.json ./\n   6 | \u003e\u003e\u003e RUN apk add --no-cache --update \\\n   7 | \u003e\u003e\u003e     libcrypto1.1\u003e=1.1.1l-r0 \\\n   8 | \u003e\u003e\u003e     libssl1.1\u003e=1.1.1l-r0 \\\n   9 | \u003e\u003e\u003e     busybox\u003e=1.31.1-r11 \\\n  10 | \u003e\u003e\u003e     zlib\u003e=1.2.11-r4 \\\n  11 | \u003e\u003e\u003e     libgcc\u003e=9.3.0-r0 \\\n  12 | \u003e\u003e\u003e     libstdc++\u003e=9.3.0-r0 \\\n  13 | \u003e\u003e\u003e     musl\u003e=1.1.24-r3 \\\n  14 | \u003e\u003e\u003e     musl-utils\u003e=1.1.24-r3 \\\n  15 | \u003e\u003e\u003e     apk-tools\u003e=2.10.7-r0\n  16 |     RUN npm install -g pm2\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache --update     libcrypto1.1\u003e=1.1.1l-r0     libssl1.1\u003e=1.1.1l-r0     busybox\u003e=1.31.1-r11     zlib\u003e=1.2.11-r4     libgcc\u003e=9.3.0-r0     libstdc++\u003e=9.3.0-r0     musl\u003e=1.1.24-r3     musl-utils\u003e=1.1.24-r3     apk-tools\u003e=2.10.7-r0\" did not complete successfully: exit code: 2"
+  }
+]

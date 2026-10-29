@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 63.36 [ERROR] For more information about the errors and possible solutions, please read the following articles:\n63.36 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginConfigurationException\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - LegacyKeyValueFormat: \"ENV key=value\" should be used instead of legacy \"ENV key value\" format (line 8)\nDockerfile:13\n--------------------\n  11 |     ENV MAVEN_OPTS=-Dmaven.repo.local=/root/.m2repo/\n  12 |     \n  13 | \u003e\u003e\u003e RUN mvn clean package -P nocheck\n  14 |     \n  15 |     ### Dist\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c mvn clean package -P nocheck\" did not complete successfully: exit code: 1"
+  }
+]

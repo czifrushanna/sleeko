@@ -6,6 +6,15 @@ pipelines on the benchmark in `eval/benchmark/v1.yaml`, the rule-based
 baseline for W2, the reports, the statistical analyses and the figures. Everything below runs from this
 branch (`pipeline`).
 
+## The paper's results
+
+Everything the paper reports was computed from the files in
+[`eval/results/`](results/README.md): the records of every attempt, the
+scans of every image, the run logs, the reports and analyses, and the
+figures. They can be recreated from these files directly, without running
+the study again; the commands of [step 6](#6-recreate-the-papers-results)
+reproduce every report, analysis and figure byte for byte.
+
 ## Requirements
 
 - Go 1.26 (see `go.mod`) and Docker with `buildx`. Give Docker at least 8 GB
@@ -107,6 +116,66 @@ the findings are cached, so later runs take seconds. `figures.py` writes the
 paper's figures to `RESULTS_DIR/figures/`; with `--baseline`, every figure
 also shows the baseline next to the pipelines.
 
+## 5. Scanner visibility and cost
+
+```sh
+bin/sleeko-eval inventory -manifest eval/benchmark/v1.yaml \
+  -items ITEM,ITEM,... -out INVENTORY_DIR \
+  -trivy-db "trivy 0.75.0 db 2026-10-20T07:17:35.368599961Z"
+bin/sleeko-eval visibility -inventory INVENTORY_DIR -out visibility.md \
+  RESULTS_DIR/w0.jsonl RESULTS_DIR/w1.jsonl RESULTS_DIR/w2.jsonl
+bin/sleeko-eval prompts -out calls.jsonl \
+  RESULTS_DIR/w0.jsonl RESULTS_DIR/w1.jsonl RESULTS_DIR/w2.jsonl
+python3 eval/plots/tokens.py calls.jsonl cost.md
+```
+
+G6 counts a critical or high vulnerability in C that O′'s scan does not
+report, but the study's scans list only vulnerable packages, so they cannot
+tell a package C added from one O′ already had that the scanner did not flag
+there (an end-of-life release no longer receives advisories). `inventory`
+rebuilds O′ of the given items exactly as the run built it and lists every
+package in it, with the same scanner and database; it refuses any other
+database version. `visibility` then classifies every new critical or high
+finding behind a G6 failure (in a package O′ already had at the same or an
+older version, in a package O′ does not have, or in one O′ has at a newer
+version), recomputes success with G6 counting only findings in packages new
+to C, and compares each rebuilt O′ with the study's O′ scan. Without
+`-inventory`, it bounds the effect from the scans alone. The paper rebuilt
+the 28 projects with a G6 failure in any pipeline, on 29 October 2026.
+
+`prompts` reconstructs every model call of every attempt from the records,
+the run info and O′'s saved scan, with the code and settings of the run;
+`tokens.py` counts their tokens with the study model's tokenizer
+(requirements: `eval/plots/requirements-tokens.txt`) and adds the latency
+and number of calls from the records. The first request and the final answer
+of an attempt are exact; a repair request resends the conversation with the
+final answer standing in for the earlier ones.
+
+## 6. Recreate the paper's results
+
+With the committed results, the paper's outputs are recreated without
+running anything against a registry or a model:
+
+```sh
+D=eval/results
+bin/sleeko-eval report --out OUT/w2-report.md $D/2026-10-21/w2.jsonl          # and w0, w1, the baseline
+bin/sleeko-eval compare --a W0 --b W0+W1+W2 --out OUT/w0-vs-w2.md \
+  $D/2026-10-21/w0.jsonl $D/2026-10-21/w2.jsonl
+bin/sleeko-eval analyze -lint-gates OUT/lint-gates.jsonl -out OUT/analysis.md \
+  $D/2026-10-21/w0.jsonl $D/2026-10-21/w1.jsonl $D/2026-10-21/w2.jsonl
+bin/sleeko-eval visibility -inventory $D/2026-10-29-inventory -out OUT/visibility.md \
+  $D/2026-10-21/w0.jsonl $D/2026-10-21/w1.jsonl $D/2026-10-21/w2.jsonl
+bin/sleeko-eval prompts -out OUT/calls.jsonl \
+  $D/2026-10-21/w0.jsonl $D/2026-10-21/w1.jsonl $D/2026-10-21/w2.jsonl
+python3 eval/plots/tokens.py OUT/calls.jsonl OUT/cost.md
+python3 eval/plots/figures.py $D/2026-10-21 --baseline $D/2026-10-28-baseline
+```
+
+Each output is identical to its committed copy; `analyze` needs the pinned
+Hadolint container for G7 (its first run takes about 20 minutes), and
+`figures.py` rewrites `eval/results/2026-10-21/figures/`, the paper's
+figures.
+
 ## Where the paper's numbers come from
 
 | In the paper | File |
@@ -119,6 +188,8 @@ also shows the baseline next to the pipelines.
 | ΔV and ΔS of the successful attempts | `wN-report.md`, `figures/fig2-components` |
 | Invented tags and versions, sensitivity analysis | `analysis.md` |
 | Rule-based baseline (Table 7 and the figures) | `baseline-report.md`, `BASELINE_DIR/analysis.md`, `baseline.jsonl` compared with `w0.jsonl`–`w2.jsonl` on the projects both measured |
+| Scanner visibility of G6 failures | `visibility.md`, `visibility-baseline.md` (with the inventories) |
+| Latency, model calls and tokens per proposal | `cost.md` |
 
 ## What will differ
 

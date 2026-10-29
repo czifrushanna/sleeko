@@ -1,0 +1,15 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2025-71405",
+    "Package": "github.com/go-chi/chi/v5",
+    "InstalledVersion": "v5.0.7",
+    "FixedVersion": "5.2.2",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "",
+ "EOSL": false
+}

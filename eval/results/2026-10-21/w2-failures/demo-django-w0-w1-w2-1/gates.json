@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: ENTRYPOINT [\"python3\"] -\u003e []; CMD [\"manage.py\" \"runserver\" \"0.0.0.0:8000\"] -\u003e [\"python3\"]; EXPOSE [8000/tcp] -\u003e []"
+  }
+]

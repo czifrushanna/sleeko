@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 0.458 switch to nightly channel you can add\n0.458 `cargo-features = [\"edition\"]` to enable this feature\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 1)\nDockerfile:4\n--------------------\n   2 |     WORKDIR /root\n   3 |     COPY . /root\n   4 | \u003e\u003e\u003e RUN cargo build --release\n   5 |     \n   6 |     FROM ubuntu:22.04\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c cargo build --release\" did not complete successfully: exit code: 101"
+  }
+]

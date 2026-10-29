@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 127 within 10s, want it running or exit code 0: /__cacert_entrypoint.sh: line 123: exec: mail-catcher-1.0.0-SNAPSHOT.jar: not found"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2026-78667, CVE-2026-78669, CVE-2026-97031"
+  }
+]

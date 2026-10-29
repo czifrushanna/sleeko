@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 5.986 go: github.com/go-viper/mapstructure/v2@2.4.0: invalid version: unknown revision 2.4.0\n5.986 go: github.com/refraction-networking/utls@1.8.1: invalid version: unknown revision 1.8.1\n5.986 go: github.com/ulikunitz/xz@0.5.15: invalid version: unknown revision 0.5.15\n5.986 go: github.com/cloudflare/circl@1.6.3: invalid version: unknown revision 1.6.3\n5.986 go: golang.org/x/sys@0.44.0: invalid version: unknown revision 0.44.0\n------\nDockerfile:7\n--------------------\n   5 |     WORKDIR /app\n   6 |     COPY . /app\n   7 | \u003e\u003e\u003e RUN go get golang.org/x/crypto@0.56.0 golang.org/x/net@0.60.0 golang.org/x/text@0.41.0 golang.org/x/oauth2@0.27.0 github.com/go-viper/mapstructure/v2@2.4.0 github.com/refraction-networking/utls@1.8.1 github.com/ulikunitz/xz@0.5.15 github.com/cloudflare/circl@1.6.3 golang.org/x/sys@0.44.0\n   8 |     RUN go mod download\n   9 |     RUN go build ./cmd/httpx\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c go get golang.org/x/crypto@0.56.0 golang.org/x/net@0.60.0 golang.org/x/text@0.41.0 golang.org/x/oauth2@0.27.0 github.com/go-viper/mapstructure/v2@2.4.0 github.com/refraction-networking/utls@1.8.1 github.com/ulikunitz/xz@0.5.15 github.com/cloudflare/circl@1.6.3 golang.org/x/sys@0.44.0\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,32 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY lib .
+WORKDIR /src/Whalerator.WebAPI
+RUN dotnet build -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish -c Release -o /app
+
+FROM node:18-bullseye-slim AS ngbuild
+COPY web/src /web/src
+COPY web/package.json /web/
+COPY web/package-lock.json /web/
+COPY web/angular.json /web/
+COPY web/tsconfig.json /web/
+WORKDIR /web
+RUN npm install
+RUN npm install @angular/cli
+RUN /web/node_modules/@angular/cli/bin/ng.js build --configuration production --output-path /dist
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+COPY --from=publish /app .
+COPY --from=ngbuild /dist ./wwwroot
+COPY lib/Whalerator.WebAPI/config-docker.yaml config.yaml
+EXPOSE 80
+
+ARG SRC_HASH="Unknown"
+ARG RELEASE="0.0"
+RUN mkdir -p ./wwwroot/assets && echo "{ \""hash\"": \""$SRC_HASH\"", \""release\"": \""$RELEASE\"" }" > ./wwwroot/assets/v.json
+COPY *.md /
+ENTRYPOINT ["dotnet", "Whalerator.WebAPI.dll"]

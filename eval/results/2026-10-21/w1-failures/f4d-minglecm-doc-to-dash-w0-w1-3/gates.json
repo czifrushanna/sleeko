@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:   12 | \u003e\u003e\u003e         librsvg2-2 \\\n  13 | \u003e\u003e\u003e         librsvg2-common \\\n  14 | \u003e\u003e\u003e         librsvg2-dev \\\n  15 | \u003e\u003e\u003e         liblzma-dev \\\n  16 | \u003e\u003e\u003e         liblzma5 \\\n  17 | \u003e\u003e\u003e         xz-utils \\\n  18 | \u003e\u003e\u003e         linux-libc-dev \u0026\u0026 \\\n  19 | \u003e\u003e\u003e     apt-get clean \u0026\u0026 \\\n  20 | \u003e\u003e\u003e     rm -rf /var/lib/apt/lists/* \u0026\u0026 \\\n  21 | \u003e\u003e\u003e     touch ~/.gemrc \u0026\u0026 \\\n  22 | \u003e\u003e\u003e     echo \"gem: --no-ri --no-rdoc\" \u003e\u003e ~/.gemrc \u0026\u0026 \\\n  23 | \u003e\u003e\u003e     mkdir -p /gem/\n  24 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update \u0026\u0026     apt-get install -y --no-install-recommends         curl         libcurl3t64-gnutls         libcurl4-openssl-dev         libcurl4t64         libexpat1         libexpat1-dev         gir1.2-rsvg-2.0         librsvg2-2         librsvg2-common         librsvg2-dev         liblzma-dev         liblzma5         xz-utils         linux-libc-dev \u0026\u0026     apt-get clean \u0026\u0026     rm -rf /var/lib/apt/lists/* \u0026\u0026     touch ~/.gemrc \u0026\u0026     echo \\\"gem: --no-ri --no-rdoc\\\" \u003e\u003e ~/.gemrc \u0026\u0026     mkdir -p /gem/\" did not complete successfully: exit code: 100"
+  }
+]

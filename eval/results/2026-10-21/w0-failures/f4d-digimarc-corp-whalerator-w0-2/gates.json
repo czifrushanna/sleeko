@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 8.277 npm error\n8.277 npm error\n8.277 npm error For a full report see:\n8.277 npm error /root/.npm/_logs/2026-10-20T23_56_04_806Z-eresolve-report.txt\n8.279 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-20T23_56_04_806Z-debug-0.log\n------\nDockerfile:18\n--------------------\n  16 |     WORKDIR /web\n  17 |     RUN npm install\n  18 | \u003e\u003e\u003e RUN npm install @angular/cli\n  19 |     RUN /web/node_modules/@angular/cli/bin/ng.js build --configuration production --output-path /dist\n  20 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install @angular/cli\" did not complete successfully: exit code: 1"
+  }
+]

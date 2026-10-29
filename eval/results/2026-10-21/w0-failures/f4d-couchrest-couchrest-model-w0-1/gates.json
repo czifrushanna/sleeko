@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n \u003e [4/6] COPY Gemfile Gemfile.lock ./:\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - LegacyKeyValueFormat: \"ENV key=value\" should be used instead of legacy \"ENV key value\" format (line 3)\nDockerfile:20\n--------------------\n  18 |     WORKDIR $WORK_DIR\n  19 |     \n  20 | \u003e\u003e\u003e COPY Gemfile Gemfile.lock ./\n  21 |     \n  22 |     RUN gem update --system \u0026\u0026 \\\n--------------------\nERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref 4vokk8e9qg4g8mwb4kna3qp1q::qtboshazsi87h4zupr59y376z: \"/Gemfile.lock\": not found"
+  }
+]

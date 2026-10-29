@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 154.2 npm error\n154.2 npm error\n154.2 npm error For a full report see:\n154.2 npm error /root/.npm/_logs/2026-10-21T04_31_58_200Z-eresolve-report.txt\n154.2 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-21T04_31_58_200Z-debug-0.log\n------\nDockerfile:17\n--------------------\n  15 |     COPY web/tsconfig.json /web/\n  16 |     WORKDIR /web\n  17 | \u003e\u003e\u003e RUN npm install \u0026\u0026 npm install @angular/cli\n  18 |     RUN /web/node_modules/@angular/cli/bin/ng.js build --configuration production --output-path /dist\n  19 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install \u0026\u0026 npm install @angular/cli\" did not complete successfully: exit code: 1"
+  }
+]

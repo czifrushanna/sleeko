@@ -1,0 +1,309 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "login.defs",
+    "InstalledVersion": "1:4.17.4-2ubuntu3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.17.4-2ubuntu3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-102473",
+    "Package": "dash",
+    "InstalledVersion": "0.5.12-12ubuntu3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102474",
+    "Package": "dash",
+    "InstalledVersion": "0.5.12-12ubuntu3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-103111",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-gconv-modules-extra",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18477",
+    "Package": "tar",
+    "InstalledVersion": "1.35+dfsg-4ubuntu0.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18508",
+    "Package": "tar",
+    "InstalledVersion": "1.35+dfsg-4ubuntu0.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35341",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35344",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35345",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35348",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35350",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35351",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35352",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35354",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35357",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35359",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35360",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35363",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35364",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35367",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35368",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35370",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35371",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35373",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35374",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35377",
+    "Package": "rust-coreutils",
+    "InstalledVersion": "0.10.0-1ubuntu2~26.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libsystemd0",
+    "InstalledVersion": "259.9-0ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libudev1",
+    "InstalledVersion": "259.9-0ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.3.dfsg+really1.3.1-1ubuntu3.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86145",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-gconv-modules-extra",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.43-2ubuntu2.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89156",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89157",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89158",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89160",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89161",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89162",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.46-1build1",
+    "FixedVersion": "",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "ubuntu 26.04",
+ "EOSL": false
+}

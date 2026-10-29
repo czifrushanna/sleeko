@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 1.247 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]\n1.615 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n1.618 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n\n Command line option --no-cache is not understood in combination with the other options\n------\nDockerfile:3\n--------------------\n   1 |     FROM debian:13-slim\n   2 |     \n   3 | \u003e\u003e\u003e RUN apt-get update \u0026\u0026 apt-get install -y --no-cache curl ca-certificates \u0026\u0026 rm -rf /var/lib/apt/lists/*\n   4 |     \n   5 |     RUN adduser --disabled-password --gecos '' bruin\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update \u0026\u0026 apt-get install -y --no-cache curl ca-certificates \u0026\u0026 rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+  }
+]

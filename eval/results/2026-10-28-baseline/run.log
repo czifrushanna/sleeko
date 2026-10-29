@@ -1,0 +1,301 @@
+11:29:23 Docker Hub pulls remaining: 0
+11:34:24 Docker Hub pulls remaining: 0
+11:39:26 Docker Hub pulls remaining: 0
+11:44:26 Docker Hub pulls remaining: 0
+11:49:27 Docker Hub pulls remaining: 0
+11:54:28 Docker Hub pulls remaining: 0
+11:59:29 Docker Hub pulls remaining: 0
+12:04:30 Docker Hub pulls remaining: 200
+=== pass 1: Rebase Wed Oct 28 12:04:32 CET 2026
+12:04:38 demo-flask: O′ from cache (built 2026-10-28T11:15:54+01:00)
+12:04:38 demo-django: O′ from cache (built 2026-10-28T11:16:01+01:00)
+12:04:38 demo-express-backend: O′ from cache (built 2026-10-28T11:16:11+01:00)
+12:05:02 demo-express-backend #1: measured success=false 
+12:05:02 demo-fastapi: cached O′ is 180h28m0s old, rebuilding
+12:05:02 demo-fastapi: building O′
+12:05:04 demo-flask #1: measured success=true 
+12:05:04 demo-apache-php: cached O′ is 180h27m0s old, rebuilding
+12:05:04 demo-apache-php: building O′
+12:05:28 demo-django #1: measured success=false 
+12:05:28 demo-sparkjava: cached O′ is 180h26m0s old, rebuilding
+12:05:28 demo-sparkjava: building O′
+12:06:25 demo-fastapi #1: measured success=false 
+12:06:25 demo-nodejs-web: cached O′ is 180h25m0s old, rebuilding
+12:06:25 demo-nodejs-web: building O′
+12:06:51 demo-apache-php #1: measured success=false 
+12:06:52 demo-golang-backend: cached O′ is 180h25m0s old, rebuilding
+12:06:52 demo-golang-backend: building O′
+12:07:38 demo-nodejs-web #1: measured success=false 
+12:07:38 demo-traefik-golang: cached O′ is 180h25m0s old, rebuilding
+12:07:38 demo-traefik-golang: building O′
+12:07:43 demo-golang-backend #1: measured success=false 
+12:07:43 demo-aspnet: O′ from cache (built 2026-10-28T11:17:54+01:00)
+12:08:28 demo-sparkjava #1: measured success=false 
+12:08:28 d3-astrbotdevs-astrbot: cached O′ is 180h18m0s old, rebuilding
+12:08:28 d3-astrbotdevs-astrbot: building O′
+12:08:29 demo-aspnet #1: measured success=false 
+12:08:29 d3-glimesh-broadcast-box: cached O′ is 180h23m0s old, rebuilding
+12:08:29 d3-glimesh-broadcast-box: building O′
+12:09:33 demo-traefik-golang #1: measured success=false 
+12:09:33 d3-jfryy-qq: cached O′ is 180h23m0s old, rebuilding
+12:09:33 d3-jfryy-qq: building O′
+12:11:19 d3-jfryy-qq #1: measured success=false 
+12:11:19 d3-raywangqvq-bilibilitoolpro: cached O′ is 178h26m0s old, rebuilding
+12:11:19 d3-raywangqvq-bilibilitoolpro: building O′
+12:11:25 d3-glimesh-broadcast-box #1: measured success=false 
+12:11:25 d3-tracecathq-tracecat-prod: cached O′ is 180h16m0s old, rebuilding
+12:11:25 d3-tracecathq-tracecat-prod: building O′
+12:15:36 d3-raywangqvq-bilibilitoolpro #1: measured success=false 
+12:15:36 d3-badtuxx-girus-cli: cached O′ is 180h24m0s old, rebuilding
+12:15:36 d3-badtuxx-girus-cli: building O′
+12:17:35 d3-badtuxx-girus-cli #1: measured success=false 
+12:17:35 d3-bruin-data-bruin: cached O′ is 180h22m0s old, rebuilding
+12:17:35 d3-bruin-data-bruin: building O′
+12:20:17 d3-tracecathq-tracecat-prod #1: measured success=false 
+12:20:17 d3-cilium-tetragon-rthooks: O′ from cache (built 2026-10-28T11:17:13+01:00)
+12:20:35 d3-cilium-tetragon-rthooks #1: measured success=false 
+12:20:35 d3-datawhores-of-scraper: O′ from cache (built 2026-10-28T11:19:27+01:00)
+12:21:10 d3-datawhores-of-scraper #1: measured success=false 
+12:21:10 d3-hanxi-xiaomusic-builder: cached O′ is 180h14m0s old, rebuilding
+12:21:10 d3-hanxi-xiaomusic-builder: building O′
+12:21:11 d3-bruin-data-bruin #1: measured success=true 
+12:21:11 d3-langchain-ai-local-deep-researcher: cached O′ is 180h12m0s old, rebuilding
+12:21:11 d3-langchain-ai-local-deep-researcher: building O′
+12:23:32 d3-hanxi-xiaomusic-builder #1: infra_error success=false scan candidate: trivy scan: exit code 1: 2026-10-28T11:23:30Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize cache: unable to initialize fs cache: cache may be in use by another process: timeout
+12:23:32 d3-lanyi1998-dnslog-go: cached O′ is 180h14m0s old, rebuilding
+12:23:32 d3-lanyi1998-dnslog-go: building O′
+12:23:45 O′: scan: trivy scan: exit code 1: 2026-10-28T11:23:42Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize cache: unable to initialize fs cache: cache may be in use by another process: timeout
+12:23:45 d3-marcopiovanello-yt-dlp-web-ui: cached O′ is 180h9m0s old, rebuilding
+12:23:45 d3-marcopiovanello-yt-dlp-web-ui: building O′
+12:24:16 d3-astrbotdevs-astrbot #1: measured success=true 
+12:24:16 d3-markqvist-nomadnet: cached O′ is 180h10m0s old, rebuilding
+12:24:16 d3-markqvist-nomadnet: building O′
+12:25:44 d3-markqvist-nomadnet #1: measured success=false 
+12:25:44 d3-projectdiscovery-httpx: cached O′ is 180h8m0s old, rebuilding
+12:25:44 d3-projectdiscovery-httpx: building O′
+12:25:53 d3-lanyi1998-dnslog-go #1: measured success=true 
+12:25:53 d3-unitycatalog-unitycatalog: building O′
+12:30:14 d3-marcopiovanello-yt-dlp-web-ui #1: measured success=false 
+12:30:14 d3-vogler-free-games-claimer: cached O′ is 180h2m0s old, rebuilding
+12:30:14 d3-vogler-free-games-claimer: building O′
+12:31:39 d3-projectdiscovery-httpx #1: measured success=false 
+12:31:40 f4d-jeffreyksmithjr-galapagos-nao: cached O′ is 180h1m0s old, rebuilding
+12:31:40 f4d-jeffreyksmithjr-galapagos-nao: building O′
+12:35:53 O′: build: build took longer than 10m0s
+12:35:53 f4d-fsprojects-argu: O′ from cache (built 2026-10-28T11:19:32+01:00)
+12:36:46 f4d-fsprojects-argu #1: measured success=false 
+12:36:46 f4d-3scale-3scale-toolbox: O′ from cache (built 2026-10-28T11:23:00+01:00)
+12:37:01 f4d-jeffreyksmithjr-galapagos-nao #1: measured success=false 
+12:37:01 f4d-wyhaya-updns: cached O′ is 180h4m0s old, rebuilding
+12:37:01 f4d-wyhaya-updns: building O′
+12:37:25 f4d-3scale-3scale-toolbox #1: measured success=false 
+12:37:25 f4d-robinmonjo-coincoin: cached O′ is 180h2m0s old, rebuilding
+12:37:25 f4d-robinmonjo-coincoin: building O′
+12:38:53 f4d-wyhaya-updns #1: measured success=false 
+12:38:53 f4d-eiriktsarpalis-typeshape: O′ from cache (built 2026-10-28T11:21:32+01:00)
+12:39:12 f4d-robinmonjo-coincoin #1: measured success=false 
+12:39:12 f4d-appwish-graphqlapi: cached O′ is 180h1m0s old, rebuilding
+12:39:12 f4d-appwish-graphqlapi: building O′
+12:39:40 f4d-eiriktsarpalis-typeshape #1: measured success=false 
+12:39:40 f4d-jaymoulin-guzzlehttp-cloudflare: cached O′ is 180h2m0s old, rebuilding
+12:39:40 f4d-jaymoulin-guzzlehttp-cloudflare: building O′
+12:40:08 f4d-appwish-graphqlapi #1: measured success=false 
+12:40:08 f4d-couchrest-couchrest-model: cached O′ is 179h54m0s old, rebuilding
+12:40:08 f4d-couchrest-couchrest-model: building O′
+12:40:14 O′: build: build took longer than 10m0s
+12:40:14 f4d-ponkotuy-myfleetgirls: cached O′ is 180h0m0s old, rebuilding
+12:40:14 f4d-ponkotuy-myfleetgirls: building O′
+12:41:02 f4d-ponkotuy-myfleetgirls #1: measured success=false 
+12:41:02 f4d-hmbsbige-bilibilimangaautoclockin: O′ from cache (built 2026-10-28T11:23:24+01:00)
+12:41:21 f4d-hmbsbige-bilibilimangaautoclockin #1: measured success=false 
+12:41:21 f4d-linux-china-mail-catcher: cached O′ is 179h59m0s old, rebuilding
+12:41:21 f4d-linux-china-mail-catcher: building O′
+12:42:27 f4d-linux-china-mail-catcher #1: measured success=false 
+12:42:28 f4d-ideatosrl-idephix: cached O′ is 179h59m0s old, rebuilding
+12:42:28 f4d-ideatosrl-idephix: building O′
+12:43:16 f4d-ideatosrl-idephix #1: measured success=false 
+12:43:16 f4d-minglecm-doc-to-dash: cached O′ is 179h57m0s old, rebuilding
+12:43:16 f4d-minglecm-doc-to-dash: building O′
+12:43:33 f4d-jaymoulin-guzzlehttp-cloudflare #1: measured success=false 
+12:43:33 f4d-digimarc-corp-whalerator: cached O′ is 179h55m0s old, rebuilding
+12:43:33 f4d-digimarc-corp-whalerator: building O′
+12:47:29 f4d-minglecm-doc-to-dash #1: measured success=true 
+12:47:29 f4d-dsibilio-rsocket-demo: cached O′ is 179h52m0s old, rebuilding
+12:47:29 f4d-dsibilio-rsocket-demo: building O′
+12:49:48 f4d-digimarc-corp-whalerator #1: measured success=false 
+12:49:48 f4d-icemic-search-bakery-moe: cached O′ is 179h56m0s old, rebuilding
+12:49:48 f4d-icemic-search-bakery-moe: building O′
+12:50:08 f4d-couchrest-couchrest-model #1: measured success=false 
+12:50:08 f4d-flix-tech-avro-serde-php: cached O′ is 179h51m0s old, rebuilding
+12:50:08 f4d-flix-tech-avro-serde-php: building O′
+12:52:21 O′ fails its own smoke test: exited with code 1 within 10s, want it running or exit code 0: at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on NativeConnection instance at:
+    at Immediate.<anonymous> (/app/node_modules/mongoose/lib/connection.js:325:19)
+    at processImmediate (internal/timers.js:461:21)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! search.bakery.moe@1.0.0 server-prod: `NODE_ENV=production node server/server.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the search.bakery.moe@1.0.0 server-prod script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2026-10-28T11_52_13_989Z-debug.log
+12:52:21 f4d-flores-moarcats-app: cached O′ is 179h52m0s old, rebuilding
+12:52:21 f4d-flores-moarcats-app: building O′
+12:53:42 f4d-flix-tech-avro-serde-php #1: measured success=false 
+12:53:43 f4d-bizanc-bizanc-io-core: cached O′ is 179h51m0s old, rebuilding
+12:53:43 f4d-bizanc-bizanc-io-core: building O′
+12:55:54 f4d-flores-moarcats-app #1: measured success=false 
+12:55:54 f4d-centerforopenscience-cas-overlay: cached O′ is 179h43m0s old, rebuilding
+12:55:54 f4d-centerforopenscience-cas-overlay: building O′
+12:55:56 f4d-bizanc-bizanc-io-core #1: measured success=true 
+12:55:56 f4d-amiralies-metalarchives-api: cached O′ is 179h49m0s old, rebuilding
+12:55:56 f4d-amiralies-metalarchives-api: building O′
+12:57:19 f4d-amiralies-metalarchives-api #1: measured success=false 
+12:57:19 f4d-ety001-online-clipboard: cached O′ is 179h48m0s old, rebuilding
+12:57:19 f4d-ety001-online-clipboard: building O′
+12:57:29 O′: build: build took longer than 10m0s
+12:57:29 f4d-ardalis-specification: cached O′ is 179h47m0s old, rebuilding
+12:57:29 f4d-ardalis-specification: building O′
+12:59:33 f4d-ardalis-specification #1: measured success=false 
+12:59:35 f4d-atomheartother-wanwan-html5: cached O′ is 179h49m0s old, rebuilding
+12:59:35 f4d-atomheartother-wanwan-html5: building O′
+13:00:28 f4d-atomheartother-wanwan-html5 #1: measured success=false 
+13:00:30 f4d-mixcore-mix-core: cached O′ is 179h44m0s old, rebuilding
+13:00:30 f4d-mixcore-mix-core: building O′
+13:00:54 f4d-ety001-online-clipboard #1: measured success=false 
+13:00:55 f4d-alexr1712-messenger-to-telegram: cached O′ is 179h48m0s old, rebuilding
+13:00:55 f4d-alexr1712-messenger-to-telegram: building O′
+13:03:13 f4d-alexr1712-messenger-to-telegram #1: measured success=false 
+13:03:14 f4d-atifaziz-linqpadless: cached O′ is 179h46m0s old, rebuilding
+13:03:14 f4d-atifaziz-linqpadless: building O′
+sleeko-eval(77518) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77543) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77698) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77837) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77968) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77969) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77970) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(77978) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78008) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78161) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78337) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78477) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:06:09 f4d-atifaziz-linqpadless #1: infra_error success=false scan candidate: trivy scan: exit code 1: 2026-10-28T12:06:07Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize cache: unable to initialize fs cache: cache may be in use by another process: timeout
+sleeko-eval(78479) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78480) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78481) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78482) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78511) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:06:11 f4d-code4sac-codeforsacramento-org: cached O′ is 179h41m0s old, rebuilding
+13:06:11 f4d-code4sac-codeforsacramento-org: building O′
+sleeko-eval(78513) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78648) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78773) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78774) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78775) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(78814) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:07:48 f4d-centerforopenscience-cas-overlay #1: measured success=false 
+sleeko-eval(79644) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(79645) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(79646) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(79647) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(79654) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:07:49 f4d-18f-content-guide: cached O′ is 179h43m0s old, rebuilding
+13:07:49 f4d-18f-content-guide: building O′
+sleeko-eval(79655) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:10:30 O′: build: build took longer than 10m0s
+sleeko-eval(81565) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(81923) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82124) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82245) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82264) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82268) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82292) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82416) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82480) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82862) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(82975) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83157) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83158) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83184) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:12:51 f4d-code4sac-codeforsacramento-org #1: measured success=false 
+sleeko-eval(83320) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83431) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83432) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83433) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83455) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(83937) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(84184) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(84317) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(84318) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(84319) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+13:14:29 f4d-18f-content-guide #1: measured success=false 
+=== pass 2: Rebase Wed Oct 28 13:14:29 CET 2026
+13:14:33 demo-flask: all 1 repetitions already recorded, skipping
+13:14:33 demo-express-backend: all 1 repetitions already recorded, skipping
+13:14:33 demo-django: all 1 repetitions already recorded, skipping
+13:14:33 demo-fastapi: all 1 repetitions already recorded, skipping
+13:14:33 demo-apache-php: all 1 repetitions already recorded, skipping
+13:14:33 demo-sparkjava: all 1 repetitions already recorded, skipping
+13:14:33 demo-nodejs-web: all 1 repetitions already recorded, skipping
+13:14:33 demo-golang-backend: all 1 repetitions already recorded, skipping
+13:14:33 demo-traefik-golang: all 1 repetitions already recorded, skipping
+13:14:33 demo-aspnet: all 1 repetitions already recorded, skipping
+13:14:33 d3-astrbotdevs-astrbot: all 1 repetitions already recorded, skipping
+13:14:33 d3-glimesh-broadcast-box: all 1 repetitions already recorded, skipping
+13:14:33 d3-jfryy-qq: all 1 repetitions already recorded, skipping
+13:14:33 d3-raywangqvq-bilibilitoolpro: all 1 repetitions already recorded, skipping
+13:14:33 d3-tracecathq-tracecat-prod: all 1 repetitions already recorded, skipping
+13:14:33 d3-badtuxx-girus-cli: all 1 repetitions already recorded, skipping
+13:14:33 d3-bruin-data-bruin: all 1 repetitions already recorded, skipping
+13:14:33 d3-cilium-tetragon-rthooks: all 1 repetitions already recorded, skipping
+13:14:33 d3-datawhores-of-scraper: all 1 repetitions already recorded, skipping
+13:14:33 d3-lanyi1998-dnslog-go: all 1 repetitions already recorded, skipping
+13:14:33 d3-marcopiovanello-yt-dlp-web-ui: all 1 repetitions already recorded, skipping
+13:14:33 d3-markqvist-nomadnet: all 1 repetitions already recorded, skipping
+13:14:33 d3-projectdiscovery-httpx: all 1 repetitions already recorded, skipping
+13:14:33 d3-unitycatalog-unitycatalog: all 1 repetitions already recorded, skipping
+13:14:33 d3-vogler-free-games-claimer: all 1 repetitions already recorded, skipping
+13:14:33 f4d-jeffreyksmithjr-galapagos-nao: all 1 repetitions already recorded, skipping
+13:14:33 f4d-fsprojects-argu: all 1 repetitions already recorded, skipping
+13:14:33 f4d-3scale-3scale-toolbox: all 1 repetitions already recorded, skipping
+13:14:33 f4d-wyhaya-updns: all 1 repetitions already recorded, skipping
+13:14:33 f4d-robinmonjo-coincoin: all 1 repetitions already recorded, skipping
+13:14:33 f4d-eiriktsarpalis-typeshape: all 1 repetitions already recorded, skipping
+13:14:33 f4d-appwish-graphqlapi: all 1 repetitions already recorded, skipping
+13:14:33 f4d-jaymoulin-guzzlehttp-cloudflare: all 1 repetitions already recorded, skipping
+13:14:33 f4d-couchrest-couchrest-model: all 1 repetitions already recorded, skipping
+13:14:33 f4d-ponkotuy-myfleetgirls: all 1 repetitions already recorded, skipping
+13:14:33 f4d-hmbsbige-bilibilimangaautoclockin: all 1 repetitions already recorded, skipping
+13:14:33 f4d-linux-china-mail-catcher: all 1 repetitions already recorded, skipping
+13:14:33 f4d-ideatosrl-idephix: all 1 repetitions already recorded, skipping
+13:14:33 f4d-minglecm-doc-to-dash: all 1 repetitions already recorded, skipping
+13:14:33 f4d-digimarc-corp-whalerator: all 1 repetitions already recorded, skipping
+13:14:33 f4d-dsibilio-rsocket-demo: all 1 repetitions already recorded, skipping
+13:14:33 f4d-icemic-search-bakery-moe: all 1 repetitions already recorded, skipping
+13:14:33 f4d-flix-tech-avro-serde-php: all 1 repetitions already recorded, skipping
+13:14:33 f4d-flores-moarcats-app: all 1 repetitions already recorded, skipping
+13:14:33 f4d-bizanc-bizanc-io-core: all 1 repetitions already recorded, skipping
+13:14:33 f4d-centerforopenscience-cas-overlay: all 1 repetitions already recorded, skipping
+13:14:33 f4d-amiralies-metalarchives-api: all 1 repetitions already recorded, skipping
+13:14:33 f4d-ety001-online-clipboard: all 1 repetitions already recorded, skipping
+13:14:33 f4d-ardalis-specification: all 1 repetitions already recorded, skipping
+13:14:33 f4d-atomheartother-wanwan-html5: all 1 repetitions already recorded, skipping
+13:14:33 f4d-mixcore-mix-core: all 1 repetitions already recorded, skipping
+13:14:33 f4d-alexr1712-messenger-to-telegram: all 1 repetitions already recorded, skipping
+13:14:33 f4d-code4sac-codeforsacramento-org: all 1 repetitions already recorded, skipping
+13:14:33 f4d-18f-content-guide: all 1 repetitions already recorded, skipping
+13:14:33 d3-hanxi-xiaomusic-builder: O′ from cache (built 2026-10-28T12:22:41+01:00)
+13:14:33 d3-langchain-ai-local-deep-researcher: cached O′ is 181h5m0s old, rebuilding
+13:14:33 d3-langchain-ai-local-deep-researcher: building O′
+13:14:33 f4d-atifaziz-linqpadless: O′ from cache (built 2026-10-28T13:05:18+01:00)
+13:15:06 d3-hanxi-xiaomusic-builder #1: measured success=false 
+13:15:18 f4d-atifaziz-linqpadless #1: measured success=false 
+13:17:18 d3-langchain-ai-local-deep-researcher #1: measured success=true 
+13:17:18 saved 14 failures under /Users/czifrushanna/sleeko-results/2026-10-28/baseline-failures
+report: /Users/czifrushanna/sleeko-results/2026-10-28/baseline-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-28/baseline-failures.txt
+exit 0

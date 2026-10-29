@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 41.38 \n41.38 × Failed to build installable wheels for some pyproject.toml based projects\n41.38 ╰─\u003e brotli\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV \"JWT_SECRET\") (line 36)\nDockerfile:27\n--------------------\n  26 |     \n  27 | \u003e\u003e\u003e RUN apk add --no-cache ffmpeg ca-certificates curl wget gnutls \u0026\u0026 \\\n  28 | \u003e\u003e\u003e     pip install --no-cache-dir \"yt-dlp[default,curl-cffi,mutagen,pycryptodomex,phantomjs,secretstorage]\"\n  29 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache ffmpeg ca-certificates curl wget gnutls \u0026\u0026     pip install --no-cache-dir \\\"yt-dlp[default,curl-cffi,mutagen,pycryptodomex,phantomjs,secretstorage]\\\"\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: CMD [\"/bin/sh\" \"-c\" \"~/bin/sbt -v server/stage \u0026\u0026   rm -f server/target/universal/stage/RUNNING_PID \u0026\u0026   server/target/universal/stage/bin/myfleetgirlsserver     -Ddb.default.url=\\\"jdbc:mysql://${DB_HOST}:${DB_PORT}/myfleet\\\"     -Ddb.default.user=\\\"root\\\"     -Ddb.default.password=\\\"\\\"\"] -\u003e [\"/bin/sh\" \"-c\" \"/root/bin/sbt -v server/stage \u0026\u0026   rm -f server/target/universal/stage/RUNNING_PID \u0026\u0026   server/target/universal/stage/bin/myfleetgirlsserver     -Ddb.default.url=\\\"jdbc:mysql://${DB_HOST}:${DB_PORT}/myfleet\\\"     -Ddb.default.user=\\\"root\\\"     -Ddb.default.password=\\\"\\\"\"]"
+  }
+]

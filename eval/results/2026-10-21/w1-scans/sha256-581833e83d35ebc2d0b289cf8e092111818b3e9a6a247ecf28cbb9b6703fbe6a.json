@@ -1,0 +1,862 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2024-58251",
+    "Package": "busybox",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-58251",
+    "Package": "busybox-binsh",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-58251",
+    "Package": "ssl_client",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-11187",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-11187",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15467",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-15467",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-15468",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15468",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15469",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15469",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-46394",
+    "Package": "busybox",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-46394",
+    "Package": "busybox-binsh",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-46394",
+    "Package": "ssl_client",
+    "InstalledVersion": "1.37.0-r19",
+    "FixedVersion": "1.37.0-r20",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-47273",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "78.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-66199",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-66199",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-8869",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "25.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13346",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.2.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-14456",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-14456",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-14457",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-14457",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-1703",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-18798",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18798",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22184",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.1-r2",
+    "FixedVersion": "1.3.2-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.5-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-2673",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-2673",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27171",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.1-r2",
+    "FixedVersion": "1.3.2-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-31789",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-31789",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-31790",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-31790",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.6-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3219",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34181",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34181",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34182",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34182",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34183",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34183",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34743",
+    "Package": "xz-libs",
+    "InstalledVersion": "5.8.1-r0",
+    "FixedVersion": "5.8.3-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40200",
+    "Package": "musl",
+    "InstalledVersion": "1.2.5-r10",
+    "FixedVersion": "1.2.5-r12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40200",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.2.5-r10",
+    "FixedVersion": "1.2.5-r12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42764",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42764",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42767",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42767",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42768",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42768",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42769",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42769",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42770",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42770",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-45445",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-45445",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-45446",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-45446",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53612",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53614",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-59890",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "83.0.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6042",
+    "Package": "musl",
+    "InstalledVersion": "1.2.5-r10",
+    "FixedVersion": "1.2.5-r11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6042",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.2.5-r10",
+    "FixedVersion": "1.2.5-r11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63073",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63073",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63075",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63075",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6357",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.8-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libuuid",
+    "InstalledVersion": "2.41-r9",
+    "FixedVersion": "2.41.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.1-r2",
+    "FixedVersion": "1.3.2-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8643",
+    "Package": "pip",
+    "InstalledVersion": "25.0.1",
+    "FixedVersion": "26.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "libcrypto3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "libssl3",
+    "InstalledVersion": "3.5.4-r0",
+    "FixedVersion": "3.5.7-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-97687",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-97688",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97689",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-6v7p-g79w-8964",
+    "Package": "msgpack",
+    "InstalledVersion": "1.1.2",
+    "FixedVersion": "1.2.1",
+    "Severity": 3
+   }
+  ]
+ },
+ "OS": "alpine 3.22.2",
+ "EOSL": false
+}

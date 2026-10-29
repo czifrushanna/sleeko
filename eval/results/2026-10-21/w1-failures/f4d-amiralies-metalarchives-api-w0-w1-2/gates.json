@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-64756, CVE-2026-48815, CVE-2026-69192, CVE-2026-9496"
+  }
+]

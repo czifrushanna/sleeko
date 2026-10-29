@@ -1,0 +1,22 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2019-14697",
+    "Package": "musl",
+    "InstalledVersion": "1.1.19-r10",
+    "FixedVersion": "1.1.19-r11",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2019-14697",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.1.19-r10",
+    "FixedVersion": "1.1.19-r11",
+    "Severity": 4
+   }
+  ]
+ },
+ "OS": "alpine 3.8.2",
+ "EOSL": true
+}

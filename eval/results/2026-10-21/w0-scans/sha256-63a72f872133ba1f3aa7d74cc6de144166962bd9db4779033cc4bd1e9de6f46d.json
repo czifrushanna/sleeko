@@ -1,0 +1,3501 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2010-4756",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2012-0039",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-0340",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2016-1000027",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.0.0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2016-10735",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "3.4.0, 4.0.0-beta.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2017-11164",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-16231",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-7245",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-7246",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-14040",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "4.1.2, 3.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2018-14042",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "4.1.2, 3.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2018-20676",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "3.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2018-20677",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "3.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2018-20796",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010022",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010023",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010024",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010025",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-20838",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-6129",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-8331",
+    "Package": "org.webjars:bootstrap",
+    "InstalledVersion": "3.3.7-1",
+    "FixedVersion": "3.4.1, 4.3.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-9192",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-36518",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.13.2.1, 2.12.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-22060",
+    "Package": "org.springframework:spring-core",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.14, 5.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-22096",
+    "Package": "org.springframework:spring-core",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.11, 5.2.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3999",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-4214",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-42550",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.2.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-43466",
+    "Package": "org.thymeleaf:thymeleaf-spring5",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.0.13.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2021-46822",
+    "Package": "libjpeg62-turbo",
+    "InstalledVersion": "1:2.0.6-4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-46877",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.12.6, 2.13.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-1292",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1292",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1471",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "2.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2068",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2068",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2097",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-2097",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21426",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.15+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21434",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.15+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21443",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.15+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21476",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.15+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21496",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.15+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21540",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.16+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21541",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.16+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21619",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-21624",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-21626",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-21628",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-22950",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.17, 5.2.20.RELEASE",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-22965",
+    "Package": "org.springframework:spring-beans",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.2.20.RELEASE, 5.3.18",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-22965",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.2.20.RELEASE, 5.3.18",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-22968",
+    "Package": "org.springframework:spring-context",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.19, 5.2.21.RELEASE",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-22970",
+    "Package": "org.springframework:spring-beans",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.2.22.RELEASE, 5.3.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-25857",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.31",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27404",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "2.10.4+dfsg-1+deb11u1",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-27405",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "2.10.4+dfsg-1+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27406",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "2.10.4+dfsg-1+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-31782",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-33068",
+    "Package": "libharfbuzz0b",
+    "InstalledVersion": "2.7.4-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-34169",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.16+8-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-37434",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u1",
+    "FixedVersion": "1:1.2.11.dfsg-2+deb11u2",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-38749",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.31",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-38750",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.31",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-38751",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.31",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-38752",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.32",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-39399",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-40674",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41854",
+    "Package": "org.yaml:snakeyaml",
+    "InstalledVersion": "1.28",
+    "FixedVersion": "1.32",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-42003",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.12.7.1, 2.13.4.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42004",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.12.7.1, 2.13.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42252",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "8.5.83, 9.0.68, 10.0.27, 10.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4304",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-4304",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-43680",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4450",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4450",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-45143",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "8.5.84, 9.0.69, 10.1.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0215",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0215",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0286",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0286",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0464",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0464",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0465",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0465",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0466",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0466",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-20860",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.0.7, 5.3.26",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-20861",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.0.7, 5.3.26, 5.2.23.RELEASE",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-20863",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.0.8, 5.3.27, 5.2.24.RELEASE",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-20883",
+    "Package": "org.springframework.boot:spring-boot-autoconfigure",
+    "InstalledVersion": "2.5.0",
+    "FixedVersion": "3.0.7, 2.7.12, 2.6.15, 2.5.15",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-21835",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-21843",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.18+10-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-21930",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-21937",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-21938",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-21939",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-21954",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-21967",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-21968",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-22006",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-22036",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-22041",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-22045",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-22049",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.20+8-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-22081",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.21+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-24998",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "10.1.5, 11.0.0-M5, 8.5.88, 9.0.71",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-25193",
+    "Package": "libharfbuzz0b",
+    "InstalledVersion": "2.7.4-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1n-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29499",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-32611",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-32665",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1v-0~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1v-0~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1v-0~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1v-0~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "libgcc-s1",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "libgomp1",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "libstdc++6",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-41080",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "8.5.93, 9.0.80, 10.1.13, 11.0.0-M11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-42795",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "10.1.14, 9.0.81, 8.5.94, 11.0.0-M12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-44487",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M12, 10.1.14, 9.0.81, 8.5.94",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-45648",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M12, 10.1.14, 9.0.81, 8.5.94",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-45853",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-46589",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M11, 10.1.16, 9.0.83, 8.5.96",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-4806",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4813",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4911",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-52425",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-52426",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-6378",
+    "Package": "ch.qos.logback:logback-classic",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.3.12, 1.4.12, 1.2.13",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-6378",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.3.12, 1.4.12, 1.2.13",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-0727",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-0727",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-12798",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.13, 1.3.15",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-12801",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.13, 1.3.15",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-20918",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-20919",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-20921",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-20926",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-20945",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-20952",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.22+7-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-21011",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.23+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21012",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.23+9-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-21068",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.23+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21085",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.23+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21094",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.23+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21131",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21138",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21140",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21144",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-21145",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21147",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.24+8-2~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-21208",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.25+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21210",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.25+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21217",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.25+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21235",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.25+9-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22243",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.4, 6.0.17, 5.3.32",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-22259",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.5, 6.0.18, 5.3.33",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-22262",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.34, 6.0.19, 6.1.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-23672",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-websocket",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M17, 10.1.19, 9.0.86, 8.5.99",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-24549",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "8.5.99, 9.0.86, 10.1.19, 11.0.0-M17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-2511",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2511",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-28085",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "2.36.1-8+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-28757",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2961",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-33599",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-33600",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-33601",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u10",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-33602",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u10",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-34397",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-34750",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M21, 10.1.25, 9.0.90",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-38286",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.0-M21, 10.1.25, 9.0.90",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-38808",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.39",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-38809",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.38, 6.0.23, 6.1.12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-38816",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.13",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-38819",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.14",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-38820",
+    "Package": "org.springframework:spring-context",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-38820",
+    "Package": "org.springframework:spring-web",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.1.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-38828",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "5.3.42",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45490",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-45491",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-45492",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-4741",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-4741",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-47554",
+    "Package": "commons-io:commons-io",
+    "InstalledVersion": "2.8.0",
+    "FixedVersion": "2.14.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-50379",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.2, 10.1.34, 9.0.98",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-50602",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "2.2.10-2+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-52533",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-5535",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-5535",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56337",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.2, 10.1.34, 9.0.98",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-8176",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-9143",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-9143",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-11226",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.19, 1.3.16",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-13601",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-14087",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u7",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14512",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15281",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-21502",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.26+4-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-21587",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.27+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-22233",
+    "Package": "org.springframework:spring-context",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.2.7, 6.1.20",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-22235",
+    "Package": "org.springframework.boot:spring-boot",
+    "InstalledVersion": "2.5.0",
+    "FixedVersion": "3.3.11, 3.4.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-24813",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.3, 10.1.35, 9.0.99",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-27363",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "2.10.4+dfsg-1+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27587",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-27587",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-28162",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-28164",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-29070",
+    "Package": "liblcms2-2",
+    "InstalledVersion": "2.12~rc1-2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-30691",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.27+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30698",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.27+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30749",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.28+6-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-30754",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.28+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30761",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.28+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3360",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u6",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-41242",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.2.10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-41249",
+    "Package": "org.springframework:spring-core",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "6.2.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-4373",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-46701",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.105, 10.1.41, 11.0.7",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-48924",
+    "Package": "org.apache.commons:commons-lang3",
+    "InstalledVersion": "3.12.0",
+    "FixedVersion": "3.18.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-48988",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.8, 10.1.42, 9.0.106",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-48989",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.10, 10.1.44, 9.0.108",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-49124",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.8, 10.1.42, 9.0.106",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-49125",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.8, 10.1.42, 9.0.106",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-49128",
+    "Package": "com.fasterxml.jackson.core:jackson-core",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.13.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-50059",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.28+6-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-50106",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.28+6-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-52434",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.107",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-52520",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.9, 10.1.43, 9.0.107",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-52999",
+    "Package": "com.fasterxml.jackson.core:jackson-core",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.15.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-53057",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.29+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-53066",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.29+6-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-53506",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.107, 10.1.43, 11.0.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-55668",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.8, 10.1.42, 9.0.106",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-55752",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.11, 10.1.45, 9.0.109",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-55754",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.11, 10.1.45, 9.0.109",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-59375",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61795",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.12, 10.1.47, 9.0.110",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-64505",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64506",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64720",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-65018",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-66293",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-66382",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-66614",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.15, 10.1.50, 9.0.113",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-7039",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u7",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-8058",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-9230",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-9230",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-0861",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-0915",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-0988",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-102633",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-10532",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.34",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-1225",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.25",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1484",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1485",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-1489",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15588",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-16118",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19032",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.10, 2.21.6, 2.22.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19499",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19542",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-21925",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.30+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-21932",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.30+7-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-21933",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.30+7-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-21945",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.30+7-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-22007",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22013",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22016",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-22018",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22021",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22693",
+    "Package": "libharfbuzz0b",
+    "InstalledVersion": "2.7.4-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22695",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-22735",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.6, 6.2.17",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22737",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.6, 6.2.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22741",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.7, 6.2.18",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22745",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.7, 6.2.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22801",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-24515",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-24880",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.116, 10.1.52, 11.0.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25210",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25646",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25854",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.116, 10.1.53, 11.0.20",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27171",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32776",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32777",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32778",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33416",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33636",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34268",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34282",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.31+11-1~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34483",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.116, 10.1.54, 11.0.21",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34487",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.117, 10.1.54, 11.0.21",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34757",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "1.6.37-3+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35189",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35189",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35191",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35191",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-3713",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-4046",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40477",
+    "Package": "org.thymeleaf:thymeleaf",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.4.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-40477",
+    "Package": "org.thymeleaf:thymeleaf-spring5",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.4.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-40478",
+    "Package": "org.thymeleaf:thymeleaf",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.4.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-40478",
+    "Package": "org.thymeleaf:thymeleaf-spring5",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.4.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-40930",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40973",
+    "Package": "org.springframework.boot:spring-boot",
+    "InstalledVersion": "2.5.0",
+    "FixedVersion": "4.0.6, 3.5.14",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41080",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-41254",
+    "Package": "liblcms2-2",
+    "InstalledVersion": "2.12~rc1-2",
+    "FixedVersion": "2.12~rc1-2+deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41254",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41284",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41293",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-41841",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41842",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41843",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41844",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41845",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41846",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41848",
+    "Package": "org.springframework:spring-core",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-41849",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41850",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41851",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41852",
+    "Package": "org.springframework:spring-expression",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-41853",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.8, 6.2.19",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41901",
+    "Package": "org.thymeleaf:thymeleaf",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.5.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-41901",
+    "Package": "org.thymeleaf:thymeleaf-spring5",
+    "InstalledVersion": "3.0.12.RELEASE",
+    "FixedVersion": "3.1.5.RELEASE",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42498",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42772",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42772",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-43512",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-43513",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-43514",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-43515",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "9.0.118, 10.1.55, 11.0.22",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-45186",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46675",
+    "Package": "libpng16-16",
+    "InstalledVersion": "1.6.37-3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-46917",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-46968",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-47010",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-47021",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-47027",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-47057",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-47058",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-47059",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-47063",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-47884",
+    "Package": "org.springframework:spring-webmvc",
+    "InstalledVersion": "5.3.7",
+    "FixedVersion": "7.0.9",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-49844",
+    "Package": "org.apache.logging.log4j:log4j-api",
+    "InstalledVersion": "2.14.1",
+    "FixedVersion": "2.25.5, 2.26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-50193",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.14.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-50219",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-50593",
+    "Package": "libgraphite2-3",
+    "InstalledVersion": "1.3.14-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-5435",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5450",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54512",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.8, 3.1.4, 2.21.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-54513",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.8, 2.21.4, 3.1.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-54514",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.8, 2.21.4, 3.1.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54515",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "3.1.4, 2.18.9, 2.21.5, 2.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54872",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54872",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54873",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54873",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-54875",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54875",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56131",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56132",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56403",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56404",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56405",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56406",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56407",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56408",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56409",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56410",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56411",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56412",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-58010",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58011",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58012",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58013",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58014",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58015",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58016",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-5928",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59889",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.21.5, 2.18.9, 2.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-60147",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32+9-2~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-60589",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32.1+1-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-61308",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32.1+1-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6238",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6368",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-65182",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.25, 10.1.58, 9.0.121",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-65905",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.25, 10.1.58, 9.0.121",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-66046",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-6791",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-68494",
+    "Package": "com.fasterxml.jackson.core:jackson-core",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.8, 2.21.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-68525",
+    "Package": "org.apache.tomcat.embed:tomcat-embed-core",
+    "InstalledVersion": "9.0.46",
+    "FixedVersion": "11.0.25, 10.1.58, 9.0.121",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-70907",
+    "Package": "openjdk-11-jre-headless",
+    "InstalledVersion": "11.0.14+9-1~deb11u1",
+    "FixedVersion": "11.0.32.1+1-1~deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72522",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72897",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72897",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75804",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75804",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75805",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75805",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75806",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75806",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76957",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-77117",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77214",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-77310",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.9, 2.21.5, 2.22.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77696",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77696",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-80489",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-83557",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.10, 2.21.6, 2.22.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-84782",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84782",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84784",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-84784",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86469",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8674",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86805",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89425",
+    "Package": "com.fasterxml.jackson.core:jackson-core",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.21.7, 2.22.3, 2.18.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-0+deb11u1",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-91776",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.18.11, 2.21.7, 2.22.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-91777",
+    "Package": "com.fasterxml.jackson.core:jackson-databind",
+    "InstalledVersion": "2.12.3",
+    "FixedVersion": "2.21.7, 2.18.11, 2.22.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-93990",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-95512",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.4+dfsg-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95818",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97399",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9828",
+    "Package": "ch.qos.logback:logback-core",
+    "InstalledVersion": "1.2.3",
+    "FixedVersion": "1.5.33",
+    "Severity": 1
+   },
+   {
+    "ID": "DLA-3972-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2021a-1+deb11u3",
+    "FixedVersion": "2024b-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4085-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2021a-1+deb11u3",
+    "FixedVersion": "2025a-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4105-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2021a-1+deb11u3",
+    "FixedVersion": "2025b-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4403-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2021a-1+deb11u3",
+    "FixedVersion": "2025b-0+deb11u2",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4569-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2021a-1+deb11u3",
+    "FixedVersion": "2026b-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DSA-5682-2",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.66.8-1",
+    "FixedVersion": "2.66.8-1+deb11u3",
+    "Severity": 0
+   }
+  ]
+ },
+ "OS": "debian 11.3",
+ "EOSL": true
+}

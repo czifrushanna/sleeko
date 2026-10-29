@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #1 transferring dockerfile: 1.33kB 0.0s done\n#1 DONE 0.2s\n\n#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16\n#2 ERROR: mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16: not found\n------\n \u003e [internal] load metadata for mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16 AS build\n   2 |     WORKDIR /\n   3 |     \n--------------------\nERROR: failed to build: failed to solve: mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16: failed to resolve source metadata for mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16: mcr.microsoft.com/dotnet/sdk:6.0.36-alpine3.16: not found"
+  }
+]

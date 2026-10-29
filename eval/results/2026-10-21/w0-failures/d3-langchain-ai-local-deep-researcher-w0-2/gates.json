@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #2 [auth] library/python:pull token for registry-1.docker.io\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158\n#3 ERROR: docker.io/library/python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158: not found\n------\n \u003e [internal] load metadata for docker.io/library/python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM --platform=$BUILDPLATFORM python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158\n   2 |     \n   3 |     WORKDIR /app\n--------------------\nERROR: failed to build: failed to solve: python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158: failed to resolve source metadata for docker.io/library/python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158: docker.io/library/python:3.11-slim@sha256:8c840205a4675793f2547b8a83067285a158a158a158a158a158a158a158a158: not found"
+  }
+]

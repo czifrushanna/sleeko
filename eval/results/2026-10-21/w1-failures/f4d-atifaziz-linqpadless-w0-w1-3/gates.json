@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image mcr.microsoft.com/dotnet/sdk:6.0.426 does not exist in its registry; use a tag that exists; the base image mcr.microsoft.com/dotnet/sdk:6.0.426 does not exist in its registry; use a tag that exists; the base image mcr.microsoft.com/dotnet/sdk:6.0.426 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n#2 [internal] load metadata for mcr.microsoft.com/dotnet/sdk:6.0.426\n#2 ERROR: mcr.microsoft.com/dotnet/sdk:6.0.426: not found\n------\n \u003e [internal] load metadata for mcr.microsoft.com/dotnet/sdk:6.0.426:\n------\nDockerfile:25\n--------------------\n  23 |             LinqPadless --version 2.0.0\n  24 |     \n  25 | \u003e\u003e\u003e FROM mcr.microsoft.com/dotnet/sdk:6.0.426\n  26 |     \n  27 |     COPY --from=tool /root/.dotnet/tools /root/.dotnet/tools\n--------------------\nERROR: failed to build: failed to solve: mcr.microsoft.com/dotnet/sdk:6.0.426: failed to resolve source metadata for mcr.microsoft.com/dotnet/sdk:6.0.426: mcr.microsoft.com/dotnet/sdk:6.0.426: not found"
+  }
+]

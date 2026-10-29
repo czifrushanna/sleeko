@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 45.83 npm ERR! Failed at the nodejieba@2.4.1 install script.\n45.83 npm ERR! This is probably not a problem with npm. There is likely additional logging output above.\n45.88 \n45.88 npm ERR! A complete log of this run can be found in:\n45.88 npm ERR!     /root/.npm/_logs/2026-10-21T04_34_07_948Z-debug.log\n------\nDockerfile:5\n--------------------\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n   5 | \u003e\u003e\u003e RUN npm install \u0026\u0026 npm run client-build \u0026\u0026 rm -rf node_modules \u0026\u0026 rm -rf client \u0026\u0026 npm install --only=prod\n   6 |     \n   7 |     FROM node:12-alpine3.15\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install \u0026\u0026 npm run client-build \u0026\u0026 rm -rf node_modules \u0026\u0026 rm -rf client \u0026\u0026 npm install --only=prod\" did not complete successfully: exit code: 1"
+  }
+]

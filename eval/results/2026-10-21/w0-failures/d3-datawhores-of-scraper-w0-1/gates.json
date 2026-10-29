@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000 does not exist in its registry; use a tag that exists; the base image ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n#2 [internal] load metadata for ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000\n#2 ERROR: ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000: not found\n------\n \u003e [internal] load metadata for ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000:\n------\nDockerfile:29\n--------------------\n  27 |         hatch build\n  28 |     \n  29 | \u003e\u003e\u003e FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000\n  30 |     ARG INSTALL_FFMPEG=false\n  31 |     \n--------------------\nERROR: failed to build: failed to solve: ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000: failed to resolve source metadata for ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000: ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:0000000000000000000000000000000000000000000000000000000000000000: not found"
+  }
+]

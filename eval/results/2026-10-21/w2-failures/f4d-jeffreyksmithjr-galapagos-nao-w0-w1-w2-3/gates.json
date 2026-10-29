@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 2.370 E: The repository 'http://security.debian.org stretch/updates Release' does no longer have a Release file.\n2.370 E: The repository 'http://deb.debian.org/debian stretch-updates Release' does no longer have a Release file.\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 17)\nDockerfile:3\n--------------------\n   2 |     \n   3 | \u003e\u003e\u003e RUN apt-get update \u0026\u0026 apt-get -y upgrade --no-install-recommends \u0026\u0026 \\\n   4 | \u003e\u003e\u003e     apt-get install -y --no-install-recommends ca-certificates=20200601~deb9u2 \u0026\u0026 \\\n   5 | \u003e\u003e\u003e     rm -rf /var/lib/apt/lists/*\n   6 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update \u0026\u0026 apt-get -y upgrade --no-install-recommends \u0026\u0026     apt-get install -y --no-install-recommends ca-certificates=20200601~deb9u2 \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+  }
+]

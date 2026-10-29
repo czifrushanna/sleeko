@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 8.509 \n8.509 \u003e broadcast-box@0.1.0 build\n8.509 \u003e vite build\n8.509 \n8.547 sh: vite: not found\n------\nDockerfile:20\n--------------------\n  18 |     WORKDIR /broadcast-box/web\n  19 |     COPY . /broadcast-box\n  20 | \u003e\u003e\u003e RUN npm install --omit=dev \u0026\u0026 npm run build\n  21 |     \n  22 |     FROM alpine:3.21\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install --omit=dev \u0026\u0026 npm run build\" did not complete successfully: exit code: 127"
+  }
+]

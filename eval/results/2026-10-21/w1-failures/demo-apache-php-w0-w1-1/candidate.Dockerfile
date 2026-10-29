@@ -1,0 +1,111 @@
+# syntax=docker/dockerfile:1.4
+
+FROM --platform=$BUILDPLATFORM php:8.0.9-apache as builder
+
+# Update all packages to latest security patches to address vulnerabilities
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        apache2=2.4.67-1~deb11u3 \
+        apache2-bin=2.4.67-1~deb11u3 \
+        apache2-data=2.4.67-1~deb11u3 \
+        apache2-utils=2.4.67-1~deb11u3 \
+        libexpat1=2.2.10-2+deb11u7 \
+        linux-libc-dev=5.10.262-1 \
+        curl=7.74.0-1.3+deb11u16 \
+        libcurl4=7.74.0-1.3+deb11u16 \
+        libperl5.32=5.32.1-4+deb11u5 \
+        perl=5.32.1-4+deb11u5 \
+        perl-base=5.32.1-4+deb11u5 \
+        perl-modules-5.32=5.32.1-4+deb11u5 \
+        libc-bin=2.31-13+deb11u14 \
+        libc-dev-bin=2.31-13+deb11u14 \
+        libc6=2.31-13+deb11u14 \
+        libc6-dev=2.31-13+deb11u14 \
+        libxml2=2.9.10+dfsg-6.7+deb11u10 \
+        libgnutls30=3.7.1-5+deb11u10 \
+        libglib2.0-0=2.66.8-1+deb11u8 \
+        libpcre2-8-0=10.36-2+deb11u1 \
+        zlib1g=1:1.2.11.dfsg-2+deb11u2 \
+        libssl1.1=1.1.1w-0+deb11u8 \
+        openssl=1.1.1w-0+deb11u8 \
+        libgssapi-krb5-2=1.18.3-6+deb11u8 \
+        libk5crypto3=1.18.3-6+deb11u8 \
+        libkrb5-3=1.18.3-6+deb11u8 \
+        libkrb5support0=1.18.3-6+deb11u8 \
+        libapr1=1.7.0-6+deb11u2 \
+        libldap-2.4-2=2.4.57+dfsg-3+deb11u1 \
+        libtasn1-6=4.16.0-2+deb11u2 \
+        dpkg=1.20.14 \
+        dpkg-dev=1.20.14 \
+        libdpkg-perl=1.20.14 \
+        bsdutils=1:2.36.1-8+deb11u2 \
+        libblkid1=2.36.1-8+deb11u2 \
+        libmount1=2.36.1-8+deb11u2 \
+        libsmartcols1=2.36.1-8+deb11u2 \
+        libuuid1=2.36.1-8+deb11u2 \
+        mount=2.36.1-8+deb11u2 \
+        util-linux=2.36.1-8+deb11u2 \
+        libsqlite3-0=3.34.1-3+deb11u1 \
+        libsystemd0=247.3-7+deb11u8 \
+        libudev1=247.3-7+deb11u8 \
+        libssh2-1=1.9.0-2+deb11u1 \
+        libncurses6=6.2+20201114-2+deb11u2 \
+        libncursesw6=6.2+20201114-2+deb11u2 \
+        libtinfo6=6.2+20201114-2+deb11u2 \
+        ncurses-base=6.2+20201114-2+deb11u2 \
+        ncurses-bin=6.2+20201114-2+deb11u2 \
+        libnghttp2-14=1.43.0-1+deb11u3 \
+        gzip=1.10-4+deb11u1 \
+        libaprutil1=1.6.1-5+deb11u2 \
+        libaprutil1-dbd-sqlite3=1.6.1-5+deb11u2 \
+        libaprutil1-ldap=1.6.1-5+deb11u2 \
+        gpgv=2.2.27-2+deb11u3 \
+        libpam-modules=1.4.0-9+deb11u2 \
+        libpam-modules-bin=1.4.0-9+deb11u2 \
+        libpam-runtime=1.4.0-9+deb11u2 \
+        libpam0g=1.4.0-9+deb11u2 \
+        libtirpc-common=1.3.1-1+deb11u1 \
+        libtirpc-dev=1.3.1-1+deb11u1 \
+        libtirpc3=1.3.1-1+deb11u1 \
+        liblzma5=5.2.5-2.1~deb11u2 \
+        xz-utils=5.2.5-2.1~deb11u2 \
+        liblua5.3-0=5.3.3-1.1+deb11u1 \
+        libsasl2-2=2.1.27+dfsg-2.1+deb11u1 \
+        libsasl2-modules-db=2.1.27+dfsg-2.1+deb11u1 \
+        e2fsprogs=1.46.2-2+deb11u1 \
+        libcom-err2=1.46.2-2+deb11u1 \
+        libext2fs2=1.46.2-2+deb11u1 \
+        libgmp10=2:6.2.1+dfsg-1+deb11u1 \
+        libss2=1.46.2-2+deb11u1 \
+        logsave=1.46.2-2+deb11u1 \
+        tar=1.34+dfsg-1+deb11u1 \
+        login=1:4.8.1-1+deb11u1 \
+        passwd=1:4.8.1-1+deb11u1 \
+        file=1:5.39-3+deb11u1 \
+        libicu67=67.1-7+deb11u1 \
+        libmagic-mgc=1:5.39-3+deb11u1 \
+        libmagic1=1:5.39-3+deb11u1 \
+        libsodium23=1.0.18-1+deb11u1 \
+        libsepol1=3.1-1+deb11u1 \
+        tzdata=2026b-0+deb11u1 \
+        ca-certificates=20250419~deb12u1~deb11u1 \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD ["apache2-foreground"]
+
+FROM builder as dev-envs
+
+RUN <<EOF
+apt-get update
+apt-get install -y --no-install-recommends git
+EOF
+
+RUN <<EOF
+useradd -s /bin/bash -m vscode
+groupadd docker
+usermod -aG docker vscode
+EOF
+# install Docker tools (cli, buildx, compose)
+COPY --from=gloursdocker/docker / /
+
+CMD ["apache2-foreground"]

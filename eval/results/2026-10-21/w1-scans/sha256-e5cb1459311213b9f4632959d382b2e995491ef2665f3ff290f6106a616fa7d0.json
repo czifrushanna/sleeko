@@ -1,0 +1,533 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2025-22868",
+    "Package": "golang.org/x/oauth2",
+    "InstalledVersion": "v0.25.0",
+    "FixedVersion": "0.27.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-22869",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.35.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27144",
+    "Package": "github.com/go-jose/go-jose/v4",
+    "InstalledVersion": "v4.0.4",
+    "FixedVersion": "4.0.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30204",
+    "Package": "github.com/golang-jwt/jwt/v5",
+    "InstalledVersion": "v5.2.1",
+    "FixedVersion": "5.2.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-47273",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "78.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-47913",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.43.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-47914",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-58181",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.45.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-71405",
+    "Package": "github.com/go-chi/chi/v5",
+    "InstalledVersion": "v5.2.0",
+    "FixedVersion": "5.2.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-25679",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27139",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-27142",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.8, 1.26.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27145",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32280",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32281",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32282",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32283",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32288",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32289",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.9, 1.26.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33811",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33814",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33818",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34986",
+    "Package": "github.com/go-jose/go-jose/v4",
+    "InstalledVersion": "v4.0.4",
+    "FixedVersion": "4.1.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39820",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39821",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39822",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.12, 1.26.5, 1.27.0-rc.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39823",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39824",
+    "Package": "golang.org/x/sys",
+    "InstalledVersion": "v0.29.0",
+    "FixedVersion": "0.44.0",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-39825",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39826",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39827",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39828",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39829",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39830",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39831",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39832",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39833",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39834",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39835",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-39836",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42499",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.10, 1.26.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42504",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42505",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.12, 1.26.5, 1.27.0-rc.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42507",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.11, 1.26.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42508",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46595",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46597",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-46598",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.52.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56853",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56854",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.55.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56855",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.56.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56857",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-56858",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56859",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56860",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56862",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-56866",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59890",
+    "Package": "setuptools",
+    "InstalledVersion": "70.3.0",
+    "FixedVersion": "83.0.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78659",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78660",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78662",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "0.56.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78663",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78667",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78669",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-94439",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94440",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94448",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97030",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97031",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-97032",
+    "Package": "stdlib",
+    "InstalledVersion": "v1.24.13",
+    "FixedVersion": "1.26.9, 1.27.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97687",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-97688",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97689",
+    "Package": "urllib3",
+    "InstalledVersion": "2.7.0",
+    "FixedVersion": "2.8.0",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-6v7p-g79w-8964",
+    "Package": "msgpack",
+    "InstalledVersion": "1.1.2",
+    "FixedVersion": "1.2.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GO-2026-5932",
+    "Package": "golang.org/x/crypto",
+    "InstalledVersion": "v0.32.0",
+    "FixedVersion": "",
+    "Severity": 0
+   }
+  ]
+ },
+ "OS": "alpine 3.21.3",
+ "EOSL": false
+}

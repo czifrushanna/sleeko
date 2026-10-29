@@ -1,0 +1,7 @@
+{
+ "Result": {
+  "Vulnerabilities": []
+ },
+ "OS": "alpine 3.8.2",
+ "EOSL": true
+}

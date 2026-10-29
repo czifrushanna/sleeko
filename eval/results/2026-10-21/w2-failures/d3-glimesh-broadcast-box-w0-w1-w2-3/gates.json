@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 82.95 go: downloading github.com/pion/stun/v3 v3.1.5\n83.32 go: downloading github.com/pion/dtls/v3 v3.1.4\n84.93 go: golang.org/x/crypto@v0.56.0 requires golang.org/x/sys@v0.47.0, not golang.org/x/sys@v0.44.0\n84.93 go: golang.org/x/net@v0.60.0 requires golang.org/x/crypto@v0.57.0, not golang.org/x/crypto@v0.56.0\n------\nDockerfile:11\n--------------------\n  10 |     COPY . /broadcast-box\n  11 | \u003e\u003e\u003e RUN apk add --no-cache git \u0026\u0026 \\\n  12 | \u003e\u003e\u003e     go get golang.org/x/crypto@v0.56.0 golang.org/x/net@v0.60.0 github.com/pion/interceptor@v0.1.39 github.com/pion/dtls/v3@v3.1.4 github.com/pion/stun/v3@v3.1.5 golang.org/x/sys@v0.44.0 \u0026\u0026 \\\n  13 | \u003e\u003e\u003e     go mod tidy \u0026\u0026 \\\n  14 | \u003e\u003e\u003e     go build\n  15 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache git \u0026\u0026     go get golang.org/x/crypto@v0.56.0 golang.org/x/net@v0.60.0 github.com/pion/interceptor@v0.1.39 github.com/pion/dtls/v3@v3.1.4 github.com/pion/stun/v3@v3.1.5 golang.org/x/sys@v0.44.0 \u0026\u0026     go mod tidy \u0026\u0026     go build\" did not complete successfully: exit code: 1"
+  }
+]

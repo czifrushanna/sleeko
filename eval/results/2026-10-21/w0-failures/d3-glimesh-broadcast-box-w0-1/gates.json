@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n#3 [internal] load metadata for docker.io/library/golang:alpine3.20\n#3 CANCELED\n------\n \u003e [internal] load metadata for docker.io/library/web-build:latest:\n------\nDockerfile:15\n--------------------\n  13 |     COPY --from=go-build /broadcast-box/broadcast-box /broadcast-box/broadcast-box\n  14 |     COPY --from=go-build /broadcast-box/.env.production /broadcast-box/.env.production\n  15 | \u003e\u003e\u003e COPY --from=web-build /broadcast-box/web/build /broadcast-box/web/build\n  16 |     \n  17 |     ENV APP_ENV=production\n--------------------\nERROR: failed to build: failed to solve: web-build: failed to resolve source metadata for docker.io/library/web-build:latest: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed"
+  }
+]

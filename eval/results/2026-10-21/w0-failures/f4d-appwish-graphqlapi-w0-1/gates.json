@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: ENTRYPOINT [\"java\" \"-jar\" \"graphqlapi.jar\"] -\u003e []; CMD [] -\u003e [\"/bin/sh\"]; EXPOSE [8000/tcp] -\u003e []"
+  }
+]

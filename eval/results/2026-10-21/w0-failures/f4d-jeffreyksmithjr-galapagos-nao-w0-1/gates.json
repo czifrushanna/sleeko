@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image jeffreyksmithjr/elixir-mxnet:stretch-security does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #1 transferring dockerfile: 275B done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/jeffreyksmithjr/elixir-mxnet:stretch-security\n#2 ERROR: docker.io/jeffreyksmithjr/elixir-mxnet:stretch-security: not found\n------\n \u003e [internal] load metadata for docker.io/jeffreyksmithjr/elixir-mxnet:stretch-security:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM jeffreyksmithjr/elixir-mxnet:stretch-security\n   2 |     \n   3 |     COPY . .\n--------------------\nERROR: failed to build: failed to solve: jeffreyksmithjr/elixir-mxnet:stretch-security: failed to resolve source metadata for docker.io/jeffreyksmithjr/elixir-mxnet:stretch-security: docker.io/jeffreyksmithjr/elixir-mxnet:stretch-security: not found"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: CMD [\"/start.sh\"] -\u003e [\"python3\"]"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2023-45853, CVE-2025-6020, CVE-2025-68973, CVE-2025-7458, CVE-2026-33845, CVE-2026-33846, CVE-2026-3833, CVE-2026-40355, CVE-2026-40356, CVE-2026-42009, CVE-2026-42010"
+  }
+]

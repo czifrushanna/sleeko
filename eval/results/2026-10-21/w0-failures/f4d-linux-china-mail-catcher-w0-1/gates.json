@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image maven:3.8.9-jdk-8-slim does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #4 [internal] load metadata for docker.io/library/eclipse-temurin:11-jre\n#4 CANCELED\n------\n \u003e [internal] load metadata for docker.io/library/maven:3.8.9-jdk-8-slim:\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 8)\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM maven:3.8.9-jdk-8-slim AS build\n   2 |     COPY src /usr/src/app/src\n   3 |     COPY pom.xml /usr/src/app\n--------------------\nERROR: failed to build: failed to solve: maven:3.8.9-jdk-8-slim: failed to resolve source metadata for docker.io/library/maven:3.8.9-jdk-8-slim: docker.io/library/maven:3.8.9-jdk-8-slim: not found"
+  }
+]
