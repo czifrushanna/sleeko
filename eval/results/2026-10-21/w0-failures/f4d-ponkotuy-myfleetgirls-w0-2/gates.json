@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n \u003e [2/6] RUN apk add --no-cache openjdk8-jdk sbt:\n0.185 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz\n0.387 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz\n world[sbt]\n------\nDockerfile:3\n--------------------\n   1 |     FROM alpine:3.20\n   2 |     \n   3 | \u003e\u003e\u003e RUN apk add --no-cache openjdk8-jdk sbt\n   4 |     \n   5 |     WORKDIR /myfleet\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache openjdk8-jdk sbt\" did not complete successfully: exit code: 1"
+  }
+]

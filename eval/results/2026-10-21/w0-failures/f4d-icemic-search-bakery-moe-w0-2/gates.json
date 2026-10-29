@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 57.17 npm notice New major version of npm available! 10.8.2 -\u003e 12.2.0\n57.17 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\n57.17 npm notice To update run: npm install -g npm@12.2.0\n57.17 npm notice\n57.17 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-20T23_55_03_119Z-debug-0.log\n------\nDockerfile:5\n--------------------\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n   5 | \u003e\u003e\u003e RUN npm install \u0026\u0026 npm run client-build \u0026\u0026 rm -rf node_modules \u0026\u0026 rm -rf client \u0026\u0026 npm install --only=prod\n   6 |     \n   7 |     FROM node:20-alpine3.19\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install \u0026\u0026 npm run client-build \u0026\u0026 rm -rf node_modules \u0026\u0026 rm -rf client \u0026\u0026 npm install --only=prod\" did not complete successfully: exit code: 1"
+  }
+]

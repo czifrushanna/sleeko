@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image php:7.1-cli-alpine3.13 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #2 [internal] load metadata for docker.io/library/php:7.1-cli-alpine3.13\n#2 ERROR: docker.io/library/php:7.1-cli-alpine3.13: not found\n\n#3 [internal] load metadata for docker.io/library/composer:latest\n#3 CANCELED\n------\n \u003e [internal] load metadata for docker.io/library/php:7.1-cli-alpine3.13:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM php:7.1-cli-alpine3.13\n   2 |     \n   3 |     RUN apk add --no-cache git\n--------------------\nERROR: failed to build: failed to solve: php:7.1-cli-alpine3.13: failed to resolve source metadata for docker.io/library/php:7.1-cli-alpine3.13: docker.io/library/php:7.1-cli-alpine3.13: not found"
+  }
+]

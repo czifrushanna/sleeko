@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #9 ERROR: process \"/bin/sh -c gem install bundler -v '\u003e= 2.2.33' --no-document \u0026\u0026     bundle install\" did not complete successfully: exit code: 1\n------\n \u003e [5/8] RUN gem install bundler -v '\u003e= 2.2.33' --no-document \u0026\u0026     bundle install:\n21.62 ERROR:  Error installing bundler:\n21.62 \tThe last version of bundler (\u003e= 2.2.33) to support your Ruby \u0026 RubyGems was 2.3.27. Try installing it with `gem install bundler -v 2.3.27`\n21.62 \tbundler requires Ruby version \u003e= 3.2.0. The current ruby version is 2.5.9.229.\n------\nDockerfile:9\n--------------------\n   8 |     COPY Gemfile Gemfile.lock ./\n   9 | \u003e\u003e\u003e RUN gem install bundler -v '\u003e= 2.2.33' --no-document \u0026\u0026 \\\n  10 | \u003e\u003e\u003e     bundle install\n  11 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c gem install bundler -v '\u003e= 2.2.33' --no-document \u0026\u0026     bundle install\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,540 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2020-27216",
+    "Package": "org.eclipse.jetty:jetty-webapp",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.33.v20201020, 10.0.0.beta3, 11.0.0.beta3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-27218",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.35.v20201120",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-27223",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.37, 10.0.1, 11.0.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-28165",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.39, 10.0.2, 11.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-31879",
+    "Package": "wget",
+    "InstalledVersion": "1.21.2-2ubuntu1.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-34428",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.41, 10.0.3, 11.0.3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-2047",
+    "Package": "org.eclipse.jetty:jetty-http",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.47, 10.0.10, 11.0.10",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "gcc-12-base",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libgcc-s1",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libstdc++6",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-41409",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-4899",
+    "Package": "libzstd1",
+    "InstalledVersion": "1.4.8+dfsg-3build1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-26048",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.51.v20230217, 10.0.14, 11.0.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-26049",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.51.v20230217, 10.0.14, 11.0.14, 12.0.0.beta0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-40167",
+    "Package": "org.eclipse.jetty:jetty-http",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.52, 10.0.16, 11.0.16, 12.0.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libncurses6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libncursesw6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-13009",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.57.v20241219",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-6763",
+    "Package": "org.eclipse.jetty:jetty-http",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "12.0.12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-8184",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "12.0.9, 10.0.24, 11.0.24, 9.4.56",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-11143",
+    "Package": "org.eclipse.jetty:jetty-http",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "12.0.31, 12.1.5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-66382",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.4.7-1ubuntu0.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-10050",
+    "Package": "org.eclipse.jetty:jetty-security",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "9.4.63, 10.0.31, 11.0.31, 12.0.36, 12.1.10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102473",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20210903+057cd650a4ed-3build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102474",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20210903+057cd650a4ed-3build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-103111",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-2",
+    "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-modules-db",
+    "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "locales",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18477",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18508",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-2332",
+    "Package": "org.eclipse.jetty:jetty-http",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "12.1.7, 12.0.33, 11.0.29, 10.0.28, 9.4.60",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libsystemd0",
+    "InstalledVersion": "249.11-0ubuntu3.22",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libudev1",
+    "InstalledVersion": "249.11-0ubuntu3.22",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-67693",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6790",
+    "Package": "org.eclipse.jetty:jetty-server",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "12.0.35, 12.1.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2ubuntu9.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86145",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-88647",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "locales",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89156",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89157",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89158",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89160",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89161",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-95184",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95209",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95210",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-58qw-p7qm-5rvh",
+    "Package": "org.eclipse.jetty:jetty-xml",
+    "InstalledVersion": "9.4.30.v20200611",
+    "FixedVersion": "10.0.16, 11.0.16, 12.0.0, 9.4.52.v20230823",
+    "Severity": 1
+   }
+  ]
+ },
+ "OS": "ubuntu 22.04",
+ "EOSL": false
+}

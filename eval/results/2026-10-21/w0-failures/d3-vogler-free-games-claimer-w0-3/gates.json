@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 2.598     \n2.598     See /usr/share/doc/python3.12/README.venv for more information.\n2.598 \n2.598 note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.\n2.598 hint: See PEP 668 for the detailed specification.\n------\nDockerfile:41\n--------------------\n  39 |     \n  40 |     RUN ln -s /usr/share/novnc/vnc_auto.html /usr/share/novnc/index.html\n  41 | \u003e\u003e\u003e RUN pip install --no-cache-dir apprise\n  42 |     \n  43 |     WORKDIR /fgc\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/bash -o pipefail -c pip install --no-cache-dir apprise\" did not complete successfully: exit code: 1"
+  }
+]

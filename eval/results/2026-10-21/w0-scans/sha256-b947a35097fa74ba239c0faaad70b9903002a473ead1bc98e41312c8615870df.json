@@ -1,0 +1,1898 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11045",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11047",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11048",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-11050",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.26-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-13117",
+    "Package": "libxslt",
+    "InstalledVersion": "1.1.33-r2",
+    "FixedVersion": "1.1.33-r3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-13118",
+    "Package": "libxslt",
+    "InstalledVersion": "1.1.33-r2",
+    "FixedVersion": "1.1.33-r3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1547",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1547",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1549",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1549",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1551",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1551",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-1563",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1563",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1d-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-19242",
+    "Package": "sqlite-libs",
+    "InstalledVersion": "3.28.0-r1",
+    "FixedVersion": "3.28.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-19244",
+    "Package": "sqlite-libs",
+    "InstalledVersion": "3.28.0-r1",
+    "FixedVersion": "3.28.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-19956",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.9-r1",
+    "FixedVersion": "2.9.9-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-10543",
+    "Package": "perl",
+    "InstalledVersion": "5.26.3-r0",
+    "FixedVersion": "5.26.3-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-10878",
+    "Package": "perl",
+    "InstalledVersion": "5.26.3-r0",
+    "FixedVersion": "5.26.3-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-11655",
+    "Package": "sqlite-libs",
+    "InstalledVersion": "3.28.0-r1",
+    "FixedVersion": "3.28.0-r3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-12723",
+    "Package": "perl",
+    "InstalledVersion": "5.26.3-r0",
+    "FixedVersion": "5.26.3-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "libpcre16",
+    "InstalledVersion": "8.42-r1",
+    "FixedVersion": "8.42-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "libpcre32",
+    "InstalledVersion": "8.42-r1",
+    "FixedVersion": "8.42-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "libpcrecpp",
+    "InstalledVersion": "8.42-r1",
+    "FixedVersion": "8.42-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "pcre",
+    "InstalledVersion": "8.42-r1",
+    "FixedVersion": "8.42-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "pcre-dev",
+    "InstalledVersion": "8.42-r1",
+    "FixedVersion": "8.42-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-1967",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1g-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1967",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1g-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1971",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1i-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-1971",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1i-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-24977",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.9-r1",
+    "FixedVersion": "2.9.9-r3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-28928",
+    "Package": "musl",
+    "InstalledVersion": "1.1.20-r5",
+    "FixedVersion": "1.1.20-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-28928",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.1.20-r5",
+    "FixedVersion": "1.1.20-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7059",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7060",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.27-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7062",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7063",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7064",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7066",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.31-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-common",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-dev",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-dom",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-fpm",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-json",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-mbstring",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-mysqli",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-mysqlnd",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-opcache",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-openssl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-pcntl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-pdo",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-pdo_mysql",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-pdo_sqlite",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-pear",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-sqlite3",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-xml",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-xmlreader",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-xmlrpc",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-7068",
+    "Package": "php7-xsl",
+    "InstalledVersion": "7.2.24-r0",
+    "FixedVersion": "7.2.33-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-23839",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-23839",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-23840",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-23840",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-23841",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-23841",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3449",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3449",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3450",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-3450",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1b-r1",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 3
+   }
+  ]
+ },
+ "OS": "alpine 3.9.4",
+ "EOSL": true
+}

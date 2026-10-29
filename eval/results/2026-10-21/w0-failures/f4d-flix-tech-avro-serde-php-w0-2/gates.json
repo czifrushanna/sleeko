@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image php:8.1-cli-alpine:3.20 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n#2 [internal] load metadata for docker.io/library/composer:latest\n#2 CANCELED\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - InvalidDefaultArgInFrom: Default value for ARG php:${PHP_VERSION}-cli-alpine:3.20 results in empty or invalid base image name (line 3)\nDockerfile:3\n--------------------\n   1 |     ARG PHP_VERSION=8.1\n   2 |     \n   3 | \u003e\u003e\u003e FROM php:${PHP_VERSION}-cli-alpine:3.20\n   4 |     \n   5 |     ARG XDEBUG_VERSION=3.1.5\n--------------------\nERROR: failed to build: failed to solve: failed to parse stage name \"php:8.1-cli-alpine:3.20\": invalid reference format"
+  }
+]

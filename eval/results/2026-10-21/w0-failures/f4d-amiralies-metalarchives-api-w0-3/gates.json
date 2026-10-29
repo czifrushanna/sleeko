@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: CMD [\"/bin/sh\" \"-c\" \"./start.sh\"] -\u003e [\"./start.sh\"]"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2026-33671, CVE-2026-48815, CVE-2026-69192, CVE-2026-9496"
+  }
+]

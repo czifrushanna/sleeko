@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 1 within 10s, want it running or exit code 0: at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {\n  errno: -3008,\n  code: 'ENOTFOUND',\n  syscall: 'getaddrinfo',\n  hostname: 'redis'\n}\n\nNode.js v20.19.2\nnpm notice\nnpm notice New major version of npm available! 10.8.2 -\u003e 12.2.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\nnpm notice To update run: npm install -g npm@12.2.0\nnpm notice"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-15467, CVE-2025-64756, CVE-2025-69421, CVE-2026-22184, CVE-2026-28387, CVE-2026-28388, CVE-2026-28389, CVE-2026-28390, CVE-2026-31789, CVE-2026-40200, CVE-2026-48815, CVE-2026-69192, CVE-2026-9496"
+  }
+]

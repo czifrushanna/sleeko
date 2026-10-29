@@ -1,0 +1,1732 @@
+{
+ "item": "f4d-atifaziz-linqpadless",
+ "digest": "sha256:04deb1f0faadb8506affd588107e27e66fba53f2fe705b2cf3d85b77ab527c2a",
+ "os": "alpine 3.10.4",
+ "eosl": true,
+ "trivy_db": "trivy 0.75.0 db 2026-10-20T07:17:35.368599961Z",
+ "built_at": "2026-10-29T15:17:22.770207Z",
+ "packages": [
+  {
+   "name": "alpine-baselayout",
+   "version": "3.1.2-r0"
+  },
+  {
+   "name": "alpine-keys",
+   "version": "2.1-r2"
+  },
+  {
+   "name": "apk-tools",
+   "version": "2.10.4-r2"
+  },
+  {
+   "name": "busybox",
+   "version": "1.30.1-r3"
+  },
+  {
+   "name": "ca-certificates",
+   "version": "20190108-r0"
+  },
+  {
+   "name": "ca-certificates-cacert",
+   "version": "20190108-r0"
+  },
+  {
+   "name": "icu-libs",
+   "version": "64.2-r0"
+  },
+  {
+   "name": "keyutils-libs",
+   "version": "1.6-r1"
+  },
+  {
+   "name": "krb5-conf",
+   "version": "1.0-r1"
+  },
+  {
+   "name": "krb5-libs",
+   "version": "1.17-r0"
+  },
+  {
+   "name": "libc-utils",
+   "version": "0.7.1-r0"
+  },
+  {
+   "name": "libcom_err",
+   "version": "1.45.5-r0"
+  },
+  {
+   "name": "libcrypto1.1",
+   "version": "1.1.1d-r2"
+  },
+  {
+   "name": "libgcc",
+   "version": "8.3.0-r0"
+  },
+  {
+   "name": "libintl",
+   "version": "0.19.8.1-r4"
+  },
+  {
+   "name": "libssl1.1",
+   "version": "1.1.1d-r2"
+  },
+  {
+   "name": "libstdc++",
+   "version": "8.3.0-r0"
+  },
+  {
+   "name": "libtls-standalone",
+   "version": "2.9.1-r0"
+  },
+  {
+   "name": "libverto",
+   "version": "0.3.1-r0"
+  },
+  {
+   "name": "musl",
+   "version": "1.1.22-r3"
+  },
+  {
+   "name": "musl-utils",
+   "version": "1.1.22-r3"
+  },
+  {
+   "name": "ncurses-terminfo-base",
+   "version": "6.1_p20190518-r0"
+  },
+  {
+   "name": "scanelf",
+   "version": "1.2.3-r0"
+  },
+  {
+   "name": "ssl_client",
+   "version": "1.30.1-r3"
+  },
+  {
+   "name": "zlib",
+   "version": "1.2.11-r1"
+  },
+  {
+   "name": "lpless",
+   "version": "2.0.0"
+  },
+  {
+   "name": "CSharpMinifier",
+   "version": "1.2.1"
+  },
+  {
+   "name": "Choices",
+   "version": "1.0.1"
+  },
+  {
+   "name": "KeyValuePairs",
+   "version": "1.0.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.3.1"
+  },
+  {
+   "name": "NuGet.Versioning",
+   "version": "5.2.0"
+  },
+  {
+   "name": "Optuple",
+   "version": "2.1.0"
+  },
+  {
+   "name": "morelinq",
+   "version": "3.2.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.3.1"
+  },
+  {
+   "name": "System.Runtime.CompilerServices.Unsafe",
+   "version": "4.5.2"
+  },
+  {
+   "name": "System.Text.Encoding.CodePages",
+   "version": "4.5.1"
+  },
+  {
+   "name": "lpless",
+   "version": "2.0.0"
+  },
+  {
+   "name": "CSharpMinifier",
+   "version": "1.2.1"
+  },
+  {
+   "name": "Choices",
+   "version": "1.0.1"
+  },
+  {
+   "name": "KeyValuePairs",
+   "version": "1.0.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.3.1"
+  },
+  {
+   "name": "NuGet.Versioning",
+   "version": "5.2.0"
+  },
+  {
+   "name": "Optuple",
+   "version": "2.1.0"
+  },
+  {
+   "name": "morelinq",
+   "version": "3.2.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.3.1"
+  },
+  {
+   "name": "dotnet-dev-certs",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "dotnet-user-secrets",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "Microsoft.Extensions.Configuration.UserSecrets",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "12.0.2"
+  },
+  {
+   "name": "Microsoft.Extensions.Configuration",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.Configuration.Abstractions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.Configuration.FileExtensions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.Configuration.Json",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.FileProviders.Abstractions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.FileProviders.Physical",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.FileSystemGlobbing",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.Primitives",
+   "version": "3.1.1"
+  },
+  {
+   "name": "dotnet-watch",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "tool_fsc",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "Microsoft.FSharp.Compiler",
+   "version": "10.7.0-beta.19610.6"
+  },
+  {
+   "name": "tool_fsc",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "Microsoft.FSharp.Compiler",
+   "version": "10.7.0-beta.19610.6"
+  },
+  {
+   "name": "MSBuild.deps.json",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_cli",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_msbuild",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_nuget",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "Microsoft.Build.NuGetSdkResolver",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Build",
+   "version": "16.3.0"
+  },
+  {
+   "name": "NuGet.Build.Tasks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.ProjectModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.CodeDom",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.ProtectedData",
+   "version": "4.7.0"
+  },
+  {
+   "name": "Microsoft.ApplicationInsights",
+   "version": "2.0.0"
+  },
+  {
+   "name": "Microsoft.AspNetCore.DeveloperCertificates.XPlat",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "Microsoft.Build",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Framework",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Tasks.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Utilities.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.CommandLine",
+   "version": "1.0.0-preview.19208.1"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Sln.Internal",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Utils",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Configurer",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.InternalAbstractions",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.PlatformAbstractions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.CommandLineUtils",
+   "version": "1.0.1"
+  },
+  {
+   "name": "Microsoft.Extensions.DependencyModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.NET.HostModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Abstractions",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Cli",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core.Contracts",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Edge",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Orchestrator.RunnableProjects",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Utils",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateSearch.Common",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "11.0.1"
+  },
+  {
+   "name": "NuGet.CommandLine.XPlat",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Commands",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Common",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Configuration",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Credentials",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.DependencyResolver.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.LibraryModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Protocol",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Versioning",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.Resources.Extensions",
+   "version": "4.7.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.PlatformAbstractions",
+   "version": "16.3.0"
+  },
+  {
+   "name": "NuGet.CommandLine.XPlat.deps.json",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_cli",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_msbuild",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_nuget",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "Microsoft.Build.NuGetSdkResolver",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Build",
+   "version": "16.3.0"
+  },
+  {
+   "name": "NuGet.Build.Tasks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.ProjectModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.CodeDom",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.ProtectedData",
+   "version": "4.7.0"
+  },
+  {
+   "name": "Microsoft.ApplicationInsights",
+   "version": "2.0.0"
+  },
+  {
+   "name": "Microsoft.AspNetCore.DeveloperCertificates.XPlat",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "Microsoft.Build",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Framework",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Tasks.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Utilities.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.CommandLine",
+   "version": "1.0.0-preview.19208.1"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Sln.Internal",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Utils",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Configurer",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.InternalAbstractions",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.PlatformAbstractions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.CommandLineUtils",
+   "version": "1.0.1"
+  },
+  {
+   "name": "Microsoft.Extensions.DependencyModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.NET.HostModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Abstractions",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Cli",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core.Contracts",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Edge",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Orchestrator.RunnableProjects",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Utils",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateSearch.Common",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "11.0.1"
+  },
+  {
+   "name": "NuGet.CommandLine.XPlat",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Commands",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Common",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Configuration",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Credentials",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.DependencyResolver.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.LibraryModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Protocol",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Versioning",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.Resources.Extensions",
+   "version": "4.7.0"
+  },
+  {
+   "name": "VBCSCompiler",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.VisualBasic",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "System.Runtime.CompilerServices.Unsafe",
+   "version": "4.5.2"
+  },
+  {
+   "name": "System.Text.Encoding.CodePages",
+   "version": "4.5.1"
+  },
+  {
+   "name": "csc",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "System.Runtime.CompilerServices.Unsafe",
+   "version": "4.5.2"
+  },
+  {
+   "name": "System.Text.Encoding.CodePages",
+   "version": "4.5.1"
+  },
+  {
+   "name": "vbc",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.VisualBasic",
+   "version": "3.4.1-beta4-19614-01"
+  },
+  {
+   "name": "System.Runtime.CompilerServices.Unsafe",
+   "version": "4.5.2"
+  },
+  {
+   "name": "System.Text.Encoding.CodePages",
+   "version": "4.5.1"
+  },
+  {
+   "name": "ILLink.Tasks",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil.Mdb",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil.Pdb",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "illink",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "illink",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil.Mdb",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "Mono.Cecil.Pdb",
+   "version": "0.1.6-prerelease.19380.1"
+  },
+  {
+   "name": "rzc",
+   "version": "3.1.1-servicing.19614.11"
+  },
+  {
+   "name": "Microsoft.AspNetCore.Razor.Language",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Razor",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "9.0.1"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.3.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.3.0"
+  },
+  {
+   "name": "datacollector",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CommunicationUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CoreUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CrossPlatEngine",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.ObjectModel",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.PlatformAbstractions",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Utilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Common",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "9.0.1"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.0.0"
+  },
+  {
+   "name": "dotnet.deps.json",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_cli",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_msbuild",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "tool_nuget",
+   "version": "3.1.101-servicing.19617.13"
+  },
+  {
+   "name": "Microsoft.Build.NuGetSdkResolver",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Build",
+   "version": "16.3.0"
+  },
+  {
+   "name": "NuGet.Build.Tasks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.ProjectModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.CodeDom",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.ProtectedData",
+   "version": "4.7.0"
+  },
+  {
+   "name": "Microsoft.ApplicationInsights",
+   "version": "2.0.0"
+  },
+  {
+   "name": "Microsoft.AspNetCore.DeveloperCertificates.XPlat",
+   "version": "3.1.1-servicing.19615.10"
+  },
+  {
+   "name": "Microsoft.Build",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Framework",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Tasks.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.Build.Utilities.Core",
+   "version": "16.4.0"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.CommandLine",
+   "version": "1.0.0-preview.19208.1"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Sln.Internal",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Cli.Utils",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.Configurer",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.InternalAbstractions",
+   "version": "3.1.101-servicing.19617.2"
+  },
+  {
+   "name": "Microsoft.DotNet.PlatformAbstractions",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.Extensions.CommandLineUtils",
+   "version": "1.0.1"
+  },
+  {
+   "name": "Microsoft.Extensions.DependencyModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.NET.HostModel",
+   "version": "3.1.1"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Abstractions",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Cli",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Core.Contracts",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Edge",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Orchestrator.RunnableProjects",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateEngine.Utils",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Microsoft.TemplateSearch.Common",
+   "version": "3.1.1-servicing.19605.2"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "11.0.1"
+  },
+  {
+   "name": "NuGet.CommandLine.XPlat",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Commands",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Common",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Configuration",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Credentials",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.DependencyResolver.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.LibraryModel",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Packaging.Core",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Protocol",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "NuGet.Versioning",
+   "version": "5.4.0-rtm.6292"
+  },
+  {
+   "name": "System.Resources.Extensions",
+   "version": "4.7.0"
+  },
+  {
+   "name": "package",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CommunicationUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CoreUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CrossPlatEngine",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.ObjectModel",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.PlatformAbstractions",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.TestHostRuntimeProvider",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Utilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.VsTestConsole.TranslationLayer",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Client",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Common",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Extensions.Html.TestLogger",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Extensions.Trx.TestLogger",
+   "version": "16.3.0"
+  },
+  {
+   "name": "vstest.console",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.Extensions.DependencyModel",
+   "version": "3.0.0-preview4-27615-11"
+  },
+  {
+   "name": "Microsoft.Extensions.FileSystemGlobbing",
+   "version": "1.1.1"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "9.0.1"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.0.0"
+  },
+  {
+   "name": "System.Runtime.CompilerServices.Unsafe",
+   "version": "4.5.2"
+  },
+  {
+   "name": "vstest.console",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CommunicationUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CoreUtilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.CrossPlatEngine",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.ObjectModel",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.PlatformAbstractions",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.TestPlatform.Utilities",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Client",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.VisualStudio.TestPlatform.Common",
+   "version": "16.3.0"
+  },
+  {
+   "name": "Microsoft.Extensions.FileSystemGlobbing",
+   "version": "1.1.1"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "9.0.1"
+  },
+  {
+   "name": "NuGet.Frameworks",
+   "version": "5.0.0"
+  },
+  {
+   "name": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+   "version": "3.1.1"
+  },
+  {
+   "name": "runtime.linux-musl-x64.Microsoft.NETCore.App",
+   "version": "3.1.1-servicing.19608.4"
+  },
+  {
+   "name": "runtime.linux-musl-x64.Microsoft.NETCore.DotNetHostPolicy",
+   "version": "3.1.1"
+  },
+  {
+   "name": "pwsh",
+   "version": "7.0.0-rc.1"
+  },
+  {
+   "name": "Microsoft.PowerShell.Commands.Management",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Microsoft.PowerShell.Commands.Utility",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Microsoft.PowerShell.ConsoleHost",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Microsoft.PowerShell.MarkdownRender",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Microsoft.PowerShell.SDK",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Microsoft.PowerShell.Security",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "System.Management.Automation",
+   "version": "7.0.0-preview.6"
+  },
+  {
+   "name": "Markdig.Signed",
+   "version": "0.18.0"
+  },
+  {
+   "name": "Microsoft.ApplicationInsights",
+   "version": "2.12.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "3.4.0"
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "3.4.0"
+  },
+  {
+   "name": "Microsoft.Management.Infrastructure.Runtime.Unix",
+   "version": "2.0.0"
+  },
+  {
+   "name": "Microsoft.Management.Infrastructure.Runtime.Win",
+   "version": "2.0.0"
+  },
+  {
+   "name": "Microsoft.PowerShell.Native",
+   "version": "7.0.0-rc.1"
+  },
+  {
+   "name": "Microsoft.Win32.Registry.AccessControl",
+   "version": "4.7.0"
+  },
+  {
+   "name": "Microsoft.Win32.SystemEvents",
+   "version": "4.7.0"
+  },
+  {
+   "name": "NJsonSchema",
+   "version": "10.0.28"
+  },
+  {
+   "name": "Namotion.Reflection",
+   "version": "1.0.7"
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "12.0.3"
+  },
+  {
+   "name": "System.CodeDom",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ComponentModel.Composition",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ComponentModel.Composition.Registration",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Configuration.ConfigurationManager",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Data.Odbc",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Data.OleDb",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Data.SqlClient",
+   "version": "4.8.0"
+  },
+  {
+   "name": "System.Diagnostics.EventLog",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Diagnostics.PerformanceCounter",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.DirectoryServices",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.DirectoryServices.AccountManagement",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.DirectoryServices.Protocols",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Drawing.Common",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.IO.Packaging",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.IO.Ports",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Management",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Net.Http.WinHttpHandler",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Private.ServiceModel",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Reflection.Context",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Runtime.Caching",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.Pkcs",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.ProtectedData",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Cryptography.Xml",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Security.Permissions",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.Duplex",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.Http",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.NetTcp",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.Primitives",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.Security",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceModel.Syndication",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.ServiceProcess.ServiceController",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Threading.AccessControl",
+   "version": "4.7.0"
+  },
+  {
+   "name": "System.Windows.Extensions",
+   "version": "4.7.0"
+  },
+  {
+   "name": "runtime.linux-arm.runtime.native.System.IO.Ports",
+   "version": "4.7.0"
+  },
+  {
+   "name": "runtime.linux-arm64.runtime.native.System.IO.Ports",
+   "version": "4.7.0"
+  },
+  {
+   "name": "runtime.linux-x64.runtime.native.System.IO.Ports",
+   "version": "4.7.0"
+  },
+  {
+   "name": "runtime.osx-x64.runtime.native.System.IO.Ports",
+   "version": "4.7.0"
+  },
+  {
+   "name": "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni",
+   "version": "4.4.0"
+  },
+  {
+   "name": "runtime.win-x64.runtime.native.System.Data.SqlClient.sni",
+   "version": "4.4.0"
+  },
+  {
+   "name": "runtime.win-x86.runtime.native.System.Data.SqlClient.sni",
+   "version": "4.4.0"
+  }
+ ],
+ "scan": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2020-1045",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-10531",
+    "Package": "icu-libs",
+    "InstalledVersion": "64.2-r0",
+    "FixedVersion": "64.2-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1161",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1597",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1967",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1g-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1967",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1g-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1971",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1i-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-1971",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1i-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-28196",
+    "Package": "krb5-libs",
+    "InstalledVersion": "1.17-r0",
+    "FixedVersion": "1.17.2-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-28928",
+    "Package": "musl",
+    "InstalledVersion": "1.1.22-r3",
+    "FixedVersion": "1.1.22-r4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-28928",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.1.22-r3",
+    "FixedVersion": "1.1.22-r4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-1723",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.11, 5.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-23839",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-23839",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-23840",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-23840",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-23841",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-23841",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1j-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-24112",
+    "Package": "System.Drawing.Common",
+    "InstalledVersion": "4.7.0",
+    "FixedVersion": "4.7.2, 5.0.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2021-28831",
+    "Package": "busybox",
+    "InstalledVersion": "1.30.1-r3",
+    "FixedVersion": "1.30.1-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-28831",
+    "Package": "ssl_client",
+    "InstalledVersion": "1.30.1-r3",
+    "FixedVersion": "1.30.1-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-30139",
+    "Package": "apk-tools",
+    "InstalledVersion": "2.10.4-r2",
+    "FixedVersion": "2.10.6-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-3449",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3449",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3450",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-3450",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1d-r2",
+    "FixedVersion": "1.1.1k-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-36159",
+    "Package": "apk-tools",
+    "InstalledVersion": "2.10.4-r2",
+    "FixedVersion": "2.10.7-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2021-41355",
+    "Package": "System.DirectoryServices.Protocols",
+    "InstalledVersion": "4.7.0",
+    "FixedVersion": "5.0.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-23267",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.25, 5.0.17, 6.0.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-24464",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.23, 5.0.15, 6.0.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-26788",
+    "Package": "Microsoft.PowerShell.SDK",
+    "InstalledVersion": "7.0.0-preview.6",
+    "FixedVersion": "7.0.10, 7.1.7, 7.2.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29117",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.25, 5.0.17, 6.0.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29145",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.25, 5.0.17, 6.0.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-30184",
+    "Package": "NuGet.CommandLine.XPlat",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "4.9.5, 5.2.1, 5.7.2, 5.9.2, 5.11.2, 6.0.2, 6.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-30184",
+    "Package": "NuGet.Commands",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "4.9.5, 5.2.1, 5.7.2, 5.9.2, 5.11.2, 6.0.2, 6.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-34716",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.28, 6.0.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-34716",
+    "Package": "System.Security.Cryptography.Xml",
+    "InstalledVersion": "4.7.0",
+    "FixedVersion": "4.7.1, 6.0.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-38013",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "3.1.29, 6.0.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41032",
+    "Package": "NuGet.Commands",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "4.9.6, 5.7.3, 5.9.3, 5.11.3, 6.0.3, 6.2.2, 6.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41032",
+    "Package": "NuGet.Protocol",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "4.9.6, 5.7.3, 5.9.3, 5.11.3, 6.0.3, 6.2.2, 6.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41064",
+    "Package": "System.Data.SqlClient",
+    "InstalledVersion": "4.8.0",
+    "FixedVersion": "4.8.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29337",
+    "Package": "NuGet.Commands",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "6.0.5, 6.2.4, 6.3.3, 6.4.2, 6.5.1, 6.6.1, 5.11.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29337",
+    "Package": "NuGet.Common",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "6.0.5, 6.2.4, 6.3.3, 6.4.2, 6.5.1, 6.6.1, 5.11.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29337",
+    "Package": "NuGet.Protocol",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "6.0.5, 6.2.4, 6.3.3, 6.4.2, 6.5.1, 6.6.1, 5.11.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-33170",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "7.0.9, 6.0.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-0056",
+    "Package": "System.Data.SqlClient",
+    "InstalledVersion": "4.8.0",
+    "FixedVersion": "4.8.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-0057",
+    "Package": "NuGet.Packaging",
+    "InstalledVersion": "5.4.0-rtm.6292",
+    "FixedVersion": "5.11.6, 6.0.6, 6.3.4, 6.4.3, 6.6.2, 6.7.1, 6.8.1",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-21386",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-musl-x64",
+    "InstalledVersion": "3.1.1",
+    "FixedVersion": "6.0.27, 7.0.16, 8.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-21907",
+    "Package": "Newtonsoft.Json",
+    "InstalledVersion": "12.0.2",
+    "FixedVersion": "13.0.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-26646",
+    "Package": "Microsoft.Build.Tasks.Core",
+    "InstalledVersion": "16.4.0",
+    "FixedVersion": "15.9.30, 16.11.6, 17.8.29, 17.10.29, 17.12.36, 17.13.26, 17.14.8",
+    "Severity": 3
+   }
+  ]
+ }
+}

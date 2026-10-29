@@ -1,0 +1,3037 @@
+{
+ "item": "demo-express-backend",
+ "digest": "sha256:a11be5bba4f06a98853cbfa9b0b81a8944d4a5d13573e1838c1a4693995e766a",
+ "os": "debian 10.13",
+ "eosl": true,
+ "trivy_db": "trivy 0.75.0 db 2026-10-20T07:17:35.368599961Z",
+ "built_at": "2026-10-29T15:05:07.34684Z",
+ "packages": [
+  {
+   "name": "adduser",
+   "version": "3.118"
+  },
+  {
+   "name": "apt",
+   "version": "1.8.2.3"
+  },
+  {
+   "name": "base-files",
+   "version": "10.3+deb10u13"
+  },
+  {
+   "name": "base-passwd",
+   "version": "3.5.46"
+  },
+  {
+   "name": "bash",
+   "version": "5.0-4"
+  },
+  {
+   "name": "bsdutils",
+   "version": "1:2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "coreutils",
+   "version": "8.30-3"
+  },
+  {
+   "name": "dash",
+   "version": "0.5.10.2-5"
+  },
+  {
+   "name": "debconf",
+   "version": "1.5.71+deb10u1"
+  },
+  {
+   "name": "debian-archive-keyring",
+   "version": "2019.1+deb10u2"
+  },
+  {
+   "name": "debianutils",
+   "version": "4.8.6.1"
+  },
+  {
+   "name": "diffutils",
+   "version": "1:3.7-3"
+  },
+  {
+   "name": "dpkg",
+   "version": "1.19.8"
+  },
+  {
+   "name": "e2fsprogs",
+   "version": "1.44.5-1+deb10u3"
+  },
+  {
+   "name": "fdisk",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "findutils",
+   "version": "4.6.0+git+20190209-2"
+  },
+  {
+   "name": "gcc-8-base",
+   "version": "8.3.0-6"
+  },
+  {
+   "name": "gpgv",
+   "version": "2.2.12-1+deb10u2"
+  },
+  {
+   "name": "grep",
+   "version": "3.3-1"
+  },
+  {
+   "name": "gzip",
+   "version": "1.9-3+deb10u1"
+  },
+  {
+   "name": "hostname",
+   "version": "3.21"
+  },
+  {
+   "name": "init-system-helpers",
+   "version": "1.56+nmu1"
+  },
+  {
+   "name": "libacl1",
+   "version": "2.2.53-4"
+  },
+  {
+   "name": "libapt-pkg5.0",
+   "version": "1.8.2.3"
+  },
+  {
+   "name": "libattr1",
+   "version": "1:2.4.48-4"
+  },
+  {
+   "name": "libaudit-common",
+   "version": "1:2.8.4-3"
+  },
+  {
+   "name": "libaudit1",
+   "version": "1:2.8.4-3"
+  },
+  {
+   "name": "libblkid1",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "libbz2-1.0",
+   "version": "1.0.6-9.2~deb10u2"
+  },
+  {
+   "name": "libc-bin",
+   "version": "2.28-10+deb10u3"
+  },
+  {
+   "name": "libc6",
+   "version": "2.28-10+deb10u3"
+  },
+  {
+   "name": "libcap-ng0",
+   "version": "0.7.9-2"
+  },
+  {
+   "name": "libcom-err2",
+   "version": "1.44.5-1+deb10u3"
+  },
+  {
+   "name": "libdb5.3",
+   "version": "5.3.28+dfsg1-0.5"
+  },
+  {
+   "name": "libdebconfclient0",
+   "version": "0.249"
+  },
+  {
+   "name": "libext2fs2",
+   "version": "1.44.5-1+deb10u3"
+  },
+  {
+   "name": "libfdisk1",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "libffi6",
+   "version": "3.2.1-9"
+  },
+  {
+   "name": "libgcc1",
+   "version": "1:8.3.0-6"
+  },
+  {
+   "name": "libgcrypt20",
+   "version": "1.8.4-5+deb10u1"
+  },
+  {
+   "name": "libgmp10",
+   "version": "2:6.1.2+dfsg-4+deb10u1"
+  },
+  {
+   "name": "libgnutls30",
+   "version": "3.6.7-4+deb10u12"
+  },
+  {
+   "name": "libgpg-error0",
+   "version": "1.35-1"
+  },
+  {
+   "name": "libhogweed4",
+   "version": "3.4.1-1+deb10u1"
+  },
+  {
+   "name": "libidn2-0",
+   "version": "2.0.5-1+deb10u1"
+  },
+  {
+   "name": "liblz4-1",
+   "version": "1.8.3-1+deb10u1"
+  },
+  {
+   "name": "liblzma5",
+   "version": "5.2.4-1+deb10u1"
+  },
+  {
+   "name": "libmount1",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "libncursesw6",
+   "version": "6.1+20181013-2+deb10u5"
+  },
+  {
+   "name": "libnettle6",
+   "version": "3.4.1-1+deb10u1"
+  },
+  {
+   "name": "libp11-kit0",
+   "version": "0.23.15-2+deb10u1"
+  },
+  {
+   "name": "libpam-modules",
+   "version": "1.3.1-5"
+  },
+  {
+   "name": "libpam-modules-bin",
+   "version": "1.3.1-5"
+  },
+  {
+   "name": "libpam-runtime",
+   "version": "1.3.1-5"
+  },
+  {
+   "name": "libpam0g",
+   "version": "1.3.1-5"
+  },
+  {
+   "name": "libpcre3",
+   "version": "2:8.39-12"
+  },
+  {
+   "name": "libseccomp2",
+   "version": "2.3.3-4"
+  },
+  {
+   "name": "libselinux1",
+   "version": "2.8-1+b1"
+  },
+  {
+   "name": "libsemanage-common",
+   "version": "2.8-2"
+  },
+  {
+   "name": "libsemanage1",
+   "version": "2.8-2"
+  },
+  {
+   "name": "libsepol1",
+   "version": "2.8-1"
+  },
+  {
+   "name": "libsmartcols1",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "libss2",
+   "version": "1.44.5-1+deb10u3"
+  },
+  {
+   "name": "libstdc++6",
+   "version": "8.3.0-6"
+  },
+  {
+   "name": "libsystemd0",
+   "version": "241-7~deb10u10"
+  },
+  {
+   "name": "libtasn1-6",
+   "version": "4.13-3+deb10u1"
+  },
+  {
+   "name": "libtinfo6",
+   "version": "6.1+20181013-2+deb10u5"
+  },
+  {
+   "name": "libudev1",
+   "version": "241-7~deb10u10"
+  },
+  {
+   "name": "libunistring2",
+   "version": "0.9.10-1"
+  },
+  {
+   "name": "libuuid1",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "libzstd1",
+   "version": "1.3.8+dfsg-3+deb10u2"
+  },
+  {
+   "name": "login",
+   "version": "1:4.5-1.1"
+  },
+  {
+   "name": "lsb-base",
+   "version": "10.2019051400"
+  },
+  {
+   "name": "mawk",
+   "version": "1.3.3-17+b3"
+  },
+  {
+   "name": "mount",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "ncurses-base",
+   "version": "6.1+20181013-2+deb10u5"
+  },
+  {
+   "name": "ncurses-bin",
+   "version": "6.1+20181013-2+deb10u5"
+  },
+  {
+   "name": "passwd",
+   "version": "1:4.5-1.1"
+  },
+  {
+   "name": "perl-base",
+   "version": "5.28.1-6+deb10u1"
+  },
+  {
+   "name": "sed",
+   "version": "4.7-1"
+  },
+  {
+   "name": "sysvinit-utils",
+   "version": "2.93-8"
+  },
+  {
+   "name": "tar",
+   "version": "1.30+dfsg-6+deb10u1"
+  },
+  {
+   "name": "tzdata",
+   "version": "2024a-0+deb10u1"
+  },
+  {
+   "name": "util-linux",
+   "version": "2.33.1-0.1+deb10u1"
+  },
+  {
+   "name": "zlib1g",
+   "version": "1:1.2.11.dfsg-1+deb10u2"
+  },
+  {
+   "name": "@isaacs/cliui",
+   "version": "8.0.2"
+  },
+  {
+   "name": "@isaacs/string-locale-compare",
+   "version": "1.1.0"
+  },
+  {
+   "name": "@npmcli/agent",
+   "version": "2.2.2"
+  },
+  {
+   "name": "@npmcli/arborist",
+   "version": "7.5.1"
+  },
+  {
+   "name": "@npmcli/config",
+   "version": "8.3.1"
+  },
+  {
+   "name": "@npmcli/fs",
+   "version": "3.1.0"
+  },
+  {
+   "name": "@npmcli/git",
+   "version": "5.0.6"
+  },
+  {
+   "name": "@npmcli/installed-package-contents",
+   "version": "2.1.0"
+  },
+  {
+   "name": "@npmcli/map-workspaces",
+   "version": "3.0.6"
+  },
+  {
+   "name": "@npmcli/metavuln-calculator",
+   "version": "7.1.0"
+  },
+  {
+   "name": "@npmcli/name-from-folder",
+   "version": "2.0.0"
+  },
+  {
+   "name": "@npmcli/node-gyp",
+   "version": "3.0.0"
+  },
+  {
+   "name": "@npmcli/package-json",
+   "version": "5.1.0"
+  },
+  {
+   "name": "@npmcli/promise-spawn",
+   "version": "7.0.1"
+  },
+  {
+   "name": "@npmcli/query",
+   "version": "3.1.0"
+  },
+  {
+   "name": "@npmcli/redact",
+   "version": "2.0.0"
+  },
+  {
+   "name": "@npmcli/run-script",
+   "version": "8.1.0"
+  },
+  {
+   "name": "@pkgjs/parseargs",
+   "version": "0.11.0"
+  },
+  {
+   "name": "@sigstore/bundle",
+   "version": "2.3.1"
+  },
+  {
+   "name": "@sigstore/core",
+   "version": "1.1.0"
+  },
+  {
+   "name": "@sigstore/protobuf-specs",
+   "version": "0.3.1"
+  },
+  {
+   "name": "@sigstore/sign",
+   "version": "2.3.0"
+  },
+  {
+   "name": "@sigstore/tuf",
+   "version": "2.3.2"
+  },
+  {
+   "name": "@sigstore/verify",
+   "version": "1.2.0"
+  },
+  {
+   "name": "@sindresorhus/is",
+   "version": "0.14.0"
+  },
+  {
+   "name": "@szmarczak/http-timer",
+   "version": "1.1.2"
+  },
+  {
+   "name": "@tufjs/canonical-json",
+   "version": "2.0.0"
+  },
+  {
+   "name": "@tufjs/models",
+   "version": "2.0.0"
+  },
+  {
+   "name": "@types/color-name",
+   "version": "1.1.1"
+  },
+  {
+   "name": "@types/node",
+   "version": "16.10.3"
+  },
+  {
+   "name": "@types/webidl-conversions",
+   "version": "6.1.1"
+  },
+  {
+   "name": "@types/whatwg-url",
+   "version": "8.2.1"
+  },
+  {
+   "name": "abbrev",
+   "version": "1.1.1"
+  },
+  {
+   "name": "abbrev",
+   "version": "2.0.0"
+  },
+  {
+   "name": "accepts",
+   "version": "1.3.7"
+  },
+  {
+   "name": "agent-base",
+   "version": "7.1.1"
+  },
+  {
+   "name": "aggregate-error",
+   "version": "3.1.0"
+  },
+  {
+   "name": "ansi-align",
+   "version": "3.0.1"
+  },
+  {
+   "name": "ansi-regex",
+   "version": "5.0.1"
+  },
+  {
+   "name": "ansi-regex",
+   "version": "5.0.1"
+  },
+  {
+   "name": "ansi-regex",
+   "version": "6.0.1"
+  },
+  {
+   "name": "ansi-regex",
+   "version": "6.0.1"
+  },
+  {
+   "name": "ansi-styles",
+   "version": "4.2.1"
+  },
+  {
+   "name": "ansi-styles",
+   "version": "4.3.0"
+  },
+  {
+   "name": "ansi-styles",
+   "version": "6.2.1"
+  },
+  {
+   "name": "anymatch",
+   "version": "3.1.1"
+  },
+  {
+   "name": "aproba",
+   "version": "2.0.0"
+  },
+  {
+   "name": "archy",
+   "version": "1.0.0"
+  },
+  {
+   "name": "array-flatten",
+   "version": "1.1.1"
+  },
+  {
+   "name": "balanced-match",
+   "version": "1.0.0"
+  },
+  {
+   "name": "balanced-match",
+   "version": "1.0.2"
+  },
+  {
+   "name": "base64-js",
+   "version": "1.5.1"
+  },
+  {
+   "name": "bcryptjs",
+   "version": "2.4.3"
+  },
+  {
+   "name": "bin-links",
+   "version": "4.0.3"
+  },
+  {
+   "name": "binary-extensions",
+   "version": "2.0.0"
+  },
+  {
+   "name": "binary-extensions",
+   "version": "2.3.0"
+  },
+  {
+   "name": "bl",
+   "version": "2.2.1"
+  },
+  {
+   "name": "body-parser",
+   "version": "1.19.0"
+  },
+  {
+   "name": "boxen",
+   "version": "4.2.0"
+  },
+  {
+   "name": "brace-expansion",
+   "version": "1.1.11"
+  },
+  {
+   "name": "brace-expansion",
+   "version": "2.0.1"
+  },
+  {
+   "name": "braces",
+   "version": "3.0.2"
+  },
+  {
+   "name": "bson",
+   "version": "1.1.4"
+  },
+  {
+   "name": "bson",
+   "version": "4.5.3"
+  },
+  {
+   "name": "buffer",
+   "version": "5.7.1"
+  },
+  {
+   "name": "builtins",
+   "version": "5.1.0"
+  },
+  {
+   "name": "bytes",
+   "version": "3.1.0"
+  },
+  {
+   "name": "cacache",
+   "version": "18.0.2"
+  },
+  {
+   "name": "cacheable-request",
+   "version": "6.1.0"
+  },
+  {
+   "name": "camelcase",
+   "version": "5.3.1"
+  },
+  {
+   "name": "chalk",
+   "version": "3.0.0"
+  },
+  {
+   "name": "chalk",
+   "version": "5.3.0"
+  },
+  {
+   "name": "chokidar",
+   "version": "3.4.0"
+  },
+  {
+   "name": "chownr",
+   "version": "2.0.0"
+  },
+  {
+   "name": "ci-info",
+   "version": "2.0.0"
+  },
+  {
+   "name": "ci-info",
+   "version": "4.0.0"
+  },
+  {
+   "name": "cidr-regex",
+   "version": "4.0.5"
+  },
+  {
+   "name": "clean-stack",
+   "version": "2.2.0"
+  },
+  {
+   "name": "cli-boxes",
+   "version": "2.2.0"
+  },
+  {
+   "name": "cli-columns",
+   "version": "4.0.0"
+  },
+  {
+   "name": "clone-response",
+   "version": "1.0.2"
+  },
+  {
+   "name": "cmd-shim",
+   "version": "6.0.2"
+  },
+  {
+   "name": "color-convert",
+   "version": "2.0.1"
+  },
+  {
+   "name": "color-convert",
+   "version": "2.0.1"
+  },
+  {
+   "name": "color-name",
+   "version": "1.1.4"
+  },
+  {
+   "name": "color-name",
+   "version": "1.1.4"
+  },
+  {
+   "name": "common-ancestor-path",
+   "version": "1.0.1"
+  },
+  {
+   "name": "concat-map",
+   "version": "0.0.1"
+  },
+  {
+   "name": "configstore",
+   "version": "5.0.1"
+  },
+  {
+   "name": "content-disposition",
+   "version": "0.5.3"
+  },
+  {
+   "name": "content-type",
+   "version": "1.0.4"
+  },
+  {
+   "name": "cookie",
+   "version": "0.4.0"
+  },
+  {
+   "name": "cookie-parser",
+   "version": "1.4.5"
+  },
+  {
+   "name": "cookie-signature",
+   "version": "1.0.6"
+  },
+  {
+   "name": "core-util-is",
+   "version": "1.0.2"
+  },
+  {
+   "name": "corepack",
+   "version": "0.28.1"
+  },
+  {
+   "name": "cors",
+   "version": "2.8.5"
+  },
+  {
+   "name": "cross-spawn",
+   "version": "7.0.3"
+  },
+  {
+   "name": "crypto-random-string",
+   "version": "2.0.0"
+  },
+  {
+   "name": "cssesc",
+   "version": "3.0.0"
+  },
+  {
+   "name": "debug",
+   "version": "2.6.9"
+  },
+  {
+   "name": "debug",
+   "version": "3.2.6"
+  },
+  {
+   "name": "debug",
+   "version": "4.3.2"
+  },
+  {
+   "name": "debug",
+   "version": "4.3.4"
+  },
+  {
+   "name": "decompress-response",
+   "version": "3.3.0"
+  },
+  {
+   "name": "deep-extend",
+   "version": "0.6.0"
+  },
+  {
+   "name": "defer-to-connect",
+   "version": "1.1.3"
+  },
+  {
+   "name": "denque",
+   "version": "1.4.1"
+  },
+  {
+   "name": "denque",
+   "version": "2.0.1"
+  },
+  {
+   "name": "depd",
+   "version": "1.1.2"
+  },
+  {
+   "name": "destroy",
+   "version": "1.0.4"
+  },
+  {
+   "name": "diff",
+   "version": "5.2.0"
+  },
+  {
+   "name": "docker_node_mongo_starter",
+   "version": "1.0.0"
+  },
+  {
+   "name": "dot-prop",
+   "version": "5.2.0"
+  },
+  {
+   "name": "duplexer3",
+   "version": "0.1.4"
+  },
+  {
+   "name": "eastasianwidth",
+   "version": "0.2.0"
+  },
+  {
+   "name": "ee-first",
+   "version": "1.1.1"
+  },
+  {
+   "name": "emoji-regex",
+   "version": "8.0.0"
+  },
+  {
+   "name": "emoji-regex",
+   "version": "8.0.0"
+  },
+  {
+   "name": "emoji-regex",
+   "version": "9.2.2"
+  },
+  {
+   "name": "emoji-regex",
+   "version": "9.2.2"
+  },
+  {
+   "name": "encodeurl",
+   "version": "1.0.2"
+  },
+  {
+   "name": "encoding",
+   "version": "0.1.13"
+  },
+  {
+   "name": "end-of-stream",
+   "version": "1.4.4"
+  },
+  {
+   "name": "env-paths",
+   "version": "2.2.1"
+  },
+  {
+   "name": "err-code",
+   "version": "2.0.3"
+  },
+  {
+   "name": "escape-goat",
+   "version": "2.1.1"
+  },
+  {
+   "name": "escape-html",
+   "version": "1.0.3"
+  },
+  {
+   "name": "etag",
+   "version": "1.8.1"
+  },
+  {
+   "name": "exponential-backoff",
+   "version": "3.1.1"
+  },
+  {
+   "name": "express",
+   "version": "4.17.1"
+  },
+  {
+   "name": "fastest-levenshtein",
+   "version": "1.0.16"
+  },
+  {
+   "name": "fill-range",
+   "version": "7.0.1"
+  },
+  {
+   "name": "finalhandler",
+   "version": "1.1.2"
+  },
+  {
+   "name": "foreground-child",
+   "version": "3.1.1"
+  },
+  {
+   "name": "forwarded",
+   "version": "0.1.2"
+  },
+  {
+   "name": "fresh",
+   "version": "0.5.2"
+  },
+  {
+   "name": "fs-minipass",
+   "version": "2.1.0"
+  },
+  {
+   "name": "fs-minipass",
+   "version": "3.0.3"
+  },
+  {
+   "name": "function-bind",
+   "version": "1.1.2"
+  },
+  {
+   "name": "get-stream",
+   "version": "4.1.0"
+  },
+  {
+   "name": "get-stream",
+   "version": "5.1.0"
+  },
+  {
+   "name": "glob",
+   "version": "10.3.12"
+  },
+  {
+   "name": "glob-parent",
+   "version": "5.1.2"
+  },
+  {
+   "name": "global-dirs",
+   "version": "2.0.1"
+  },
+  {
+   "name": "got",
+   "version": "9.6.0"
+  },
+  {
+   "name": "graceful-fs",
+   "version": "4.2.11"
+  },
+  {
+   "name": "graceful-fs",
+   "version": "4.2.4"
+  },
+  {
+   "name": "has-flag",
+   "version": "3.0.0"
+  },
+  {
+   "name": "has-flag",
+   "version": "4.0.0"
+  },
+  {
+   "name": "has-yarn",
+   "version": "2.1.0"
+  },
+  {
+   "name": "hasown",
+   "version": "2.0.2"
+  },
+  {
+   "name": "hosted-git-info",
+   "version": "7.0.1"
+  },
+  {
+   "name": "http-cache-semantics",
+   "version": "4.1.0"
+  },
+  {
+   "name": "http-cache-semantics",
+   "version": "4.1.1"
+  },
+  {
+   "name": "http-errors",
+   "version": "1.7.2"
+  },
+  {
+   "name": "http-proxy-agent",
+   "version": "7.0.2"
+  },
+  {
+   "name": "https-proxy-agent",
+   "version": "7.0.4"
+  },
+  {
+   "name": "iconv-lite",
+   "version": "0.4.24"
+  },
+  {
+   "name": "iconv-lite",
+   "version": "0.6.3"
+  },
+  {
+   "name": "ieee754",
+   "version": "1.2.1"
+  },
+  {
+   "name": "ignore-by-default",
+   "version": "1.0.1"
+  },
+  {
+   "name": "ignore-walk",
+   "version": "6.0.4"
+  },
+  {
+   "name": "import-lazy",
+   "version": "2.1.0"
+  },
+  {
+   "name": "imurmurhash",
+   "version": "0.1.4"
+  },
+  {
+   "name": "imurmurhash",
+   "version": "0.1.4"
+  },
+  {
+   "name": "indent-string",
+   "version": "4.0.0"
+  },
+  {
+   "name": "inherits",
+   "version": "2.0.3"
+  },
+  {
+   "name": "ini",
+   "version": "1.3.8"
+  },
+  {
+   "name": "ini",
+   "version": "4.1.2"
+  },
+  {
+   "name": "init-package-json",
+   "version": "6.0.2"
+  },
+  {
+   "name": "ip-address",
+   "version": "9.0.5"
+  },
+  {
+   "name": "ip-regex",
+   "version": "5.0.0"
+  },
+  {
+   "name": "ipaddr.js",
+   "version": "1.9.1"
+  },
+  {
+   "name": "is-binary-path",
+   "version": "2.1.0"
+  },
+  {
+   "name": "is-ci",
+   "version": "2.0.0"
+  },
+  {
+   "name": "is-cidr",
+   "version": "5.0.5"
+  },
+  {
+   "name": "is-core-module",
+   "version": "2.13.1"
+  },
+  {
+   "name": "is-extglob",
+   "version": "2.1.1"
+  },
+  {
+   "name": "is-fullwidth-code-point",
+   "version": "3.0.0"
+  },
+  {
+   "name": "is-fullwidth-code-point",
+   "version": "3.0.0"
+  },
+  {
+   "name": "is-glob",
+   "version": "4.0.1"
+  },
+  {
+   "name": "is-installed-globally",
+   "version": "0.3.2"
+  },
+  {
+   "name": "is-lambda",
+   "version": "1.0.1"
+  },
+  {
+   "name": "is-npm",
+   "version": "4.0.0"
+  },
+  {
+   "name": "is-number",
+   "version": "7.0.0"
+  },
+  {
+   "name": "is-obj",
+   "version": "2.0.0"
+  },
+  {
+   "name": "is-path-inside",
+   "version": "3.0.2"
+  },
+  {
+   "name": "is-typedarray",
+   "version": "1.0.0"
+  },
+  {
+   "name": "is-yarn-global",
+   "version": "0.3.0"
+  },
+  {
+   "name": "isarray",
+   "version": "1.0.0"
+  },
+  {
+   "name": "isexe",
+   "version": "2.0.0"
+  },
+  {
+   "name": "isexe",
+   "version": "3.1.1"
+  },
+  {
+   "name": "jackspeak",
+   "version": "2.3.6"
+  },
+  {
+   "name": "jsbn",
+   "version": "1.1.0"
+  },
+  {
+   "name": "json-buffer",
+   "version": "3.0.0"
+  },
+  {
+   "name": "json-parse-even-better-errors",
+   "version": "3.0.1"
+  },
+  {
+   "name": "json-stringify-nice",
+   "version": "1.1.4"
+  },
+  {
+   "name": "jsonparse",
+   "version": "1.3.1"
+  },
+  {
+   "name": "just-diff",
+   "version": "6.0.2"
+  },
+  {
+   "name": "just-diff-apply",
+   "version": "5.5.0"
+  },
+  {
+   "name": "kareem",
+   "version": "2.3.2"
+  },
+  {
+   "name": "keyv",
+   "version": "3.1.0"
+  },
+  {
+   "name": "latest-version",
+   "version": "5.1.0"
+  },
+  {
+   "name": "libnpmaccess",
+   "version": "8.0.5"
+  },
+  {
+   "name": "libnpmdiff",
+   "version": "6.1.1"
+  },
+  {
+   "name": "libnpmexec",
+   "version": "8.1.0"
+  },
+  {
+   "name": "libnpmfund",
+   "version": "5.0.9"
+  },
+  {
+   "name": "libnpmhook",
+   "version": "10.0.4"
+  },
+  {
+   "name": "libnpmorg",
+   "version": "6.0.5"
+  },
+  {
+   "name": "libnpmpack",
+   "version": "7.0.1"
+  },
+  {
+   "name": "libnpmpublish",
+   "version": "9.0.7"
+  },
+  {
+   "name": "libnpmsearch",
+   "version": "7.0.4"
+  },
+  {
+   "name": "libnpmteam",
+   "version": "6.0.4"
+  },
+  {
+   "name": "libnpmversion",
+   "version": "6.0.1"
+  },
+  {
+   "name": "lodash",
+   "version": "4.17.21"
+  },
+  {
+   "name": "lowercase-keys",
+   "version": "1.0.1"
+  },
+  {
+   "name": "lowercase-keys",
+   "version": "2.0.0"
+  },
+  {
+   "name": "lru-cache",
+   "version": "10.2.2"
+  },
+  {
+   "name": "lru-cache",
+   "version": "6.0.0"
+  },
+  {
+   "name": "make-dir",
+   "version": "3.1.0"
+  },
+  {
+   "name": "make-fetch-happen",
+   "version": "13.0.1"
+  },
+  {
+   "name": "media-typer",
+   "version": "0.3.0"
+  },
+  {
+   "name": "memory-pager",
+   "version": "1.5.0"
+  },
+  {
+   "name": "merge-descriptors",
+   "version": "1.0.1"
+  },
+  {
+   "name": "methods",
+   "version": "1.1.2"
+  },
+  {
+   "name": "mime",
+   "version": "1.6.0"
+  },
+  {
+   "name": "mime-db",
+   "version": "1.44.0"
+  },
+  {
+   "name": "mime-types",
+   "version": "2.1.27"
+  },
+  {
+   "name": "mimic-response",
+   "version": "1.0.1"
+  },
+  {
+   "name": "minimatch",
+   "version": "3.0.4"
+  },
+  {
+   "name": "minimatch",
+   "version": "9.0.4"
+  },
+  {
+   "name": "minimist",
+   "version": "1.2.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "3.3.6"
+  },
+  {
+   "name": "minipass",
+   "version": "5.0.0"
+  },
+  {
+   "name": "minipass",
+   "version": "7.0.4"
+  },
+  {
+   "name": "minipass-collect",
+   "version": "2.0.1"
+  },
+  {
+   "name": "minipass-fetch",
+   "version": "3.0.4"
+  },
+  {
+   "name": "minipass-flush",
+   "version": "1.0.5"
+  },
+  {
+   "name": "minipass-json-stream",
+   "version": "1.0.1"
+  },
+  {
+   "name": "minipass-pipeline",
+   "version": "1.2.4"
+  },
+  {
+   "name": "minipass-sized",
+   "version": "1.0.3"
+  },
+  {
+   "name": "minizlib",
+   "version": "2.1.2"
+  },
+  {
+   "name": "mkdirp",
+   "version": "1.0.4"
+  },
+  {
+   "name": "moment",
+   "version": "2.29.3"
+  },
+  {
+   "name": "mongodb",
+   "version": "3.6.5"
+  },
+  {
+   "name": "mongodb",
+   "version": "4.1.2"
+  },
+  {
+   "name": "mongodb-connection-string-url",
+   "version": "2.1.0"
+  },
+  {
+   "name": "mongoose",
+   "version": "6.0.9"
+  },
+  {
+   "name": "mpath",
+   "version": "0.8.4"
+  },
+  {
+   "name": "mquery",
+   "version": "4.0.0"
+  },
+  {
+   "name": "ms",
+   "version": "2.0.0"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.1"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.2"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.2"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.2"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.2"
+  },
+  {
+   "name": "ms",
+   "version": "2.1.3"
+  },
+  {
+   "name": "mute-stream",
+   "version": "1.0.0"
+  },
+  {
+   "name": "negotiator",
+   "version": "0.6.2"
+  },
+  {
+   "name": "negotiator",
+   "version": "0.6.3"
+  },
+  {
+   "name": "nestedtest",
+   "version": "1.0.0"
+  },
+  {
+   "name": "node-gyp",
+   "version": "10.1.0"
+  },
+  {
+   "name": "nodemon",
+   "version": "2.0.3"
+  },
+  {
+   "name": "nopt",
+   "version": "1.0.10"
+  },
+  {
+   "name": "nopt",
+   "version": "7.2.0"
+  },
+  {
+   "name": "normalize-package-data",
+   "version": "6.0.0"
+  },
+  {
+   "name": "normalize-path",
+   "version": "3.0.0"
+  },
+  {
+   "name": "normalize-url",
+   "version": "4.5.1"
+  },
+  {
+   "name": "npm",
+   "version": "10.7.0"
+  },
+  {
+   "name": "npm-audit-report",
+   "version": "5.0.0"
+  },
+  {
+   "name": "npm-bundled",
+   "version": "3.0.0"
+  },
+  {
+   "name": "npm-install-checks",
+   "version": "6.3.0"
+  },
+  {
+   "name": "npm-normalize-package-bin",
+   "version": "3.0.1"
+  },
+  {
+   "name": "npm-package-arg",
+   "version": "11.0.2"
+  },
+  {
+   "name": "npm-packlist",
+   "version": "8.0.2"
+  },
+  {
+   "name": "npm-pick-manifest",
+   "version": "9.0.0"
+  },
+  {
+   "name": "npm-profile",
+   "version": "9.0.2"
+  },
+  {
+   "name": "npm-registry-fetch",
+   "version": "17.0.0"
+  },
+  {
+   "name": "npm-user-validate",
+   "version": "2.0.0"
+  },
+  {
+   "name": "object-assign",
+   "version": "4.1.1"
+  },
+  {
+   "name": "on-finished",
+   "version": "2.3.0"
+  },
+  {
+   "name": "once",
+   "version": "1.4.0"
+  },
+  {
+   "name": "p-cancelable",
+   "version": "1.1.0"
+  },
+  {
+   "name": "p-map",
+   "version": "4.0.0"
+  },
+  {
+   "name": "package-json",
+   "version": "6.5.0"
+  },
+  {
+   "name": "pacote",
+   "version": "18.0.3"
+  },
+  {
+   "name": "parse-conflict-json",
+   "version": "3.0.1"
+  },
+  {
+   "name": "parseurl",
+   "version": "1.3.3"
+  },
+  {
+   "name": "path-key",
+   "version": "3.1.1"
+  },
+  {
+   "name": "path-scurry",
+   "version": "1.10.2"
+  },
+  {
+   "name": "path-to-regexp",
+   "version": "0.1.7"
+  },
+  {
+   "name": "picomatch",
+   "version": "2.2.2"
+  },
+  {
+   "name": "postcss-selector-parser",
+   "version": "6.0.16"
+  },
+  {
+   "name": "prepend-http",
+   "version": "2.0.0"
+  },
+  {
+   "name": "prettier",
+   "version": "2.0.5"
+  },
+  {
+   "name": "proc-log",
+   "version": "3.0.0"
+  },
+  {
+   "name": "proc-log",
+   "version": "4.2.0"
+  },
+  {
+   "name": "process-nextick-args",
+   "version": "2.0.1"
+  },
+  {
+   "name": "proggy",
+   "version": "2.0.0"
+  },
+  {
+   "name": "promise-all-reject-late",
+   "version": "1.0.1"
+  },
+  {
+   "name": "promise-call-limit",
+   "version": "3.0.1"
+  },
+  {
+   "name": "promise-inflight",
+   "version": "1.0.1"
+  },
+  {
+   "name": "promise-retry",
+   "version": "2.0.1"
+  },
+  {
+   "name": "promzard",
+   "version": "1.0.1"
+  },
+  {
+   "name": "proxy-addr",
+   "version": "2.0.6"
+  },
+  {
+   "name": "pstree.remy",
+   "version": "1.1.7"
+  },
+  {
+   "name": "pump",
+   "version": "3.0.0"
+  },
+  {
+   "name": "punycode",
+   "version": "2.1.1"
+  },
+  {
+   "name": "pupa",
+   "version": "2.0.1"
+  },
+  {
+   "name": "qrcode-terminal",
+   "version": "0.12.0"
+  },
+  {
+   "name": "qs",
+   "version": "6.7.0"
+  },
+  {
+   "name": "range-parser",
+   "version": "1.2.1"
+  },
+  {
+   "name": "raw-body",
+   "version": "2.4.0"
+  },
+  {
+   "name": "rc",
+   "version": "1.2.8"
+  },
+  {
+   "name": "read",
+   "version": "3.0.1"
+  },
+  {
+   "name": "read-cmd-shim",
+   "version": "4.0.0"
+  },
+  {
+   "name": "read-package-json-fast",
+   "version": "3.0.2"
+  },
+  {
+   "name": "readable-stream",
+   "version": "2.3.6"
+  },
+  {
+   "name": "readdirp",
+   "version": "3.4.0"
+  },
+  {
+   "name": "regexp-clone",
+   "version": "1.0.0"
+  },
+  {
+   "name": "registry-auth-token",
+   "version": "4.1.1"
+  },
+  {
+   "name": "registry-url",
+   "version": "5.1.0"
+  },
+  {
+   "name": "require_optional",
+   "version": "1.0.1"
+  },
+  {
+   "name": "resolve-from",
+   "version": "2.0.0"
+  },
+  {
+   "name": "responselike",
+   "version": "1.0.2"
+  },
+  {
+   "name": "retry",
+   "version": "0.12.0"
+  },
+  {
+   "name": "safe-buffer",
+   "version": "5.1.2"
+  },
+  {
+   "name": "safer-buffer",
+   "version": "2.1.2"
+  },
+  {
+   "name": "safer-buffer",
+   "version": "2.1.2"
+  },
+  {
+   "name": "saslprep",
+   "version": "1.0.3"
+  },
+  {
+   "name": "semver",
+   "version": "5.5.0"
+  },
+  {
+   "name": "semver",
+   "version": "5.7.1"
+  },
+  {
+   "name": "semver",
+   "version": "6.3.0"
+  },
+  {
+   "name": "semver",
+   "version": "6.3.0"
+  },
+  {
+   "name": "semver",
+   "version": "6.3.0"
+  },
+  {
+   "name": "semver",
+   "version": "7.6.0"
+  },
+  {
+   "name": "semver-diff",
+   "version": "3.1.1"
+  },
+  {
+   "name": "send",
+   "version": "0.17.1"
+  },
+  {
+   "name": "serve-static",
+   "version": "1.14.1"
+  },
+  {
+   "name": "setprototypeof",
+   "version": "1.1.1"
+  },
+  {
+   "name": "shebang-command",
+   "version": "2.0.0"
+  },
+  {
+   "name": "shebang-regex",
+   "version": "3.0.0"
+  },
+  {
+   "name": "sift",
+   "version": "13.5.2"
+  },
+  {
+   "name": "signal-exit",
+   "version": "3.0.3"
+  },
+  {
+   "name": "signal-exit",
+   "version": "4.1.0"
+  },
+  {
+   "name": "sigstore",
+   "version": "2.3.0"
+  },
+  {
+   "name": "simple-node-logger",
+   "version": "18.12.24"
+  },
+  {
+   "name": "sliced",
+   "version": "1.0.1"
+  },
+  {
+   "name": "smart-buffer",
+   "version": "4.2.0"
+  },
+  {
+   "name": "socks",
+   "version": "2.8.3"
+  },
+  {
+   "name": "socks-proxy-agent",
+   "version": "8.0.3"
+  },
+  {
+   "name": "sparse-bitfield",
+   "version": "3.0.3"
+  },
+  {
+   "name": "spdx-correct",
+   "version": "3.2.0"
+  },
+  {
+   "name": "spdx-exceptions",
+   "version": "2.5.0"
+  },
+  {
+   "name": "spdx-expression-parse",
+   "version": "3.0.1"
+  },
+  {
+   "name": "spdx-expression-parse",
+   "version": "3.0.1"
+  },
+  {
+   "name": "spdx-expression-parse",
+   "version": "4.0.0"
+  },
+  {
+   "name": "spdx-license-ids",
+   "version": "3.0.17"
+  },
+  {
+   "name": "sprintf-js",
+   "version": "1.1.3"
+  },
+  {
+   "name": "ssri",
+   "version": "10.0.5"
+  },
+  {
+   "name": "statuses",
+   "version": "1.5.0"
+  },
+  {
+   "name": "string-width",
+   "version": "4.2.0"
+  },
+  {
+   "name": "string-width",
+   "version": "4.2.3"
+  },
+  {
+   "name": "string-width",
+   "version": "4.2.3"
+  },
+  {
+   "name": "string-width",
+   "version": "5.1.2"
+  },
+  {
+   "name": "string-width",
+   "version": "5.1.2"
+  },
+  {
+   "name": "string_decoder",
+   "version": "1.1.1"
+  },
+  {
+   "name": "strip-ansi",
+   "version": "6.0.0"
+  },
+  {
+   "name": "strip-ansi",
+   "version": "6.0.1"
+  },
+  {
+   "name": "strip-ansi",
+   "version": "6.0.1"
+  },
+  {
+   "name": "strip-ansi",
+   "version": "7.1.0"
+  },
+  {
+   "name": "strip-ansi",
+   "version": "7.1.0"
+  },
+  {
+   "name": "strip-json-comments",
+   "version": "2.0.1"
+  },
+  {
+   "name": "supports-color",
+   "version": "5.5.0"
+  },
+  {
+   "name": "supports-color",
+   "version": "7.1.0"
+  },
+  {
+   "name": "supports-color",
+   "version": "9.4.0"
+  },
+  {
+   "name": "tar",
+   "version": "6.2.1"
+  },
+  {
+   "name": "term-size",
+   "version": "2.2.0"
+  },
+  {
+   "name": "text-table",
+   "version": "0.2.0"
+  },
+  {
+   "name": "tiny-relative-date",
+   "version": "1.3.0"
+  },
+  {
+   "name": "to-readable-stream",
+   "version": "1.0.0"
+  },
+  {
+   "name": "to-regex-range",
+   "version": "5.0.1"
+  },
+  {
+   "name": "toidentifier",
+   "version": "1.0.0"
+  },
+  {
+   "name": "touch",
+   "version": "3.1.0"
+  },
+  {
+   "name": "tr46",
+   "version": "2.1.0"
+  },
+  {
+   "name": "treeverse",
+   "version": "3.0.0"
+  },
+  {
+   "name": "tuf-js",
+   "version": "2.2.0"
+  },
+  {
+   "name": "type-fest",
+   "version": "0.8.1"
+  },
+  {
+   "name": "type-is",
+   "version": "1.6.18"
+  },
+  {
+   "name": "typedarray-to-buffer",
+   "version": "3.1.5"
+  },
+  {
+   "name": "undefsafe",
+   "version": "2.0.3"
+  },
+  {
+   "name": "unique-filename",
+   "version": "3.0.0"
+  },
+  {
+   "name": "unique-slug",
+   "version": "4.0.0"
+  },
+  {
+   "name": "unique-string",
+   "version": "2.0.0"
+  },
+  {
+   "name": "unpipe",
+   "version": "1.0.0"
+  },
+  {
+   "name": "update-notifier",
+   "version": "4.1.0"
+  },
+  {
+   "name": "url-parse-lax",
+   "version": "3.0.0"
+  },
+  {
+   "name": "util-deprecate",
+   "version": "1.0.2"
+  },
+  {
+   "name": "util-deprecate",
+   "version": "1.0.2"
+  },
+  {
+   "name": "utils-merge",
+   "version": "1.0.1"
+  },
+  {
+   "name": "validate-npm-package-license",
+   "version": "3.0.4"
+  },
+  {
+   "name": "validate-npm-package-name",
+   "version": "5.0.0"
+  },
+  {
+   "name": "validator",
+   "version": "13.7.0"
+  },
+  {
+   "name": "vary",
+   "version": "1.1.2"
+  },
+  {
+   "name": "walk-up-path",
+   "version": "3.0.1"
+  },
+  {
+   "name": "webidl-conversions",
+   "version": "6.1.0"
+  },
+  {
+   "name": "whatwg-url",
+   "version": "9.1.0"
+  },
+  {
+   "name": "which",
+   "version": "2.0.2"
+  },
+  {
+   "name": "which",
+   "version": "4.0.0"
+  },
+  {
+   "name": "widest-line",
+   "version": "3.1.0"
+  },
+  {
+   "name": "wrap-ansi",
+   "version": "7.0.0"
+  },
+  {
+   "name": "wrap-ansi",
+   "version": "8.1.0"
+  },
+  {
+   "name": "wrappy",
+   "version": "1.0.2"
+  },
+  {
+   "name": "write-file-atomic",
+   "version": "3.0.3"
+  },
+  {
+   "name": "write-file-atomic",
+   "version": "5.0.1"
+  },
+  {
+   "name": "xdg-basedir",
+   "version": "4.0.0"
+  },
+  {
+   "name": "yallist",
+   "version": "4.0.0"
+  },
+  {
+   "name": "yarn",
+   "version": "1.22.22"
+  }
+ ],
+ "scan": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2016-2781",
+    "Package": "coreutils",
+    "InstalledVersion": "8.30-3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-16137",
+    "Package": "debug",
+    "InstalledVersion": "3.2.6",
+    "FixedVersion": "2.6.9, 3.1.0, 3.2.7, 4.3.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-12886",
+    "Package": "gcc-8-base",
+    "InstalledVersion": "8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2018-12886",
+    "Package": "libgcc1",
+    "InstalledVersion": "1:8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2018-12886",
+    "Package": "libstdc++6",
+    "InstalledVersion": "8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2018-7169",
+    "Package": "login",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-7169",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-12290",
+    "Package": "libidn2-0",
+    "InstalledVersion": "2.0.5-1+deb10u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-13627",
+    "Package": "libgcrypt20",
+    "InstalledVersion": "1.8.4-5+deb10u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2019-14855",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.12-1+deb10u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-15847",
+    "Package": "gcc-8-base",
+    "InstalledVersion": "8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-15847",
+    "Package": "libgcc1",
+    "InstalledVersion": "1:8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-15847",
+    "Package": "libstdc++6",
+    "InstalledVersion": "8.3.0-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-17543",
+    "Package": "liblz4-1",
+    "InstalledVersion": "1.8.3-1+deb10u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-3843",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-3843",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-3844",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-3844",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-8457",
+    "Package": "libdb5.3",
+    "InstalledVersion": "5.3.28+dfsg1-0.5",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2020-14155",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-12",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2020-16156",
+    "Package": "perl-base",
+    "InstalledVersion": "5.28.1-6+deb10u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1751",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2020-1751",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-32050",
+    "Package": "mongodb",
+    "InstalledVersion": "3.6.5",
+    "FixedVersion": "3.6.10, 4.17.0, 5.8.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-33560",
+    "Package": "libgcrypt20",
+    "InstalledVersion": "1.8.4-5+deb10u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-36084",
+    "Package": "libsepol1",
+    "InstalledVersion": "2.8-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-36085",
+    "Package": "libsepol1",
+    "InstalledVersion": "2.8-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-36086",
+    "Package": "libsepol1",
+    "InstalledVersion": "2.8-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-36087",
+    "Package": "libsepol1",
+    "InstalledVersion": "2.8-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-3997",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-3997",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-1304",
+    "Package": "e2fsprogs",
+    "InstalledVersion": "1.44.5-1+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1304",
+    "Package": "libcom-err2",
+    "InstalledVersion": "1.44.5-1+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1304",
+    "Package": "libext2fs2",
+    "InstalledVersion": "1.44.5-1+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1304",
+    "Package": "libss2",
+    "InstalledVersion": "1.44.5-1+deb10u3",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-24999",
+    "Package": "qs",
+    "InstalledVersion": "6.7.0",
+    "FixedVersion": "6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2564",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "6.4.6, 5.13.15",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-25881",
+    "Package": "http-cache-semantics",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "4.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-25883",
+    "Package": "semver",
+    "InstalledVersion": "5.5.0",
+    "FixedVersion": "7.5.2, 6.3.1, 5.7.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-31129",
+    "Package": "moment",
+    "InstalledVersion": "2.29.3",
+    "FixedVersion": "2.29.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-33987",
+    "Package": "got",
+    "InstalledVersion": "9.6.0",
+    "FixedVersion": "12.1.0, 11.8.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-3517",
+    "Package": "minimatch",
+    "InstalledVersion": "3.0.4",
+    "FixedVersion": "3.0.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4415",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-4415",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "login",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31484",
+    "Package": "perl-base",
+    "InstalledVersion": "5.28.1-6+deb10u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-3696",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "7.3.3, 6.11.3, 5.13.20",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-45853",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-1+deb10u2",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-4641",
+    "Package": "login",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4641",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.5-1.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4806",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4806",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4813",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4813",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50387",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-50387",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libncursesw6",
+    "InstalledVersion": "6.1+20181013-2+deb10u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.1+20181013-2+deb10u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.1+20181013-2+deb10u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.1+20181013-2+deb10u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50868",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-50868",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-7008",
+    "Package": "libsystemd0",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-7008",
+    "Package": "libudev1",
+    "InstalledVersion": "241-7~deb10u10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21538",
+    "Package": "cross-spawn",
+    "InstalledVersion": "7.0.3",
+    "FixedVersion": "7.0.5, 6.0.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-modules",
+    "InstalledVersion": "1.3.1-5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-modules-bin",
+    "InstalledVersion": "1.3.1-5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-runtime",
+    "InstalledVersion": "1.3.1-5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam0g",
+    "InstalledVersion": "1.3.1-5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-29041",
+    "Package": "express",
+    "InstalledVersion": "4.17.1",
+    "FixedVersion": "4.19.2, 5.0.0-beta.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-33599",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-33599",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-33600",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-33600",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-33601",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-33601",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-33602",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-33602",
+    "Package": "libc6",
+    "InstalledVersion": "2.28-10+deb10u3",
+    "FixedVersion": "2.28-10+deb10u4",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-4068",
+    "Package": "braces",
+    "InstalledVersion": "3.0.2",
+    "FixedVersion": "3.0.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-43796",
+    "Package": "express",
+    "InstalledVersion": "4.17.1",
+    "FixedVersion": "4.20.0, 5.0.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-43799",
+    "Package": "send",
+    "InstalledVersion": "0.17.1",
+    "FixedVersion": "0.19.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-43800",
+    "Package": "serve-static",
+    "InstalledVersion": "1.14.1",
+    "FixedVersion": "1.16.0, 2.1.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-45296",
+    "Package": "path-to-regexp",
+    "InstalledVersion": "0.1.7",
+    "FixedVersion": "1.9.0, 0.1.10, 8.0.0, 3.3.0, 6.3.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-45590",
+    "Package": "body-parser",
+    "InstalledVersion": "1.19.0",
+    "FixedVersion": "1.20.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-47764",
+    "Package": "cookie",
+    "InstalledVersion": "0.4.0",
+    "FixedVersion": "0.7.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52798",
+    "Package": "path-to-regexp",
+    "InstalledVersion": "0.1.7",
+    "FixedVersion": "0.1.12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-53900",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "8.8.3, 7.8.3, 6.13.5, 5.13.23",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-12758",
+    "Package": "validator",
+    "InstalledVersion": "13.7.0",
+    "FixedVersion": "13.15.22",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-13465",
+    "Package": "lodash",
+    "InstalledVersion": "4.17.21",
+    "FixedVersion": "4.17.23",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15284",
+    "Package": "qs",
+    "InstalledVersion": "6.7.0",
+    "FixedVersion": "6.14.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-23061",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "8.9.5, 7.8.4, 6.13.6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-56200",
+    "Package": "validator",
+    "InstalledVersion": "13.7.0",
+    "FixedVersion": "13.15.20",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-5889",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "2.0.2, 1.1.12, 3.0.1, 4.0.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-64756",
+    "Package": "glob",
+    "InstalledVersion": "10.3.12",
+    "FixedVersion": "11.1.0, 10.5.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-101911",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101912",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101913",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.5.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102276",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102277",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.12, 3.0.9, 2.1.7, 1.1.21",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102278",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-104844",
+    "Package": "postcss-selector-parser",
+    "InstalledVersion": "6.0.16",
+    "FixedVersion": "7.1.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12590",
+    "Package": "body-parser",
+    "InstalledVersion": "1.19.0",
+    "FixedVersion": "1.20.6, 2.3.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13149",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.7, 1.1.16, 2.1.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-14257",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.8, 3.0.3, 2.1.3, 1.1.17",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-17495",
+    "Package": "moment",
+    "InstalledVersion": "2.29.3",
+    "FixedVersion": "2.31.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-23745",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-2391",
+    "Package": "qs",
+    "InstalledVersion": "6.7.0",
+    "FixedVersion": "6.14.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-23950",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-24001",
+    "Package": "diff",
+    "InstalledVersion": "5.2.0",
+    "FixedVersion": "8.0.3, 5.2.2, 4.0.4, 3.5.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-24842",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-26960",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-26996",
+    "Package": "minimatch",
+    "InstalledVersion": "3.0.4",
+    "FixedVersion": "10.2.1, 9.0.6, 8.0.5, 7.4.7, 6.2.1, 5.1.7, 4.2.4, 3.1.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27903",
+    "Package": "minimatch",
+    "InstalledVersion": "3.0.4",
+    "FixedVersion": "10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27904",
+    "Package": "minimatch",
+    "InstalledVersion": "3.0.4",
+    "FixedVersion": "10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-2950",
+    "Package": "lodash",
+    "InstalledVersion": "4.17.21",
+    "FixedVersion": "4.18.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-29786",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-31802",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33671",
+    "Package": "picomatch",
+    "InstalledVersion": "2.2.2",
+    "FixedVersion": "4.0.4, 3.0.2, 2.3.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33672",
+    "Package": "picomatch",
+    "InstalledVersion": "2.2.2",
+    "FixedVersion": "4.0.4, 3.0.2, 2.3.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33750",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.5, 3.0.2, 2.0.3, 1.1.13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42334",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "6.13.9, 7.8.9, 8.22.1, 9.1.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42338",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4800",
+    "Package": "lodash",
+    "InstalledVersion": "4.17.21",
+    "FixedVersion": "4.18.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-4867",
+    "Package": "path-to-regexp",
+    "InstalledVersion": "0.1.7",
+    "FixedVersion": "0.1.13",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48758",
+    "Package": "@sigstore/core",
+    "InstalledVersion": "1.1.0",
+    "FixedVersion": "3.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48815",
+    "Package": "sigstore",
+    "InstalledVersion": "2.3.0",
+    "FixedVersion": "4.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53655",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.16",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59871",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59873",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.19",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-59874",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.18",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-59875",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-69152",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "1.1.18, 2.1.4, 3.0.6, 5.0.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-69192",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73562",
+    "Package": "mongoose",
+    "InstalledVersion": "6.0.9",
+    "FixedVersion": "6.13.10, 7.8.10, 8.24.1, 9.7.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-73566",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.21",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-82417",
+    "Package": "qs",
+    "InstalledVersion": "6.7.0",
+    "FixedVersion": "6.16.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-90711",
+    "Package": "proxy-addr",
+    "InstalledVersion": "2.0.6",
+    "FixedVersion": "2.0.8",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-93687",
+    "Package": "braces",
+    "InstalledVersion": "3.0.2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-93748",
+    "Package": "http-cache-semantics",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9496",
+    "Package": "pacote",
+    "InstalledVersion": "18.0.3",
+    "FixedVersion": "21.5.1",
+    "Severity": 3
+   }
+  ]
+ }
+}

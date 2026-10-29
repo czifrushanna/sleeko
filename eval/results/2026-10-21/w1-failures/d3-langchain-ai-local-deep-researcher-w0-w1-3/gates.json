@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: docker run: exit code 125: docker: Error response from daemon: unable to find user python: no matching entries in passwd file\n\nRun 'docker run --help' for more information"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-47273, CVE-2026-97687, CVE-2026-97689, GHSA-6v7p-g79w-8964"
+  }
+]

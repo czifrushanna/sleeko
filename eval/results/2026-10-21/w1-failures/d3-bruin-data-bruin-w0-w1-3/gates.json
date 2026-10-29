@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: docker run: exit code 127: docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: \"bruin\": executable file not found in $PATH\n\nRun 'docker run --help' for more information"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2023-31484, CVE-2024-56406, CVE-2026-13221, CVE-2026-42496, CVE-2026-42497, CVE-2026-48962, CVE-2026-57432, CVE-2026-57433, CVE-2026-8376"
+  }
+]

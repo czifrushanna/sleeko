@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 7.391  + xmltodict==1.0.4\n7.391  + yarl==1.25.1\n8.024 error: Failed to parse: `mcp\u003e=1.30.0,2.2.0`\n8.025   cause: Unexpected end of version specifier, expected operator. Did you mean `==2.2.0`?\n8.025          mcp\u003e=1.30.0,2.2.0\n8.025                      ^^^^^\n------\nDockerfile:34\n--------------------\n  33 |     # We use uv pip install to install requirements and then explicitly upgrade the specific packages listed in the vulnerability summary.\n  34 | \u003e\u003e\u003e RUN uv pip install -r requirements.txt --no-cache-dir --system \\\n  35 | \u003e\u003e\u003e     \u0026\u0026 uv pip install --no-cache-dir --system \"mcp\u003e=1.30.0,2.2.0\" \"jaraco.context\u003e=6.1.0\"\n  36 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c uv pip install -r requirements.txt --no-cache-dir --system     \u0026\u0026 uv pip install --no-cache-dir --system \\\"mcp\u003e=1.30.0,2.2.0\\\" \\\"jaraco.context\u003e=6.1.0\\\"\" did not complete successfully: exit code: 2"
+  }
+]

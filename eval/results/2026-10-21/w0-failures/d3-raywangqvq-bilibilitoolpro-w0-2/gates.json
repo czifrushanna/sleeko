@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: apt cannot install perl-base=5.36.0-7+deb12u4: that version is not in ubuntu noble (or its -updates/-security); pin a version the archive has, or leave the version out"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 7.491 is only available from another source\n7.491 However the following packages replace it:\n7.491   perl-modules-5.38 perl libperl5.38t64\n7.491 \n7.498 E: Version '5.36.0-7+deb12u4' for 'perl-base' was not found\n------\nDockerfile:4\n--------------------\n   2 |     WORKDIR /app\n   3 |     EXPOSE 8080\n   4 | \u003e\u003e\u003e RUN apt-get update \u0026\u0026 apt-get install -y --no-install-recommends perl-base=5.36.0-7+deb12u4 \u0026\u0026 rm -rf /var/lib/apt/lists/*\n   5 |     \n   6 |     FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update \u0026\u0026 apt-get install -y --no-install-recommends perl-base=5.36.0-7+deb12u4 \u0026\u0026 rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+  }
+]

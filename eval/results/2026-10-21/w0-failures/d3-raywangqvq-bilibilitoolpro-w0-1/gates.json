@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image mcr.microsoft.com/dotnet/aspnet:8.0.32@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f does not exist in its registry; use a tag that exists; the base image mcr.microsoft.com/dotnet/sdk:8.0.400@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f has a malformed digest and cannot be pulled; use a tag, or a digest that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n#2 [internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0.32@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f\n#2 CANCELED\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - InvalidDefaultArgInFrom: Default value for ARG mcr.microsoft.com/dotnet/sdk:8.0.400@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f results in empty or invalid base image name (line 5)\nDockerfile:5\n--------------------\n   3 |     EXPOSE 8080\n   4 |     \n   5 | \u003e\u003e\u003e FROM mcr.microsoft.com/dotnet/sdk:8.0.400@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f AS build\n   6 |     WORKDIR /code\n   7 |     COPY [\"src/Ray.BiliBiliTool.Web/Ray.BiliBiliTool.Web.csproj\", \"src/Ray.BiliBiliTool.Web/\"]\n--------------------\nERROR: failed to build: failed to solve: failed to parse stage name \"mcr.microsoft.com/dotnet/sdk:8.0.400@sha256:2e0a5a1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f2c1f\": invalid checksum digest length"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest does not exist in its registry; use a tag that exists; the base image ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #1 WARN: InvalidDefaultArgInFrom: Default value for ARG ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest results in empty or invalid base image name (line 2)\n#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest results in empty or invalid base image name (line 52)\n#1 DONE 0.0s\n\n \u001b[33m2 warnings found (use docker --debug to expand):\n\u001b[0m - InvalidDefaultArgInFrom: Default value for ARG ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest results in empty or invalid base image name (line 2)\n - InvalidDefaultArgInFrom: Default value for ARG ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest results in empty or invalid base image name (line 52)\nDockerfile:2\n--------------------\n   1 |     # Stage 1: Build the application artifact\n   2 | \u003e\u003e\u003e FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest AS builder\n   3 |     \n   4 |     ARG BUILD_VERSION\n--------------------\nERROR: failed to build: failed to solve: failed to parse stage name \"ghcr.io/astral-sh/uv:python3.11-bookworm-slim:latest\": invalid reference format"
+  }
+]

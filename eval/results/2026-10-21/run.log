@@ -1,0 +1,1781 @@
+=== pass 1: W0 Wed Oct 21 00:34:28 CEST 2026
+00:34:35 demo-django: building O′
+00:34:35 demo-flask: building O′
+00:34:35 demo-express-backend: building O′
+00:35:48 demo-flask #1: measured success=false 
+00:36:02 demo-django #1: measured success=false 
+00:36:19 demo-flask #2: measured success=false 
+00:36:42 demo-django #2: measured success=false 
+00:36:53 demo-flask #3: measured success=false 
+00:36:53 demo-fastapi: building O′
+00:37:10 demo-express-backend #1: measured success=false 
+00:37:20 demo-django #3: measured success=false 
+00:37:20 demo-apache-php: building O′
+00:38:01 demo-express-backend #2: measured success=false 
+00:38:31 demo-express-backend #3: measured success=false 
+00:38:31 demo-sparkjava: building O′
+00:39:01 demo-apache-php #1: measured success=false 
+00:39:31 demo-apache-php #2: measured success=false 
+00:40:05 demo-sparkjava #1: measured success=false 
+00:40:32 demo-sparkjava #2: measured success=false 
+00:40:35 demo-fastapi #1: measured success=false 
+00:40:53 demo-fastapi #2: measured success=false 
+00:41:20 demo-apache-php #3: measured success=false 
+00:41:20 demo-nodejs-web: building O′
+00:41:30 demo-fastapi #3: measured success=false 
+00:41:30 demo-golang-backend: building O′
+00:41:54 demo-nodejs-web #1: measured success=false 
+00:42:16 demo-sparkjava #3: measured success=false 
+00:42:16 demo-traefik-golang: building O′
+00:42:33 demo-nodejs-web #2: measured success=false 
+00:42:34 demo-golang-backend #1: measured success=false 
+00:42:40 demo-nodejs-web #3: measured success=false 
+00:42:41 demo-aspnet: building O′
+00:42:57 demo-golang-backend #2: measured success=false 
+00:43:14 demo-golang-backend #3: measured success=false 
+00:43:14 d3-astrbotdevs-astrbot: building O′
+00:43:35 demo-traefik-golang #1: measured success=false 
+00:43:50 demo-traefik-golang #2: measured success=false 
+00:44:07 demo-traefik-golang #3: measured success=false 
+00:44:07 d3-glimesh-broadcast-box: building O′
+00:44:18 demo-aspnet #1: measured success=false 
+00:44:37 demo-aspnet #2: measured success=false 
+00:45:31 demo-aspnet #3: measured success=false 
+00:45:31 d3-jfryy-qq: building O′
+00:45:41 d3-glimesh-broadcast-box #1: measured success=false 
+00:45:51 d3-glimesh-broadcast-box #2: measured success=false 
+00:46:17 d3-glimesh-broadcast-box #3: measured success=false 
+00:46:18 d3-raywangqvq-bilibilitoolpro: building O′
+00:47:16 d3-jfryy-qq #1: measured success=false 
+00:47:21 d3-jfryy-qq #2: measured success=false 
+00:47:26 d3-jfryy-qq #3: measured success=false 
+00:47:27 d3-tracecathq-tracecat-prod: building O′
+00:50:38 O′: scan: trivy scan: exit code 1: 2026-10-20T22:50:37Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize cache: unable to initialize fs cache: cache may be in use by another process: timeout
+00:50:38 d3-badtuxx-girus-cli: building O′
+00:52:53 d3-badtuxx-girus-cli #1: measured success=true 
+00:53:33 d3-badtuxx-girus-cli #2: measured success=false 
+00:54:09 d3-badtuxx-girus-cli #3: measured success=false 
+00:54:09 d3-bruin-data-bruin: building O′
+00:54:58 d3-astrbotdevs-astrbot #1: measured success=false 
+00:57:08 d3-bruin-data-bruin #1: measured success=true 
+00:58:33 d3-astrbotdevs-astrbot #2: measured success=false 
+00:58:35 d3-bruin-data-bruin #2: measured success=true 
+00:58:59 d3-bruin-data-bruin #3: measured success=false 
+00:58:59 d3-cilium-tetragon-rthooks: building O′
+01:00:56 d3-cilium-tetragon-rthooks #1: measured success=false 
+01:01:43 d3-cilium-tetragon-rthooks #2: measured success=false 
+01:02:29 d3-cilium-tetragon-rthooks #3: measured success=false 
+01:02:29 d3-datawhores-of-scraper: building O′
+01:02:56 d3-tracecathq-tracecat-prod #1: measured success=false 
+01:03:51 d3-tracecathq-tracecat-prod #2: measured success=false 
+01:05:36 d3-astrbotdevs-astrbot #3: measured success=false 
+01:05:36 d3-hanxi-xiaomusic-builder: building O′
+01:05:38 d3-datawhores-of-scraper #1: measured success=false 
+01:07:25 d3-tracecathq-tracecat-prod #3: measured success=false 
+01:07:25 d3-langchain-ai-local-deep-researcher: building O′
+01:07:53 d3-datawhores-of-scraper #2: measured success=false 
+01:08:25 d3-datawhores-of-scraper #3: measured success=false 
+01:08:25 d3-lanyi1998-dnslog-go: building O′
+01:10:18 d3-langchain-ai-local-deep-researcher #1: measured success=false 
+01:10:28 d3-langchain-ai-local-deep-researcher #2: measured success=false 
+01:10:43 d3-lanyi1998-dnslog-go #1: measured success=false 
+01:11:02 d3-hanxi-xiaomusic-builder #1: measured success=false 
+01:11:16 d3-hanxi-xiaomusic-builder #2: measured success=false 
+01:11:21 d3-langchain-ai-local-deep-researcher #3: measured success=false 
+01:11:21 d3-marcopiovanello-yt-dlp-web-ui: building O′
+01:12:14 d3-lanyi1998-dnslog-go #2: measured success=false 
+01:13:07 d3-lanyi1998-dnslog-go #3: measured success=false 
+01:13:08 d3-markqvist-nomadnet: building O′
+01:14:06 d3-hanxi-xiaomusic-builder #3: measured success=false 
+01:14:06 d3-projectdiscovery-httpx: building O′
+01:16:07 d3-markqvist-nomadnet #1: measured success=false 
+01:17:16 d3-markqvist-nomadnet #2: measured success=false 
+01:18:34 d3-markqvist-nomadnet #3: measured success=false 
+01:18:34 d3-unitycatalog-unitycatalog: building O′
+01:19:09 d3-marcopiovanello-yt-dlp-web-ui #1: measured success=false 
+01:21:05 d3-projectdiscovery-httpx #1: measured success=false 
+01:23:34 d3-marcopiovanello-yt-dlp-web-ui #2: measured success=false 
+01:24:51 d3-projectdiscovery-httpx #2: measured success=true 
+01:26:59 d3-marcopiovanello-yt-dlp-web-ui #3: measured success=false 
+01:26:59 d3-vogler-free-games-claimer: building O′
+01:28:34 O′: build: build took longer than 10m0s
+01:28:34 f4d-jeffreyksmithjr-galapagos-nao: building O′
+01:29:10 d3-projectdiscovery-httpx #3: measured success=true 
+01:29:10 f4d-fsprojects-argu: building O′
+01:30:43 d3-vogler-free-games-claimer #1: measured success=false 
+01:30:54 f4d-fsprojects-argu #1: measured success=false 
+01:31:10 f4d-jeffreyksmithjr-galapagos-nao #1: measured success=false 
+01:31:38 f4d-jeffreyksmithjr-galapagos-nao #2: measured success=false 
+01:31:41 f4d-fsprojects-argu #2: measured success=false 
+01:31:46 f4d-jeffreyksmithjr-galapagos-nao #3: measured success=false 
+01:31:46 f4d-3scale-3scale-toolbox: building O′
+01:32:01 d3-vogler-free-games-claimer #2: measured success=false 
+01:32:18 f4d-fsprojects-argu #3: measured success=false 
+01:32:18 f4d-wyhaya-updns: building O′
+01:33:44 f4d-3scale-3scale-toolbox #1: measured success=false 
+01:34:01 f4d-3scale-3scale-toolbox #2: measured success=false 
+01:34:18 f4d-3scale-3scale-toolbox #3: measured success=false 
+01:34:18 f4d-robinmonjo-coincoin: building O′
+01:35:22 f4d-wyhaya-updns #1: measured success=false 
+01:35:28 f4d-wyhaya-updns #2: measured success=false 
+01:35:28 f4d-robinmonjo-coincoin #1: measured success=false 
+01:35:28 d3-vogler-free-games-claimer #3: measured success=false 
+01:35:28 f4d-eiriktsarpalis-typeshape: building O′
+01:35:30 f4d-robinmonjo-coincoin #2: measured success=false 
+01:35:33 f4d-robinmonjo-coincoin #3: measured success=false 
+01:35:33 f4d-appwish-graphqlapi: building O′
+01:36:34 f4d-wyhaya-updns #3: measured success=false 
+01:36:34 f4d-jaymoulin-guzzlehttp-cloudflare: building O′
+01:37:44 f4d-jaymoulin-guzzlehttp-cloudflare #1: measured success=false 
+01:37:49 f4d-eiriktsarpalis-typeshape #1: measured success=false 
+01:38:49 f4d-eiriktsarpalis-typeshape #2: measured success=false 
+01:38:52 f4d-jaymoulin-guzzlehttp-cloudflare #2: measured success=false 
+01:38:56 f4d-jaymoulin-guzzlehttp-cloudflare #3: measured success=false 
+01:38:56 f4d-couchrest-couchrest-model: building O′
+01:39:20 f4d-appwish-graphqlapi #1: measured success=false 
+01:39:24 f4d-eiriktsarpalis-typeshape #3: measured success=false 
+01:39:24 f4d-ponkotuy-myfleetgirls: building O′
+01:40:00 f4d-appwish-graphqlapi #2: measured success=false 
+01:40:46 f4d-ponkotuy-myfleetgirls #1: measured success=false 
+01:40:53 f4d-ponkotuy-myfleetgirls #2: measured success=false 
+01:41:02 f4d-ponkotuy-myfleetgirls #3: measured success=false 
+01:41:02 f4d-hmbsbige-bilibilimangaautoclockin: building O′
+01:41:09 f4d-appwish-graphqlapi #3: measured success=false 
+01:41:09 f4d-linux-china-mail-catcher: building O′
+01:42:18 f4d-hmbsbige-bilibilimangaautoclockin #1: measured success=false 
+01:42:36 f4d-linux-china-mail-catcher #1: measured success=false 
+01:42:41 f4d-linux-china-mail-catcher #2: measured success=false 
+01:42:58 f4d-hmbsbige-bilibilimangaautoclockin #2: measured success=false 
+01:43:18 f4d-linux-china-mail-catcher #3: measured success=true 
+01:43:18 f4d-ideatosrl-idephix: building O′
+01:43:38 f4d-hmbsbige-bilibilimangaautoclockin #3: measured success=false 
+01:43:38 f4d-minglecm-doc-to-dash: building O′
+01:43:44 f4d-ideatosrl-idephix #1: measured success=false 
+01:43:46 f4d-ideatosrl-idephix #2: measured success=false 
+01:43:48 f4d-ideatosrl-idephix #3: measured success=false 
+01:43:48 f4d-digimarc-corp-whalerator: building O′
+01:46:11 f4d-couchrest-couchrest-model #1: measured success=false 
+01:46:16 f4d-couchrest-couchrest-model #2: measured success=false 
+01:46:21 f4d-couchrest-couchrest-model #3: measured success=false 
+01:46:21 f4d-dsibilio-rsocket-demo: building O′
+01:48:08 f4d-minglecm-doc-to-dash #1: measured success=false 
+01:51:04 f4d-minglecm-doc-to-dash #2: measured success=true 
+01:51:30 f4d-minglecm-doc-to-dash #3: measured success=false 
+01:51:30 f4d-icemic-search-bakery-moe: building O′
+01:53:09 f4d-digimarc-corp-whalerator #1: measured success=false 
+01:54:52 f4d-icemic-search-bakery-moe #1: measured success=false 
+01:55:58 f4d-icemic-search-bakery-moe #2: measured success=false 
+01:56:10 f4d-digimarc-corp-whalerator #2: measured success=false 
+01:56:19 f4d-icemic-search-bakery-moe #3: measured success=false 
+01:56:19 f4d-flix-tech-avro-serde-php: building O′
+01:58:06 f4d-digimarc-corp-whalerator #3: measured success=false 
+01:58:06 f4d-flores-moarcats-app: building O′
+02:00:52 f4d-flix-tech-avro-serde-php #1: measured success=false 
+02:01:03 f4d-flix-tech-avro-serde-php #2: measured success=false 
+02:01:08 f4d-flix-tech-avro-serde-php #3: measured success=false 
+02:01:08 f4d-bizanc-bizanc-io-core: building O′
+02:02:27 f4d-flores-moarcats-app #1: measured success=false 
+02:03:14 f4d-dsibilio-rsocket-demo #1: measured success=false 
+02:03:24 f4d-dsibilio-rsocket-demo #2: measured success=false 
+02:04:33 f4d-flores-moarcats-app #2: measured success=false 
+02:04:35 f4d-bizanc-bizanc-io-core #1: measured success=false 
+02:04:51 f4d-flores-moarcats-app #3: measured success=false 
+02:04:51 f4d-centerforopenscience-cas-overlay: building O′
+02:06:34 f4d-bizanc-bizanc-io-core #2: measured success=false 
+02:06:42 f4d-dsibilio-rsocket-demo #3: measured success=false 
+02:06:42 f4d-amiralies-metalarchives-api: building O′
+02:07:33 f4d-bizanc-bizanc-io-core #3: measured success=false 
+02:07:33 f4d-ety001-online-clipboard: building O′
+02:07:39 f4d-amiralies-metalarchives-api #1: measured success=false 
+02:08:52 f4d-amiralies-metalarchives-api #2: measured success=false 
+02:09:54 f4d-amiralies-metalarchives-api #3: measured success=false 
+02:09:54 f4d-ardalis-specification: building O′
+02:10:01 f4d-ety001-online-clipboard #1: measured success=false 
+02:10:08 f4d-ety001-online-clipboard #2: measured success=false 
+02:10:26 f4d-ety001-online-clipboard #3: measured success=false 
+02:10:26 f4d-atomheartother-wanwan-html5: building O′
+02:11:05 f4d-atomheartother-wanwan-html5 #1: measured success=false 
+02:11:11 f4d-atomheartother-wanwan-html5 #2: measured success=false 
+02:11:24 f4d-ardalis-specification #1: measured success=false 
+02:11:37 f4d-atomheartother-wanwan-html5 #3: measured success=false 
+02:11:37 f4d-mixcore-mix-core: building O′
+02:12:31 f4d-ardalis-specification #2: measured success=false 
+02:12:48 f4d-ardalis-specification #3: measured success=false 
+02:12:48 f4d-alexr1712-messenger-to-telegram: building O′
+02:13:43 f4d-alexr1712-messenger-to-telegram #1: measured success=false 
+02:13:47 f4d-alexr1712-messenger-to-telegram #2: measured success=false 
+02:15:14 f4d-alexr1712-messenger-to-telegram #3: measured success=false 
+02:15:14 f4d-atifaziz-linqpadless: building O′
+02:17:52 f4d-mixcore-mix-core #1: measured success=false 
+02:18:16 f4d-mixcore-mix-core #2: measured success=false 
+02:18:54 f4d-atifaziz-linqpadless #1: measured success=false 
+02:19:09 f4d-atifaziz-linqpadless #2: measured success=false 
+02:19:25 f4d-atifaziz-linqpadless #3: measured success=false 
+02:19:25 f4d-code4sac-codeforsacramento-org: building O′
+02:19:50 f4d-mixcore-mix-core #3: measured success=true 
+02:19:50 f4d-18f-content-guide: building O′
+02:20:41 f4d-centerforopenscience-cas-overlay #1: measured success=false 
+02:21:21 f4d-centerforopenscience-cas-overlay #2: measured success=false 
+02:21:47 f4d-centerforopenscience-cas-overlay #3: measured success=false 
+02:25:42 f4d-code4sac-codeforsacramento-org #1: measured success=false 
+02:26:06 f4d-code4sac-codeforsacramento-org #2: measured success=false 
+02:26:22 f4d-18f-content-guide #1: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+02:27:31 f4d-18f-content-guide #2: measured success=false 
+02:27:36 f4d-code4sac-codeforsacramento-org #3: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+02:28:35 f4d-18f-content-guide #3: measured success=false 
+02:28:35 saved 134 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w0-failures
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w0-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w0-failures.txt
+=== pass 1: W0+W1 Wed Oct 21 02:28:35 CEST 2026
+02:28:38 demo-django: O′ from cache (built 2026-10-21T00:35:25+02:00)
+02:28:38 demo-express-backend: O′ from cache (built 2026-10-21T00:35:39+02:00)
+02:28:38 demo-flask: O′ from cache (built 2026-10-21T00:34:58+02:00)
+02:29:07 demo-django #1: measured success=false 
+02:29:32 demo-flask #1: measured success=false 
+02:30:17 demo-django #2: measured success=false 
+02:30:26 demo-flask #2: measured success=false 
+02:31:01 demo-express-backend #1: measured success=false 
+02:31:03 demo-flask #3: measured success=false 
+02:31:03 demo-fastapi: O′ from cache (built 2026-10-21T00:37:20+02:00)
+02:31:11 demo-django #3: measured success=false 
+02:31:11 demo-apache-php: O′ from cache (built 2026-10-21T00:37:57+02:00)
+02:31:55 demo-express-backend #2: measured success=false 
+02:32:04 demo-apache-php #1: measured success=false 
+02:32:33 demo-fastapi #1: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+02:32:35 demo-apache-php #2: measured success=false 
+02:32:51 demo-express-backend #3: measured success=false 
+02:32:52 demo-sparkjava: O′ from cache (built 2026-10-21T00:39:29+02:00)
+02:33:26 demo-fastapi #2: measured success=false 
+02:34:07 demo-fastapi #3: measured success=false 
+02:34:08 demo-nodejs-web: O′ from cache (built 2026-10-21T00:41:34+02:00)
+02:34:43 demo-apache-php #3: measured success=false 
+02:34:43 demo-golang-backend: O′ from cache (built 2026-10-21T00:41:42+02:00)
+02:34:53 demo-nodejs-web #1: measured success=false 
+02:34:56 demo-sparkjava #1: measured success=false 
+02:35:37 demo-golang-backend #1: measured success=false 
+02:35:49 demo-nodejs-web #2: measured success=false 
+02:35:59 demo-nodejs-web #3: measured success=false 
+02:35:59 demo-traefik-golang: O′ from cache (built 2026-10-21T00:42:49+02:00)
+02:35:59 demo-sparkjava #2: measured success=false 
+02:36:02 demo-golang-backend #2: measured success=false 
+02:36:34 demo-golang-backend #3: measured success=false 
+02:36:34 demo-aspnet: O′ from cache (built 2026-10-21T00:43:32+02:00)
+02:37:18 demo-aspnet #1: measured success=false 
+02:37:20 demo-traefik-golang #1: measured success=false 
+02:37:38 demo-traefik-golang #2: measured success=false 
+02:38:02 demo-sparkjava #3: measured success=false 
+02:38:02 d3-astrbotdevs-astrbot: O′ from cache (built 2026-10-21T00:50:50+02:00)
+02:38:04 demo-traefik-golang #3: measured success=false 
+02:38:04 d3-glimesh-broadcast-box: O′ from cache (built 2026-10-21T00:45:23+02:00)
+02:38:15 demo-aspnet #2: measured success=false 
+02:38:23 d3-glimesh-broadcast-box #1: measured success=false 
+02:38:44 d3-glimesh-broadcast-box #2: measured success=false 
+02:39:14 d3-glimesh-broadcast-box #3: measured success=false 
+02:39:14 d3-jfryy-qq: O′ from cache (built 2026-10-21T00:46:55+02:00)
+02:39:39 d3-jfryy-qq #1: measured success=false 
+02:39:56 demo-aspnet #3: measured success=false 
+02:39:56 d3-raywangqvq-bilibilitoolpro: building O′
+02:41:08 d3-jfryy-qq #2: measured success=false 
+02:41:45 d3-jfryy-qq #3: measured success=false 
+02:41:45 d3-tracecathq-tracecat-prod: O′ from cache (built 2026-10-21T00:55:33+02:00)
+02:47:45 d3-raywangqvq-bilibilitoolpro #1: measured success=true 
+02:48:14 d3-astrbotdevs-astrbot #1: measured success=false 
+02:49:30 d3-raywangqvq-bilibilitoolpro #2: measured success=false 
+02:50:44 d3-tracecathq-tracecat-prod #1: measured success=false 
+02:50:47 d3-raywangqvq-bilibilitoolpro #3: measured success=true 
+02:50:47 d3-badtuxx-girus-cli: O′ from cache (built 2026-10-21T00:51:38+02:00)
+02:52:21 d3-badtuxx-girus-cli #1: measured success=true 
+02:53:39 d3-badtuxx-girus-cli #2: measured success=false 
+02:54:22 d3-badtuxx-girus-cli #3: measured success=false 
+02:54:23 d3-bruin-data-bruin: O′ from cache (built 2026-10-21T00:55:31+02:00)
+02:56:48 d3-bruin-data-bruin #1: measured success=true 
+02:57:54 d3-astrbotdevs-astrbot #2: measured success=false 
+02:58:58 d3-bruin-data-bruin #2: measured success=true 
+02:59:40 d3-bruin-data-bruin #3: measured success=false 
+02:59:40 d3-cilium-tetragon-rthooks: O′ from cache (built 2026-10-21T00:59:40+02:00)
+03:00:33 d3-tracecathq-tracecat-prod #2: measured success=false 
+03:00:35 d3-cilium-tetragon-rthooks #1: measured success=false 
+03:02:31 d3-cilium-tetragon-rthooks #2: measured success=false 
+03:03:35 d3-cilium-tetragon-rthooks #3: measured success=false 
+03:03:35 d3-datawhores-of-scraper: O′ from cache (built 2026-10-21T01:04:27+02:00)
+03:06:01 d3-tracecathq-tracecat-prod #3: measured success=false 
+03:06:01 d3-hanxi-xiaomusic-builder: O′ from cache (built 2026-10-21T01:07:35+02:00)
+03:07:42 d3-astrbotdevs-astrbot #3: measured success=false 
+03:07:42 d3-langchain-ai-local-deep-researcher: O′ from cache (built 2026-10-21T01:09:12+02:00)
+03:08:15 d3-datawhores-of-scraper #1: measured success=false 
+03:08:48 d3-langchain-ai-local-deep-researcher #1: measured success=false 
+03:10:03 d3-hanxi-xiaomusic-builder #1: measured success=false 
+03:11:52 d3-langchain-ai-local-deep-researcher #2: measured success=false 
+03:12:54 d3-langchain-ai-local-deep-researcher #3: measured success=false 
+03:12:54 d3-lanyi1998-dnslog-go: O′ from cache (built 2026-10-21T01:09:21+02:00)
+03:12:57 d3-hanxi-xiaomusic-builder #2: measured success=false 
+03:14:12 d3-lanyi1998-dnslog-go #1: measured success=false 
+03:14:54 d3-datawhores-of-scraper #2: measured success=false 
+03:15:25 d3-lanyi1998-dnslog-go #2: measured success=false 
+03:15:36 d3-hanxi-xiaomusic-builder #3: measured success=false 
+03:15:36 d3-marcopiovanello-yt-dlp-web-ui: O′ from cache (built 2026-10-21T01:14:50+02:00)
+03:16:59 d3-lanyi1998-dnslog-go #3: measured success=false 
+03:16:59 d3-markqvist-nomadnet: O′ from cache (built 2026-10-21T01:13:56+02:00)
+03:18:31 d3-datawhores-of-scraper #3: measured success=false 
+03:18:31 d3-projectdiscovery-httpx: O′ from cache (built 2026-10-21T01:17:14+02:00)
+03:18:51 d3-markqvist-nomadnet #1: measured success=false 
+03:19:34 d3-marcopiovanello-yt-dlp-web-ui #1: measured success=false 
+03:21:05 d3-markqvist-nomadnet #2: measured success=false 
+03:22:30 d3-markqvist-nomadnet #3: measured success=false 
+03:22:30 d3-unitycatalog-unitycatalog: building O′
+03:23:04 d3-projectdiscovery-httpx #1: measured success=false 
+03:25:37 d3-marcopiovanello-yt-dlp-web-ui #2: measured success=false 
+03:27:24 d3-projectdiscovery-httpx #2: measured success=true 
+03:28:36 d3-marcopiovanello-yt-dlp-web-ui #3: measured success=false 
+03:28:36 d3-vogler-free-games-claimer: O′ from cache (built 2026-10-21T01:27:51+02:00)
+03:31:00 d3-vogler-free-games-claimer #1: measured success=false 
+03:31:09 d3-projectdiscovery-httpx #3: measured success=true 
+03:31:09 f4d-jeffreyksmithjr-galapagos-nao: O′ from cache (built 2026-10-21T01:30:52+02:00)
+03:32:30 O′: build: build took longer than 10m0s
+03:32:30 f4d-fsprojects-argu: O′ from cache (built 2026-10-21T01:30:21+02:00)
+03:32:39 f4d-jeffreyksmithjr-galapagos-nao #1: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+03:33:50 f4d-fsprojects-argu #1: measured success=false 
+03:34:09 f4d-jeffreyksmithjr-galapagos-nao #2: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+03:34:47 f4d-fsprojects-argu #2: measured success=false 
+03:34:51 f4d-jeffreyksmithjr-galapagos-nao #3: measured success=false 
+03:34:51 f4d-3scale-3scale-toolbox: O′ from cache (built 2026-10-21T01:33:24+02:00)
+03:35:20 f4d-fsprojects-argu #3: measured success=false 
+03:35:20 f4d-wyhaya-updns: O′ from cache (built 2026-10-21T01:33:23+02:00)
+03:37:58 d3-vogler-free-games-claimer #2: measured success=false 
+03:38:23 f4d-3scale-3scale-toolbox #1: measured success=true 
+03:38:43 f4d-wyhaya-updns #1: measured success=false 
+03:39:11 f4d-3scale-3scale-toolbox #2: measured success=false 
+03:39:12 f4d-wyhaya-updns #2: measured success=false 
+03:39:34 f4d-3scale-3scale-toolbox #3: measured success=false 
+03:39:35 f4d-robinmonjo-coincoin: O′ from cache (built 2026-10-21T01:35:11+02:00)
+03:40:05 f4d-wyhaya-updns #3: measured success=false 
+03:40:05 f4d-robinmonjo-coincoin #1: measured success=false 
+03:40:05 f4d-eiriktsarpalis-typeshape: O′ from cache (built 2026-10-21T01:36:39+02:00)
+03:40:27 f4d-robinmonjo-coincoin #2: measured success=false 
+03:40:48 f4d-robinmonjo-coincoin #3: measured success=false 
+03:40:48 f4d-appwish-graphqlapi: O′ from cache (built 2026-10-21T01:38:40+02:00)
+03:40:50 f4d-eiriktsarpalis-typeshape #1: measured success=false 
+03:42:43 f4d-eiriktsarpalis-typeshape #2: measured success=false 
+03:43:10 d3-vogler-free-games-claimer #3: measured success=false 
+03:43:10 f4d-jaymoulin-guzzlehttp-cloudflare: O′ from cache (built 2026-10-21T01:37:25+02:00)
+03:43:18 f4d-eiriktsarpalis-typeshape #3: measured success=false 
+03:43:18 f4d-couchrest-couchrest-model: O′ from cache (built 2026-10-21T01:45:42+02:00)
+03:43:41 f4d-appwish-graphqlapi #1: measured success=false 
+03:43:52 f4d-couchrest-couchrest-model #1: measured success=false 
+03:44:58 f4d-jaymoulin-guzzlehttp-cloudflare #1: measured success=false 
+03:45:45 f4d-couchrest-couchrest-model #2: measured success=false 
+03:45:59 f4d-couchrest-couchrest-model #3: measured success=false 
+03:45:59 f4d-ponkotuy-myfleetgirls: O′ from cache (built 2026-10-21T01:39:53+02:00)
+03:46:39 f4d-jaymoulin-guzzlehttp-cloudflare #2: measured success=false 
+03:47:14 f4d-jaymoulin-guzzlehttp-cloudflare #3: measured success=false 
+03:47:14 f4d-hmbsbige-bilibilimangaautoclockin: O′ from cache (built 2026-10-21T01:41:41+02:00)
+03:47:20 f4d-ponkotuy-myfleetgirls #1: measured success=true 
+03:48:14 f4d-ponkotuy-myfleetgirls #2: measured success=false 
+03:48:26 f4d-appwish-graphqlapi #2: measured success=false 
+03:48:33 f4d-hmbsbige-bilibilimangaautoclockin #1: measured success=false 
+03:49:06 f4d-ponkotuy-myfleetgirls #3: measured success=false 
+03:49:06 f4d-linux-china-mail-catcher: O′ from cache (built 2026-10-21T01:42:19+02:00)
+03:49:21 f4d-appwish-graphqlapi #3: measured success=false 
+03:49:21 f4d-ideatosrl-idephix: O′ from cache (built 2026-10-21T01:43:30+02:00)
+03:49:21 f4d-hmbsbige-bilibilimangaautoclockin #2: measured success=false 
+03:50:49 f4d-ideatosrl-idephix #1: measured success=false 
+03:51:16 f4d-hmbsbige-bilibilimangaautoclockin #3: measured success=false 
+03:51:16 f4d-minglecm-doc-to-dash: O′ from cache (built 2026-10-21T01:46:20+02:00)
+03:51:37 f4d-ideatosrl-idephix #2: measured success=false 
+03:52:22 f4d-ideatosrl-idephix #3: measured success=false 
+03:52:22 f4d-digimarc-corp-whalerator: O′ from cache (built 2026-10-21T01:49:00+02:00)
+03:52:50 f4d-linux-china-mail-catcher #1: measured success=false 
+03:53:20 f4d-linux-china-mail-catcher #2: measured success=false 
+03:54:50 f4d-linux-china-mail-catcher #3: measured success=true 
+03:54:51 f4d-dsibilio-rsocket-demo: O′ from cache (built 2026-10-21T01:55:10+02:00)
+03:56:54 f4d-minglecm-doc-to-dash #1: measured success=false 
+03:58:20 f4d-digimarc-corp-whalerator #1: measured success=false 
+03:59:59 f4d-minglecm-doc-to-dash #2: measured success=true 
+04:01:14 f4d-minglecm-doc-to-dash #3: measured success=false 
+04:01:14 f4d-icemic-search-bakery-moe: O′ from cache (built 2026-10-21T01:53:47+02:00)
+04:01:32 f4d-digimarc-corp-whalerator #2: measured success=false 
+04:01:47 f4d-icemic-search-bakery-moe #1: measured success=false 
+04:03:16 f4d-icemic-search-bakery-moe #2: measured success=false 
+04:04:07 f4d-icemic-search-bakery-moe #3: measured success=false 
+04:04:07 f4d-flix-tech-avro-serde-php: O′ from cache (built 2026-10-21T01:58:43+02:00)
+04:04:28 f4d-digimarc-corp-whalerator #3: measured success=false 
+04:04:28 f4d-flores-moarcats-app: O′ from cache (built 2026-10-21T02:00:26+02:00)
+04:04:41 f4d-dsibilio-rsocket-demo #1: measured success=false 
+04:05:16 f4d-dsibilio-rsocket-demo #2: measured success=false 
+04:06:46 f4d-flores-moarcats-app #1: measured success=false 
+04:06:58 f4d-flix-tech-avro-serde-php #1: measured success=false 
+04:08:40 f4d-dsibilio-rsocket-demo #3: measured success=false 
+04:08:40 f4d-bizanc-bizanc-io-core: O′ from cache (built 2026-10-21T02:02:19+02:00)
+04:08:56 f4d-flores-moarcats-app #2: measured success=false 
+04:09:21 f4d-flores-moarcats-app #3: measured success=false 
+04:09:21 f4d-centerforopenscience-cas-overlay: O′ from cache (built 2026-10-21T02:12:40+02:00)
+04:09:37 f4d-flix-tech-avro-serde-php #2: measured success=false 
+04:12:16 f4d-bizanc-bizanc-io-core #1: measured success=false 
+04:12:19 f4d-flix-tech-avro-serde-php #3: measured success=false 
+04:12:19 f4d-amiralies-metalarchives-api: O′ from cache (built 2026-10-21T02:07:17+02:00)
+04:13:03 f4d-amiralies-metalarchives-api #1: measured success=false 
+04:14:58 f4d-amiralies-metalarchives-api #2: measured success=false 
+04:15:11 f4d-bizanc-bizanc-io-core #2: measured success=false 
+04:15:49 f4d-bizanc-bizanc-io-core #3: measured success=false 
+04:15:49 f4d-ety001-online-clipboard: O′ from cache (built 2026-10-21T02:09:12+02:00)
+04:16:25 f4d-ety001-online-clipboard #1: measured success=false 
+04:16:38 f4d-ety001-online-clipboard #2: measured success=false 
+04:16:47 f4d-amiralies-metalarchives-api #3: measured success=false 
+04:16:47 f4d-ardalis-specification: O′ from cache (built 2026-10-21T02:10:34+02:00)
+04:16:52 f4d-ety001-online-clipboard #3: measured success=false 
+04:16:52 f4d-atomheartother-wanwan-html5: O′ from cache (built 2026-10-21T02:10:40+02:00)
+04:17:06 f4d-atomheartother-wanwan-html5 #1: measured success=false 
+04:17:13 f4d-atomheartother-wanwan-html5 #2: measured success=false 
+04:17:46 f4d-atomheartother-wanwan-html5 #3: measured success=false 
+04:17:46 f4d-mixcore-mix-core: O′ from cache (built 2026-10-21T02:16:52+02:00)
+04:17:51 f4d-ardalis-specification #1: measured success=false 
+04:18:20 f4d-mixcore-mix-core #1: measured success=false 
+04:18:51 f4d-mixcore-mix-core #2: measured success=false 
+04:19:19 f4d-centerforopenscience-cas-overlay #1: measured success=false 
+04:19:58 f4d-ardalis-specification #2: measured success=false 
+04:20:28 f4d-ardalis-specification #3: measured success=false 
+04:20:28 f4d-alexr1712-messenger-to-telegram: O′ from cache (built 2026-10-21T02:13:23+02:00)
+04:20:56 f4d-alexr1712-messenger-to-telegram #1: measured success=false 
+04:21:17 f4d-centerforopenscience-cas-overlay #2: measured success=false 
+04:21:30 f4d-alexr1712-messenger-to-telegram #2: measured success=false 
+04:22:47 f4d-centerforopenscience-cas-overlay #3: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+04:22:47 f4d-atifaziz-linqpadless: O′ from cache (built 2026-10-21T02:17:07+02:00)
+04:23:12 f4d-alexr1712-messenger-to-telegram #3: measured success=false 
+04:23:12 f4d-code4sac-codeforsacramento-org: O′ from cache (built 2026-10-21T02:25:22+02:00)
+04:24:48 f4d-mixcore-mix-core #3: measured success=true 
+04:24:48 f4d-18f-content-guide: O′ from cache (built 2026-10-21T02:24:38+02:00)
+04:25:26 f4d-atifaziz-linqpadless #1: measured success=false 
+04:25:59 f4d-atifaziz-linqpadless #2: measured success=false 
+04:26:30 f4d-atifaziz-linqpadless #3: measured success=false 
+04:27:51 f4d-18f-content-guide #1: measured success=false 
+04:29:50 f4d-code4sac-codeforsacramento-org #1: measured success=false 
+04:30:04 f4d-18f-content-guide #2: measured success=false 
+04:32:17 f4d-18f-content-guide #3: measured success=false 
+04:32:54 f4d-code4sac-codeforsacramento-org #2: measured success=false 
+04:34:24 f4d-code4sac-codeforsacramento-org #3: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+04:34:24 saved 114 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w1-failures
+comparison: /Users/czifrushanna/sleeko-results/2026-10-21/w0-vs-w1.md
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w1-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w1-failures.txt
+=== pass 1: W0+W1+W2 Wed Oct 21 04:34:24 CEST 2026
+04:35:05 demo-flask: python:3.10-alpine (V 27) → python:3.12-alpine3.24 (V 13), python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+04:36:07 demo-express-backend: node:lts-buster-slim (V 357, end of life) → node:24-trixie-slim (V 426), node:26-trixie-slim (V 430), node:22-trixie-slim (V 460), node:20-trixie-slim (V 1046)
+04:36:16 demo-django: python:3.7-alpine (V 188, end of life) → python:3.12-alpine3.24 (V 13), python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+04:36:16 demo-fastapi: no table: tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim is not an official image, whose tags the candidate rule knows
+04:38:49 demo-apache-php: php:8.0.9-apache (V 31578, end of life) → php:8.3-apache-trixie (V 3825), php:8.4-apache-trixie (V 3825), php:8.5-apache-trixie (V 3825), php:8.0-apache-bullseye (V 23236, end of life)
+04:39:21 demo-sparkjava: eclipse-temurin:17-jre-focal (V 16, end of life) → eclipse-temurin:17-jre-noble (V 76)
+04:39:46 demo-nodejs-web: node:14.17.3-alpine3.14 (V 462, end of life) → node:14-alpine3.17 (V 305, end of life)
+04:39:46 demo-golang-backend: no table: the final stage is built FROM scratch
+04:39:46 demo-traefik-golang: no table: the final stage is built FROM scratch
+04:39:59 demo-aspnet: mcr.microsoft.com/dotnet/aspnet:5.0 (V 647, end of life): no candidates
+04:41:14 d3-astrbotdevs-astrbot: python:3.10-slim (V 422) → python:3.12-slim-trixie (V 408), python:3.13-slim-trixie (V 421), python:3.14-slim-trixie (V 421), python:3.15-slim-trixie (V 421)
+04:43:05 d3-glimesh-broadcast-box: golang:alpine (V 2) → golang:1.26-alpine3.24 (V 2), golang:1.25-alpine3.24 (V 70), golang:1.24-alpine3.23 (V 319), golang:1.23-alpine3.22 (V 427)
+04:43:05 d3-jfryy-qq: no table: gcr.io/distroless/static:nonroot is not an official image, whose tags the candidate rule knows
+04:43:22 d3-raywangqvq-bilibilitoolpro: mcr.microsoft.com/dotnet/aspnet:8.0 (V 639): no candidates
+04:44:11 d3-tracecathq-tracecat-prod: node:22-alpine (V 71): no candidates
+04:44:32 d3-badtuxx-girus-cli: alpine:3.21 (V 46) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2)
+04:44:51 d3-bruin-data-bruin: debian:12.8-slim (V 829) → debian:13-slim (V 391)
+04:44:52 d3-cilium-tetragon-rthooks: no table: docker.io/library/alpine:3.21.3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c is pinned by digest
+04:44:52 d3-datawhores-of-scraper: no table: ghcr.io/astral-sh/uv:python3.11-bookworm-slim is not an official image, whose tags the candidate rule knows
+04:45:01 d3-hanxi-xiaomusic-builder: python:3.10.18-alpine3.22 (V 290) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26), python:3.10-alpine3.24 (V 27)
+04:45:12 d3-langchain-ai-local-deep-researcher: python:3.11-slim (V 420) → python:3.12-slim-trixie (V 408), python:3.13-slim-trixie (V 421), python:3.14-slim-trixie (V 421), python:3.15-slim-trixie (V 421)
+04:45:18 d3-lanyi1998-dnslog-go: alpine (V 2) → alpine:3.20 (V 0, end of life), alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.21 (V 46)
+04:45:26 d3-marcopiovanello-yt-dlp-web-ui: python:3.13.2-alpine3.21 (V 272) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+04:45:29 d3-markqvist-nomadnet: python:3.12-alpine (V 13) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+04:45:35 d3-projectdiscovery-httpx: alpine:3.18.2 (V 122, end of life) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2), alpine:3.21 (V 46)
+04:45:35 d3-unitycatalog-unitycatalog: alpine:3.20 (V 0, end of life) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2), alpine:3.21 (V 46)
+04:46:06 d3-vogler-free-games-claimer: ubuntu:jammy (V 58) → ubuntu:24.04 (V 46), ubuntu:26.04 (V 116)
+04:46:06 f4d-jeffreyksmithjr-galapagos-nao: no table: jeffreyksmithjr/elixir-mxnet is not an official image, whose tags the candidate rule knows
+04:47:29 f4d-fsprojects-argu: mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim (V 1854, end of life) → mcr.microsoft.com/dotnet/sdk:6.0-bookworm-slim (V 1855)
+04:47:29 f4d-3scale-3scale-toolbox: no table: registry.access.redhat.com/ubi9/ruby-30 is not an official image, whose tags the candidate rule knows
+04:47:49 f4d-wyhaya-updns: ubuntu (V 116) → ubuntu:18.04 (V 0, end of life), ubuntu:20.04 (V 4, end of life), ubuntu:24.04 (V 46), ubuntu:22.04 (V 58)
+04:48:38 f4d-robinmonjo-coincoin: elixir:1.6.1-alpine (V 54, end of life) → elixir:1.20-alpine (V 2), elixir:1.6-alpine (V 10, end of life), elixir:1.18-alpine (V 36), elixir:1.19-alpine (V 36)
+04:50:22 f4d-eiriktsarpalis-typeshape: mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim (V 2174, end of life) → mcr.microsoft.com/dotnet/sdk:7.0-bookworm-slim (V 2095)
+04:50:22 f4d-appwish-graphqlapi: no table: azul/zulu-openjdk-alpine:11-jre is not an official image, whose tags the candidate rule knows
+04:50:57 f4d-jaymoulin-guzzlehttp-cloudflare: php:7.2-alpine (V 391, end of life) → php:7.4-alpine3.16 (V 275, end of life), php:7.3-alpine3.15 (V 461, end of life)
+04:55:41 f4d-couchrest-couchrest-model: ruby:2.3 (V 12100, end of life) → ruby:2.5-buster (V 9678, end of life), ruby:2.4-buster (V 14610, end of life), ruby:2.7-bullseye (V 37488, end of life), ruby:2.6-bullseye (V 43887, end of life)
+04:55:41 f4d-ponkotuy-myfleetgirls: no table: anapsix/alpine-java:8_jdk is not an official image, whose tags the candidate rule knows
+04:55:56 f4d-hmbsbige-bilibilimangaautoclockin: mcr.microsoft.com/dotnet/core/runtime:3.1-buster-slim (V 542, end of life): no candidates
+04:55:56 f4d-linux-china-mail-catcher: no table: gcr.io/distroless/java is not an official image, whose tags the candidate rule knows
+04:56:22 f4d-ideatosrl-idephix: php:7.1-cli-alpine (V 190, end of life) → php:7.4-cli-alpine3.16 (V 275, end of life), php:7.2-cli-alpine3.12 (V 391, end of life), php:7.3-cli-alpine3.15 (V 461, end of life)
+05:00:42 f4d-minglecm-doc-to-dash: ruby (V 6878) → ruby:3.4-trixie (V 6868), ruby:3.3-trixie (V 6879), ruby:3.2-trixie (V 24061), ruby:3.1-bookworm (V 29314)
+05:00:43 f4d-digimarc-corp-whalerator: mcr.microsoft.com/dotnet/aspnet:5.0 (V 647, end of life): no candidates
+05:02:19 f4d-dsibilio-rsocket-demo: maven:3.5-jdk-8 (V 3677, end of life) → maven:3.6-jdk-8 (V 2106, end of life), maven:3.8-jdk-8 (V 4043, end of life)
+05:02:42 f4d-icemic-search-bakery-moe: node:12-alpine3.11 (V 304, end of life) → node:12-alpine3.15 (V 268, end of life)
+05:03:43 f4d-flix-tech-avro-serde-php: php:8.1-cli-alpine (V 432) → php:8.3-cli-alpine3.24 (V 4), php:8.4-cli-alpine3.24 (V 4), php:8.5-cli-alpine3.24 (V 4), php:8.1-cli-alpine3.22 (V 435)
+05:03:53 f4d-flores-moarcats-app: docker.io/library/ruby:2.7-alpine (V 101, end of life): no candidates
+05:04:19 f4d-bizanc-bizanc-io-core: mcr.microsoft.com/dotnet/core/aspnet:3.1.1 (V 1459, end of life) → mcr.microsoft.com/dotnet/core/aspnet:3.1 (V 552, end of life)
+05:05:08 f4d-centerforopenscience-cas-overlay: maven:3.3-jdk-8 (V 3840, end of life) → maven:3.6-jdk-8 (V 2106, end of life), maven:3.5-jdk-8 (V 3677, end of life), maven:3.8-jdk-8 (V 4043, end of life)
+05:05:22 f4d-amiralies-metalarchives-api: node:carbon-alpine (V 503, end of life): no candidates
+05:05:22 f4d-ety001-online-clipboard: no table: ety001/swoole:latest is not an official image, whose tags the candidate rule knows
+05:05:22 f4d-ardalis-specification: mcr.microsoft.com/dotnet/sdk:6.0 (V 1854, end of life): no candidates
+05:06:05 f4d-atomheartother-wanwan-html5: nginx:alpine (V 22) → nginx:1.30-alpine3.24 (V 22), nginx:1.29-alpine3.23 (V 441), nginx:1.27-alpine3.21 (V 525), nginx:1.28-alpine3.23 (V 569)
+05:06:05 f4d-mixcore-mix-core: mcr.microsoft.com/dotnet/sdk:6.0 (V 1854, end of life): no candidates
+05:06:54 f4d-alexr1712-messenger-to-telegram: node:alpine (V 37) → node:24-alpine3.24 (V 37), node:22-alpine3.24 (V 71), node:20-alpine3.23 (V 227), node:18-alpine3.21 (V 377)
+05:07:47 f4d-atifaziz-linqpadless: mcr.microsoft.com/dotnet/core/sdk:3.1.101-alpine3.10 (V 215, end of life) → mcr.microsoft.com/dotnet/core/sdk:3.1-alpine3.13 (V 168, end of life)
+05:07:50 f4d-code4sac-codeforsacramento-org: ruby:2.5 (V 9678, end of life) → ruby:2.7-bullseye (V 37488, end of life), ruby:2.6-bullseye (V 43887, end of life)
+05:07:52 f4d-18f-content-guide: ruby:2.7 (V 37488, end of life): no candidates
+05:07:52 57 items: 35 with a table, 10 with no candidates, 12 with no table
+05:07:55 demo-flask: O′ from cache (built 2026-10-21T00:34:58+02:00)
+05:07:55 demo-express-backend: O′ from cache (built 2026-10-21T00:35:39+02:00)
+05:07:55 demo-django: O′ from cache (built 2026-10-21T00:35:25+02:00)
+05:08:49 demo-flask #1: measured success=true 
+05:09:05 demo-django #1: measured success=false 
+05:09:23 demo-express-backend #1: measured success=false 
+05:09:55 demo-flask #2: measured success=false 
+05:09:58 demo-express-backend #2: measured success=false 
+05:10:04 demo-django #2: measured success=false 
+05:10:33 demo-express-backend #3: measured success=false 
+05:10:33 demo-fastapi: O′ from cache (built 2026-10-21T00:37:20+02:00)
+05:10:38 demo-flask #3: measured success=false 
+05:10:38 demo-apache-php: O′ from cache (built 2026-10-21T00:37:57+02:00)
+05:11:19 demo-django #3: measured success=false 
+05:11:19 demo-sparkjava: O′ from cache (built 2026-10-21T00:39:29+02:00)
+05:11:38 demo-apache-php #1: measured success=false 
+05:11:40 demo-fastapi #1: measured success=false 
+05:12:51 demo-apache-php #2: measured success=false 
+05:12:54 demo-fastapi #2: measured success=false 
+05:13:40 demo-fastapi #3: measured success=false 
+05:13:40 demo-nodejs-web: O′ from cache (built 2026-10-21T00:41:34+02:00)
+05:13:56 demo-sparkjava #1: measured success=false 
+05:14:37 demo-sparkjava #2: measured success=false 
+05:14:44 demo-nodejs-web #1: measured success=false 
+05:15:05 demo-apache-php #3: measured success=false 
+05:15:05 demo-golang-backend: O′ from cache (built 2026-10-21T00:41:42+02:00)
+05:15:12 demo-nodejs-web #2: measured success=false 
+05:15:14 demo-sparkjava #3: measured success=false 
+05:15:15 demo-traefik-golang: O′ from cache (built 2026-10-21T00:42:49+02:00)
+05:15:44 demo-nodejs-web #3: measured success=false 
+05:15:44 demo-aspnet: O′ from cache (built 2026-10-21T00:43:32+02:00)
+05:16:05 demo-golang-backend #1: measured success=false 
+05:16:30 demo-aspnet #1: measured success=false 
+05:16:36 demo-golang-backend #2: measured success=false 
+05:16:54 demo-traefik-golang #1: measured success=false 
+05:17:04 demo-golang-backend #3: measured success=false 
+05:17:04 d3-astrbotdevs-astrbot: O′ from cache (built 2026-10-21T00:50:50+02:00)
+05:17:16 demo-traefik-golang #2: measured success=false 
+05:17:40 demo-traefik-golang #3: measured success=false 
+05:17:40 d3-glimesh-broadcast-box: O′ from cache (built 2026-10-21T00:45:23+02:00)
+05:17:47 demo-aspnet #2: measured success=false 
+05:18:34 d3-glimesh-broadcast-box #1: measured success=false 
+05:18:48 d3-glimesh-broadcast-box #2: measured success=false 
+05:19:13 demo-aspnet #3: measured success=false 
+05:19:13 d3-jfryy-qq: O′ from cache (built 2026-10-21T00:46:55+02:00)
+05:19:43 d3-jfryy-qq #1: measured success=false 
+05:20:48 d3-glimesh-broadcast-box #3: measured success=false 
+05:20:48 d3-raywangqvq-bilibilitoolpro: O′ from cache (built 2026-10-21T02:45:17+02:00)
+05:20:54 d3-jfryy-qq #2: measured success=false 
+05:21:13 d3-jfryy-qq #3: measured success=false 
+05:21:13 d3-tracecathq-tracecat-prod: O′ from cache (built 2026-10-21T00:55:33+02:00)
+05:22:51 d3-raywangqvq-bilibilitoolpro #1: measured success=true 
+05:24:20 d3-raywangqvq-bilibilitoolpro #2: measured success=false 
+05:24:22 d3-astrbotdevs-astrbot #1: measured success=false 
+05:25:38 d3-raywangqvq-bilibilitoolpro #3: measured success=true 
+05:25:38 d3-badtuxx-girus-cli: O′ from cache (built 2026-10-21T00:51:38+02:00)
+05:27:14 d3-badtuxx-girus-cli #1: measured success=true 
+05:27:47 d3-badtuxx-girus-cli #2: measured success=true 
+05:28:29 d3-badtuxx-girus-cli #3: measured success=true 
+05:28:29 d3-bruin-data-bruin: O′ from cache (built 2026-10-21T00:55:31+02:00)
+05:28:49 d3-bruin-data-bruin #1: measured success=false 
+05:29:12 d3-bruin-data-bruin #2: measured success=false 
+05:29:18 d3-bruin-data-bruin #3: measured success=false 
+05:29:19 d3-cilium-tetragon-rthooks: O′ from cache (built 2026-10-21T00:59:40+02:00)
+05:29:55 d3-astrbotdevs-astrbot #2: measured success=false 
+05:30:07 d3-tracecathq-tracecat-prod #1: measured success=false 
+05:30:09 d3-cilium-tetragon-rthooks #1: measured success=false 
+05:31:55 d3-cilium-tetragon-rthooks #2: measured success=false 
+05:33:18 d3-cilium-tetragon-rthooks #3: measured success=false 
+05:33:18 d3-datawhores-of-scraper: O′ from cache (built 2026-10-21T01:04:27+02:00)
+05:34:55 d3-astrbotdevs-astrbot #3: measured success=false 
+05:34:55 d3-hanxi-xiaomusic-builder: O′ from cache (built 2026-10-21T01:07:35+02:00)
+05:38:03 d3-hanxi-xiaomusic-builder #1: measured success=false 
+05:38:16 d3-tracecathq-tracecat-prod #2: measured success=false 
+05:39:47 d3-datawhores-of-scraper #1: measured success=false 
+05:40:42 d3-hanxi-xiaomusic-builder #2: measured success=false 
+05:43:26 d3-tracecathq-tracecat-prod #3: measured success=false 
+05:43:26 d3-langchain-ai-local-deep-researcher: O′ from cache (built 2026-10-21T01:09:12+02:00)
+05:43:38 d3-hanxi-xiaomusic-builder #3: measured success=false 
+05:43:38 d3-lanyi1998-dnslog-go: O′ from cache (built 2026-10-21T01:09:21+02:00)
+05:44:55 d3-lanyi1998-dnslog-go #1: measured success=true 
+05:45:28 d3-lanyi1998-dnslog-go #2: measured success=true 
+05:46:06 d3-langchain-ai-local-deep-researcher #1: infra_error success=false scan candidate: trivy scan: exit code 1: 2026-10-21T03:46:04Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize cache: unable to initialize fs cache: cache may be in use by another process: timeout
+05:46:08 d3-lanyi1998-dnslog-go #3: measured success=false 
+05:46:08 d3-marcopiovanello-yt-dlp-web-ui: O′ from cache (built 2026-10-21T01:14:50+02:00)
+05:46:19 d3-datawhores-of-scraper #2: measured success=true 
+05:47:13 d3-marcopiovanello-yt-dlp-web-ui #1: measured success=false 
+05:49:43 d3-langchain-ai-local-deep-researcher #2: measured success=false 
+05:51:36 d3-marcopiovanello-yt-dlp-web-ui #2: measured success=false 
+05:51:47 d3-datawhores-of-scraper #3: measured success=false 
+05:51:47 d3-markqvist-nomadnet: O′ from cache (built 2026-10-21T01:13:56+02:00)
+05:53:18 d3-langchain-ai-local-deep-researcher #3: measured success=false 
+05:53:18 d3-projectdiscovery-httpx: O′ from cache (built 2026-10-21T01:17:14+02:00)
+05:53:50 d3-markqvist-nomadnet #1: measured success=false 
+sleeko-eval(4265) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4287) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4352) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4468) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4469) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4494) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:55:06 d3-markqvist-nomadnet #2: measured success=false 
+sleeko-eval(4627) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4695) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:55:25 d3-projectdiscovery-httpx #1: measured success=false 
+sleeko-eval(4696) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4792) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4816) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(4841) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:56:10 d3-projectdiscovery-httpx #2: measured success=false 
+sleeko-eval(5310) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5311) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5333) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:56:31 d3-projectdiscovery-httpx #3: measured success=false 
+sleeko-eval(5458) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5459) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:56:31 d3-unitycatalog-unitycatalog: building O′
+sleeko-eval(5460) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5515) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5537) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5602) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5603) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5716) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5719) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5720) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5745) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:56:56 d3-markqvist-nomadnet #3: measured success=false 
+sleeko-eval(5746) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5748) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:56:56 d3-vogler-free-games-claimer: O′ from cache (built 2026-10-21T01:27:51+02:00)
+sleeko-eval(5750) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5754) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5779) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5783) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5808) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5812) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5858) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5976) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5977) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(5999) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:57:17 d3-marcopiovanello-yt-dlp-web-ui #3: measured success=false 
+sleeko-eval(6000) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6001) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+05:57:17 f4d-jeffreyksmithjr-galapagos-nao: O′ from cache (built 2026-10-21T01:30:52+02:00)
+sleeko-eval(6044) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6066) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6148) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6170) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6192) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6336) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6358) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6380) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(6898) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(7527) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8061) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8182) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8183) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8184) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:00:28 f4d-jeffreyksmithjr-galapagos-nao #1: measured success=false 
+sleeko-eval(8411) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8433) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8829) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(8851) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:01:28 d3-vogler-free-games-claimer #1: measured success=false 
+sleeko-eval(9221) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9245) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9269) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:02:03 f4d-jeffreyksmithjr-galapagos-nao #2: measured success=false 
+sleeko-eval(9437) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9438) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9503) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9504) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9529) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9530) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9533) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9555) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:02:51 f4d-jeffreyksmithjr-galapagos-nao #3: measured success=false 
+sleeko-eval(9931) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9932) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:02:52 f4d-fsprojects-argu: O′ from cache (built 2026-10-21T01:30:21+02:00)
+sleeko-eval(9933) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9937) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9958) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(9966) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(10190) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(10191) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(10216) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:03:29 f4d-fsprojects-argu #1: measured success=false 
+sleeko-eval(10579) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(10601) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(10602) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:04:02 f4d-fsprojects-argu #2: measured success=false 
+sleeko-eval(11287) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(11330) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(11561) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(11637) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(11665) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:05:37 f4d-fsprojects-argu #3: measured success=false 
+sleeko-eval(11908) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(11910) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:05:38 f4d-3scale-3scale-toolbox: O′ from cache (built 2026-10-21T01:33:24+02:00)
+sleeko-eval(12040) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12065) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12088) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12363) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:06:31 O′: build: build took longer than 10m0s
+sleeko-eval(12578) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12579) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:06:31 f4d-wyhaya-updns: O′ from cache (built 2026-10-21T01:33:23+02:00)
+sleeko-eval(12580) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12593) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12635) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12669) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12679) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:06:36 d3-vogler-free-games-claimer #2: measured success=false 
+sleeko-eval(12686) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12715) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12723) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12775) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12797) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(12819) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13052) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13167) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13258) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13259) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13434) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13629) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13756) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13757) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13758) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13759) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:08:08 f4d-3scale-3scale-toolbox #1: measured success=true 
+sleeko-eval(13782) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13827) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13898) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13910) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13962) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13963) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13965) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(13966) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:08:22 f4d-wyhaya-updns #1: measured success=false 
+sleeko-eval(14016) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14039) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14041) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14206) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14230) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14256) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:09:00 f4d-3scale-3scale-toolbox #2: measured success=false 
+sleeko-eval(14524) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14568) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14593) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:09:23 f4d-wyhaya-updns #2: measured success=false 
+06:09:27 f4d-3scale-3scale-toolbox #3: measured success=false 
+sleeko-eval(14788) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14789) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:09:27 f4d-robinmonjo-coincoin: O′ from cache (built 2026-10-21T01:35:11+02:00)
+sleeko-eval(14790) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14815) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14819) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14844) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14845) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14849) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14850) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14875) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14879) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14904) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14905) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14909) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14913) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14917) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(14941) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15007) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15008) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:09:42 f4d-wyhaya-updns #3: measured success=false 
+sleeko-eval(15009) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15010) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:09:42 f4d-eiriktsarpalis-typeshape: O′ from cache (built 2026-10-21T01:36:39+02:00)
+sleeko-eval(15011) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15015) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15040) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15044) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15047) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15174) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15221) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15224) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:10:04 f4d-robinmonjo-coincoin #1: measured success=false 
+sleeko-eval(15320) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15342) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15364) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:10:28 f4d-robinmonjo-coincoin #2: measured success=false 
+sleeko-eval(15623) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15646) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15648) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15675) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15707) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15796) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:10:52 f4d-robinmonjo-coincoin #3: measured success=false 
+sleeko-eval(15839) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15861) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:10:52 f4d-appwish-graphqlapi: O′ from cache (built 2026-10-21T01:38:40+02:00)
+sleeko-eval(15862) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15884) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15910) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15911) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15912) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:10:57 f4d-eiriktsarpalis-typeshape #1: measured success=false 
+sleeko-eval(15959) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15960) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(15982) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16011) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16012) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16038) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16177) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16424) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:11:53 d3-vogler-free-games-claimer #3: measured success=false 
+sleeko-eval(16563) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16564) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:11:53 f4d-jaymoulin-guzzlehttp-cloudflare: O′ from cache (built 2026-10-21T01:37:25+02:00)
+sleeko-eval(16565) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16569) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16570) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16571) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:11:54 f4d-eiriktsarpalis-typeshape #2: measured success=false 
+sleeko-eval(16572) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16645) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16646) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16668) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16699) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16724) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16732) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16757) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16761) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16765) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16766) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16833) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16889) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16911) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(16933) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17013) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17122) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17123) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17124) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:12:40 f4d-eiriktsarpalis-typeshape #3: measured success=false 
+sleeko-eval(17146) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17147) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:12:40 f4d-couchrest-couchrest-model: O′ from cache (built 2026-10-21T01:45:42+02:00)
+sleeko-eval(17148) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17152) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17177) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17202) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17206) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17213) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17238) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17263) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17267) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17292) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17296) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17300) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17394) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17421) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17422) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:13:07 f4d-couchrest-couchrest-model #1: measured success=false 
+sleeko-eval(17519) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17520) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17521) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17624) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17625) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17670) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17801) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17802) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17803) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:13:34 f4d-jaymoulin-guzzlehttp-cloudflare #1: measured success=false 
+sleeko-eval(17912) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17914) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17939) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(17961) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18038) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18368) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18494) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18495) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18496) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:14:32 f4d-couchrest-couchrest-model #2: measured success=false 
+sleeko-eval(18518) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18519) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18541) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18566) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18567) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18568) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18590) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18591) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18642) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18688) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18689) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18690) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:14:48 f4d-jaymoulin-guzzlehttp-cloudflare #2: measured success=false 
+sleeko-eval(18754) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18755) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18756) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:14:54 f4d-appwish-graphqlapi #1: measured success=false 
+sleeko-eval(18825) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18826) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18849) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18850) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18873) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(18994) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19019) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19041) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19172) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:15:36 f4d-couchrest-couchrest-model #3: measured success=false 
+sleeko-eval(19261) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19262) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:15:36 f4d-ponkotuy-myfleetgirls: O′ from cache (built 2026-10-21T01:39:53+02:00)
+sleeko-eval(19263) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19327) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19397) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19419) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19441) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19442) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19464) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:15:55 f4d-appwish-graphqlapi #2: measured success=false 
+sleeko-eval(19520) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19521) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19543) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19544) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19567) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19666) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19667) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19689) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19690) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19712) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19745) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19878) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19879) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19880) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:16:29 f4d-jaymoulin-guzzlehttp-cloudflare #3: measured success=false 
+sleeko-eval(19881) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19882) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:16:30 f4d-hmbsbige-bilibilimangaautoclockin: O′ from cache (built 2026-10-21T01:41:41+02:00)
+sleeko-eval(19883) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(19887) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20045) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20088) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20218) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20219) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20220) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20224) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:16:57 f4d-ponkotuy-myfleetgirls #1: measured success=true 
+sleeko-eval(20225) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20270) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20271) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20405) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20406) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20432) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20464) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20486) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20508) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20582) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:17:40 f4d-hmbsbige-bilibilimangaautoclockin #1: measured success=false 
+sleeko-eval(20755) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20828) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20969) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20970) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(20971) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:18:01 f4d-ponkotuy-myfleetgirls #2: measured success=false 
+sleeko-eval(21048) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21070) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21205) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21206) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21207) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21229) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21232) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21239) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:18:27 f4d-hmbsbige-bilibilimangaautoclockin #2: measured success=false 
+sleeko-eval(21316) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21426) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21493) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21515) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21537) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21566) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21567) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21568) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:18:52 f4d-ponkotuy-myfleetgirls #3: measured success=false 
+sleeko-eval(21569) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21570) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:18:52 f4d-linux-china-mail-catcher: O′ from cache (built 2026-10-21T01:42:19+02:00)
+sleeko-eval(21660) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21682) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21781) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21803) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21825) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:19:15 f4d-appwish-graphqlapi #3: measured success=false 
+sleeko-eval(21828) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21829) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:19:15 f4d-ideatosrl-idephix: O′ from cache (built 2026-10-21T01:43:30+02:00)
+sleeko-eval(21851) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21865) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21977) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(21984) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22009) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22013) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22039) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22044) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22048) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22073) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22155) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22177) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22178) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:19:53 f4d-ideatosrl-idephix #1: measured success=false 
+06:20:03 f4d-hmbsbige-bilibilimangaautoclockin #3: measured success=false 
+sleeko-eval(22430) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22431) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:20:03 f4d-minglecm-doc-to-dash: O′ from cache (built 2026-10-21T01:46:20+02:00)
+sleeko-eval(22432) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22457) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22461) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22490) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22495) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22520) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22524) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22549) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22553) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22554) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22558) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22559) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22583) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22587) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22591) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22709) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22717) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22739) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22815) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22837) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(22940) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23077) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23078) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23079) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:20:53 f4d-ideatosrl-idephix #2: measured success=false 
+sleeko-eval(23169) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23240) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23262) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23284) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23306) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:21:16 f4d-ideatosrl-idephix #3: measured success=false 
+sleeko-eval(23340) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23341) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:21:16 f4d-digimarc-corp-whalerator: O′ from cache (built 2026-10-21T01:49:00+02:00)
+sleeko-eval(23405) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23427) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23436) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23461) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23536) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23537) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23538) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23539) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:21:33 f4d-linux-china-mail-catcher #1: measured success=false 
+sleeko-eval(23630) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23652) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23719) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23741) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23764) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:21:57 f4d-linux-china-mail-catcher #2: measured success=false 
+sleeko-eval(23884) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23931) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(23953) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24303) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24395) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24569) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24617) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24691) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24692) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24740) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:23:19 f4d-linux-china-mail-catcher #3: measured success=true 
+sleeko-eval(24741) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24742) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:23:19 f4d-dsibilio-rsocket-demo: O′ from cache (built 2026-10-21T01:55:10+02:00)
+sleeko-eval(24743) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24768) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24797) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24801) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24826) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24827) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24831) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24922) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24945) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(24976) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25361) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25475) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25476) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25477) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:24:24 f4d-minglecm-doc-to-dash #1: measured success=true 
+sleeko-eval(25660) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25683) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(25707) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27057) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27104) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27152) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27200) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27222) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27286) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27332) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27333) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27334) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27335) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:27:00 f4d-digimarc-corp-whalerator #1: measured success=false 
+sleeko-eval(27402) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27403) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27404) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:27:06 f4d-minglecm-doc-to-dash #2: measured success=true 
+sleeko-eval(27430) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27431) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27453) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27470) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27492) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(27514) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(28651) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(28784) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(28896) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:29:19 f4d-digimarc-corp-whalerator #2: measured success=false 
+sleeko-eval(29011) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29012) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29013) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:29:26 f4d-minglecm-doc-to-dash #3: measured success=true 
+sleeko-eval(29014) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29015) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:29:26 f4d-icemic-search-bakery-moe: O′ from cache (built 2026-10-21T01:53:47+02:00)
+sleeko-eval(29016) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29044) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29094) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29098) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29099) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29124) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29125) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29159) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29181) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(29203) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(30830) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(30930) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:32:17 f4d-digimarc-corp-whalerator #3: measured success=false 
+sleeko-eval(30999) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31000) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:32:17 f4d-flix-tech-avro-serde-php: O′ from cache (built 2026-10-21T01:58:43+02:00)
+sleeko-eval(31001) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31005) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31118) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31119) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31144) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31148) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31173) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31177) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31202) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31206) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31231) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31259) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31260) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31261) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:32:38 f4d-dsibilio-rsocket-demo #1: measured success=false 
+sleeko-eval(31283) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31327) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31328) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31350) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31351) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31352) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31379) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31403) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31468) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31592) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31593) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31598) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:33:07 f4d-icemic-search-bakery-moe #1: measured success=false 
+sleeko-eval(31685) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31710) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(31734) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32110) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32208) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:34:08 f4d-icemic-search-bakery-moe #2: measured success=false 
+sleeko-eval(32320) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32363) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32390) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32391) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32442) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32443) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32444) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32466) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:34:24 f4d-dsibilio-rsocket-demo #2: measured success=false 
+sleeko-eval(32495) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32520) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:34:29 f4d-flix-tech-avro-serde-php #1: measured success=false 
+sleeko-eval(32543) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32565) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32619) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32620) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32642) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:34:38 f4d-icemic-search-bakery-moe #3: measured success=false 
+sleeko-eval(32643) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32644) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:34:38 f4d-flores-moarcats-app: O′ from cache (built 2026-10-21T02:00:26+02:00)
+sleeko-eval(32645) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32670) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32695) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32699) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32769) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32770) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32771) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32793) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32794) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32816) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(32819) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33034) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33197) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33198) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33199) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:35:26 f4d-dsibilio-rsocket-demo #3: measured success=false 
+sleeko-eval(33200) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33201) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:35:26 f4d-bizanc-bizanc-io-core: O′ from cache (built 2026-10-21T02:02:19+02:00)
+sleeko-eval(33202) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33231) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33235) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33239) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33287) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33309) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33310) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:36:07 f4d-flix-tech-avro-serde-php #2: measured success=false 
+sleeko-eval(33957) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33982) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(33984) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34345) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34367) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34392) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:37:13 f4d-flores-moarcats-app #1: measured success=false 
+06:37:14 f4d-flix-tech-avro-serde-php #3: measured success=false 
+sleeko-eval(34502) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34503) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:37:15 f4d-centerforopenscience-cas-overlay: O′ from cache (built 2026-10-21T02:12:40+02:00)
+sleeko-eval(34504) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34529) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34530) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34534) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:37:17 f4d-bizanc-bizanc-io-core #1: measured success=true 
+sleeko-eval(34586) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34587) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34609) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34610) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34612) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34615) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34823) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34845) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(34870) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:39:03 f4d-centerforopenscience-cas-overlay #1: measured success=false 
+sleeko-eval(35882) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(35909) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(35976) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36052) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36053) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36075) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36099) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36100) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36102) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:39:33 f4d-bizanc-bizanc-io-core #2: measured success=false 
+sleeko-eval(36191) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36217) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36220) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:39:48 f4d-flores-moarcats-app #2: measured success=false 
+sleeko-eval(36296) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36340) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36362) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36363) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36411) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36513) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36514) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36518) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:40:07 f4d-bizanc-bizanc-io-core #3: measured success=true 
+sleeko-eval(36519) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36520) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:40:07 f4d-amiralies-metalarchives-api: O′ from cache (built 2026-10-21T02:07:17+02:00)
+sleeko-eval(36521) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36546) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36592) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36617) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36698) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36722) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:40:29 f4d-flores-moarcats-app #3: measured success=false 
+sleeko-eval(36797) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36798) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:40:29 f4d-ety001-online-clipboard: O′ from cache (built 2026-10-21T02:09:12+02:00)
+sleeko-eval(36821) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36822) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36895) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36930) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36952) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(36983) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37017) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37059) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:40:53 f4d-amiralies-metalarchives-api #1: measured success=false 
+06:40:56 f4d-ety001-online-clipboard #1: measured success=false 
+sleeko-eval(37277) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37299) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37303) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37326) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37351) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37352) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37360) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37405) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37427) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:41:13 f4d-ety001-online-clipboard #2: measured success=false 
+sleeko-eval(37449) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:41:30 f4d-centerforopenscience-cas-overlay #2: measured success=false 
+sleeko-eval(37698) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37723) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37745) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:41:50 f4d-ety001-online-clipboard #3: measured success=false 
+sleeko-eval(37884) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37885) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:41:50 f4d-ardalis-specification: O′ from cache (built 2026-10-21T02:10:34+02:00)
+sleeko-eval(37886) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37890) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37936) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37939) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(37961) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38215) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38266) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38355) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38420) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38421) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38449) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38480) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38481) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38482) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:42:41 f4d-amiralies-metalarchives-api #2: measured success=false 
+sleeko-eval(38570) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:42:49 f4d-ardalis-specification #1: measured success=false 
+sleeko-eval(38592) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38656) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38657) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:43:01 f4d-centerforopenscience-cas-overlay #3: measured success=false 
+sleeko-eval(38703) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38704) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:43:01 f4d-atomheartother-wanwan-html5: O′ from cache (built 2026-10-21T02:10:40+02:00)
+sleeko-eval(38723) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38730) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38731) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38735) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38757) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38760) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38766) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38793) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38803) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38833) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38837) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38841) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38866) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38870) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38895) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38896) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38900) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38922) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38944) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(38948) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39069) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39096) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39160) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39186) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39208) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39230) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39281) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39282) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39283) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:43:46 f4d-atomheartother-wanwan-html5 #1: measured success=false 
+sleeko-eval(39305) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39309) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39331) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39382) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39383) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39405) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39494) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39543) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39544) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39545) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:07 f4d-atomheartother-wanwan-html5 #2: measured success=false 
+sleeko-eval(39547) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39569) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39570) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39595) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39645) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:16 f4d-ardalis-specification #2: measured success=false 
+sleeko-eval(39670) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39716) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39717) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39718) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39719) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:23 f4d-amiralies-metalarchives-api #3: measured success=false 
+sleeko-eval(39741) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39742) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:23 f4d-mixcore-mix-core: O′ from cache (built 2026-10-21T02:16:52+02:00)
+sleeko-eval(39744) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39817) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39818) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39819) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:30 f4d-atomheartother-wanwan-html5 #3: measured success=false 
+sleeko-eval(39820) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39821) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:30 f4d-alexr1712-messenger-to-telegram: O′ from cache (built 2026-10-21T02:13:23+02:00)
+sleeko-eval(39822) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39848) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39898) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39902) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39937) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39941) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39946) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39947) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39984) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39988) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(39989) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40016) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40019) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40029) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:43 f4d-ardalis-specification #3: measured success=false 
+sleeko-eval(40051) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40052) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:44:43 f4d-atifaziz-linqpadless: O′ from cache (built 2026-10-21T02:17:07+02:00)
+sleeko-eval(40053) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40057) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40058) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40059) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40085) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40086) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40097) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40211) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40236) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40258) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:45:00 f4d-mixcore-mix-core #1: measured success=false 
+06:45:20 f4d-atifaziz-linqpadless #1: measured success=false 
+sleeko-eval(40599) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40621) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40622) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40644) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:45:36 f4d-atifaziz-linqpadless #2: measured success=false 
+sleeko-eval(40698) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40742) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40743) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40765) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40820) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40821) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40843) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40844) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40939) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40940) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(40941) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:46:00 f4d-alexr1712-messenger-to-telegram #1: measured success=false 
+06:46:01 f4d-mixcore-mix-core #2: measured success=false 
+sleeko-eval(41163) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41166) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41188) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41245) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41270) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41315) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:46:49 f4d-mixcore-mix-core #3: measured success=false 
+sleeko-eval(41529) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41532) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:46:49 f4d-code4sac-codeforsacramento-org: O′ from cache (built 2026-10-21T02:25:22+02:00)
+sleeko-eval(41533) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41537) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41943) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41947) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(41969) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42033) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42034) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42059) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42145) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42146) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42147) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:47:44 f4d-atifaziz-linqpadless #3: measured success=false 
+sleeko-eval(42148) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42149) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:47:44 f4d-18f-content-guide: O′ from cache (built 2026-10-21T02:24:38+02:00)
+sleeko-eval(42150) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42154) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42182) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42183) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42184) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:47:48 f4d-alexr1712-messenger-to-telegram #2: measured success=true 
+sleeko-eval(42269) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42270) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42296) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42492) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42514) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42581) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42604) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42628) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42759) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42760) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(42764) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:48:37 f4d-alexr1712-messenger-to-telegram #3: measured success=true 
+sleeko-eval(43101) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(43102) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(43504) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:49:56 f4d-code4sac-codeforsacramento-org #1: measured success=false 
+sleeko-eval(43980) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(44002) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:51:27 f4d-code4sac-codeforsacramento-org #2: optimizer_failed success=false stage generate: context deadline exceeded (Client.Timeout or context cancellation while reading body)
+sleeko-eval(45008) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:52:09 f4d-18f-content-guide #1: measured success=false 
+sleeko-eval(45426) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45427) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45580) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45581) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45801) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45802) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(45803) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:53:20 f4d-18f-content-guide #2: measured success=false 
+sleeko-eval(46565) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(46587) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(46588) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:54:25 f4d-code4sac-codeforsacramento-org #3: measured success=false 
+sleeko-eval(47318) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(47319) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+sleeko-eval(47340) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+06:55:39 f4d-18f-content-guide #3: measured success=false 
+06:55:39 saved 113 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w2-failures
+comparison: /Users/czifrushanna/sleeko-results/2026-10-21/w1-vs-w2.md
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w2-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w2-failures.txt, tables: /Users/czifrushanna/sleeko-results/2026-10-21/w2-bases.jsonl
+=== pass 2: W0 Wed Oct 21 06:55:39 CEST 2026
+06:55:43 demo-flask: all 3 repetitions already recorded, skipping
+06:55:43 demo-express-backend: all 3 repetitions already recorded, skipping
+06:55:43 demo-django: all 3 repetitions already recorded, skipping
+06:55:43 demo-fastapi: all 3 repetitions already recorded, skipping
+06:55:43 demo-apache-php: all 3 repetitions already recorded, skipping
+06:55:43 demo-sparkjava: all 3 repetitions already recorded, skipping
+06:55:43 demo-nodejs-web: all 3 repetitions already recorded, skipping
+06:55:43 demo-golang-backend: all 3 repetitions already recorded, skipping
+06:55:43 demo-traefik-golang: all 3 repetitions already recorded, skipping
+06:55:43 demo-aspnet: all 3 repetitions already recorded, skipping
+06:55:43 d3-astrbotdevs-astrbot: all 3 repetitions already recorded, skipping
+06:55:43 d3-glimesh-broadcast-box: all 3 repetitions already recorded, skipping
+06:55:43 d3-jfryy-qq: all 3 repetitions already recorded, skipping
+06:55:43 d3-tracecathq-tracecat-prod: all 3 repetitions already recorded, skipping
+06:55:43 d3-badtuxx-girus-cli: all 3 repetitions already recorded, skipping
+06:55:43 d3-bruin-data-bruin: all 3 repetitions already recorded, skipping
+06:55:43 d3-cilium-tetragon-rthooks: all 3 repetitions already recorded, skipping
+06:55:43 d3-datawhores-of-scraper: all 3 repetitions already recorded, skipping
+06:55:43 d3-hanxi-xiaomusic-builder: all 3 repetitions already recorded, skipping
+06:55:43 d3-langchain-ai-local-deep-researcher: all 3 repetitions already recorded, skipping
+06:55:43 d3-lanyi1998-dnslog-go: all 3 repetitions already recorded, skipping
+06:55:43 d3-marcopiovanello-yt-dlp-web-ui: all 3 repetitions already recorded, skipping
+06:55:43 d3-markqvist-nomadnet: all 3 repetitions already recorded, skipping
+06:55:43 d3-projectdiscovery-httpx: all 3 repetitions already recorded, skipping
+06:55:43 d3-unitycatalog-unitycatalog: all 3 repetitions already recorded, skipping
+06:55:43 d3-vogler-free-games-claimer: all 3 repetitions already recorded, skipping
+06:55:43 f4d-jeffreyksmithjr-galapagos-nao: all 3 repetitions already recorded, skipping
+06:55:43 f4d-fsprojects-argu: all 3 repetitions already recorded, skipping
+06:55:43 f4d-3scale-3scale-toolbox: all 3 repetitions already recorded, skipping
+06:55:43 f4d-wyhaya-updns: all 3 repetitions already recorded, skipping
+06:55:43 f4d-robinmonjo-coincoin: all 3 repetitions already recorded, skipping
+06:55:43 f4d-eiriktsarpalis-typeshape: all 3 repetitions already recorded, skipping
+06:55:43 f4d-appwish-graphqlapi: all 3 repetitions already recorded, skipping
+06:55:43 f4d-jaymoulin-guzzlehttp-cloudflare: all 3 repetitions already recorded, skipping
+06:55:43 f4d-couchrest-couchrest-model: all 3 repetitions already recorded, skipping
+06:55:43 f4d-ponkotuy-myfleetgirls: all 3 repetitions already recorded, skipping
+06:55:43 f4d-hmbsbige-bilibilimangaautoclockin: all 3 repetitions already recorded, skipping
+06:55:43 f4d-linux-china-mail-catcher: all 3 repetitions already recorded, skipping
+06:55:43 f4d-ideatosrl-idephix: all 3 repetitions already recorded, skipping
+06:55:43 f4d-minglecm-doc-to-dash: all 3 repetitions already recorded, skipping
+06:55:43 f4d-digimarc-corp-whalerator: all 3 repetitions already recorded, skipping
+06:55:43 f4d-dsibilio-rsocket-demo: all 3 repetitions already recorded, skipping
+06:55:43 f4d-icemic-search-bakery-moe: all 3 repetitions already recorded, skipping
+06:55:43 f4d-flix-tech-avro-serde-php: all 3 repetitions already recorded, skipping
+06:55:43 f4d-flores-moarcats-app: all 3 repetitions already recorded, skipping
+06:55:43 f4d-bizanc-bizanc-io-core: all 3 repetitions already recorded, skipping
+06:55:43 f4d-centerforopenscience-cas-overlay: all 3 repetitions already recorded, skipping
+06:55:43 f4d-amiralies-metalarchives-api: all 3 repetitions already recorded, skipping
+06:55:43 f4d-ety001-online-clipboard: all 3 repetitions already recorded, skipping
+06:55:43 f4d-ardalis-specification: all 3 repetitions already recorded, skipping
+06:55:43 f4d-atomheartother-wanwan-html5: all 3 repetitions already recorded, skipping
+06:55:43 f4d-mixcore-mix-core: all 3 repetitions already recorded, skipping
+06:55:43 f4d-alexr1712-messenger-to-telegram: all 3 repetitions already recorded, skipping
+06:55:43 f4d-atifaziz-linqpadless: all 3 repetitions already recorded, skipping
+06:55:43 f4d-code4sac-codeforsacramento-org: all 3 repetitions already recorded, skipping
+06:55:43 f4d-18f-content-guide: all 3 repetitions already recorded, skipping
+06:55:43 d3-raywangqvq-bilibilitoolpro: O′ from cache (built 2026-10-21T02:45:17+02:00)
+06:56:21 d3-raywangqvq-bilibilitoolpro #1: measured success=false 
+06:56:49 d3-raywangqvq-bilibilitoolpro #2: measured success=false 
+07:00:13 d3-raywangqvq-bilibilitoolpro #3: measured success=true 
+07:00:14 saved 136 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w0-failures
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w0-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w0-failures.txt
+=== pass 2: W0+W1 Wed Oct 21 07:00:14 CEST 2026
+07:00:18 demo-flask: all 3 repetitions already recorded, skipping
+07:00:18 demo-express-backend: all 3 repetitions already recorded, skipping
+07:00:18 demo-django: all 3 repetitions already recorded, skipping
+07:00:18 demo-fastapi: all 3 repetitions already recorded, skipping
+07:00:18 demo-apache-php: all 3 repetitions already recorded, skipping
+07:00:18 demo-sparkjava: all 3 repetitions already recorded, skipping
+07:00:18 demo-nodejs-web: all 3 repetitions already recorded, skipping
+07:00:18 demo-golang-backend: all 3 repetitions already recorded, skipping
+07:00:18 demo-traefik-golang: all 3 repetitions already recorded, skipping
+07:00:18 demo-aspnet: all 3 repetitions already recorded, skipping
+07:00:18 d3-astrbotdevs-astrbot: all 3 repetitions already recorded, skipping
+07:00:18 d3-glimesh-broadcast-box: all 3 repetitions already recorded, skipping
+07:00:18 d3-jfryy-qq: all 3 repetitions already recorded, skipping
+07:00:18 d3-raywangqvq-bilibilitoolpro: all 3 repetitions already recorded, skipping
+07:00:18 d3-tracecathq-tracecat-prod: all 3 repetitions already recorded, skipping
+07:00:18 d3-badtuxx-girus-cli: all 3 repetitions already recorded, skipping
+07:00:18 d3-bruin-data-bruin: all 3 repetitions already recorded, skipping
+07:00:18 d3-cilium-tetragon-rthooks: all 3 repetitions already recorded, skipping
+07:00:18 d3-datawhores-of-scraper: all 3 repetitions already recorded, skipping
+07:00:18 d3-hanxi-xiaomusic-builder: all 3 repetitions already recorded, skipping
+07:00:18 d3-langchain-ai-local-deep-researcher: all 3 repetitions already recorded, skipping
+07:00:18 d3-lanyi1998-dnslog-go: all 3 repetitions already recorded, skipping
+07:00:18 d3-marcopiovanello-yt-dlp-web-ui: all 3 repetitions already recorded, skipping
+07:00:18 d3-markqvist-nomadnet: all 3 repetitions already recorded, skipping
+07:00:18 d3-projectdiscovery-httpx: all 3 repetitions already recorded, skipping
+07:00:18 d3-unitycatalog-unitycatalog: all 3 repetitions already recorded, skipping
+07:00:18 d3-vogler-free-games-claimer: all 3 repetitions already recorded, skipping
+07:00:18 f4d-jeffreyksmithjr-galapagos-nao: all 3 repetitions already recorded, skipping
+07:00:18 f4d-fsprojects-argu: all 3 repetitions already recorded, skipping
+07:00:18 f4d-3scale-3scale-toolbox: all 3 repetitions already recorded, skipping
+07:00:18 f4d-wyhaya-updns: all 3 repetitions already recorded, skipping
+07:00:18 f4d-robinmonjo-coincoin: all 3 repetitions already recorded, skipping
+07:00:18 f4d-eiriktsarpalis-typeshape: all 3 repetitions already recorded, skipping
+07:00:18 f4d-appwish-graphqlapi: all 3 repetitions already recorded, skipping
+07:00:18 f4d-jaymoulin-guzzlehttp-cloudflare: all 3 repetitions already recorded, skipping
+07:00:18 f4d-couchrest-couchrest-model: all 3 repetitions already recorded, skipping
+07:00:18 f4d-ponkotuy-myfleetgirls: all 3 repetitions already recorded, skipping
+07:00:18 f4d-hmbsbige-bilibilimangaautoclockin: all 3 repetitions already recorded, skipping
+07:00:18 f4d-linux-china-mail-catcher: all 3 repetitions already recorded, skipping
+07:00:18 f4d-ideatosrl-idephix: all 3 repetitions already recorded, skipping
+07:00:18 f4d-minglecm-doc-to-dash: all 3 repetitions already recorded, skipping
+07:00:18 f4d-digimarc-corp-whalerator: all 3 repetitions already recorded, skipping
+07:00:18 f4d-dsibilio-rsocket-demo: all 3 repetitions already recorded, skipping
+07:00:18 f4d-icemic-search-bakery-moe: all 3 repetitions already recorded, skipping
+07:00:18 f4d-flix-tech-avro-serde-php: all 3 repetitions already recorded, skipping
+07:00:18 f4d-flores-moarcats-app: all 3 repetitions already recorded, skipping
+07:00:18 f4d-bizanc-bizanc-io-core: all 3 repetitions already recorded, skipping
+07:00:18 f4d-centerforopenscience-cas-overlay: all 3 repetitions already recorded, skipping
+07:00:18 f4d-amiralies-metalarchives-api: all 3 repetitions already recorded, skipping
+07:00:18 f4d-ety001-online-clipboard: all 3 repetitions already recorded, skipping
+07:00:18 f4d-ardalis-specification: all 3 repetitions already recorded, skipping
+07:00:18 f4d-atomheartother-wanwan-html5: all 3 repetitions already recorded, skipping
+07:00:18 f4d-mixcore-mix-core: all 3 repetitions already recorded, skipping
+07:00:18 f4d-alexr1712-messenger-to-telegram: all 3 repetitions already recorded, skipping
+07:00:18 f4d-atifaziz-linqpadless: all 3 repetitions already recorded, skipping
+07:00:18 f4d-code4sac-codeforsacramento-org: all 3 repetitions already recorded, skipping
+07:00:18 f4d-18f-content-guide: all 3 repetitions already recorded, skipping
+07:00:18 saved 114 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w1-failures
+comparison: /Users/czifrushanna/sleeko-results/2026-10-21/w0-vs-w1.md
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w1-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w1-failures.txt
+=== pass 2: W0+W1+W2 Wed Oct 21 07:00:18 CEST 2026
+07:00:36 demo-flask: python:3.10-alpine (V 27) → python:3.12-alpine3.24 (V 13), python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+07:00:52 demo-express-backend: node:lts-buster-slim (V 357, end of life) → node:24-trixie-slim (V 426), node:26-trixie-slim (V 430), node:22-trixie-slim (V 460), node:20-trixie-slim (V 1046)
+07:00:58 demo-django: python:3.7-alpine (V 188, end of life) → python:3.12-alpine3.24 (V 13), python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+07:00:58 demo-fastapi: no table: tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim is not an official image, whose tags the candidate rule knows
+07:02:17 demo-apache-php: php:8.0.9-apache (V 31578, end of life) → php:8.3-apache-trixie (V 2900), php:8.4-apache-trixie (V 2900), php:8.5-apache-trixie (V 2900), php:8.0-apache-bullseye (V 23236, end of life)
+07:02:23 demo-sparkjava: eclipse-temurin:17-jre-focal (V 16, end of life) → eclipse-temurin:17-jre-noble (V 76)
+07:02:30 demo-nodejs-web: node:14.17.3-alpine3.14 (V 462, end of life) → node:14-alpine3.17 (V 305, end of life)
+07:02:30 demo-golang-backend: no table: the final stage is built FROM scratch
+07:02:30 demo-traefik-golang: no table: the final stage is built FROM scratch
+07:02:31 demo-aspnet: mcr.microsoft.com/dotnet/aspnet:5.0 (V 647, end of life): no candidates
+07:02:43 d3-astrbotdevs-astrbot: python:3.10-slim (V 422) → python:3.12-slim-trixie (V 408), python:3.13-slim-trixie (V 421), python:3.14-slim-trixie (V 421), python:3.15-slim-trixie (V 421)
+07:02:56 d3-glimesh-broadcast-box: golang:alpine (V 2) → golang:1.26-alpine3.24 (V 2), golang:1.25-alpine3.24 (V 70), golang:1.24-alpine3.23 (V 319), golang:1.23-alpine3.22 (V 427)
+07:02:56 d3-jfryy-qq: no table: gcr.io/distroless/static:nonroot is not an official image, whose tags the candidate rule knows
+07:03:08 d3-raywangqvq-bilibilitoolpro: mcr.microsoft.com/dotnet/aspnet:8.0 (V 577): no candidates
+07:03:15 d3-tracecathq-tracecat-prod: node:22-alpine (V 71): no candidates
+07:03:22 d3-badtuxx-girus-cli: alpine:3.21 (V 46) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2)
+07:03:27 d3-bruin-data-bruin: debian:12.8-slim (V 829) → debian:13-slim (V 391)
+07:03:28 d3-cilium-tetragon-rthooks: no table: docker.io/library/alpine:3.21.3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c is pinned by digest
+07:03:28 d3-datawhores-of-scraper: no table: ghcr.io/astral-sh/uv:python3.11-bookworm-slim is not an official image, whose tags the candidate rule knows
+07:03:31 d3-hanxi-xiaomusic-builder: python:3.10.18-alpine3.22 (V 290) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26), python:3.10-alpine3.24 (V 27)
+07:03:36 d3-langchain-ai-local-deep-researcher: python:3.11-slim (V 420) → python:3.12-slim-trixie (V 408), python:3.13-slim-trixie (V 421), python:3.14-slim-trixie (V 421), python:3.15-slim-trixie (V 421)
+07:03:40 d3-lanyi1998-dnslog-go: alpine (V 2) → alpine:3.20 (V 0, end of life), alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.21 (V 46)
+07:03:43 d3-marcopiovanello-yt-dlp-web-ui: python:3.13.2-alpine3.21 (V 272) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+07:03:45 d3-markqvist-nomadnet: python:3.12-alpine (V 13) → python:3.15-alpine3.24 (V 24), python:3.13-alpine3.24 (V 26), python:3.14-alpine3.24 (V 26)
+07:03:47 d3-projectdiscovery-httpx: alpine:3.18.2 (V 122, end of life) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2), alpine:3.21 (V 46)
+07:03:48 d3-unitycatalog-unitycatalog: alpine:3.20 (V 0, end of life) → alpine:3.22 (V 2), alpine:3.23 (V 2), alpine:3.24 (V 2), alpine:3.21 (V 46)
+07:03:54 d3-vogler-free-games-claimer: ubuntu:jammy (V 58) → ubuntu:24.04 (V 46), ubuntu:26.04 (V 116)
+07:03:54 f4d-jeffreyksmithjr-galapagos-nao: no table: jeffreyksmithjr/elixir-mxnet is not an official image, whose tags the candidate rule knows
+07:03:55 f4d-fsprojects-argu: mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim (V 1854, end of life) → mcr.microsoft.com/dotnet/sdk:6.0-bookworm-slim (V 1855)
+07:03:55 f4d-3scale-3scale-toolbox: no table: registry.access.redhat.com/ubi9/ruby-30 is not an official image, whose tags the candidate rule knows
+07:04:03 f4d-wyhaya-updns: ubuntu (V 116) → ubuntu:18.04 (V 0, end of life), ubuntu:20.04 (V 4, end of life), ubuntu:24.04 (V 46), ubuntu:22.04 (V 58)
+07:04:13 f4d-robinmonjo-coincoin: elixir:1.6.1-alpine (V 54, end of life) → elixir:1.20-alpine (V 2), elixir:1.6-alpine (V 10, end of life), elixir:1.18-alpine (V 36), elixir:1.19-alpine (V 36)
+07:04:14 f4d-eiriktsarpalis-typeshape: mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim (V 2174, end of life) → mcr.microsoft.com/dotnet/sdk:7.0-bookworm-slim (V 2095)
+07:04:14 f4d-appwish-graphqlapi: no table: azul/zulu-openjdk-alpine:11-jre is not an official image, whose tags the candidate rule knows
+07:04:30 f4d-jaymoulin-guzzlehttp-cloudflare: php:7.2-alpine (V 391, end of life) → php:7.4-alpine3.16 (V 275, end of life), php:7.3-alpine3.15 (V 461, end of life)
+07:04:42 f4d-couchrest-couchrest-model: ruby:2.3 (V 12100, end of life) → ruby:2.5-buster (V 9678, end of life), ruby:2.4-buster (V 14610, end of life), ruby:2.7-bullseye (V 37488, end of life), ruby:2.6-bullseye (V 43887, end of life)
+07:04:42 f4d-ponkotuy-myfleetgirls: no table: anapsix/alpine-java:8_jdk is not an official image, whose tags the candidate rule knows
+07:04:43 f4d-hmbsbige-bilibilimangaautoclockin: mcr.microsoft.com/dotnet/core/runtime:3.1-buster-slim (V 542, end of life): no candidates
+07:04:43 f4d-linux-china-mail-catcher: no table: gcr.io/distroless/java is not an official image, whose tags the candidate rule knows
+07:05:00 f4d-ideatosrl-idephix: php:7.1-cli-alpine (V 190, end of life) → php:7.4-cli-alpine3.16 (V 275, end of life), php:7.2-cli-alpine3.12 (V 391, end of life), php:7.3-cli-alpine3.15 (V 461, end of life)
+07:06:53 f4d-minglecm-doc-to-dash: ruby (V 6092) → ruby:3.4-trixie (V 6082), ruby:3.3-trixie (V 6093), ruby:3.2-trixie (V 24061), ruby:3.1-bookworm (V 29314)
+07:06:53 f4d-digimarc-corp-whalerator: mcr.microsoft.com/dotnet/aspnet:5.0 (V 647, end of life): no candidates
+07:07:00 f4d-dsibilio-rsocket-demo: maven:3.5-jdk-8 (V 3677, end of life) → maven:3.6-jdk-8 (V 2106, end of life), maven:3.8-jdk-8 (V 4043, end of life)
+07:07:07 f4d-icemic-search-bakery-moe: node:12-alpine3.11 (V 304, end of life) → node:12-alpine3.15 (V 268, end of life)
+07:07:25 f4d-flix-tech-avro-serde-php: php:8.1-cli-alpine (V 432) → php:8.3-cli-alpine3.24 (V 4), php:8.4-cli-alpine3.24 (V 4), php:8.5-cli-alpine3.24 (V 4), php:8.1-cli-alpine3.22 (V 435)
+07:07:29 f4d-flores-moarcats-app: docker.io/library/ruby:2.7-alpine (V 101, end of life): no candidates
+07:07:31 f4d-bizanc-bizanc-io-core: mcr.microsoft.com/dotnet/core/aspnet:3.1.1 (V 1459, end of life) → mcr.microsoft.com/dotnet/core/aspnet:3.1 (V 552, end of life)
+07:07:32 f4d-centerforopenscience-cas-overlay: maven:3.3-jdk-8 (V 3840, end of life) → maven:3.6-jdk-8 (V 2106, end of life), maven:3.5-jdk-8 (V 3677, end of life), maven:3.8-jdk-8 (V 4043, end of life)
+07:07:40 f4d-amiralies-metalarchives-api: node:carbon-alpine (V 503, end of life): no candidates
+07:07:40 f4d-ety001-online-clipboard: no table: ety001/swoole:latest is not an official image, whose tags the candidate rule knows
+07:07:40 f4d-ardalis-specification: mcr.microsoft.com/dotnet/sdk:6.0 (V 1854, end of life): no candidates
+07:07:52 f4d-atomheartother-wanwan-html5: nginx:alpine (V 22) → nginx:1.30-alpine3.24 (V 22), nginx:1.29-alpine3.23 (V 441), nginx:1.27-alpine3.21 (V 525), nginx:1.28-alpine3.23 (V 569)
+07:07:52 f4d-mixcore-mix-core: mcr.microsoft.com/dotnet/sdk:6.0 (V 1854, end of life): no candidates
+07:08:05 f4d-alexr1712-messenger-to-telegram: node:alpine (V 37) → node:24-alpine3.24 (V 37), node:22-alpine3.24 (V 71), node:20-alpine3.23 (V 227), node:18-alpine3.21 (V 377)
+07:08:06 f4d-atifaziz-linqpadless: mcr.microsoft.com/dotnet/core/sdk:3.1.101-alpine3.10 (V 215, end of life) → mcr.microsoft.com/dotnet/core/sdk:3.1-alpine3.13 (V 168, end of life)
+07:08:09 f4d-code4sac-codeforsacramento-org: ruby:2.5 (V 9678, end of life) → ruby:2.7-bullseye (V 37488, end of life), ruby:2.6-bullseye (V 43887, end of life)
+07:08:11 f4d-18f-content-guide: ruby:2.7 (V 37488, end of life): no candidates
+07:08:11 57 items: 35 with a table, 10 with no candidates, 12 with no table
+07:08:13 demo-flask: all 3 repetitions already recorded, skipping
+07:08:13 demo-express-backend: all 3 repetitions already recorded, skipping
+07:08:13 demo-django: all 3 repetitions already recorded, skipping
+07:08:13 demo-fastapi: all 3 repetitions already recorded, skipping
+07:08:13 demo-apache-php: all 3 repetitions already recorded, skipping
+07:08:13 demo-sparkjava: all 3 repetitions already recorded, skipping
+07:08:13 demo-nodejs-web: all 3 repetitions already recorded, skipping
+07:08:13 demo-golang-backend: all 3 repetitions already recorded, skipping
+07:08:13 demo-traefik-golang: all 3 repetitions already recorded, skipping
+07:08:13 demo-aspnet: all 3 repetitions already recorded, skipping
+07:08:13 d3-astrbotdevs-astrbot: all 3 repetitions already recorded, skipping
+07:08:13 d3-glimesh-broadcast-box: all 3 repetitions already recorded, skipping
+07:08:13 d3-jfryy-qq: all 3 repetitions already recorded, skipping
+07:08:13 d3-raywangqvq-bilibilitoolpro: all 3 repetitions already recorded, skipping
+07:08:13 d3-tracecathq-tracecat-prod: all 3 repetitions already recorded, skipping
+07:08:13 d3-badtuxx-girus-cli: all 3 repetitions already recorded, skipping
+07:08:13 d3-bruin-data-bruin: all 3 repetitions already recorded, skipping
+07:08:13 d3-cilium-tetragon-rthooks: all 3 repetitions already recorded, skipping
+07:08:13 d3-datawhores-of-scraper: all 3 repetitions already recorded, skipping
+07:08:13 d3-hanxi-xiaomusic-builder: all 3 repetitions already recorded, skipping
+07:08:13 d3-lanyi1998-dnslog-go: all 3 repetitions already recorded, skipping
+07:08:13 d3-marcopiovanello-yt-dlp-web-ui: all 3 repetitions already recorded, skipping
+07:08:13 d3-markqvist-nomadnet: all 3 repetitions already recorded, skipping
+07:08:13 d3-projectdiscovery-httpx: all 3 repetitions already recorded, skipping
+07:08:13 d3-unitycatalog-unitycatalog: all 3 repetitions already recorded, skipping
+07:08:13 d3-vogler-free-games-claimer: all 3 repetitions already recorded, skipping
+07:08:13 f4d-jeffreyksmithjr-galapagos-nao: all 3 repetitions already recorded, skipping
+07:08:13 f4d-fsprojects-argu: all 3 repetitions already recorded, skipping
+07:08:13 f4d-3scale-3scale-toolbox: all 3 repetitions already recorded, skipping
+07:08:13 f4d-wyhaya-updns: all 3 repetitions already recorded, skipping
+07:08:13 f4d-robinmonjo-coincoin: all 3 repetitions already recorded, skipping
+07:08:13 f4d-eiriktsarpalis-typeshape: all 3 repetitions already recorded, skipping
+07:08:13 f4d-appwish-graphqlapi: all 3 repetitions already recorded, skipping
+07:08:13 f4d-jaymoulin-guzzlehttp-cloudflare: all 3 repetitions already recorded, skipping
+07:08:13 f4d-couchrest-couchrest-model: all 3 repetitions already recorded, skipping
+07:08:13 f4d-ponkotuy-myfleetgirls: all 3 repetitions already recorded, skipping
+07:08:13 f4d-hmbsbige-bilibilimangaautoclockin: all 3 repetitions already recorded, skipping
+07:08:13 f4d-linux-china-mail-catcher: all 3 repetitions already recorded, skipping
+07:08:13 f4d-ideatosrl-idephix: all 3 repetitions already recorded, skipping
+07:08:13 f4d-minglecm-doc-to-dash: all 3 repetitions already recorded, skipping
+07:08:13 f4d-digimarc-corp-whalerator: all 3 repetitions already recorded, skipping
+07:08:13 f4d-dsibilio-rsocket-demo: all 3 repetitions already recorded, skipping
+07:08:13 f4d-icemic-search-bakery-moe: all 3 repetitions already recorded, skipping
+07:08:13 f4d-flix-tech-avro-serde-php: all 3 repetitions already recorded, skipping
+07:08:13 f4d-flores-moarcats-app: all 3 repetitions already recorded, skipping
+07:08:13 f4d-bizanc-bizanc-io-core: all 3 repetitions already recorded, skipping
+07:08:13 f4d-centerforopenscience-cas-overlay: all 3 repetitions already recorded, skipping
+07:08:13 f4d-amiralies-metalarchives-api: all 3 repetitions already recorded, skipping
+07:08:13 f4d-ety001-online-clipboard: all 3 repetitions already recorded, skipping
+07:08:13 f4d-ardalis-specification: all 3 repetitions already recorded, skipping
+07:08:13 f4d-atomheartother-wanwan-html5: all 3 repetitions already recorded, skipping
+07:08:13 f4d-mixcore-mix-core: all 3 repetitions already recorded, skipping
+07:08:13 f4d-alexr1712-messenger-to-telegram: all 3 repetitions already recorded, skipping
+07:08:13 f4d-atifaziz-linqpadless: all 3 repetitions already recorded, skipping
+07:08:13 f4d-code4sac-codeforsacramento-org: all 3 repetitions already recorded, skipping
+07:08:13 f4d-18f-content-guide: all 3 repetitions already recorded, skipping
+07:08:13 d3-langchain-ai-local-deep-researcher: O′ from cache (built 2026-10-21T01:09:12+02:00)
+07:09:16 d3-langchain-ai-local-deep-researcher #1: measured success=false 
+07:09:16 saved 114 failures under /Users/czifrushanna/sleeko-results/2026-10-21/w2-failures
+comparison: /Users/czifrushanna/sleeko-results/2026-10-21/w1-vs-w2.md
+report: /Users/czifrushanna/sleeko-results/2026-10-21/w2-report.md, failures: /Users/czifrushanna/sleeko-results/2026-10-21/w2-failures.txt, tables: /Users/czifrushanna/sleeko-results/2026-10-21/w2-bases.jsonl
+=== done Wed Oct 21 07:09:16 CEST 2026: reports /Users/czifrushanna/sleeko-results/2026-10-21/w{0,1,2}-report.md, comparisons /Users/czifrushanna/sleeko-results/2026-10-21/w0-vs-w1.md /Users/czifrushanna/sleeko-results/2026-10-21/w1-vs-w2.md /Users/czifrushanna/sleeko-results/2026-10-21/w0-vs-w2.md

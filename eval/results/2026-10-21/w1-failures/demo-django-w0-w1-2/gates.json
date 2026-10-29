@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 1 within 10s, want it running or exit code 0: File \"/usr/local/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"\u003cfrozen importlib._bootstrap\u003e\", line 1387, in _gcd_import\n  File \"\u003cfrozen importlib._bootstrap\u003e\", line 1360, in _find_and_load\n  File \"\u003cfrozen importlib._bootstrap\u003e\", line 1331, in _find_and_load_unlocked\n  File \"\u003cfrozen importlib._bootstrap\u003e\", line 935, in _load_unlocked\n  File \"\u003cfrozen importlib._bootstrap_external\u003e\", line 999, in exec_module\n  File \"\u003cfrozen importlib._bootstrap\u003e\", line 488, in _call_with_frames_removed\n  File \"/app/example/settings.py\", line 15, in \u003cmodule\u003e\n    from environs import Env\n  File \"/usr/local/lib/python3.12/site-packages/environs/__init__.py\", line 21, in \u003cmodule\u003e\n    MARSHMALLOW_VERSION_INFO = tuple(int(part) for part in ma.__version__.split(\".\") if part.isdigit())\n                                                           ^^^^^^^^^^^^^^\nAttributeError: module 'marshmallow' has no attribute '__version__'"
+  }
+]

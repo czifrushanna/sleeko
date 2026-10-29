@@ -1,0 +1,673 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2020-36327",
+    "Package": "bundler",
+    "InstalledVersion": "2.1.4",
+    "FixedVersion": "= 2.2.10, \u003e= 2.2.18",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2021-43809",
+    "Package": "bundler",
+    "InstalledVersion": "2.1.4",
+    "FixedVersion": "\u003e= 2.2.33",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-44570",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0.9, \u003e= 2.0.9.2, ~\u003e 2.1.4, \u003e= 2.1.4.2, ~\u003e 2.2.6, \u003e= 2.2.6.2, \u003e= 3.0.4.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-44571",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0.9, \u003e= 2.0.9.2, ~\u003e 2.1.4, \u003e= 2.1.4.2, ~\u003e 2.2.6, \u003e= 2.2.6.1, \u003e= 3.0.4.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-44572",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0.9, \u003e= 2.0.9.2, ~\u003e 2.1.4, \u003e= 2.1.4.2, ~\u003e 2.2.6, \u003e= 2.2.6.1, \u003e= 3.0.4.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-45442",
+    "Package": "sinatra",
+    "InstalledVersion": "2.2.0",
+    "FixedVersion": "~\u003e 2.2.3, \u003e= 3.0.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1u-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1u-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27530",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0.9, \u003e= 2.0.9.3, ~\u003e 2.1.4, \u003e= 2.1.4.3, ~\u003e 2.2.6, \u003e= 2.2.6.3, \u003e= 3.0.4.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-27539",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0, \u003e= 2.2.6.4, \u003e= 3.0.6.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-29491",
+    "Package": "ncurses-libs",
+    "InstalledVersion": "6.3_p20220521-r0",
+    "FixedVersion": "6.3_p20220521-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29491",
+    "Package": "ncurses-terminfo-base",
+    "InstalledVersion": "6.3_p20220521-r0",
+    "FixedVersion": "6.3_p20220521-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1u-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1u-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-36617",
+    "Package": "uri",
+    "InstalledVersion": "0.10.0.2",
+    "FixedVersion": "~\u003e 0.10.0.3, ~\u003e 0.10.3, ~\u003e 0.11.2, \u003e= 0.12.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1v-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1v-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4016",
+    "Package": "libproc",
+    "InstalledVersion": "3.3.17-r1",
+    "FixedVersion": "3.3.17-r2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4016",
+    "Package": "procps",
+    "InstalledVersion": "3.3.17-r1",
+    "FixedVersion": "3.3.17-r2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-40175",
+    "Package": "puma",
+    "InstalledVersion": "5.6.4",
+    "FixedVersion": "~\u003e 5.6.7, \u003e= 6.3.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-42366",
+    "Package": "busybox",
+    "InstalledVersion": "1.35.0-r17",
+    "FixedVersion": "1.35.0-r18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-42366",
+    "Package": "ssl_client",
+    "InstalledVersion": "1.35.0-r17",
+    "FixedVersion": "1.35.0-r18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1w-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1t-r2",
+    "FixedVersion": "1.1.1w-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21510",
+    "Package": "sinatra",
+    "InstalledVersion": "2.2.0",
+    "FixedVersion": "\u003e= 4.1.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21647",
+    "Package": "puma",
+    "InstalledVersion": "5.6.4",
+    "FixedVersion": "~\u003e 5.6.8, \u003e= 6.4.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-25126",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.8, \u003e= 2.2.8.1, \u003e= 3.0.9.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-26141",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.8, \u003e= 2.2.8.1, \u003e= 3.0.9.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-26146",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.0.9, \u003e= 2.0.9.4, ~\u003e 2.1.4, \u003e= 2.1.4.4, ~\u003e 2.2.8, \u003e= 2.2.8.1, \u003e= 3.0.9.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-27280",
+    "Package": "stringio",
+    "InstalledVersion": "0.1.0",
+    "FixedVersion": "\u003e= 3.0.1.1",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-27281",
+    "Package": "rdoc",
+    "InstalledVersion": "6.2.1.1",
+    "FixedVersion": "~\u003e 6.3.4, \u003e= 6.3.4.1, ~\u003e 6.4.1, \u003e= 6.4.1.1, \u003e= 6.5.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-27285",
+    "Package": "yard",
+    "InstalledVersion": "0.9.27",
+    "FixedVersion": "\u003e= 0.9.36",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-35176",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.2.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-39908",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.3.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-41123",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.3.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-41946",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.3.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-43398",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.3.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45614",
+    "Package": "puma",
+    "InstalledVersion": "5.6.4",
+    "FixedVersion": "~\u003e 5.6.9, \u003e= 6.4.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-49761",
+    "Package": "rexml",
+    "InstalledVersion": "3.2.3.1",
+    "FixedVersion": "\u003e= 3.3.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-25184",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.11, ~\u003e 3.0.12, \u003e= 3.1.10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-26519",
+    "Package": "musl",
+    "InstalledVersion": "1.2.3-r2",
+    "FixedVersion": "1.2.3-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-26519",
+    "Package": "musl-utils",
+    "InstalledVersion": "1.2.3-r2",
+    "FixedVersion": "1.2.3-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27111",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.12, ~\u003e 3.0.13, \u003e= 3.1.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27219",
+    "Package": "cgi",
+    "InstalledVersion": "0.1.0.2",
+    "FixedVersion": "~\u003e 0.3.5.1, ~\u003e 0.3.7, \u003e= 0.4.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-27220",
+    "Package": "cgi",
+    "InstalledVersion": "0.1.0.2",
+    "FixedVersion": "~\u003e 0.3.5.1, ~\u003e 0.3.7, \u003e= 0.4.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-27221",
+    "Package": "uri",
+    "InstalledVersion": "0.10.0.2",
+    "FixedVersion": "~\u003e 0.11.3, ~\u003e 0.12.4, ~\u003e 0.13.2, \u003e= 1.0.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-27610",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.13, ~\u003e 3.0.14, \u003e= 3.1.12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-32441",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "\u003e= 2.2.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-46727",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.14, ~\u003e 3.0.16, \u003e= 3.1.14",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-59830",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "\u003e= 2.2.18",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61594",
+    "Package": "uri",
+    "InstalledVersion": "0.10.0.2",
+    "FixedVersion": "~\u003e 0.12.5, ~\u003e 0.13.3, \u003e= 1.0.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61770",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.19, ~\u003e 3.1.17, \u003e= 3.2.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61771",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.19, ~\u003e 3.1.17, \u003e= 3.2.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61772",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.19, ~\u003e 3.1.17, \u003e= 3.2.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61780",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.20, ~\u003e 3.1.18, \u003e= 3.2.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-61919",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.20, ~\u003e 3.1.18, \u003e= 3.2.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-61921",
+    "Package": "sinatra",
+    "InstalledVersion": "2.2.0",
+    "FixedVersion": "\u003e= 4.2.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6442",
+    "Package": "webrick",
+    "InstalledVersion": "1.6.1",
+    "FixedVersion": "\u003e= 1.8.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22860",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.22, ~\u003e 3.1.20, \u003e= 3.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25500",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.22, ~\u003e 3.1.20, \u003e= 3.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-26961",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-27820",
+    "Package": "zlib",
+    "InstalledVersion": "1.1.0",
+    "FixedVersion": "~\u003e 3.0.1, ~\u003e 3.1.2, \u003e= 3.2.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-34230",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34763",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34785",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34786",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34826",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34829",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34830",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-34831",
+    "Package": "rack",
+    "InstalledVersion": "2.2.3.1",
+    "FixedVersion": "~\u003e 2.2.23, ~\u003e 3.1.21, \u003e= 3.2.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35611",
+    "Package": "addressable",
+    "InstalledVersion": "2.8.0",
+    "FixedVersion": "\u003e= 2.9.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-41493",
+    "Package": "yard",
+    "InstalledVersion": "0.9.27",
+    "FixedVersion": "\u003e= 0.9.42",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-47736",
+    "Package": "puma",
+    "InstalledVersion": "5.6.4",
+    "FixedVersion": "~\u003e 7.2.1, \u003e= 8.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-47737",
+    "Package": "puma",
+    "InstalledVersion": "5.6.4",
+    "FixedVersion": "~\u003e 7.2.1, \u003e= 8.0.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-49342",
+    "Package": "yard",
+    "InstalledVersion": "0.9.27",
+    "FixedVersion": "\u003e= 0.9.44",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-79770",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-79771",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.3",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-79772",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.1",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-2qc6-mcvw-92cw",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.13.9",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-353f-x4gh-cqq8",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.18.9",
+    "Severity": 4
+   },
+   {
+    "ID": "GHSA-5prr-v3j2-97mh",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-5v8h-3h3q-446p",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-5w6v-399v-w3cc",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.18.8",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-8678-w3jw-xfc2",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-9cv2-cfxc-v4v2",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-g9g8-vgvw-g3vf",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 0
+   },
+   {
+    "ID": "GHSA-mrxw-mxhj-p664",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.18.4",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-p67v-3w7g-wjg7",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-phwj-rprq-35pp",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-pxvg-2qj5-37jq",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.14.3",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-r95h-9x8f-r3f7",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.16.5",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-vvfq-8hwr-qm4m",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.18.3",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-wfpw-mmfh-qq69",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-wjv4-x9w8-wm3h",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "\u003e= 1.19.4",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-xc9x-jj77-9p9j",
+    "Package": "nokogiri",
+    "InstalledVersion": "1.13.6",
+    "FixedVersion": "~\u003e 1.15.6, \u003e= 1.16.2",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "alpine 3.16.5",
+ "EOSL": true
+}

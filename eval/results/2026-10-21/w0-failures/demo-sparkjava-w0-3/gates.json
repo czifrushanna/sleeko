@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: CMD [\"/bin/sh\" \"-c\" \"java -jar /app.jar\"] -\u003e []; EXPOSE [8080/tcp] -\u003e []; WORKDIR \"\" -\u003e \"/app\""
+  }
+]

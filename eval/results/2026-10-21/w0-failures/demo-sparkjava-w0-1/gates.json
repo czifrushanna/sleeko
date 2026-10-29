@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: CMD [\"/bin/sh\" \"-c\" \"java -jar /app.jar\"] -\u003e [\"java\" \"-jar\" \"/app.jar\"]; WORKDIR \"\" -\u003e \"/\""
+  }
+]

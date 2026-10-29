@@ -1,0 +1,301 @@
+{
+ "item": "f4d-atomheartother-wanwan-html5",
+ "digest": "sha256:2356d69a4131841023cb941eea3c7582628b92d7c33df3a5c34f318b9fd40ed5",
+ "os": "alpine 3.24.3",
+ "eosl": false,
+ "trivy_db": "trivy 0.75.0 db 2026-10-20T07:17:35.368599961Z",
+ "built_at": "2026-10-29T15:16:42.498772Z",
+ "packages": [
+  {
+   "name": "alpine-baselayout",
+   "version": "3.7.2-r1"
+  },
+  {
+   "name": "alpine-baselayout-data",
+   "version": "3.7.2-r1"
+  },
+  {
+   "name": "alpine-keys",
+   "version": "2.6-r0"
+  },
+  {
+   "name": "alpine-release",
+   "version": "3.24.3-r0"
+  },
+  {
+   "name": "aom-libs",
+   "version": "3.14.1-r0"
+  },
+  {
+   "name": "apk-tools",
+   "version": "3.0.8-r0"
+  },
+  {
+   "name": "brotli-libs",
+   "version": "1.2.0-r1"
+  },
+  {
+   "name": "busybox",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "busybox-binsh",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "c-ares",
+   "version": "1.34.9-r0"
+  },
+  {
+   "name": "ca-certificates",
+   "version": "20261020-r0"
+  },
+  {
+   "name": "ca-certificates-bundle",
+   "version": "20261020-r0"
+  },
+  {
+   "name": "curl",
+   "version": "8.22.0-r0"
+  },
+  {
+   "name": "fontconfig",
+   "version": "2.17.1-r1"
+  },
+  {
+   "name": "freetype",
+   "version": "2.14.3-r0"
+  },
+  {
+   "name": "geoip",
+   "version": "1.6.12-r6"
+  },
+  {
+   "name": "gettext-envsubst",
+   "version": "1.0-r0"
+  },
+  {
+   "name": "libapk",
+   "version": "3.0.8-r0"
+  },
+  {
+   "name": "libavif",
+   "version": "1.4.1-r0"
+  },
+  {
+   "name": "libbsd",
+   "version": "0.12.2-r0"
+  },
+  {
+   "name": "libbz2",
+   "version": "1.0.8-r6"
+  },
+  {
+   "name": "libcrypto3",
+   "version": "3.5.9-r0"
+  },
+  {
+   "name": "libcurl",
+   "version": "8.22.0-r0"
+  },
+  {
+   "name": "libdav1d",
+   "version": "1.5.3-r0"
+  },
+  {
+   "name": "libedit",
+   "version": "20260508.3.1-r1"
+  },
+  {
+   "name": "libexpat",
+   "version": "2.9.0-r0"
+  },
+  {
+   "name": "libgcc",
+   "version": "15.2.0-r5"
+  },
+  {
+   "name": "libgd",
+   "version": "2.3.3-r10"
+  },
+  {
+   "name": "libice",
+   "version": "1.1.2-r0"
+  },
+  {
+   "name": "libidn2",
+   "version": "2.3.8-r0"
+  },
+  {
+   "name": "libintl",
+   "version": "1.0-r0"
+  },
+  {
+   "name": "libjpeg-turbo",
+   "version": "3.1.3-r0"
+  },
+  {
+   "name": "libmaxminddb-libs",
+   "version": "1.13.3-r0"
+  },
+  {
+   "name": "libmd",
+   "version": "1.2.0-r0"
+  },
+  {
+   "name": "libncursesw",
+   "version": "6.6_p20260516-r0"
+  },
+  {
+   "name": "libpng",
+   "version": "1.6.59-r0"
+  },
+  {
+   "name": "libpsl",
+   "version": "0.21.5-r3"
+  },
+  {
+   "name": "libsharpyuv",
+   "version": "1.6.0-r0"
+  },
+  {
+   "name": "libsm",
+   "version": "1.2.6-r0"
+  },
+  {
+   "name": "libssl3",
+   "version": "3.5.9-r0"
+  },
+  {
+   "name": "libstdc++",
+   "version": "15.2.0-r5"
+  },
+  {
+   "name": "libunistring",
+   "version": "1.4.2-r0"
+  },
+  {
+   "name": "libuuid",
+   "version": "2.42.3-r1"
+  },
+  {
+   "name": "libwebp",
+   "version": "1.6.0-r0"
+  },
+  {
+   "name": "libx11",
+   "version": "1.8.14-r0"
+  },
+  {
+   "name": "libxau",
+   "version": "1.0.12-r0"
+  },
+  {
+   "name": "libxcb",
+   "version": "1.17.0-r2"
+  },
+  {
+   "name": "libxdmcp",
+   "version": "1.1.5-r1"
+  },
+  {
+   "name": "libxext",
+   "version": "1.3.7-r0"
+  },
+  {
+   "name": "libxml2",
+   "version": "2.13.9-r2"
+  },
+  {
+   "name": "libxpm",
+   "version": "3.5.20-r0"
+  },
+  {
+   "name": "libxslt",
+   "version": "1.1.43-r3"
+  },
+  {
+   "name": "libxt",
+   "version": "1.3.1-r0"
+  },
+  {
+   "name": "libyuv",
+   "version": "0.0.1928-r0"
+  },
+  {
+   "name": "musl",
+   "version": "1.2.6-r3"
+  },
+  {
+   "name": "musl-utils",
+   "version": "1.2.6-r3"
+  },
+  {
+   "name": "ncurses-terminfo-base",
+   "version": "6.6_p20260516-r0"
+  },
+  {
+   "name": "nghttp2-libs",
+   "version": "1.70.0-r0"
+  },
+  {
+   "name": "nginx",
+   "version": "1.31.8-r1"
+  },
+  {
+   "name": "nginx-module-acme",
+   "version": "1.31.8.0.4.1-r1"
+  },
+  {
+   "name": "nginx-module-geoip",
+   "version": "1.31.8-r1"
+  },
+  {
+   "name": "nginx-module-image-filter",
+   "version": "1.31.8-r1"
+  },
+  {
+   "name": "nginx-module-njs",
+   "version": "1.31.8.1.0.2-r1"
+  },
+  {
+   "name": "nginx-module-xslt",
+   "version": "1.31.8-r1"
+  },
+  {
+   "name": "pcre2",
+   "version": "10.49-r0"
+  },
+  {
+   "name": "scanelf",
+   "version": "1.3.9-r1"
+  },
+  {
+   "name": "ssl_client",
+   "version": "1.37.0-r31"
+  },
+  {
+   "name": "tiff",
+   "version": "4.7.2-r0"
+  },
+  {
+   "name": "tzdata",
+   "version": "2026e-r0"
+  },
+  {
+   "name": "xz-libs",
+   "version": "5.8.4-r0"
+  },
+  {
+   "name": "zlib",
+   "version": "1.3.2-r1"
+  },
+  {
+   "name": "zstd-libs",
+   "version": "1.5.7-r2"
+  }
+ ],
+ "scan": {
+  "Vulnerabilities": []
+ }
+}

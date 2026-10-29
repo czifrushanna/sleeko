@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image maven:3.8.9-eclipse-temurin-17 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #1 transferring dockerfile: 4.62kB done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/maven:3.8.9-eclipse-temurin-17\n#2 ERROR: docker.io/library/maven:3.8.9-eclipse-temurin-17: not found\n------\n \u003e [internal] load metadata for docker.io/library/maven:3.8.9-eclipse-temurin-17:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM maven:3.8.9-eclipse-temurin-17 AS app\n   2 |     \n   3 |     ARG GIT_COMMIT=\n--------------------\nERROR: failed to build: failed to solve: maven:3.8.9-eclipse-temurin-17: failed to resolve source metadata for docker.io/library/maven:3.8.9-eclipse-temurin-17: docker.io/library/maven:3.8.9-eclipse-temurin-17: not found"
+  }
+]

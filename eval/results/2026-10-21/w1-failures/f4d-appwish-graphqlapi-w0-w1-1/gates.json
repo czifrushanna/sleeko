@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n\n \u001b[33m3 warnings found (use docker --debug to expand):\n\u001b[0m - UndefinedVar: Usage of undefined variable '$APP_HOME' (line 23)\n - WorkdirRelativePath: Relative workdir \"\" can have unexpected results if the base image changes (line 23)\n - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 1)\nDockerfile:13\n--------------------\n  11 |     \n  12 |     COPY . .\n  13 | \u003e\u003e\u003e RUN ./gradlew shadowJar\n  14 |     \n  15 |     FROM azul/zulu-openjdk-alpine:11-jre\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c ./gradlew shadowJar\" did not complete successfully: exit code: 1"
+  }
+]

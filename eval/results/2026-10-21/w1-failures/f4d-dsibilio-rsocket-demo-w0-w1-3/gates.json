@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: ENTRYPOINT [\"/usr/local/bin/mvn-entrypoint.sh\"] -\u003e [\"/__cacert_entrypoint.sh\"]"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-68973, CVE-2026-45447, CVE-2026-84782"
+  }
+]

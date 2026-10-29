@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 127.9 An error occurred while installing nio4r (2.5.8), and Bundler cannot continue.\n127.9 \n127.9 In Gemfile:\n127.9   puma was resolved to 5.6.4, which depends on\n127.9     nio4r\n------\nDockerfile:10\n--------------------\n   8 |     \n   9 |     ADD Gemfile Gemfile.lock /\n  10 | \u003e\u003e\u003e RUN bundle install\n  11 |     \n  12 |     FROM docker.io/library/ruby:$RUBY_VERSION-alpine\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c bundle install\" did not complete successfully: exit code: 5"
+  }
+]

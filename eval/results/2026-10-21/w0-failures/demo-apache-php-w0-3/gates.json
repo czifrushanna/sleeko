@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: apt cannot install bsdutils=2.36.1-8+deb11u2: that version is not in debian bullseye (or its -updates/-security); pin a version the archive has, or leave the version out"
+  }
+]

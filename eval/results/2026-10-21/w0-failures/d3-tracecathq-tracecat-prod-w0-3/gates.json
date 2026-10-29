@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 31.57 \n68.99 src/components/tags-input.tsx(19,6): error TS2739: Type '{ activeTagIndex: number | null; setActiveTagIndex: Dispatch\u003cSetStateAction\u003cnumber | null\u003e\u003e; styleClasses: { input: string; inlineTagsContainer: string; tag: { ...; }; }; }' is missing the following properties from type 'TagInputProps': tags, setTags\n69.13 Failed to type check.\n69.13 \n69.36  ELIFECYCLE  Command failed with exit code 1.\n------\nDockerfile.prod:48\n--------------------\n  46 |     # Copy all source files and build the application\n  47 |     COPY . .\n  48 | \u003e\u003e\u003e RUN corepack enable pnpm \u0026\u0026 pnpm build\n  49 |     \n  50 |     # Use the Node.js Alpine image as the base image for the runner stage\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c corepack enable pnpm \u0026\u0026 pnpm build\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,218 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2024-32655",
+    "Package": "Npgsql",
+    "InstalledVersion": "8.0.2",
+    "FixedVersion": "8.0.3, 4.0.14, 4.1.13, 5.0.18, 6.0.11, 7.0.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "login",
+    "InstalledVersion": "1:4.13+dfsg1-4ubuntu3.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.13+dfsg1-4ubuntu3.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-5222",
+    "Package": "libicu74",
+    "InstalledVersion": "74.2-1ubuntu3.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-6965",
+    "Package": "SQLitePCLRaw.lib.e_sqlite3",
+    "InstalledVersion": "2.1.6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102473",
+    "Package": "dash",
+    "InstalledVersion": "0.5.12-6ubuntu5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102474",
+    "Package": "dash",
+    "InstalledVersion": "0.5.12-6ubuntu5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-103111",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.39-0ubuntu8.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.39-0ubuntu8.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18477",
+    "Package": "tar",
+    "InstalledVersion": "1.35+dfsg-3ubuntu0.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18508",
+    "Package": "tar",
+    "InstalledVersion": "1.35+dfsg-3ubuntu0.4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32933",
+    "Package": "AutoMapper",
+    "InstalledVersion": "10.1.1",
+    "FixedVersion": "16.1.1, 15.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libsystemd0",
+    "InstalledVersion": "255.4-1ubuntu8.17",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libudev1",
+    "InstalledVersion": "255.4-1ubuntu8.17",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-67693",
+    "Package": "libgnutls30t64",
+    "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.3.dfsg-3.1ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86145",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-88647",
+    "Package": "libgnutls30t64",
+    "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.39-0ubuntu8.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.39-0ubuntu8.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89156",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89157",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89158",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89160",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89161",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.42-4ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95184",
+    "Package": "libgnutls30t64",
+    "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95209",
+    "Package": "libgnutls30t64",
+    "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95210",
+    "Package": "libgnutls30t64",
+    "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-96230",
+    "Package": "Microsoft.AspNetCore.Components.WebAssembly.Server",
+    "InstalledVersion": "8.0.4",
+    "FixedVersion": "10.0.13, 11.0.0-rc.2, 8.0.32, 9.0.21",
+    "Severity": 3
+   }
+  ]
+ },
+ "OS": "ubuntu 24.04",
+ "EOSL": false
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 2.386  #  \n2.386  #  -------------------------------------------\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - LegacyKeyValueFormat: \"ENV key=value\" should be used instead of legacy \"ENV key value\" format (line 3)\nDockerfile:10\n--------------------\n   8 |     COPY Gemfile* $WORK_DIR/\n   9 |     \n  10 | \u003e\u003e\u003e RUN bundle install --jobs=3 --retry=3\n  11 |     \n  12 |     COPY . $WORK_DIR\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c bundle install --jobs=3 --retry=3\" did not complete successfully: exit code: 15"
+  }
+]

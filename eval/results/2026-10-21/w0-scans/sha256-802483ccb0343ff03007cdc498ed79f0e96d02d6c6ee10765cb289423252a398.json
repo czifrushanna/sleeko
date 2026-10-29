@@ -1,0 +1,428 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2024-11053",
+    "Package": "curl",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.25",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-11053",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.25",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-12133",
+    "Package": "libtasn1-6",
+    "InstalledVersion": "4.16.0-2",
+    "FixedVersion": "4.16.0-2ubuntu0.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-12243",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.6.13-2ubuntu1.11",
+    "FixedVersion": "3.6.13-2ubuntu1.12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.24",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.24",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2511",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2511",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-3596",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-3596",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-3596",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-3596",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37370",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37370",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37370",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37370",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37371",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37371",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37371",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-37371",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-38428",
+    "Package": "wget",
+    "InstalledVersion": "1.20.3-1ubuntu2",
+    "FixedVersion": "1.20.3-1ubuntu2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45490",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.9-1ubuntu0.6",
+    "FixedVersion": "2.2.9-1ubuntu0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45491",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.9-1ubuntu0.6",
+    "FixedVersion": "2.2.9-1ubuntu0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-45492",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.9-1ubuntu0.6",
+    "FixedVersion": "2.2.9-1ubuntu0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-4741",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-4741",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-50602",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.9-1ubuntu0.6",
+    "FixedVersion": "2.2.9-1ubuntu0.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-5535",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-5535",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.23",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-7264",
+    "Package": "curl",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.23",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-7264",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.23",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-8096",
+    "Package": "curl",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.24",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-8096",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.68.0-1ubuntu2.22",
+    "FixedVersion": "7.68.0-1ubuntu2.24",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-9143",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.24",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-9143",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1f-1ubuntu2.22",
+    "FixedVersion": "1.1.1f-1ubuntu2.24",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "locales",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-27363",
+    "Package": "libfreetype6",
+    "InstalledVersion": "2.10.1-2ubuntu0.3",
+    "FixedVersion": "2.10.1-2ubuntu0.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-29088",
+    "Package": "libsqlite3-0",
+    "InstalledVersion": "3.31.1-4ubuntu0.6",
+    "FixedVersion": "3.31.1-4ubuntu0.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30258",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.19-3ubuntu2.2",
+    "FixedVersion": "2.2.19-3ubuntu2.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.17-6ubuntu4.4",
+    "FixedVersion": "1.17-6ubuntu4.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "locales",
+    "InstalledVersion": "2.31-0ubuntu9.16",
+    "FixedVersion": "2.31-0ubuntu9.18",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "ubuntu 20.04",
+ "EOSL": true
+}

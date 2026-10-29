@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 1 within 10s, want it running or exit code 0: [2026-10-21 01:38:32] \u001b[1;31m[ERROR]\u001b[0m Failed to read config file \"/home/app/.updns/config\"\nOs { code: 13, kind: PermissionDenied, message: \"Permission denied\" }"
+  }
+]

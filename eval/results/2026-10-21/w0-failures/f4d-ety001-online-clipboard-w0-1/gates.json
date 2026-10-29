@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:  \u001b[33m2 warnings found (use docker --debug to expand):\n\u001b[0m - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 1)\n - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 13)\nDockerfile:5\n--------------------\n   4 |     RUN apk --no-cache add nodejs git\n   5 | \u003e\u003e\u003e RUN cd /app \u0026\u0026 git clone https://github.com/ety001/online-clipboard.git \u0026\u0026 \\\n   6 | \u003e\u003e\u003e     cd online-clipboard \u0026\u0026 \\\n   7 | \u003e\u003e\u003e     git fetch origin fe \u0026\u0026 \\\n   8 | \u003e\u003e\u003e     git checkout fe \u0026\u0026 \\\n   9 | \u003e\u003e\u003e     npm install \u0026\u0026 \\\n  10 | \u003e\u003e\u003e     npm run build\n  11 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c cd /app \u0026\u0026 git clone https://github.com/ety001/online-clipboard.git \u0026\u0026     cd online-clipboard \u0026\u0026     git fetch origin fe \u0026\u0026     git checkout fe \u0026\u0026     npm install \u0026\u0026     npm run build\" did not complete successfully: exit code: 127"
+  }
+]

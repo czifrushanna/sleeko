@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #0 building with \"harbor-builder\" instance using docker-container driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 11.25kB done\n#1 DONE 0.0s\nERROR: failed to build: failed to solve: target stage \"builder\" could not be found"
+  }
+]

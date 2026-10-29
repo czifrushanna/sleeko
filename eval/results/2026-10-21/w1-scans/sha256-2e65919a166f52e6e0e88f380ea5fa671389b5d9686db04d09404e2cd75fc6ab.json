@@ -1,0 +1,5734 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2005-2541",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2007-5686",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2007-5686",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2010-4756",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2010-4756",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-3374",
+    "Package": "apt",
+    "InstalledVersion": "2.2.4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-3374",
+    "Package": "libapt-pkg6.0",
+    "InstalledVersion": "2.2.4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-3389",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-4116",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-4116",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-4116",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2011-4116",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-0340",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-4235",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-4235",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-4392",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2013-4392",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2015-3276",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2016-2781",
+    "Package": "coreutils",
+    "InstalledVersion": "8.32-4+b1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-11164",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-14159",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-16231",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-17740",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-18018",
+    "Package": "coreutils",
+    "InstalledVersion": "8.32-4+b1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-7245",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-7246",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-1000021",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-1000021",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-20796",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-20796",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-5709",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-5709",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-5709",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-5709",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-6829",
+    "Package": "libgcrypt20",
+    "InstalledVersion": "1.8.7-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-0564",
+    "Package": "System.Net.WebSockets.WebSocketProtocol",
+    "InstalledVersion": "4.5.1",
+    "FixedVersion": "4.5.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2019-1010022",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010022",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010023",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010023",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010024",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010024",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010025",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-1010025",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-20838",
+    "Package": "libpcre3",
+    "InstalledVersion": "2:8.39-13",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-8457",
+    "Package": "libdb5.3",
+    "InstalledVersion": "5.3.28+dfsg1-0.8",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2019-9192",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-9192",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-13529",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-13529",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2020-15719",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22922",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22922",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22922",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22923",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22923",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-22923",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2021-24112",
+    "Package": "System.Drawing.Common",
+    "InstalledVersion": "5.0.0",
+    "FixedVersion": "4.7.2, 5.0.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2021-31879",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2021-33560",
+    "Package": "libgcrypt20",
+    "InstalledVersion": "1.8.7-6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-0563",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-24975",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-24975",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-29245",
+    "Package": "SSH.NET",
+    "InstalledVersion": "2016.1.0",
+    "FixedVersion": "2020.0.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-3219",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.27-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-3715",
+    "Package": "bash",
+    "InstalledVersion": "5.1-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41032",
+    "Package": "NuGet.Protocol",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "4.9.6, 5.7.3, 5.9.3, 5.11.3, 6.0.3, 6.2.2, 6.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-41064",
+    "Package": "System.Data.SqlClient",
+    "InstalledVersion": "4.8.2",
+    "FixedVersion": "4.8.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-41409",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-42916",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42916",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42916",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-43551",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-43551",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-43551",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4899",
+    "Package": "libzstd1",
+    "InstalledVersion": "1.4.8+dfsg-2.1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-23914",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-23914",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-23914",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-23915",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23915",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23915",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28320",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-28320",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-28320",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29337",
+    "Package": "NuGet.Common",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "6.0.5, 6.2.4, 6.3.3, 6.4.2, 6.5.1, 6.6.1, 5.11.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29337",
+    "Package": "NuGet.Protocol",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "6.0.5, 6.2.4, 6.3.3, 6.4.2, 6.5.1, 6.6.1, 5.11.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "1:4.8.1-1+deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "1:4.8.1-1+deb11u1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-2953",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-31437",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31437",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31438",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31438",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31439",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31439",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31486",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31486",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31486",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-31486",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "gcc-10-base",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "gcc-9-base",
+    "InstalledVersion": "9.3.0-22",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "libgcc-s1",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-4039",
+    "Package": "libstdc++6",
+    "InstalledVersion": "10.2.1-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-45853",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-46219",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46219",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46219",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4641",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "1:4.8.1-1+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4641",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "1:4.8.1-1+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4806",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4806",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4813",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-4813",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-52426",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-0056",
+    "Package": "Microsoft.Data.SqlClient",
+    "InstalledVersion": "2.1.4",
+    "FixedVersion": "2.1.7, 3.1.5, 4.0.5, 5.1.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-0056",
+    "Package": "System.Data.SqlClient",
+    "InstalledVersion": "4.8.2",
+    "FixedVersion": "4.8.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-0057",
+    "Package": "NuGet.Packaging",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "5.11.6, 6.0.6, 6.3.4, 6.4.3, 6.6.2, 6.7.1, 6.8.1",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-10041",
+    "Package": "libpam-modules",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-10041",
+    "Package": "libpam-modules-bin",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-10041",
+    "Package": "libpam-runtime",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-10041",
+    "Package": "libpam0g",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-10524",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-12133",
+    "Package": "libtasn1-6",
+    "InstalledVersion": "4.16.0-2+deb11u1",
+    "FixedVersion": "4.16.0-2+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-12243",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-13176",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-21319",
+    "Package": "Microsoft.IdentityModel.JsonWebTokens",
+    "InstalledVersion": "6.10.0",
+    "FixedVersion": "5.7.0, 6.34.0, 7.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-21319",
+    "Package": "System.IdentityModel.Tokens.Jwt",
+    "InstalledVersion": "6.10.0",
+    "FixedVersion": "5.7.0, 6.34.0, 7.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-2236",
+    "Package": "libgcrypt20",
+    "InstalledVersion": "1.8.7-6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-modules",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-modules-bin",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam-runtime",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-22365",
+    "Package": "libpam0g",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-2379",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2379",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-2379",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26458",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-26461",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-27929",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "3.1.3, 2.1.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-28757",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-32020",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-32020",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-32035",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "2.1.8, 3.1.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-32036",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "2.1.8, 3.1.4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-32655",
+    "Package": "Npgsql",
+    "InstalledVersion": "6.0.0",
+    "FixedVersion": "8.0.3, 4.0.14, 4.1.13, 5.0.18, 6.0.11, 7.0.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-38428",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "1.21-1+deb11u2",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2024-41131",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "2.1.9, 3.1.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-41132",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "2.1.9, 3.1.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-43483",
+    "Package": "System.IO.Packaging",
+    "InstalledVersion": "6.0.0",
+    "FixedVersion": "9.0.0-rc.2.24473.5, 6.0.1, 8.0.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-43484",
+    "Package": "System.IO.Packaging",
+    "InstalledVersion": "6.0.0",
+    "FixedVersion": "9.0.0-rc.2.24473.5, 8.0.1, 6.0.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-48924",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.187, 3.0.214-rc.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-50349",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-50349",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-50602",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "2.2.10-2+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-52005",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52005",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52006",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-52006",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-8176",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-9681",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-9681",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-9681",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0395",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u12",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-0725",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-0725",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-0725",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-10966",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-10966",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-10966",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-13151",
+    "Package": "libtasn1-6",
+    "InstalledVersion": "4.16.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14017",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14017",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14017",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14104",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14524",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14524",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14524",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-14831",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15079",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15079",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15079",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15224",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15224",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15224",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15281",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15281",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15649",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15649",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15649",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15649",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-15661",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24070",
+    "Package": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+    "InstalledVersion": "6.0.36",
+    "FixedVersion": "9.0.3, 8.0.14",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-24528",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-26646",
+    "Package": "Microsoft.Build.Tasks.Core",
+    "InstalledVersion": "16.9.0",
+    "FixedVersion": "15.9.30, 16.11.6, 17.8.29, 17.10.29, 17.12.36, 17.13.26, 17.14.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27587",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-27587",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-27598",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "3.1.7, 2.1.10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-27613",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-27613",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-30258",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.27-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-32988",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-32990",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-3576",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-40909",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "5.32.1-4+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-40909",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "5.32.1-4+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-40909",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "5.32.1-4+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-40909",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "5.32.1-4+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4598",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4598",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-46835",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-46835",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-4802",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-48384",
+    "Package": "git",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-48384",
+    "Package": "git-man",
+    "InstalledVersion": "1:2.30.2-1+deb11u3",
+    "FixedVersion": "1:2.30.2-1+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-5222",
+    "Package": "libicu67",
+    "InstalledVersion": "67.1-7",
+    "FixedVersion": "67.1-7+deb11u1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-5278",
+    "Package": "coreutils",
+    "InstalledVersion": "8.32-4+b1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-54575",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "2.1.11, 3.1.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-59375",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6020",
+    "Package": "libpam-modules",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6020",
+    "Package": "libpam-modules-bin",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6020",
+    "Package": "libpam-runtime",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6020",
+    "Package": "libpam0g",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "1.4.0-9+deb11u2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6141",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-6141",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-6141",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-6297",
+    "Package": "dpkg",
+    "InstalledVersion": "1.20.13",
+    "FixedVersion": "1.20.14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-6395",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-66382",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-68160",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-68972",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.27-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-68973",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.27-2+deb11u2",
+    "FixedVersion": "2.2.27-2+deb11u3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69418",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69419",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69420",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69421",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-6965",
+    "Package": "SQLitePCLRaw.lib.e_sqlite3",
+    "InstalledVersion": "2.0.6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69720",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69720",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-69720",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.2+20201114-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-8058",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-8058",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-9230",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-9230",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u4",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-9820",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u9",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-0861",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-0861",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-0915",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-0915",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102473",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20200708+dd9ef66-5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-102474",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20200708+dd9ef66-5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-102633",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-103111",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-105712",
+    "Package": "gpgv",
+    "InstalledVersion": "2.2.27-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-106114",
+    "Package": "SixLabors.ImageSharp",
+    "InstalledVersion": "1.0.3",
+    "FixedVersion": "4.1.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-2",
+    "InstalledVersion": "2.1.27+dfsg-2.1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-modules-db",
+    "InstalledVersion": "2.1.27+dfsg-2.1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107708",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107708",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107708",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107708",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107778",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107778",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107778",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107778",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107928",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-107928",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-107928",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-107929",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-107929",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-107929",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-11850",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-11850",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-11850",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-11850",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-11856",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-11856",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-11856",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12087",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12087",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12087",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12087",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13221",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-13221",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-13221",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-13221",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13595",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13608",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13608",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13608",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13757",
+    "Package": "libp11-kit0",
+    "InstalledVersion": "0.23.22-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15059",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15059",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15146",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15534",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15534",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15534",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-15534",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-16599",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-16742",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-16742",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18477",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18508",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18924",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-18924",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-18924",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-18938",
+    "Package": "libp11-kit0",
+    "InstalledVersion": "0.23.22-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19487",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19487",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19487",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19487",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19499",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19499",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19542",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19542",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1965",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1965",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-1965",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19931",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19931",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19931",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-22185",
+    "Package": "libldap-2.4-2",
+    "InstalledVersion": "2.4.57+dfsg-3+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22795",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-22796",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-24515",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-25210",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27135",
+    "Package": "libnghttp2-14",
+    "InstalledVersion": "1.43.0-1+deb11u2",
+    "FixedVersion": "1.43.0-1+deb11u3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27171",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-27456",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28387",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28388",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28389",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-28390",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-29111",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-29111",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3184",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32776",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32777",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32778",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-32933",
+    "Package": "AutoMapper",
+    "InstalledVersion": "10.1.1",
+    "FixedVersion": "16.1.1, 15.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33845",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-33846",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34180",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-34743",
+    "Package": "liblzma5",
+    "InstalledVersion": "5.2.5-2.1~deb11u1",
+    "FixedVersion": "5.2.5-2.1~deb11u2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-35189",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35189",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35191",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-35191",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-3783",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3783",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3783",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3784",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3784",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3784",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-3833",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40225",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40225",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40226",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40226",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40355",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40355",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40355",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40355",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40356",
+    "Package": "libgssapi-krb5-2",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40356",
+    "Package": "libk5crypto3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40356",
+    "Package": "libkrb5-3",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40356",
+    "Package": "libkrb5support0",
+    "InstalledVersion": "1.18.3-6+deb11u5",
+    "FixedVersion": "1.18.3-6+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-4046",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4046",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "2.31-13+deb11u14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4105",
+    "Package": "libsystemd0",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4105",
+    "Package": "libudev1",
+    "InstalledVersion": "247.3-7+deb11u6",
+    "FixedVersion": "247.3-7+deb11u8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41080",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-41991",
+    "Package": "gzip",
+    "InstalledVersion": "1.10-4+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41992",
+    "Package": "gzip",
+    "InstalledVersion": "1.10-4+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42009",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42010",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42011",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42012",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42013",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42014",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42015",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42250",
+    "Package": "libbz2-1.0",
+    "InstalledVersion": "1.0.8-4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42496",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42496",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42496",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42496",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-42497",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42497",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42497",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42497",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42766",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42772",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42772",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-45186",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45447",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48109",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48506",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48509",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48510",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48511",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48512",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48513",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48514",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48515",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48516",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48517",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.301, 3.1.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4873",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4873",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4873",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48798",
+    "Package": "SSH.NET",
+    "InstalledVersion": "2016.1.0",
+    "FixedVersion": "2026.0.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48959",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48959",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48959",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48959",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48961",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48961",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48961",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48961",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48962",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48962",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48962",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48962",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-50219",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5260",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "3.7.1-5+deb11u10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53613",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53615",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53910",
+    "Package": "diffutils",
+    "InstalledVersion": "1:3.7-5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-5435",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5435",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54369",
+    "Package": "libacl1",
+    "InstalledVersion": "2.2.53-10",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-54370",
+    "Package": "libacl1",
+    "InstalledVersion": "2.2.53-10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54371",
+    "Package": "libattr1",
+    "InstalledVersion": "1:2.4.48-6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54411",
+    "Package": "libpam-modules",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54411",
+    "Package": "libpam-modules-bin",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54411",
+    "Package": "libpam-runtime",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54411",
+    "Package": "libpam0g",
+    "InstalledVersion": "1.4.0-9+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5450",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5450",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54872",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54872",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54873",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54873",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-54874",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-54875",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-54875",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5545",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5545",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5545",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56131",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56132",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56391",
+    "Package": "coreutils",
+    "InstalledVersion": "8.32-4+b1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-56392",
+    "Package": "coreutils",
+    "InstalledVersion": "8.32-4+b1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-56403",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56404",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56405",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56406",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56407",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56408",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56409",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56410",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56411",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-56412",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5704",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-57432",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57432",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57432",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57432",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57433",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57433",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57433",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-57433",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-5773",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-5773",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-5773",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58050",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58051",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-58055",
+    "Package": "libnghttp2-14",
+    "InstalledVersion": "1.43.0-1+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-58469",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-58470",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-58471",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-58472",
+    "Package": "wget",
+    "InstalledVersion": "1.21-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-5928",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5928",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-5958",
+    "Package": "sed",
+    "InstalledVersion": "4.7-1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6238",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6238",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6253",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6253",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6253",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6276",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-6276",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-6276",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63072",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63074",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-63076",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6368",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6368",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6429",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6429",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6429",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-66032",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-66034",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-66046",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-67693",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-6791",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-6791",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7010",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7010",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7010",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7010",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7017",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7017",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7017",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7017",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7168",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7168",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7168",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72522",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72897",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-72897",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-7383",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75803",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-75804",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75804",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75805",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75805",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75806",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-75806",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-7598",
+    "Package": "libssh2-1",
+    "InstalledVersion": "1.9.0-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76642",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76957",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-77117",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77117",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77214",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-77696",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77696",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78408",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78409",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "bsdutils",
+    "InstalledVersion": "1:2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libblkid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libmount1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libsmartcols1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "libuuid1",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "mount",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-78410",
+    "Package": "util-linux",
+    "InstalledVersion": "2.36.1-8+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-80229",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80229",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80229",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80230",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80230",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80230",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80255",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80255",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80255",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-80489",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-80489",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-82208",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82208",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82208",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82209",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82209",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82209",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-82560",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-82560",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-82560",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-82560",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 0
+   },
+   {
+    "ID": "CVE-2026-8286",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8286",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8286",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8376",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-8376",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-8376",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-8376",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-8458",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8458",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8458",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84782",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84782",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-84784",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-84784",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2+deb11u2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85231",
+    "Package": "libtirpc-common",
+    "InstalledVersion": "1.3.1-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85231",
+    "Package": "libtirpc3",
+    "InstalledVersion": "1.3.1-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85756",
+    "Package": "SSH.NET",
+    "InstalledVersion": "2016.1.0",
+    "FixedVersion": "2026.0.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-85977",
+    "Package": "libtirpc-common",
+    "InstalledVersion": "1.3.1-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-85977",
+    "Package": "libtirpc3",
+    "InstalledVersion": "1.3.1-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86145",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86410",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86410",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86410",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86411",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86411",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86411",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86412",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86412",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86412",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86413",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86413",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86413",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86415",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86415",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86415",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-8674",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8674",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86805",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86805",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-87861",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87861",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87861",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87863",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87863",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87863",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87865",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87865",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87865",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87866",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87866",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87866",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-88647",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-88648",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89156",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89157",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-89158",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89160",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89161",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-89162",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.36-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-8924",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8924",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8924",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8927",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8927",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8927",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-8932",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8932",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8932",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9076",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1w-0+deb11u2",
+    "FixedVersion": "1.1.1w-0+deb11u8",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92386",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92386",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92386",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92387",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92387",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92387",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92390",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92390",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92390",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92392",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-92392",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-92392",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-92707",
+    "Package": "MessagePack",
+    "InstalledVersion": "2.1.90",
+    "FixedVersion": "2.5.303, 3.1.9",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-93990",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.2.10-2+deb11u6",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-94265",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94265",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94265",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-95184",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-95209",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-95210",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.1-5+deb11u6",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9538",
+    "Package": "libperl5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9538",
+    "Package": "perl",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9538",
+    "Package": "perl-base",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9538",
+    "Package": "perl-modules-5.32",
+    "InstalledVersion": "5.32.1-4+deb11u4",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-9547",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9547",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9547",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-95818",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95818",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-97399",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-97399",
+    "Package": "libc6",
+    "InstalledVersion": "2.31-13+deb11u11",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "DLA-4085-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2024b-0+deb11u1",
+    "FixedVersion": "2025a-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4105-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2024b-0+deb11u1",
+    "FixedVersion": "2025b-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4213-1",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u15",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4213-1",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u15",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4213-1",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u15",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4403-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2024b-0+deb11u1",
+    "FixedVersion": "2025b-0+deb11u2",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4432-1",
+    "Package": "curl",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u16",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4432-1",
+    "Package": "libcurl3-gnutls",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u16",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4432-1",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.74.0-1.3+deb11u14",
+    "FixedVersion": "7.74.0-1.3+deb11u16",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4485-1",
+    "Package": "ca-certificates",
+    "InstalledVersion": "20210119",
+    "FixedVersion": "20230311+deb12u1~deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4569-1",
+    "Package": "tzdata",
+    "InstalledVersion": "2024b-0+deb11u1",
+    "FixedVersion": "2026b-0+deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "DLA-4726-1",
+    "Package": "ca-certificates",
+    "InstalledVersion": "20210119",
+    "FixedVersion": "20250419~deb12u1~deb11u1",
+    "Severity": 0
+   },
+   {
+    "ID": "GHSA-g4vj-cjjj-v7hg",
+    "Package": "NuGet.Packaging",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "4.9.7, 5.11.7, 6.8.2, 6.11.2, 6.12.5, 6.14.3, 7.0.3, 7.3.1",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-g4vj-cjjj-v7hg",
+    "Package": "NuGet.Protocol",
+    "InstalledVersion": "5.11.0",
+    "FixedVersion": "4.9.7, 5.11.7, 6.8.2, 6.11.2, 6.12.5, 6.14.3, 7.0.3, 7.3.1",
+    "Severity": 1
+   },
+   {
+    "ID": "GHSA-qrmm-w75w-3wpx",
+    "Package": "Swashbuckle.AspNetCore.SwaggerUI",
+    "InstalledVersion": "6.1.4",
+    "FixedVersion": "6.3.0",
+    "Severity": 2
+   },
+   {
+    "ID": "TEMP-0290435-0B57B5",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "TEMP-0517018-A83CE6",
+    "Package": "sysvinit-utils",
+    "InstalledVersion": "2.96-7+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "TEMP-0628843-DBAD28",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "TEMP-0628843-DBAD28",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "TEMP-0841856-B18BAF",
+    "Package": "bash",
+    "InstalledVersion": "5.1-2+deb11u1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "TEMP-1147318-639065",
+    "Package": "liblzma5",
+    "InstalledVersion": "5.2.5-2.1~deb11u1",
+    "FixedVersion": "",
+    "Severity": 0
+   }
+  ]
+ },
+ "OS": "debian 11.11",
+ "EOSL": true
+}

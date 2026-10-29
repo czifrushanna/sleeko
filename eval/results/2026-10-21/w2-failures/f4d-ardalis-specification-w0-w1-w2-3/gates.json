@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:  \u003e [3/7] RUN apk add --no-cache bash=5.1.16-r0 curl=7.79.1-r4:\n0.157 /bin/sh: 1: apk: not found\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 11)\nDockerfile:5\n--------------------\n   3 |     \n   4 |     COPY . ./\n   5 | \u003e\u003e\u003e RUN apk add --no-cache bash=5.1.16-r0 curl=7.79.1-r4\n   6 |     ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.8.0/wait /wait\n   7 |     RUN /bin/bash -c 'ls -la /wait; chmod +x /wait; ls -la /wait'\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache bash=5.1.16-r0 curl=7.79.1-r4\" did not complete successfully: exit code: 127"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #12 [go-build 4/4] RUN apk add --no-cache git     \u0026\u0026 go get golang.org/x/crypto@v0.56.0     \u0026\u0026 go get golang.org/x/net@v0.60.0     \u0026\u0026 go get github.com/pion/interceptor@v0.1.39     \u0026\u0026 go get github.com/pion/dtls/v3@v3.1.4     \u0026\u0026 go get github.com/pion/stun/v3@v3.1.5     \u0026\u0026 go get golang.org/x/sys@v0.44.0     \u0026\u0026 go mod tidy     \u0026\u0026 go build\n#12 CANCELED\n------\n \u003e [web-build 4/4] RUN npm install \u0026\u0026 npm run build:\n0.104 /bin/sh: npm: not found\n------\nDockerfile:4\n--------------------\n   2 |     WORKDIR /broadcast-box/web\n   3 |     COPY . /broadcast-box\n   4 | \u003e\u003e\u003e RUN npm install \u0026\u0026 npm run build\n   5 |     \n   6 |     FROM golang:1.26-alpine3.24 AS go-build\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c npm install \u0026\u0026 npm run build\" did not complete successfully: exit code: 127"
+  }
+]

@@ -1,0 +1,855 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2018-25032",
+    "Package": "zlib",
+    "InstalledVersion": "1.2.11-r3",
+    "FixedVersion": "1.2.12-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-0778",
+    "Package": "libretls",
+    "InstalledVersion": "3.3.4-r2",
+    "FixedVersion": "3.3.4-r3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1271",
+    "Package": "xz",
+    "InstalledVersion": "5.2.5-r0",
+    "FixedVersion": "5.2.5-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-1271",
+    "Package": "xz-libs",
+    "InstalledVersion": "5.2.5-r0",
+    "FixedVersion": "5.2.5-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2097",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1q-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-2097",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1q-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-2097",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1q-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-22576",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-22576",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-2309",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.13-r0",
+    "FixedVersion": "2.9.14-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27774",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-27774",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-27775",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27775",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27776",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-27776",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-27780",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27780",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27781",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27781",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27782",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-27782",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-28391",
+    "Package": "busybox",
+    "InstalledVersion": "1.34.1-r4",
+    "FixedVersion": "1.34.1-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-28391",
+    "Package": "ssl_client",
+    "InstalledVersion": "1.34.1-r4",
+    "FixedVersion": "1.34.1-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29458",
+    "Package": "ncurses-libs",
+    "InstalledVersion": "6.3_p20211120-r0",
+    "FixedVersion": "6.3_p20211120-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29458",
+    "Package": "ncurses-terminfo-base",
+    "InstalledVersion": "6.3_p20211120-r0",
+    "FixedVersion": "6.3_p20211120-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-29824",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.13-r0",
+    "FixedVersion": "2.9.14-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32205",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32205",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32206",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32206",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32207",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-32207",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-32208",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32208",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-32221",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-32221",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-35252",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-35252",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-37434",
+    "Package": "zlib",
+    "InstalledVersion": "1.2.11-r3",
+    "FixedVersion": "1.2.12-r2",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2022-40303",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.13-r0",
+    "FixedVersion": "2.9.14-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-40304",
+    "Package": "libxml2",
+    "InstalledVersion": "2.9.13-r0",
+    "FixedVersion": "2.9.14-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42915",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42915",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42916",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-42916",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4304",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-4304",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-4304",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-43551",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-43551",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-43552",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-43552",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2022-4450",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4450",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-4450",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2022-48303",
+    "Package": "tar",
+    "InstalledVersion": "1.34-r0",
+    "FixedVersion": "1.34-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0215",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0215",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0215",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0286",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0286",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0286",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0464",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0464",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0464",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-0465",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0465",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-0465",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1t-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23914",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-23914",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-23915",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23915",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23916",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-23916",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "7.80.0-r6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-2650",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27533",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-27533",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-27534",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-27534",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-27535",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27535",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27536",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27536",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27537",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27537",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27538",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-27538",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.0.1-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28319",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-28319",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-28320",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28320",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28321",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28321",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-28322",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-28322",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.1.0-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29491",
+    "Package": "ncurses-libs",
+    "InstalledVersion": "6.3_p20211120-r0",
+    "FixedVersion": "6.3_p20211120-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-29491",
+    "Package": "ncurses-terminfo-base",
+    "InstalledVersion": "6.3_p20211120-r0",
+    "FixedVersion": "6.3_p20211120-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3446",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1u-r2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-35945",
+    "Package": "nghttp2-libs",
+    "InstalledVersion": "1.46.0-r0",
+    "FixedVersion": "1.46.0-r1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-38039",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.3.0-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-38039",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.3.0-r0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1v-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1v-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-3817",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1v-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-38545",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.4.0-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-38545",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.4.0-r0",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2023-38546",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.4.0-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-38546",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.4.0-r0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-44487",
+    "Package": "nghttp2-libs",
+    "InstalledVersion": "1.46.0-r0",
+    "FixedVersion": "1.46.0-r2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2023-46218",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.5.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46218",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.5.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46219",
+    "Package": "curl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.5.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-46219",
+    "Package": "libcurl",
+    "InstalledVersion": "7.80.0-r0",
+    "FixedVersion": "8.5.0-r0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "libcrypto1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1w-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "libssl1.1",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1w-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-5678",
+    "Package": "openssl",
+    "InstalledVersion": "1.1.1n-r0",
+    "FixedVersion": "1.1.1w-r1",
+    "Severity": 2
+   }
+  ]
+ },
+ "OS": "alpine 3.15.1",
+ "EOSL": true
+}

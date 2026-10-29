@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 3.812 \n3.812 First, try this link to see if there are any existing issue reports for this error:\n3.812 https://github.com/rubygems/rubygems/search?q=undefined+method+%60version%27+for+%23%3CBundler++IncompleteSpecification+0x00007fffedc01990+%40name%3D%22nokogiri%22%2C+%40platform%3Dnil%3E\u0026type=Issues\n3.812 \n3.812 If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler\u0026template=bundler-related-issue.md, and copy and paste the report template above in there.\n------\nDockerfile:7\n--------------------\n   5 |     \n   6 |     ADD Gemfile Gemfile.lock /\n   7 | \u003e\u003e\u003e RUN gem install -v 2.3.20 bundler \u0026\u0026 bundle install\n   8 |     \n   9 |     FROM docker.io/library/ruby:3.2-alpine\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c gem install -v 2.3.20 bundler \u0026\u0026 bundle install\" did not complete successfully: exit code: 1"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 15.23 Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.\n15.23 \n15.23 * Get more help at https://help.gradle.org\n15.23 \n15.23 BUILD FAILED in 14s\n------\nDockerfile:11\n--------------------\n   9 |     \n  10 |     COPY . .\n  11 | \u003e\u003e\u003e RUN ./gradlew shadowJar --no-daemon\n  12 |     \n  13 |     FROM azul/zulu-openjdk-alpine:11-jre\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c ./gradlew shadowJar --no-daemon\" did not complete successfully: exit code: 1"
+  }
+]

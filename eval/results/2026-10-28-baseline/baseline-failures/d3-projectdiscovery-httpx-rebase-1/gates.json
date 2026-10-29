@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "runtime contract changed: WORKDIR \"\" -\u003e \"/\""
+  }
+]

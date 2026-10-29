@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:  \u001b[33m2 warnings found (use docker --debug to expand):\n\u001b[0m - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)\n - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 23)\nDockerfile:6\n--------------------\n   5 |     # Install Java 8 and sbt dependencies in a single layer\n   6 | \u003e\u003e\u003e RUN apk add --no-cache openjdk8-jre-headless curl \u0026\u0026 \\\n   7 | \u003e\u003e\u003e     mkdir -p /root/bin \u0026\u0026 \\\n   8 | \u003e\u003e\u003e     curl -s https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt \u003e /root/bin/sbt \u0026\u0026 \\\n   9 | \u003e\u003e\u003e     chmod 0755 /root/bin/sbt \u0026\u0026 \\\n  10 | \u003e\u003e\u003e     apk del curl \u0026\u0026 \\\n  11 | \u003e\u003e\u003e     rm -rf /var/cache/apk/* /tmp/*\n  12 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apk add --no-cache openjdk8-jre-headless curl \u0026\u0026     mkdir -p /root/bin \u0026\u0026     curl -s https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt \u003e /root/bin/sbt \u0026\u0026     chmod 0755 /root/bin/sbt \u0026\u0026     apk del curl \u0026\u0026     rm -rf /var/cache/apk/* /tmp/*\" did not complete successfully: exit code: 1"
+  }
+]

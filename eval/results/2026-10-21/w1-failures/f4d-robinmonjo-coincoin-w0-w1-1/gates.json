@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1:  \u003e [5/7] RUN mix local.hex --force \u0026\u0026 mix deps.get:\n0.544 Segmentation fault\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 13)\nDockerfile:7\n--------------------\n   5 |     WORKDIR /app\n   6 |     COPY mix.exs mix.lock ./\n   7 | \u003e\u003e\u003e RUN mix local.hex --force \u0026\u0026 mix deps.get\n   8 |     \n   9 |     COPY . .\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c mix local.hex --force \u0026\u0026 mix deps.get\" did not complete successfully: exit code: 139"
+  }
+]

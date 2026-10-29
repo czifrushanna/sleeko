@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 1.224 go: downloading golang.org/x/text v0.41.0\n1.224 go: downloading golang.org/x/sys v0.44.0\n2.427 go: golang.org/x/net@v0.60.0 requires go \u003e= 1.26.0 (running go 1.23.12; GOTOOLCHAIN=local)\n2.427 go: golang.org/x/text@v0.41.0 requires go \u003e= 1.25.0 (running go 1.23.12; GOTOOLCHAIN=local)\n2.427 go: golang.org/x/sys@v0.44.0 requires go \u003e= 1.25.0 (running go 1.23.12; GOTOOLCHAIN=local)\n------\nDockerfile:6\n--------------------\n   4 |     COPY . .\n   5 |     ENV CGO_ENABLED=1\n   6 | \u003e\u003e\u003e RUN go get golang.org/x/net@v0.60.0 golang.org/x/text@v0.41.0 golang.org/x/sys@v0.44.0 \u0026\u0026 go mod tidy \u0026\u0026 go build -o bin/qq -ldflags=\"-linkmode external -extldflags -static\" .\n   7 |     \n   8 |     FROM gcr.io/distroless/static:nonroot\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c go get golang.org/x/net@v0.60.0 golang.org/x/text@v0.41.0 golang.org/x/sys@v0.44.0 \u0026\u0026 go mod tidy \u0026\u0026 go build -o bin/qq -ldflags=\\\"-linkmode external -extldflags -static\\\" .\" did not complete successfully: exit code: 1"
+  }
+]

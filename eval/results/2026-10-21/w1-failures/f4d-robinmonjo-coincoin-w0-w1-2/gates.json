@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: 0.149 mix local.hex --force\n0.491 make: *** [Makefile:14: dep] Segmentation fault\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 11)\nDockerfile:8\n--------------------\n   6 |     WORKDIR /app\n   7 |     \n   8 | \u003e\u003e\u003e RUN make release\n   9 |     \n  10 |     USER nobody\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c make release\" did not complete successfully: exit code: 2"
+  }
+]

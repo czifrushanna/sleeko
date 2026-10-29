@@ -1,0 +1,477 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2025-49005",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.3.3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-55173",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "14.2.31, 15.4.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-55182",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.0.5, 15.1.9, 15.2.6, 15.3.6, 15.4.8, 15.5.7, 16.0.7",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2025-57752",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "14.2.31, 15.4.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-57822",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "14.2.32, 15.4.7",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-59471",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.10, 16.1.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101911",
+    "Package": "ip-address",
+    "InstalledVersion": "10.1.0",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101912",
+    "Package": "ip-address",
+    "InstalledVersion": "10.1.0",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101913",
+    "Package": "ip-address",
+    "InstalledVersion": "10.1.0",
+    "FixedVersion": "10.5.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102276",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102277",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.12, 3.0.9, 2.1.7, 1.1.21",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102278",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-104844",
+    "Package": "postcss-selector-parser",
+    "InstalledVersion": "7.1.1",
+    "FixedVersion": "7.1.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-13149",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.7, 1.1.16, 2.1.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-14257",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.8, 3.0.3, 2.1.3, 1.1.17",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27980",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "16.1.7, 15.5.14",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-29057",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "16.1.7, 15.5.13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33671",
+    "Package": "picomatch",
+    "InstalledVersion": "4.0.3",
+    "FixedVersion": "4.0.4, 3.0.2, 2.3.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33672",
+    "Package": "picomatch",
+    "InstalledVersion": "4.0.3",
+    "FixedVersion": "4.0.4, 3.0.2, 2.3.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-33750",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "5.0.5, 3.0.2, 2.0.3, 1.1.13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-41305",
+    "Package": "postcss",
+    "InstalledVersion": "8.4.31",
+    "FixedVersion": "8.5.10",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-42338",
+    "Package": "ip-address",
+    "InstalledVersion": "10.1.0",
+    "FixedVersion": "10.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-44572",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-44573",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-44575",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-44576",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-44577",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-44578",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-44579",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-44580",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-44581",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-44582",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-45109",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.18, 16.2.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-45623",
+    "Package": "postcss",
+    "InstalledVersion": "8.4.31",
+    "FixedVersion": "8.5.12",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-48758",
+    "Package": "@sigstore/core",
+    "InstalledVersion": "2.0.0",
+    "FixedVersion": "3.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48815",
+    "Package": "sigstore",
+    "InstalledVersion": "3.1.0",
+    "FixedVersion": "4.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-64641",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-64643",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-64645",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-64646",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-64647",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-64648",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-64649",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.21, 16.2.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-67213",
+    "Package": "nanoid",
+    "InstalledVersion": "3.3.8",
+    "FixedVersion": "3.3.18, 5.1.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-67214",
+    "Package": "nanoid",
+    "InstalledVersion": "3.3.8",
+    "FixedVersion": "3.3.16, 5.1.16",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-69152",
+    "Package": "brace-expansion",
+    "InstalledVersion": "2.0.2",
+    "FixedVersion": "1.1.18, 2.1.4, 3.0.6, 5.0.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-69153",
+    "Package": "postcss",
+    "InstalledVersion": "8.4.31",
+    "FixedVersion": "8.5.23",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-69192",
+    "Package": "ip-address",
+    "InstalledVersion": "10.1.0",
+    "FixedVersion": "10.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73086",
+    "Package": "nanoid",
+    "InstalledVersion": "3.3.8",
+    "FixedVersion": "3.3.12, 5.1.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73646",
+    "Package": "postcss",
+    "InstalledVersion": "8.4.31",
+    "FixedVersion": "8.5.18",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-75604",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.24, 16.3.3",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib",
+    "InstalledVersion": "1.3.2-r0",
+    "FixedVersion": "1.3.2-r1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-9358",
+    "Package": "postcss-selector-parser",
+    "InstalledVersion": "7.1.1",
+    "FixedVersion": "6.1.3, 7.1.3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-93748",
+    "Package": "http-cache-semantics",
+    "InstalledVersion": "4.2.0",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-93749",
+    "Package": "source-map-js",
+    "InstalledVersion": "1.2.1",
+    "FixedVersion": "1.2.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-94484",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "16.3.8, 15.5.27",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-94543",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.27, 16.3.8",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-9496",
+    "Package": "pacote",
+    "InstalledVersion": "19.0.2",
+    "FixedVersion": "21.5.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-2xp9-vwfh-vxw4",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.24, 16.3.3",
+    "Severity": 4
+   },
+   {
+    "ID": "GHSA-8h8q-6873-q5fj",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.16, 16.2.5",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-f88m-g3jw-g9cj",
+    "Package": "sharp",
+    "InstalledVersion": "0.34.1",
+    "FixedVersion": "0.35.0",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-h25m-26qc-wcjf",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.0.8, 15.1.12, 15.2.9, 15.3.9, 15.4.11, 15.5.10, 15.6.0-canary.61, 16.0.11, 16.1.5",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-mwv6-3258-q52c",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "14.2.34, 15.0.6, 15.1.10, 15.2.7, 15.3.7, 15.4.9, 15.5.8, 15.6.0-canary.59, 16.0.9, 16.1.0-canary.17",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-q4gf-8mx6-v5v3",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.5.15, 16.2.3",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-rgj7-g3m4-5g8c",
+    "Package": "sharp",
+    "InstalledVersion": "0.34.1",
+    "FixedVersion": "0.35.4",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-w37m-7fhw-fmv9",
+    "Package": "next",
+    "InstalledVersion": "15.3.0",
+    "FixedVersion": "15.0.6, 15.1.10, 15.2.7, 15.3.7, 15.4.9, 15.5.8, 15.6.0-canary.59, 16.0.9, 16.1.0-canary.17",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-wq5f-xc86-pv6w",
+    "Package": "sharp",
+    "InstalledVersion": "0.34.1",
+    "FixedVersion": "0.35.5",
+    "Severity": 3
+   }
+  ]
+ },
+ "OS": "alpine 3.24.2",
+ "EOSL": false
+}

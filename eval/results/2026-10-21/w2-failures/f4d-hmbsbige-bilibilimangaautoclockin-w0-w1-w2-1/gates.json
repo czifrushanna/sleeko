@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: \n2.221 E: The repository 'http://deb.debian.org/debian buster Release' does not have a Release file.\n2.227 E: The repository 'http://deb.debian.org/debian-security buster/updates Release' does not have a Release file.\n2.228 E: The repository 'http://deb.debian.org/debian buster-updates Release' does not have a Release file.\n------\nDockerfile:23\n--------------------\n  22 |     # We run this in the final stage to ensure the runtime image is patched.\n  23 | \u003e\u003e\u003e RUN apt-get update \u0026\u0026 \\\n  24 | \u003e\u003e\u003e     apt-get upgrade -y --no-install-recommends \u0026\u0026 \\\n  25 | \u003e\u003e\u003e     apt-get clean \u0026\u0026 \\\n  26 | \u003e\u003e\u003e     rm -rf /var/lib/apt/lists/*\n  27 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update \u0026\u0026     apt-get upgrade -y --no-install-recommends \u0026\u0026     apt-get clean \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+  }
+]

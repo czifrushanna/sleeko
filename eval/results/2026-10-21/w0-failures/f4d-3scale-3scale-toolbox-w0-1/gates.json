@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image registry.access.redhat.com/ubi9/ruby-30:9.4-14 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #2 [internal] load metadata for registry.access.redhat.com/ubi9/ruby-30:9.4-14\n#2 ERROR: registry.access.redhat.com/ubi9/ruby-30:9.4-14: not found\n------\n \u003e [internal] load metadata for registry.access.redhat.com/ubi9/ruby-30:9.4-14:\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 2)\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM registry.access.redhat.com/ubi9/ruby-30:9.4-14\n   2 |     MAINTAINER Eguzki Astiz Lezaun \u003ceastizle@redhat.com\u003e\n   3 |     \n--------------------\nERROR: failed to build: failed to solve: registry.access.redhat.com/ubi9/ruby-30:9.4-14: failed to resolve source metadata for registry.access.redhat.com/ubi9/ruby-30:9.4-14: registry.access.redhat.com/ubi9/ruby-30:9.4-14: not found"
+  }
+]

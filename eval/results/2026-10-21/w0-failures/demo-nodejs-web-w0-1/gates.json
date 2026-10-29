@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G3_versions_exist",
+    "status": "fail",
+    "reason": "not found: the base image node:14.17.3-alpine3.18 does not exist in its registry; use a tag that exists"
+  },
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #1 transferring dockerfile: 503B done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/node:14.17.3-alpine3.18\n#2 ERROR: docker.io/library/node:14.17.3-alpine3.18: not found\n------\n \u003e [internal] load metadata for docker.io/library/node:14.17.3-alpine3.18:\n------\nDockerfile:1\n--------------------\n   1 | \u003e\u003e\u003e FROM node:14.17.3-alpine3.18\n   2 |     \n   3 |     WORKDIR /usr/src/app\n--------------------\nERROR: failed to build: failed to solve: node:14.17.3-alpine3.18: failed to resolve source metadata for docker.io/library/node:14.17.3-alpine3.18: docker.io/library/node:14.17.3-alpine3.18: not found"
+  }
+]

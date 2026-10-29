@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n \u003e [build 3/4] COPY src /usr/src/app/src:\n------\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 7)\nDockerfile:3\n--------------------\n   1 |     FROM maven:3.8.1-jdk-8 AS build\n   2 |     COPY pom.xml /usr/src/app\n   3 | \u003e\u003e\u003e COPY src /usr/src/app/src\n   4 |     RUN mvn -DskipTests -f /usr/src/app/pom.xml clean package\n   5 |     \n--------------------\nERROR: failed to build: failed to solve: mkdir /usr/src/app: not a directory"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "G5_behaviour",
+    "status": "fail",
+    "reason": "smoke test: exited with code 150 within 10s, want it running or exit code 0: You must install or update .NET to run this application.\n\nApp: /app/Whalerator.WebAPI.dll\nArchitecture: x64\nFramework: 'Microsoft.AspNetCore.App', version '5.0.0' (x64)\n.NET location: /usr/share/dotnet/\n\nThe following frameworks were found:\n  8.0.32 at [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]\n\nLearn more:\nhttps://aka.ms/dotnet/app-launch-failed\n\nTo install missing framework, download:\nhttps://aka.ms/dotnet-core-applaunch?framework=Microsoft.AspNetCore.App\u0026framework_version=5.0.0\u0026arch=x64\u0026rid=linux-x64\u0026os=debian.12"
+  },
+  {
+    "id": "G6_no_new_severe",
+    "status": "fail",
+    "reason": "new critical/high: CVE-2025-69720, CVE-2026-13221, CVE-2026-16742, CVE-2026-41992, CVE-2026-42496, CVE-2026-42497, CVE-2026-48962, CVE-2026-53613, CVE-2026-53615, CVE-2026-54369, CVE-2026-57432, CVE-2026-57433, CVE-2026-76642, CVE-2026-78408, CVE-2026-78409, CVE-2026-78410, CVE-2026-8376, CVE-2026-84782, CVE-2026-9538"
+  }
+]

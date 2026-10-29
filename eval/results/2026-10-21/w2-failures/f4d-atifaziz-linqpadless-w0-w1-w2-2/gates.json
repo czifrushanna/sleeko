@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: ------\n \u003e [build 4/4] RUN dotnet pack -c Release src:\n0.194   3.1.415 [/usr/share/dotnet/sdk]\n0.196 A compatible installed .NET Core SDK for global.json version [3.1.101] from [/project/global.json] was not found\n0.196 Install the [3.1.101] .NET Core SDK or update [/project/global.json] with an installed .NET Core SDK:\n------\nDockerfile:10\n--------------------\n   8 |     WORKDIR /project\n   9 |     \n  10 | \u003e\u003e\u003e RUN dotnet pack -c Release src\n  11 |     \n  12 |     FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine3.13 AS tool\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c dotnet pack -c Release src\" did not complete successfully: exit code: 145"
+  }
+]

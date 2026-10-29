@@ -1,0 +1,1170 @@
+{
+ "Result": {
+  "Vulnerabilities": [
+   {
+    "ID": "CVE-2017-7475",
+    "Package": "libcairo-gobject2",
+    "InstalledVersion": "1.16.0-5ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2017-7475",
+    "Package": "libcairo2",
+    "InstalledVersion": "1.16.0-5ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-18064",
+    "Package": "libcairo-gobject2",
+    "InstalledVersion": "1.16.0-5ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2018-18064",
+    "Package": "libcairo2",
+    "InstalledVersion": "1.16.0-5ubuntu2.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2019-6988",
+    "Package": "libopenjp2-7",
+    "InstalledVersion": "2.4.0-6ubuntu0.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "gcc-12-base",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libgcc-s1",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libgfortran5",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libgomp1",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libquadmath0",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-27943",
+    "Package": "libstdc++6",
+    "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-41409",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2022-4899",
+    "Package": "libzstd1",
+    "InstalledVersion": "1.4.8+dfsg-3build1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-29383",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-34969",
+    "Package": "dbus",
+    "InstalledVersion": "1.12.20-2ubuntu4.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-34969",
+    "Package": "dbus-user-session",
+    "InstalledVersion": "1.12.20-2ubuntu4.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-34969",
+    "Package": "libdbus-1-3",
+    "InstalledVersion": "1.12.20-2ubuntu4.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-37769",
+    "Package": "libpixman-1-0",
+    "InstalledVersion": "0.40.0-1ubuntu0.22.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-39328",
+    "Package": "libopenjp2-7",
+    "InstalledVersion": "2.4.0-6ubuntu0.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-39329",
+    "Package": "libopenjp2-7",
+    "InstalledVersion": "2.4.0-6ubuntu0.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libncurses6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libncursesw6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "libtinfo6",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-base",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-50495",
+    "Package": "ncurses-bin",
+    "InstalledVersion": "6.3-2ubuntu0.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-5574",
+    "Package": "xserver-common",
+    "InstalledVersion": "2:21.1.4-2ubuntu1.7~22.04.16",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2023-5574",
+    "Package": "xvfb",
+    "InstalledVersion": "2:21.1.4-2ubuntu1.7~22.04.16",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-21538",
+    "Package": "cross-spawn",
+    "InstalledVersion": "7.0.3",
+    "FixedVersion": "7.0.5, 6.0.6",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2024-35195",
+    "Package": "python3-pip",
+    "InstalledVersion": "22.0.2+dfsg-1ubuntu0.7",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2024-52615",
+    "Package": "libavahi-client3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52615",
+    "Package": "libavahi-common-data",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52615",
+    "Package": "libavahi-common3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52616",
+    "Package": "libavahi-client3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52616",
+    "Package": "libavahi-common-data",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-52616",
+    "Package": "libavahi-common3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "login",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-56433",
+    "Package": "passwd",
+    "InstalledVersion": "1:4.8.1-2ubuntu2.2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2024-7883",
+    "Package": "libllvm15",
+    "InstalledVersion": "1:15.0.7-0ubuntu0.22.04.3",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-13466",
+    "Package": "body-parser",
+    "InstalledVersion": "2.2.0",
+    "FixedVersion": "2.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-1352",
+    "Package": "libelf1",
+    "InstalledVersion": "0.186-1ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-1376",
+    "Package": "libelf1",
+    "InstalledVersion": "0.186-1ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-15284",
+    "Package": "qs",
+    "InstalledVersion": "6.14.0",
+    "FixedVersion": "6.14.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-5222",
+    "Package": "libicu70",
+    "InstalledVersion": "70.1-2",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-5889",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "2.0.2, 1.1.12, 3.0.1, 4.0.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2025-59529",
+    "Package": "libavahi-client3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-59529",
+    "Package": "libavahi-common-data",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-59529",
+    "Package": "libavahi-common3",
+    "InstalledVersion": "0.8-5ubuntu5.5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64718",
+    "Package": "js-yaml",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "4.1.1, 3.14.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-64756",
+    "Package": "glob",
+    "InstalledVersion": "10.4.2",
+    "FixedVersion": "11.1.0, 10.5.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-66382",
+    "Package": "libexpat1",
+    "InstalledVersion": "2.4.7-1ubuntu0.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-66414",
+    "Package": "@modelcontextprotocol/sdk",
+    "InstalledVersion": "1.11.3",
+    "FixedVersion": "1.24.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2025-66418",
+    "Package": "python3-pip",
+    "InstalledVersion": "22.0.2+dfsg-1ubuntu0.7",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-66471",
+    "Package": "python3-pip",
+    "InstalledVersion": "22.0.2+dfsg-1ubuntu0.7",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2025-69873",
+    "Package": "ajv",
+    "InstalledVersion": "6.12.6",
+    "FixedVersion": "8.18.0, 6.14.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-0621",
+    "Package": "@modelcontextprotocol/sdk",
+    "InstalledVersion": "1.11.3",
+    "FixedVersion": "1.25.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-101911",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101912",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.7.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-101913",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.5.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102276",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102277",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.12, 3.0.9, 2.1.7, 1.1.21",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102278",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102282",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-102473",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20210903+057cd650a4ed-3build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-102474",
+    "Package": "dash",
+    "InstalledVersion": "0.5.11+git20210903+057cd650a4ed-3build1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-103111",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-104844",
+    "Package": "postcss-selector-parser",
+    "InstalledVersion": "6.1.0",
+    "FixedVersion": "7.1.6",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-2",
+    "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-107161",
+    "Package": "libsasl2-modules-db",
+    "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-12590",
+    "Package": "body-parser",
+    "InstalledVersion": "2.2.0",
+    "FixedVersion": "1.20.6, 2.3.0",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-13149",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.7, 1.1.16, 2.1.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-14257",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.8, 3.0.3, 2.1.3, 1.1.17",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-1703",
+    "Package": "python3-pip",
+    "InstalledVersion": "22.0.2+dfsg-1ubuntu0.7",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18374",
+    "Package": "libc6",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18477",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-18508",
+    "Package": "tar",
+    "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-19617",
+    "Package": "libdevmapper1.02.1",
+    "InstalledVersion": "2:1.02.175-2.1ubuntu5",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-21441",
+    "Package": "python3-pip",
+    "InstalledVersion": "22.0.2+dfsg-1ubuntu0.7",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-23745",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-2391",
+    "Package": "qs",
+    "InstalledVersion": "6.14.0",
+    "FixedVersion": "6.14.2",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-23950",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-24001",
+    "Package": "diff",
+    "InstalledVersion": "5.2.0",
+    "FixedVersion": "8.0.3, 5.2.2, 4.0.4, 3.5.1",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-24842",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-25536",
+    "Package": "@modelcontextprotocol/sdk",
+    "InstalledVersion": "1.11.3",
+    "FixedVersion": "1.26.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-26960",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.8",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-26996",
+    "Package": "minimatch",
+    "InstalledVersion": "3.1.2",
+    "FixedVersion": "10.2.1, 9.0.6, 8.0.5, 7.4.7, 6.2.1, 5.1.7, 4.2.4, 3.1.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27903",
+    "Package": "minimatch",
+    "InstalledVersion": "3.1.2",
+    "FixedVersion": "10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.3",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-27904",
+    "Package": "minimatch",
+    "InstalledVersion": "3.1.2",
+    "FixedVersion": "10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.4",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-29786",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.10",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-31802",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.11",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-32141",
+    "Package": "flatted",
+    "InstalledVersion": "3.3.1",
+    "FixedVersion": "3.4.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33228",
+    "Package": "flatted",
+    "InstalledVersion": "3.3.1",
+    "FixedVersion": "3.4.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-33750",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "5.0.5, 3.0.2, 2.0.3, 1.1.13",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-39244",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libpam-systemd",
+    "InstalledVersion": "249.11-0ubuntu3.23",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libsystemd0",
+    "InstalledVersion": "249.11-0ubuntu3.23",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "libudev1",
+    "InstalledVersion": "249.11-0ubuntu3.22",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "systemd",
+    "InstalledVersion": "249.11-0ubuntu3.23",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-40228",
+    "Package": "systemd-sysv",
+    "InstalledVersion": "249.11-0ubuntu3.23",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-42338",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.1.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48758",
+    "Package": "@sigstore/core",
+    "InstalledVersion": "1.1.0",
+    "FixedVersion": "3.2.1",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-48815",
+    "Package": "sigstore",
+    "InstalledVersion": "2.3.1",
+    "FixedVersion": "4.1.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-4923",
+    "Package": "path-to-regexp",
+    "InstalledVersion": "8.2.0",
+    "FixedVersion": "8.4.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-4926",
+    "Package": "path-to-regexp",
+    "InstalledVersion": "8.2.0",
+    "FixedVersion": "8.4.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-53550",
+    "Package": "js-yaml",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "4.2.0, 3.15.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-53655",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.16",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59869",
+    "Package": "js-yaml",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "3.15.0, 4.3.0",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-59871",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.18",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-59873",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.19",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-59874",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.18",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-59875",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.17",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-67693",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-69152",
+    "Package": "brace-expansion",
+    "InstalledVersion": "1.1.11",
+    "FixedVersion": "1.1.18, 2.1.4, 3.0.6, 5.0.9",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-69192",
+    "Package": "ip-address",
+    "InstalledVersion": "9.0.5",
+    "FixedVersion": "10.3.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73088",
+    "Package": "browserslist",
+    "InstalledVersion": "4.24.5",
+    "FixedVersion": "4.28.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73089",
+    "Package": "browserslist",
+    "InstalledVersion": "4.24.5",
+    "FixedVersion": "4.28.7",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-73566",
+    "Package": "tar",
+    "InstalledVersion": "6.2.1",
+    "FixedVersion": "7.5.21",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-76845",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-77301",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-82417",
+    "Package": "qs",
+    "InstalledVersion": "6.14.0",
+    "FixedVersion": "6.16.0",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-84375",
+    "Package": "js-yaml",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "4.3.2, 3.15.2",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-85091",
+    "Package": "zlib1g",
+    "InstalledVersion": "1:1.2.11.dfsg-2ubuntu9.2",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86145",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86409",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86414",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-86469",
+    "Package": "libglib2.0-0",
+    "InstalledVersion": "2.72.4-0ubuntu2.10",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-8723",
+    "Package": "qs",
+    "InstalledVersion": "6.14.0",
+    "FixedVersion": "6.15.2",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87862",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-87864",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-88647",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-88807",
+    "Package": "libxrender1",
+    "InstalledVersion": "1:0.9.10-1build4",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc-bin",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89092",
+    "Package": "libc6",
+    "InstalledVersion": "2.35-0ubuntu3.15",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89156",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89157",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89158",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89160",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-89161",
+    "Package": "libpcre2-8-0",
+    "InstalledVersion": "10.39-3ubuntu0.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-90711",
+    "Package": "proxy-addr",
+    "InstalledVersion": "2.0.7",
+    "FixedVersion": "2.0.8",
+    "Severity": 4
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92388",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92389",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-92391",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-9358",
+    "Package": "postcss-selector-parser",
+    "InstalledVersion": "6.1.0",
+    "FixedVersion": "6.1.3, 7.1.3",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-93748",
+    "Package": "http-cache-semantics",
+    "InstalledVersion": "4.1.1",
+    "FixedVersion": "",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "curl",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94266",
+    "Package": "libcurl4",
+    "InstalledVersion": "7.81.0-1ubuntu1.30",
+    "FixedVersion": "",
+    "Severity": 1
+   },
+   {
+    "ID": "CVE-2026-94286",
+    "Package": "libxtst6",
+    "InstalledVersion": "2:1.2.3-1ubuntu0.22.04.1",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-9496",
+    "Package": "pacote",
+    "InstalledVersion": "18.0.6",
+    "FixedVersion": "21.5.1",
+    "Severity": 3
+   },
+   {
+    "ID": "CVE-2026-95184",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95209",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "CVE-2026-95210",
+    "Package": "libgnutls30",
+    "InstalledVersion": "3.7.3-4ubuntu1.9",
+    "FixedVersion": "",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-5p4m-2wfm-xmqj",
+    "Package": "js-yaml",
+    "InstalledVersion": "4.1.0",
+    "FixedVersion": "4.3.1, 3.15.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-8238-w5pm-2374",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-c6fg-446q-cg94",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-p498-v437-472g",
+    "Package": "@humanfs/node",
+    "InstalledVersion": "0.16.6",
+    "FixedVersion": "0.16.8",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-p634-w6r4-rjp2",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 2
+   },
+   {
+    "ID": "GHSA-rcw4-f5rp-g42v",
+    "Package": "adm-zip",
+    "InstalledVersion": "0.5.16",
+    "FixedVersion": "0.6.1",
+    "Severity": 3
+   },
+   {
+    "ID": "GHSA-xffm-g5w8-qvg7",
+    "Package": "@eslint/plugin-kit",
+    "InstalledVersion": "0.2.8",
+    "FixedVersion": "0.3.4",
+    "Severity": 1
+   }
+  ]
+ },
+ "OS": "ubuntu 22.04",
+ "EOSL": false
+}

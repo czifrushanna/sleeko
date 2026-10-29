@@ -1,0 +1,7 @@
+[
+  {
+    "id": "G4_build",
+    "status": "fail",
+    "reason": "docker build: exit code 1: #6 0.086 /bin/sh: 1: adduser: not found\n#6 ERROR: process \"/bin/sh -c adduser --disabled-password --gecos '' bruin\" did not complete successfully: exit code: 127\n------\n \u003e [3/4] RUN adduser --disabled-password --gecos '' bruin:\n0.086 /bin/sh: 1: adduser: not found\n------\nDockerfile:5\n--------------------\n   3 |     RUN apt-get update \u0026\u0026 apt-get install -y --no-install-recommends curl git \u0026\u0026 rm -rf /var/lib/apt/lists/*\n   4 |     \n   5 | \u003e\u003e\u003e RUN adduser --disabled-password --gecos '' bruin\n   6 |     \n   7 |     USER bruin\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c adduser --disabled-password --gecos '' bruin\" did not complete successfully: exit code: 127"
+  }
+]
