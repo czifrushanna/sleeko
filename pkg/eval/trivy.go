@@ -118,8 +118,13 @@ func (t *TrivyScanner) Scan(ctx context.Context, img Image) (ScanOutput, error) 
 	if err != nil {
 		return ScanOutput{}, err
 	}
+	return parseScan(res.Stdout)
+}
 
-	result, err := score.ParseTrivy(res.Stdout)
+// parseScan reads the findings, the distribution and its end-of-life flag
+// from a Trivy JSON report.
+func parseScan(stdout []byte) (ScanOutput, error) {
+	result, err := score.ParseTrivy(stdout)
 	if err != nil {
 		return ScanOutput{}, err
 	}
@@ -132,7 +137,7 @@ func (t *TrivyScanner) Scan(ctx context.Context, img Image) (ScanOutput, error) 
 			} `json:"OS"`
 		} `json:"Metadata"`
 	}
-	if err := json.Unmarshal(res.Stdout, &meta); err != nil {
+	if err := json.Unmarshal(stdout, &meta); err != nil {
 		return ScanOutput{}, err
 	}
 	eosl := false

@@ -64,6 +64,8 @@ const usage = `usage:
   sleeko-eval failures [flags] RESULTS.jsonl... list failed attempts, save them as fixtures
   sleeko-eval compare [flags] RESULTS.jsonl...  McNemar and Wilcoxon of pipeline B against A
   sleeko-eval analyze [flags] RESULTS.jsonl...  S9 analyses: other success definitions, G7 lint, G3, G5 audit
+  sleeko-eval visibility [flags] RESULTS.jsonl...  G6 failures split by what the scanner could see in O′ (scans in RESULTS-scans/)
+  sleeko-eval inventory [flags]               rebuild O′ of chosen items and list every package in it, for visibility -inventory
 
 Run 'sleeko-eval <command> -h' for the flags of a command.
 `
@@ -94,6 +96,10 @@ func main() {
 		err = runCompare(os.Args[2:])
 	case "analyze":
 		err = runAnalyze(ctx, os.Args[2:])
+	case "visibility":
+		err = runVisibility(os.Args[2:])
+	case "inventory":
+		err = runInventory(ctx, os.Args[2:])
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(2)
@@ -735,4 +741,117 @@ func runReport(args []string) error {
 		w = f
 	}
 	return eval.WriteMarkdown(w, eval.BuildReport(records))
+}
+
+// runVisibility classifies the new critical or high findings behind every
+// G6 failure by what the scanner could see in O′, from the records and the
+// scans their runs saved next to them (RESULTS.jsonl → RESULTS-scans/).
+func runVisibility(args []string) error {
+	fs := flag.NewFlagSet("visibility", flag.ExitOnError)
+	out := fs.String("out", "", "write the markdown here instead of stdout")
+	order := fs.String("pipelines", "W0,W0+W1,W0+W1+W2", "pipelines to analyse, in order")
+	tolerance := fs.Float64("size-tolerance", score.DefaultSizeTolerance, "size tolerance of the success rule")
+	invDir := fs.String("inventory", "", "directory of O′ inventories (sleeko-eval inventory); without it, packages O′'s scan lacks stay undetermined")
+	fs.Parse(args)
+	if fs.NArg() == 0 {
+		return errors.New("give at least one results file")
+	}
+	var inventories map[string]eval.Inventory
+	if *invDir != "" {
+		var err error
+		if inventories, err = eval.LoadInventories(*invDir); err != nil {
+			return err
+		}
+	}
+	var records []eval.Record
+	scanDirs := map[string]string{}
+	for _, file := range fs.Args() {
+		recs, err := eval.ReadRecords(file)
+		if err != nil {
+			return fmt.Errorf("%s: %w", file, err)
+		}
+		dir := strings.TrimSuffix(file, filepath.Ext(file)) + "-scans"
+		for _, r := range recs {
+			if prev, ok := scanDirs[r.Pipeline]; ok && prev != dir {
+				return fmt.Errorf("pipeline %s appears in two results files", r.Pipeline)
+			}
+			scanDirs[r.Pipeline] = dir
+		}
+		records = append(records, recs...)
+	}
+	va, err := eval.Visibility(records, strings.Split(*order, ","), scanDirs, inventories, *tolerance)
+	if err != nil {
+		return err
+	}
+	var w io.Writer = os.Stdout
+	if *out != "" {
+		f, err := os.Create(*out)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+		w = f
+	}
+	return eval.WriteVisibility(w, va)
+}
+
+// runInventory rebuilds O′ of the given items, as the runner builds it, and
+// saves each one's full package list and scan for visibility -inventory.
+// It refuses a vulnerability database other than the one named, so the
+// inventories are scanned like the study.
+func runInventory(ctx context.Context, args []string) error {
+	fs := flag.NewFlagSet("inventory", flag.ExitOnError)
+	var common commonFlags
+	common.register(fs)
+	manifestFile := fs.String("manifest", "", "benchmark manifest (YAML)")
+	items := fs.String("items", "", "comma-separated item ids to rebuild")
+	out := fs.String("out", "", "directory to write ITEM.json inventories to")
+	buildTimeout := fs.Duration("build-timeout", 10*time.Minute, "limit for each build, as in the study")
+	wantDB := fs.String("trivy-db", "", "required database version, as recorded in the study's records (trivy_db)")
+	fs.Parse(args)
+	if *manifestFile == "" || *items == "" || *out == "" || *wantDB == "" {
+		return errors.New("--manifest, --items, --out and --trivy-db are required")
+	}
+	manifest, err := eval.LoadManifest(*manifestFile)
+	if err != nil {
+		return err
+	}
+	selected, err := manifest.Select(strings.Split(*items, ","))
+	if err != nil {
+		return err
+	}
+	scanner, work, err := common.scanner()
+	if err != nil {
+		return err
+	}
+	dbVersion, err := scanner.DBVersion(ctx)
+	if err != nil {
+		return err
+	}
+	if dbVersion != *wantDB {
+		return fmt.Errorf("vulnerability database is %q, not %q", dbVersion, *wantDB)
+	}
+	src := &eval.GitSource{Dir: filepath.Join(work, "src")}
+	var failed []string
+	for _, it := range selected {
+		if _, err := os.Stat(filepath.Join(*out, it.ID+".json")); err == nil {
+			log.Printf("%s: inventory exists, skipping", it.ID)
+			continue
+		}
+		log.Printf("%s: building O′", it.ID)
+		inv, err := eval.BuildInventory(ctx, it, src, &eval.DockerBuilder{}, scanner, work, dbVersion, *buildTimeout)
+		if err != nil {
+			log.Printf("%s: %v", it.ID, err)
+			failed = append(failed, it.ID)
+			continue
+		}
+		if err := eval.WriteInventory(*out, inv); err != nil {
+			return err
+		}
+		log.Printf("%s: %d packages, %d findings, %s", it.ID, len(inv.Packages), len(inv.Scan.Vulnerabilities), inv.OS)
+	}
+	if len(failed) > 0 {
+		return fmt.Errorf("no inventory for %d items: %s", len(failed), strings.Join(failed, ", "))
+	}
+	return nil
 }
