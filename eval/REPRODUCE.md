@@ -168,8 +168,15 @@ bin/sleeko-eval visibility -inventory $D/2026-10-29-inventory -out OUT/visibilit
 bin/sleeko-eval prompts -out OUT/calls.jsonl \
   $D/2026-10-21/w0.jsonl $D/2026-10-21/w1.jsonl $D/2026-10-21/w2.jsonl
 python3 eval/plots/tokens.py OUT/calls.jsonl OUT/cost.md
+python3 eval/plots/build_failures.py $D/2026-10-21 --baseline $D/2026-10-28-baseline OUT/build-failures.md
 python3 eval/plots/figures.py $D/2026-10-21 --baseline $D/2026-10-28-baseline
 ```
+
+`build_failures.py` sorts every G4 failure into one cause by fixed rules,
+the first that matches its error, or, where the record's tail of the build
+log cuts the error off, the step that failed; a step that runs several kinds
+of command is then left unclear. It lists every failure with the line it was
+classified by, so each decision can be checked.
 
 Each output is identical to its committed copy; `analyze` needs the pinned
 Hadolint container for G7 (its first run takes about 20 minutes), and
@@ -180,9 +187,10 @@ figures.
 
 | In the paper | File |
 |---|---|
-| Success rates (Table 6 and its figure) | `wN-report.md`, `figures/fig1-success` |
+| Success rates (Table 5 and its figure) | `wN-report.md`, `figures/fig1-success` |
 | Pairwise tests | `w0-vs-w1.md`, `w1-vs-w2.md`, `w0-vs-w2.md` |
 | Gate failures and G7 | `wN-report.md`, `analysis.md`, `figures/fig3-gates` |
+| Why candidates do not build (Table 6) | `build-failures.md` |
 | Verification and repair, base image tables | the W1 and W2 sections of `w1-report.md`, `w2-report.md` |
 | End-of-life split | `wN-report.md`, `figures/fig4-eol` |
 | ΔV and ΔS of the successful attempts | `wN-report.md`, `figures/fig2-components` |
