@@ -24,6 +24,7 @@ In each run directory:
 | `*-report.md`, `*-failures.txt`, `*-failures/` | Reports, and every failed attempt with its diff |
 | `w0-vs-w1.md`, `w1-vs-w2.md`, `w0-vs-w2.md` | Pairwise comparisons |
 | `analysis.md`, `lint-gates.jsonl` | The analyses (G7, other success definitions, G3, G5) and G7 per attempt |
+| `build-failures.md` | G4 failures by cause, per pipeline and for the baseline, with the line each was classified by |
 | `run.log` | The run's log |
 | `figures/` | The paper's figures |
 
